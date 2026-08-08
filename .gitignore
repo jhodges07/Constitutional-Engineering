@@ -1,0 +1,10 @@
+# OS / editor local artifacts only — do not exclude controlled engineering documents
+Thumbs.db
+Desktop.ini
+.DS_Store
+*~
+*.tmp
+*.swp
+*.swo
+.vscode/
+.idea/
