@@ -6,8 +6,9 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Index:** [IDX-001 — Engineering Office Master Index](Engineering-Office/IDX-001-Engineering-Office-Master-Index.md)  
 **Status:** Active  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-08-08  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 
 This repository is the **engineering-control environment** for Constitutional Engineering.  
 It holds the Constitutional Engineering Office’s architecture, policy, standards, workflows, audits, certifications, and operating prompts.
@@ -136,6 +137,15 @@ Controlled engineering work proceeds under:
 Typical progression:
 
 ```text
+ENGINEERING DEFINITION
+Human Engineering Intent
+    → Research / Source Collection (informative)
+    → LOU (Letter of Understanding)
+    → Human Engineer LOU Acceptance
+    → Requirements / Scope (SPEC preferred)
+    → Human Engineer Requirements Approval / CWC-Readiness
+        ↓
+CONTROLLED EXECUTION
 CWC-CE (work authorization)
     → Human Review / Approval
     → ECR when required (controlled change)
@@ -146,6 +156,14 @@ CWC-CE (work authorization)
     → Git Commit / Tag / Push (only when authorized)
     → Baseline certification / publication (only when authorized)
 ```
+
+LOU acceptance and Requirements/SPEC acceptance do **not** authorize implementation.  
+Controlled Execution requires an approved CWC-CE.
+
+Definition surface:
+
+- [Engineering-Office/definition/](Engineering-Office/definition/)  
+- [TMP-002 — Letter of Understanding Template](Engineering-Office/templates/TMP-002-Letter-of-Understanding-Template.md)
 
 Release gates are explicit. Silence is not approval.
 
@@ -197,10 +215,11 @@ Committed Engineering Office surfaces represented in this repository:
 | [Engineering-Office/architecture/](Engineering-Office/architecture/) | Architecture baselines (ARCH series) |
 | [Engineering-Office/audits/](Engineering-Office/audits/) | CER / ECR evidence and change records |
 | [Engineering-Office/certifications/](Engineering-Office/certifications/) | Office baseline and readiness certifications |
+| [Engineering-Office/definition/](Engineering-Office/definition/) | LOU instances (Engineering Definition) |
 | [Engineering-Office/policies/](Engineering-Office/policies/) | Governance policy |
 | [Engineering-Office/prompts/](Engineering-Office/prompts/) | Operating prompts for Office / manager roles |
 | [Engineering-Office/standards/](Engineering-Office/standards/) | Engineering standards (STD series) |
-| [Engineering-Office/templates/](Engineering-Office/templates/) | Controlled templates (including [TMP-001](Engineering-Office/templates/TMP-001-Master-Document-Template.md)) |
+| [Engineering-Office/templates/](Engineering-Office/templates/) | Controlled templates (including [TMP-001](Engineering-Office/templates/TMP-001-Master-Document-Template.md), [TMP-002](Engineering-Office/templates/TMP-002-Letter-of-Understanding-Template.md)) |
 | [Engineering-Office/workflows/](Engineering-Office/workflows/) | Operating and release workflows |
 
 Master catalog:
@@ -387,3 +406,4 @@ If this README conflicts with a controlled governing document, the controlled do
 |---|---|---|
 | 0.0.0 | 2026-08-08 | Reserved workspace-root README stub (CER-001 remediation). |
 | 1.0.0 | 2026-08-08 | Replace stub with GitHub repository front door under CWC-CE-048. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: dual-phase Engineering Definition / Controlled Execution front-door workflow; definition/ navigation. |

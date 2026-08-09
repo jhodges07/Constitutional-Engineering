@@ -6,8 +6,9 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Status:** Active  
-**Version:** 1.1.0  
+**Version:** 1.2.0  
 **Effective Date:** 2026-08-08  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 
 ---
 
@@ -80,6 +81,10 @@ Templates / Indexes / Guides (as adopted)
       ↓
 Managers
       ↓
+ENGINEERING DEFINITION
+LOU → SPEC / Requirements
+      ↓
+CONTROLLED EXECUTION
 CWC-CE
       ↓
 ECR (when required)
@@ -98,12 +103,18 @@ CER
 │  ARCH  →  POL  →  STD  →  WF  →  IDX/TMP... │
 │                 │                            │
 │                 ▼                            │
-│        Operational Artifacts                 │
+│     Engineering Definition                   │
+│         LOU → SPEC                           │
+│                 │                            │
+│                 ▼                            │
+│        Controlled Execution                  │
 │     CWC-CE → ECR → CEP → CER                 │
 └──────────────────────────────────────────────┘
 ```
 
-Lower-authority artifacts shall not override higher-authority artifacts.
+Lower-authority artifacts shall not override higher-authority artifacts.  
+LOU/SPEC acceptance does not authorize implementation.  
+CWC-CE remains Controlled Execution authorization.
 
 ---
 
@@ -189,8 +200,60 @@ Official standards sequence is maintained under STD-014 and ECR-001 history thro
 | Identifier | Title | Classification | Status | Governing Authority |
 |---|---|---|---|---|
 | TMP-001 | Engineering Office Master Document Template | Engineering Office Template | Active | Constitutional Engineering Office |
+| TMP-002 | Letter of Understanding Template | Engineering Office Template | Active | Constitutional Engineering Office |
 
-**Path:** `Engineering-Office/templates/TMP-001-Master-Document-Template.md`
+**Path root:** `Engineering-Office/templates/`
+
+| Identifier | Path |
+|---|---|
+| TMP-001 | `Engineering-Office/templates/TMP-001-Master-Document-Template.md` |
+| TMP-002 | `Engineering-Office/templates/TMP-002-Letter-of-Understanding-Template.md` |
+
+---
+
+## 7B. Engineering Definition — Letters of Understanding
+
+### 7B.1 Document Type
+
+| Identifier Pattern | Title | Classification | Status | Governing Authority |
+|---|---|---|---|---|
+| LOU-NNN | Letter of Understanding | Engineering Definition Artifact | Active convention | Constitutional Engineering Office |
+
+### 7B.2 Numbering and Storage
+
+1. Form: `LOU-NNN`  
+2. Sequential integer numbering  
+3. Numbers are never reused  
+4. Filename convention: `LOU-NNN-Short-Title.md`  
+5. Storage: `Engineering-Office/definition/`  
+6. Template: TMP-002  
+7. Directory note: `Engineering-Office/definition/README.md`  
+
+### 7B.3 Authority Position
+
+1. LOU records agreed engineering understanding after Human Engineer acceptance (HG-D1).  
+2. Research annexes are informative, not authoritative.  
+3. LOU acceptance does **not** authorize implementation.  
+4. Requirements/SPEC acceptance does **not** authorize implementation.  
+5. Controlled Execution still requires approved CWC-CE.  
+
+### 7B.4 Force Separation
+
+| Artifact | Force |
+|---|---|
+| LOU | Agreed understanding |
+| SPEC | Structured Requirements / what must be accomplished |
+| CWC-CE | Discrete Controlled Execution authorization |
+| ECR | Controlled configuration change when STD-014 applies |
+| CEP | Executable implementation instructions |
+| CER | Implementation/evidence record |
+
+### 7B.5 SPEC Reuse
+
+Structured Requirements preferentially reuse **SPEC** (`SPEC-NNN`) or an approved equivalent.  
+**No REQ series** is authorized.  
+Office SPEC posture is Active for Requirements use under STD-001; manager-local SPECs may continue in manager repositories and shall not redefine Office LOU authority.  
+IDX Future SPEC reservation is superseded for Requirements use by this Active convention (GUIDE remains Future).
 
 ---
 
@@ -367,9 +430,9 @@ UNBKE (future)
                         ▼
                   WF-001 / WF-002
                         │
-                  IDX-001 / TMP-001
+             IDX-001 / TMP-001 / TMP-002
                         │
-         CWC-CE ──► ECR ──► CEP ──► CER
+         LOU ──► SPEC ──► CWC-CE ──► ECR ──► CEP ──► CER
                         │
                         ▼
               Repository Implementations
@@ -379,12 +442,14 @@ Relationship rules:
 
 1. Architecture governs policy and standards.  
 2. Standards govern workflows and operational artifacts.  
-3. WF-001 operationalizes the end-to-end work sequence.  
+3. WF-001 operationalizes Engineering Definition and Controlled Execution.  
 4. WF-002 operationalizes release baselines after Human Acceptance.  
 5. IDX-001 catalogs; it does not outrank architecture or standards.  
-6. TMP-001 governs master document structure for controlled Office documents.  
-7. ECR is required only for controlled changes under STD-014.  
-8. CER records implementation under STD-015.  
+6. TMP-001 governs master document structure; TMP-002 governs LOU structure.  
+7. LOU/SPEC feed CWC-CE; neither authorizes implementation.  
+8. ECR is required only for controlled changes under STD-014.  
+9. CER records implementation under STD-015.  
+10. `Engineering-Office/definition/` stores LOU instances.  
 
 ---
 
@@ -395,11 +460,10 @@ The following document types are reserved for future adoption. They are not acti
 | Type | Identifier Pattern | Intended Use | Status |
 |---|---|---|---|
 | ADR | ADR-NNN | Architecture Decision Records | Future |
-| SPEC | SPEC-NNN | Detailed technical or domain specifications | Future |
 | NOTE | NOTE-NNN | Non-normative engineering notes | Future |
 | GUIDE | GUIDE-NNN | Implementation guidance subordinate to standards | Future |
 
-Note: `TMP-001` is Active and cataloged in Section 7A. Additional TMP-series documents may be adopted later.
+Note: `TMP-001` and `TMP-002` are Active. `LOU-NNN` is an Active operational convention (Section 7B). `SPEC-NNN` is Active for structured Requirements reuse under STD-001; manager-local SPECs remain manager artifacts.
 
 Future types become active only through approved Engineering Office process and index update.
 
@@ -429,8 +493,12 @@ Future types become active only through approved Engineering Office process and 
 | WF-001 | Engineering Office Operating Workflow | Active |
 | WF-002 | Engineering Release Workflow | Draft (pending Human Engineer acceptance) |
 | TMP-001 | Engineering Office Master Document Template | Active |
+| TMP-002 | Letter of Understanding Template | Active |
 | IDX-001 | Engineering Office Master Index | Active |
+| LOU series | Letter of Understanding convention + `definition/` surface | Active convention |
+| SPEC series | Structured Requirements reuse under STD-001 | Active convention |
 | ECR-001 | Standard Numbering Resolution | Complete |
+| ECR-002 | Engineering Definition / LOU Controlled Adoption | Implemented (verification pending independent audit) |
 | CER-001 | Pre-Push Engineering Audit | Submitted |
 | CER-002 | Release Readiness Remediation | Submitted |
 
@@ -451,6 +519,7 @@ Future types become active only through approved Engineering Office process and 
 |---|---|---|
 | 1.0.0 | 2026-08-08 | Initial Engineering Office Master Index establishing the authoritative governing-document catalog. |
 | 1.1.0 | 2026-08-08 | CER-001 remediation: catalog ARCH-002/003/004, TMP-001, WF-002, CER-001/CER-002; correct TMP series posture; mark CDT reserved/empty; expand baseline listing. |
+| 1.2.0 | 2026-08-08 | ECR-002 / CWC-CE-054: catalog LOU convention, TMP-002, definition/ surface, SPEC Requirements reuse; dual-phase hierarchy. |
 
 ---
 

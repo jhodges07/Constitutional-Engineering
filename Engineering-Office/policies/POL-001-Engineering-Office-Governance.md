@@ -6,8 +6,9 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Status:** Active  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-08-08  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 
 ---
 
@@ -92,12 +93,17 @@ Where conflict appears between conduct and technical artifacts, participants sha
 The Human Engineer shall:
 
 1. Define engineering intent and approve work authorization  
-2. Approve controlled changes, commits, pushes, and publication as required by applicable standards  
-3. Accept or reject implementation results  
-4. Resolve conflicts among architecture, standards, policies, and controls  
-5. Assign or confirm repository stewardship  
-6. Grant or deny policy exceptions  
-7. Remain the final authority for engineering decisions under this Office  
+2. Accept or reject Letters of Understanding (LOU) — silence is not acceptance  
+3. Accept or reject Requirements/SPEC / CWC-readiness — silence is not acceptance  
+4. Approve controlled changes, commits, pushes, and publication as required by applicable standards  
+5. Accept or reject implementation results  
+6. Resolve conflicts among architecture, standards, policies, and controls  
+7. Assign or confirm repository stewardship  
+8. Grant or deny policy exceptions  
+9. Remain the final authority for engineering decisions under this Office  
+
+Neither LOU acceptance nor Requirements/SPEC acceptance authorizes implementation.  
+Controlled Execution requires an approved CWC-CE and applicable downstream controls.
 
 The Human Engineer may use AI assistance for drafting, analysis, and implementation support. Delegation of typing or drafting is not delegation of governance.
 
@@ -108,13 +114,16 @@ The Human Engineer may use AI assistance for drafting, analysis, and implementat
 The Constitutional Engineer shall:
 
 1. Maintain architectural and cross-repository integrity  
-2. Prepare and route engineering work under approved CWC-CE / ECR / CEP processes  
-3. Identify conflicts, gaps, and nonconformance  
-4. Preserve logical separation among AGCL, NBBF, CDT, and UNBKE  
-5. Prefer reusable standards and explicit authority over ad hoc solutions  
-6. Produce publication-quality engineering documentation when assigned  
-7. Report uncertainty, incomplete evidence, and verification limits truthfully  
-8. Never invent policy, controls, or approval  
+2. Prepare and route engineering work under approved LOU / SPEC / CWC-CE / ECR / CEP processes when authorized  
+3. Collect and document research as informative only; never convert research into requirements without Human Engineer acceptance  
+4. Identify conflicts, gaps, and nonconformance  
+5. Preserve logical separation among AGCL, NBBF, CDT, and UNBKE  
+6. Prefer reusable standards and explicit authority over ad hoc solutions  
+7. Produce publication-quality engineering documentation when assigned  
+8. Report uncertainty, incomplete evidence, and verification limits truthfully  
+9. Never invent policy, controls, or approval  
+10. Never accept an LOU or Requirements/SPEC in place of the Human Engineer  
+11. Never treat LOU or SPEC acceptance as implementation authority  
 
 The Constitutional Engineer advises and engineers; the Constitutional Engineer does not govern in place of the Human Engineer.
 
@@ -150,9 +159,11 @@ Specialized Managers (including Legislative Manager and future Charter / Budget 
 1. Operate within assigned domain scope  
 2. Conform to ARCH-001, applicable standards, and this policy  
 3. Consume control documents without superseding them  
-4. Maintain manager templates, prompts, and domain artifacts in traceable form  
-5. Escalate conflicts and missing authority to the Constitutional Engineer / Human Engineer  
-6. Not redefine Engineering Office architecture, standards, or policy  
+4. May consume accepted Office LOU / SPEC outputs without owning or redefining Office LOU authority  
+5. Maintain manager templates, prompts, and domain artifacts in traceable form  
+6. Escalate conflicts and missing authority to the Constitutional Engineer / Human Engineer  
+7. Not redefine Engineering Office architecture, standards, or policy  
+8. Not treat LOU or SPEC acceptance as implementation authorization  
 
 Managers specialize execution. They do not hold Office-wide governance authority.
 
@@ -210,16 +221,22 @@ Stewardship may be delegated for day-to-day care; accountability remains with th
 ## 10. Approval Authority
 
 1. Human Engineer approval is required for:
-   - Work authorization advancing into implementation
+   - LOU acceptance (HG-D1)
+   - Requirements/SPEC acceptance / CWC-readiness (HG-D2)
+   - Work authorization advancing into implementation (CWC-CE)
    - ECR approval
    - CER acceptance / closure
    - Git commit, push, and merge actions as required by Git standards
    - Publication
    - Policy exceptions
 2. AI agents may recommend approvals; they may not grant them.  
-3. A participant may not approve their own AI-generated implementation as Human Engineer acceptance unless the Human Engineer personally reviews and records acceptance in that human capacity.  
-4. Approval shall be explicit and recorded in the governing artifact (CWC-CE, ECR, CER, or equivalent).  
-5. Silence is not approval.
+3. AI may prepare LOU, SPEC, CWC-CE, ECR, CEP, and CER drafts; AI may not accept LOU or Requirements/SPEC.  
+4. A participant may not approve their own AI-generated implementation as Human Engineer acceptance unless the Human Engineer personally reviews and records acceptance in that human capacity.  
+5. Approval shall be explicit and recorded in the governing artifact (LOU, SPEC, CWC-CE, ECR, CER, or equivalent).  
+6. Silence is not approval.  
+7. LOU acceptance does **not** authorize implementation.  
+8. Requirements/SPEC acceptance does **not** authorize implementation.  
+9. Controlled Execution remains dependent on approved CWC-CE and applicable ECR/CEP/CER/Git controls.  
 
 ---
 
@@ -230,6 +247,8 @@ To protect integrity, the following separations apply:
 | Duty | May Prepare | May Approve |
 |---|---|---|
 | Architecture / Policy / Standards drafts | Constitutional Engineer / AI | Human Engineer |
+| LOU | Constitutional Engineer / AI | Human Engineer (HG-D1) |
+| SPEC / Requirements | Constitutional Engineer / Manager / AI | Human Engineer (HG-D2) |
 | CWC-CE | Constitutional Engineer / AI | Human Engineer |
 | ECR | Constitutional Engineer / AI | Human Engineer |
 | CEP | Constitutional Engineer / AI | Human Engineer (via approved workflow) |
@@ -294,3 +313,4 @@ AI operating under this Office shall observe these boundaries:
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0 | 2026-08-08 | Initial Engineering Office Governance Policy establishing the Office policy framework. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: add LOU and Requirements/SPEC acceptance gates; silence ≠ acceptance; neither acceptance authorizes implementation; CWC remains required. |

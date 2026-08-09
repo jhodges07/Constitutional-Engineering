@@ -5,8 +5,10 @@
 **Classification:** Architecture Baseline  
 **Authority:** Constitutional Engineering Office  
 **Status:** Active  
-**Version:** 1.0.0  
-**Effective Date:** 2026-08-08  
+**Version:** 1.2.0  
+**Effective Date:** 2026-08-09  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
+**Governing Remediation:** CWC-CE-056 / CER-021 — Audit Finding Remediation (F-02)  
 
 ---
 
@@ -82,8 +84,9 @@ Constitutional Engineering Office
 │   ├── workflows/
 │   ├── templates/
 │   ├── prompts/
-│   ├── agents/
-│   └── audits/
+│   ├── definition/              (LOU storage; Engineering Definition)
+│   ├── audits/
+│   └── agents/                  (reserved future surface; not present in current committed tree)
 │
 ├── Control Document Repositories
 │   ├── AGCL-Control-Documents
@@ -209,7 +212,12 @@ Public repositories are distribution surfaces, not sources of architectural auth
 
 ## 8. Engineering Workflow
 
-Engineering work proceeds through the following authority and execution chain:
+Engineering work proceeds through a two-phase lifecycle under STD-001 / WF-001:
+
+1. **Engineering Definition** — Human Engineering Intent → Research (informative) → LOU → Human Engineer LOU Acceptance → Requirements/SPEC → Human Engineer Requirements Approval / CWC-Readiness  
+2. **Controlled Execution** — CWC-CE → Human Approval → ECR when required → CEP → Implementation → CER → Human Acceptance → Git → Publication when authorized  
+
+Role execution chain:
 
 ```
 Human Engineer
@@ -229,20 +237,23 @@ Public Repository
 
 | Role | Responsibility |
 |---|---|
-| Human Engineer | Defines engineering intent; approves work, commits, and publication |
-| Constitutional Engineer | Maintains architecture, standards, and cross-repository integrity; prepares and routes engineering work |
-| Specialized Manager | Applies domain standards and templates within assigned scope |
+| Human Engineer | Defines engineering intent; accepts LOU and Requirements/SPEC; approves work, commits, and publication |
+| Constitutional Engineer | Maintains architecture, standards, and cross-repository integrity; prepares and routes engineering work including LOU/SPEC packages when authorized |
+| Specialized Manager | Applies domain standards and templates within assigned scope; may consume accepted Engineering Definition outputs without owning Office LOU authority |
 | Cursor AI | Implements approved engineering instructions within approved scope |
 | Git | Records approved changes and preserves repository integrity |
 | Public Repository | Hosts approved published artifacts |
 
 ### 8.2 Workflow Constraints
 
-1. Specification precedes implementation.
-2. Human approval is required before repository modification that advances official history.
-3. Cursor AI shall not modify repositories outside approved scope.
-4. Git operations that alter shared history require explicit human approval under Git standards.
-5. Public publication occurs only after approved engineering review.
+1. Engineering Definition precedes Controlled Execution for material work subject to Definition.
+2. Specification precedes implementation.
+3. Human approval is required before repository modification that advances official history.
+4. LOU acceptance and Requirements/SPEC acceptance do **not** authorize implementation.
+5. Controlled Execution begins with an approved CWC-CE (`CWC-CE-NNN`).
+6. Cursor AI shall not modify repositories outside approved scope.
+7. Git operations that alter shared history require explicit human approval under Git standards.
+8. Public publication occurs only after approved engineering review.
 
 ---
 
@@ -261,10 +272,14 @@ Templates
       ↓
 Managers
       ↓
-Engineering Work Cards (CEWC)
+LOU / SPEC (Engineering Definition operational artifacts; feed-forward only)
+      ↓
+Engineering Work Cards (CWC-CE)
       ↓
 Cursor Engineering Prompts (CEP)
 ```
+
+LOU and SPEC sit below Standards/Workflows/Templates as operational Definition artifacts. They do **not** outrank Architecture, Policy, Standards, or Workflows, and they do **not** authorize Controlled Execution implementation.
 
 ### 9.1 Authority Rules
 
@@ -273,18 +288,23 @@ Cursor Engineering Prompts (CEP)
 3. Workflows govern the use of templates.
 4. Templates govern manager output structure.
 5. Managers execute within the above constraints.
-6. CEWCs specify discrete engineering work and must conform to architecture and standards.
-7. CEPs translate approved CEWCs into executable instructions and must reference their originating CEWC.
-8. No lower-authority artifact may override a higher-authority artifact.
-9. Control documents retain domain authority over domain content; architecture governs engineering structure and repository relationships.
+6. Accepted LOUs record agreed understanding; they do not authorize implementation.
+7. Accepted SPEC/Requirements define what must be accomplished; they do not authorize implementation.
+8. CWC-CEs specify discrete Controlled Execution work and must conform to architecture and standards.
+9. CEPs translate approved CWC-CEs into executable instructions and must reference their originating CWC-CE.
+10. No lower-authority artifact may override a higher-authority artifact.
+11. Control documents retain domain authority over domain content; architecture governs engineering structure and repository relationships.
 
 ### 9.2 Engineering Artifact Types
 
 | Artifact | Purpose |
 |---|---|
-| CEWC — Constitutional Engineering Work Card | Engineering specification: objective, scope, deliverables, acceptance criteria, constraints |
-| CEP — Cursor Engineering Prompt | Executable translation of an approved CEWC for Cursor AI |
+| LOU — Letter of Understanding | Agreed engineering understanding after Human Engineer acceptance; stored under `Engineering-Office/definition/` as `LOU-NNN` |
+| SPEC — Requirements / Scope Definition | Structured statement of what the engineered solution must accomplish |
+| CWC-CE — Constitutional Engineering Work Card | Discrete Controlled Execution authorization and task specification |
+| CEP — Cursor Engineering Prompt | Executable translation of an approved CWC-CE for Cursor AI |
 | CER — Constitutional Engineering Report | Record of implementation results, validation, and outstanding issues |
+| ECR — Engineering Change Request | Controlled configuration-change authorization when STD-014 requires |
 
 ---
 
@@ -300,7 +320,7 @@ Current operational posture:
 4. UNBKE is not required for Legislative Manager operation.
 5. Architecture, standards, and managers shall support future UNBKE integration without assuming present UNBKE capability.
 
-No standard, workflow, template, manager, CEWC, or CEP may hard-depend on UNBKE until this architecture is revised to declare UNBKE operational.
+No standard, workflow, template, manager, CWC-CE, or CEP may hard-depend on UNBKE until this architecture is revised to declare UNBKE operational.
 
 ---
 
@@ -362,8 +382,8 @@ Every engineering artifact under Constitutional Engineering authority shall main
 1. **Architecture reference** — Standards, workflows, and major office documents shall reference the governing architecture document ID.
 2. **Standard reference** — Workflows, templates, and managers shall reference applicable standard IDs.
 3. **Control reference** — Domain artifacts shall reference the owning control document IDs or control titles.
-4. **CEWC reference** — Every CEP shall reference its originating CEWC.
-5. **CER linkage** — Every completed implementation shall produce a CER linked to the CEWC and CEP that authorized it.
+4. **CWC-CE reference** — Every CEP shall reference its originating CWC-CE.
+5. **CER linkage** — Every completed implementation shall produce a CER linked to the CWC-CE and CEP that authorized it.
 6. **Repository attribution** — Every concept has exactly one owning repository; cross-references must not create dual ownership.
 7. **Conflict handling** — Detected conflicts among architecture, standards, controls, or derived artifacts shall be reported, not silently resolved by invention.
 8. **Publication chain** — Public artifacts shall be traceable to their approved internal source documents and authorizing engineering work.
@@ -419,3 +439,5 @@ Nonconformance is an engineering defect and shall be corrected through the appro
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0 | 2026-08-08 | Initial architectural baseline for the Constitutional Engineering Office and repositories under its authority. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: recognize Engineering Definition, LOU, SPEC/Requirements, and Controlled Execution boundary without creating competing authority hierarchy. |
+| 1.2.0 | 2026-08-09 | CWC-CE-056 / CER-021 F-02: qualify agents/ as reserved/absent; add definition/; CEWC→CWC-CE terminology hygiene in residual clauses. |

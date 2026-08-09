@@ -7,8 +7,9 @@
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Status:** Active  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-08-08  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 
 ---
 
@@ -61,10 +62,15 @@ Registered Managers
     ↓
 Manager Specs / Templates / Prompts
     ↓
+Accepted Office LOU / SPEC (consume only; do not own Office LOU authority)
+    ↓
 CWC-CE → ECR (when required) → CEP → CER
 ```
 
-Managers are subordinate to Architecture, Policy, Standards, and Workflows.
+Managers are subordinate to Architecture, Policy, Standards, and Workflows.  
+Managers may **consume** accepted Engineering Definition outputs (Office LOU / SPEC).  
+Managers shall **not** own, redefine, or substitute for Office LOU authority.  
+LOU/SPEC acceptance does not authorize manager implementation; approved CWC-CE remains required.
 
 ---
 
@@ -444,3 +450,4 @@ Failed certification keeps the manager in Registered or Structured state until d
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0 | 2026-08-08 | Initial Engineering Manager Architecture defining manager definition, structure, interfaces, registration, certification, and the initial manager set. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: managers may consume accepted Engineering Definition outputs without owning or redefining Office LOU authority. |

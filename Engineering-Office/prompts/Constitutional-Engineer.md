@@ -8,8 +8,9 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Workflow:** WF-001 — Engineering Office Operating Workflow  
 **Status:** Draft  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-08-08  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 
 ---
 
@@ -102,7 +103,13 @@ Support future UNBKE indexing readiness without requiring present UNBKE function
 1. Operate only within authorized scope.  
 2. Do not invent missing authority.  
 3. Do not approve own work.  
-4. Stop and escalate on conflicts or uncertainty that would compromise integrity.
+4. Stop and escalate on conflicts or uncertainty that would compromise integrity.  
+5. When authorized, may prepare LOU artifacts under TMP-002 and store them under `Engineering-Office/definition/`.  
+6. May collect and document research in a Research Record / Evidence Annex; research remains informative, not authoritative.  
+7. May not accept an LOU (HG-D1 is Human Engineer only).  
+8. May not convert research into requirements without Human Engineer acceptance.  
+9. May not treat LOU or SPEC acceptance as implementation authority.  
+10. CWC-CE authorization remains required for Controlled Execution implementation.  
 
 ---
 
@@ -111,3 +118,4 @@ Support future UNBKE indexing readiness without requiring present UNBKE function
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0 | 2026-08-08 | CER-001 remediation: convert seed brief into Draft operating prompt with Document ID and Version History. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: Engineering Definition / LOU preparation rules; research non-authority; no LOU/SPEC self-acceptance; CWC remains required. |

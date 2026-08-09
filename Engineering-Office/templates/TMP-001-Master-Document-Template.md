@@ -7,8 +7,10 @@
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Status:** Active  
-**Version:** 1.0.0  
-**Effective Date:** 2026-08-08  
+**Version:** 1.2.0  
+**Effective Date:** 2026-08-09  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
+**Governing Remediation:** CWC-CE-056 / CER-021 — Audit Finding Remediation (F-01)  
 
 ---
 
@@ -35,12 +37,13 @@ This master template applies to:
 | Policies | POL | Engineering Office governance and conduct policies |
 | Standards | STD | Binding engineering standards |
 | Workflows | WF | Operational engineering workflows |
-| Engineering Work Cards | CWC-CE | Work authorization / specification |
+| Letters of Understanding | LOU | Engineering Definition agreed-understanding records |
+| Engineering Work Cards | CWC-CE | Controlled Execution work authorization / specification |
 | Engineering Change Requests | ECR | Controlled change authorization and record |
 | Constitutional Engineering Reports | CER | Implementation and completion records |
 | Engineering Indexes | IDX | Authoritative catalogs and indexes |
+| Specifications | SPEC | Structured Requirements / Scope Definition (preferred) |
 | Future Guides | GUIDE | Non-superseding implementation guidance |
-| Future Specifications | SPEC | Detailed technical or domain specifications |
 
 ### 2.2 Out of Scope
 
@@ -124,6 +127,7 @@ Additional metadata fields may follow the same bold-label pattern before the fir
 | POL | `POL-NNN` | POL-001 |
 | STD | `STD-NNN` | STD-015 |
 | WF | `WF-NNN` | WF-001 |
+| LOU | `LOU-NNN` | LOU-001 |
 | CWC-CE | `CWC-CE-NNN` | CWC-CE-015 |
 | ECR | `ECR-NNN` | ECR-001 |
 | CER | `CER-NNN` | CER-001 |
@@ -134,6 +138,14 @@ Additional metadata fields may follow the same bold-label pattern before the fir
 | SPEC | `SPEC-NNN` | SPEC-001 |
 | ADR | `ADR-NNN` | ADR-001 |
 | NOTE | `NOTE-NNN` | NOTE-001 |
+
+Semantic force separation (shall not be blurred):
+
+| Artifact | Force |
+|---|---|
+| LOU | What do we agree we understand? |
+| SPEC | What must the engineered solution accomplish? |
+| CWC-CE | What controlled work is authorized? |
 
 Rules:
 
@@ -389,7 +401,18 @@ Use the following skeleton for new governing documents, then adapt type-specific
 | Recommended | Principles, Inputs, Outputs, Decision points |
 | Type-Specific | Operating sequence, approval gates, AI execution gates, verification gates, Git/publication/exception paths |
 
-### 14.5 CWC-CE — Engineering Work Cards
+### 14.5 LOU — Letters of Understanding
+
+| Section Class | Sections |
+|---|---|
+| Required per TMP-002 / STD-001 | Metadata, Purpose, Human Engineering Intent, Scope — In, Scope — Out, Research Inputs, Research Record / Evidence Annex, Agreed Understanding, Rejected / Non-Adopted Interpretations, Conflicting Sources, Open Questions, Assumptions, Deferred Items, Verification Status, Provisional Requirements Implications, Authority Boundary, Requirements / SPEC Transition, Human Engineer Acceptance Record, Revision / Supersession, Traceability, Version History |
+| Recommended | Definitions |
+| Type-Specific | Explicit statement that LOU acceptance records understanding only and does **not** authorize implementation; Research Annex is informative / non-authoritative |
+
+Storage: `Engineering-Office/definition/` as `LOU-NNN-Short-Title.md`.  
+Template specialization: TMP-002.
+
+### 14.6 CWC-CE — Engineering Work Cards
 
 | Section Class | Sections |
 |---|---|
@@ -406,7 +429,9 @@ Minimum CWC-CE body:
 5. Constraints  
 6. Engineering Notes (optional)  
 
-### 14.6 ECR — Engineering Change Requests
+CWC-CE authorizes Controlled Execution work. It is not an LOU and not a SPEC.
+
+### 14.7 ECR — Engineering Change Requests
 
 | Section Class | Sections |
 |---|---|
@@ -414,7 +439,7 @@ Minimum CWC-CE body:
 | Optional | Definitions, Background |
 | Type-Specific | Change Category, Impact Analysis, Approval Record, Verification Record |
 
-### 14.7 CER — Constitutional Engineering Reports
+### 14.8 CER — Constitutional Engineering Reports
 
 | Section Class | Sections |
 |---|---|
@@ -422,7 +447,7 @@ Minimum CWC-CE body:
 | Optional | Definitions, Recommendations |
 | Type-Specific | File action lists, verification evidence, Git references, Human Acceptance |
 
-### 14.8 IDX — Engineering Indexes
+### 14.9 IDX — Engineering Indexes
 
 | Section Class | Sections |
 |---|---|
@@ -430,7 +455,7 @@ Minimum CWC-CE body:
 | Recommended | Hierarchy diagrams, dependency diagrams |
 | Type-Specific | Document catalogs, repository catalogs, numbering conventions, baseline listing |
 
-### 14.9 GUIDE — Future Guides
+### 14.10 GUIDE — Future Guides
 
 | Section Class | Sections |
 |---|---|
@@ -438,13 +463,15 @@ Minimum CWC-CE body:
 | Recommended | Examples, diagrams |
 | Type-Specific | Explicit statement that GUIDE content is subordinate to ARCH/POL/STD/WF |
 
-### 14.10 SPEC — Future Specifications
+### 14.11 SPEC — Requirements / Scope Definition
 
 | Section Class | Sections |
 |---|---|
 | Required | Metadata, Purpose, Scope, Authority, Requirements/Specification body, Responsibilities, Conformance, References, Version History |
-| Recommended | Definitions, interface models, diagrams |
-| Type-Specific | Normative specification detail without inventing higher-level policy |
+| Recommended | Definitions, interface models, diagrams, LOU citation when Engineering Definition applies |
+| Type-Specific | Structured statement of what the engineered solution must accomplish; SPEC acceptance does **not** authorize implementation; no parallel REQ series |
+
+SPEC is the preferred Active Requirements / Scope Definition surface under STD-001. It is not a “future-only” placeholder and is not an LOU.
 
 ---
 
@@ -524,3 +551,5 @@ Nonconformance is an engineering defect and shall be corrected before the docume
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0 | 2026-08-08 | Initial Engineering Office Master Document Template establishing the canonical template for Engineering Office artifacts. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: add LOU as supported controlled document type; clarify SPEC as Requirements surface. |
+| 1.2.0 | 2026-08-09 | CWC-CE-056 / CER-021 F-01: add LOU-NNN numbering; add LOU application matrix; retitle SPEC matrix to Active Requirements / Scope Definition. |

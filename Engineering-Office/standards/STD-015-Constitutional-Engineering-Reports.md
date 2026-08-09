@@ -6,8 +6,9 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Status:** Active  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-08-08  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 
 ---
 
@@ -267,7 +268,7 @@ No affected repository may be omitted.
 
 ## 15. Traceability Requirements
 
-Every CER shall maintain the following traceability chain:
+Every CER shall maintain the following Controlled Execution traceability chain:
 
 ```
 CWC-CE
@@ -277,17 +278,32 @@ CWC-CE
         → CER
 ```
 
+When Engineering Definition applied to the work, the CER shall also record upstream provenance when applicable:
+
+```
+LOU (accepted)
+  → SPEC / Requirements (accepted)
+    → CWC-CE
+      → ECR when applicable
+        → CEP
+          → CER
+```
+
 Mandatory trace links:
 
 1. CER → governing CWC-CE  
 2. CER → governing CEP  
 3. CER → governing ECR when applicable  
-4. CER → repositories affected  
-5. CER → files created/modified/renamed/deleted  
-6. CER → verification evidence  
-7. CER → Git commit references when available  
+4. CER → accepted LOU when Engineering Definition applied (or HE waiver recorded)  
+5. CER → accepted SPEC/Requirements when Engineering Definition applied (or HE waiver recorded)  
+6. CER → repositories affected  
+7. CER → files created/modified/renamed/deleted  
+8. CER → verification evidence  
+9. CER → Git commit references when available  
 
-A CER lacking its originating CWC-CE reference is nonconformant.
+A CER lacking its originating CWC-CE reference is nonconformant.  
+Upstream LOU/SPEC citations are additive and do **not** alter the CER’s non-authorizing nature.  
+A CER still does not authorize implementation.
 
 ---
 
@@ -315,6 +331,10 @@ Numbers of closed CERs are never reused.
 All CER-governed work shall follow this model:
 
 ```
+ENGINEERING DEFINITION (when applicable)
+LOU → SPEC/Requirements → Human Engineer acceptance gates
+    ↓
+CONTROLLED EXECUTION
 CWC-CE
     ↓
 Human Approval
@@ -335,6 +355,8 @@ Git Commit
     ↓
 Git Push / Publication
 ```
+
+LOU/SPEC acceptance does not authorize implementation. A CER does not authorize implementation.
 
 ### 17.2 Conformance Conditions
 
@@ -358,3 +380,4 @@ Nonconforming CERs are engineering defects and require correction before closure
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0 | 2026-08-08 | Initial Constitutional Engineering Reports Standard; establishes CER as an Engineering Office document type. |
+| 1.1.0 | 2026-08-08 | ECR-002 / CWC-CE-054: additive upstream LOU/SPEC traceability; CER non-authorization preserved. |
