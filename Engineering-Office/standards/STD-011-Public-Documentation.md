@@ -8,10 +8,10 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
-**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control; ECR-011 — KSB Three-Step Human Command Contract  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package; CWC-CE-092 — KSB Three-Step Human Command Contract  
 **Status:** Active  
-**Version:** 1.5.1  
+**Version:** 1.6.0  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -470,6 +470,7 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.4.0 | 2026-08-30 | ECR-007 / CWC-CE-087: adds Part B §36 phone-command orchestration / follow-up context; binds Active KSB Cycle, controlled-image routing, creative-artwork firewall, renderer failure-safe (`KSB IMAGE: RENDER REQUIRED`), and Active KSB-ORCH-001. |
 | 1.5.0 | 2026-08-30 | ECR-008 / CWC-CE-088: `Prepare KSB Status` targets complete KSB Sunday Publication Package (controlled status + 450–550-word press release + controlled KSB image); COMPLETE/INCOMPLETE semantics; KSB-PR-TMP-001; preserves CWC-CE-087 firewalls. |
 | 1.5.1 | 2026-08-30 | CWC-CE-088 defect remediation: §36.10 Human acceptance requires complete package; diagnostics/partial infrastructure ≠ PASS (KSB-POC-FAIL-002). |
+| 1.6.0 | 2026-08-30 | ECR-011 / CWC-CE-092: three-step Human command contract (Prepare→STATUS; Next→press release; Next→controlled image); supersedes one-shot Prepare delivery; preserves Sunday package completeness and firewalls. |
 
 ---
 
@@ -891,7 +892,7 @@ Informational artifacts remain non-operative unless later Human-authorized promo
 ## 36. Phone-Command Orchestration and Follow-Up Context
 
 **Governing procedure:** Active **KSB-ORCH-001 — KSB Phone-Command Orchestration Procedure**.  
-**Governing ECR:** ECR-007; ECR-008.
+**Governing ECR:** ECR-007; ECR-008; **ECR-011**.
 
 ### 36.1 Human trigger
 
@@ -901,22 +902,24 @@ The Human command:
 Prepare KSB Status
 ```
 
-(and authorized equivalents such as “Prepare this week’s BlueprintLiberty status”) establishes an **Active KSB Cycle Context** under Active KSB-ORCH-001 and targets the ordinary Human-reviewable **KSB Sunday Publication Package** (§36.9), not status alone.
+(and authorized equivalents such as “Prepare this week’s BlueprintLiberty status”) establishes an **Active KSB Cycle Context** under Active KSB-ORCH-001 and begins the **KSB Sunday Publication Package** (§36.9) under the **three-step Human command contract** (§36.11).
 
-Ordinary controlled sequence (Human need not recite):
+Ordinary controlled sequence (Human need not recite plumbing):
 
 ```text
 Prepare KSB Status
- → Active KSB Cycle
- → (Human certification if required; context persists)
- → CONTROLLED KSB STATUS
- → ≈500-WORD PRESS RELEASE (450–550 words)
- → CONTROLLED KSB IMAGE (baseline → renderer → anti-drift)
- → PACKAGE VALIDATION (COMPLETE / INCOMPLETE)
+ → CONTROLLED KSB STATUS   (stop)
+ → Next
+ → ≈500-WORD PRESS RELEASE (stop)
+ → Next
+ → CONTROLLED KSB IMAGE (baseline → deterministic renderer → anti-drift / bridge)
+ → PACKAGE VALIDATION (COMPLETE when all three products returned)
  → STOP FOR HUMAN REVIEW/PUBLICATION
 ```
 
-The Human SHALL NOT be required to additionally specify GitHub paths, baseline identity, renderer invocation, FIXED/VARIABLE theory, “do not redesign the image,” or a second ordinary request for the press release or KSB image. Technical ceremony remains behind the command. Human certification, Git, and publication gates remain where this standard and WF-001 require them. Preparation does **not** authorize HG-6 publication.
+`Prepare KSB Status` SHALL return the controlled **STATUS** product and **stop**. It SHALL NOT automatically return the press release or controlled image, and SHALL NOT create a render Issue solely because Step 1 was invoked.
+
+The Human SHALL NOT be required to manage GitHub Issues, Actions runs, artifacts, correlation identifiers, or renderer plumbing during ordinary successful progression. Technical ceremony remains behind the commands. Human certification, Git, and publication gates remain where this standard and WF-001 require them. Preparation does **not** authorize HG-6 publication.
 
 ### 36.2 Active-cycle follow-up context
 
@@ -1040,21 +1043,43 @@ Generative/creative substitution SHALL **NOT** convert INCOMPLETE → COMPLETE.
 
 **Publication gate:** Successful package preparation ends at Human review/publication required. `Prepare KSB Status` does not itself publish.
 
-### 36.10 Human acceptance / complete-package command contract (CWC-CE-088)
+### 36.10 Human acceptance / complete-package contract (amended by ECR-011 / CWC-CE-092)
 
-`Prepare KSB Status` **Human acceptance** succeeds only when the Human receives, through the ChatGPT command interaction, the complete Human-reviewable KSB Sunday Publication Package (§36.9):
+The **KSB Sunday Publication Package** (§36.9) remains COMPLETE only when the Human has received all three products (status + press release + controlled image). Infrastructure partial PASS ≠ package COMPLETE.
 
-1. controlled KSB status (including controlled status date and certified Bill A/B/C maturity);  
-2. press release ≈500 words (450–550; KSB-PR-TMP-001);  
-3. controlled deterministic KSB image (baseline → renderer → anti-drift), returned in a usable form supported by the authorized bridge/artifact path.
+Under the three-step contract (§36.11):
+
+- Step-1 command success = STATUS product correctly returned (not full package).  
+- Step-2 command success = PRESS RELEASE returned from the same package identity.  
+- Step-3 command success = CONTROLLED IMAGE returned (or truthful IN PROGRESS / BLOCKED).  
+- Package readiness for Human review/publication requires all three products.
 
 ```text
-COMPLETE PACKAGE REQUIRED FOR COMMAND PASS
-PARTIAL PACKAGE ≠ PASS
+SUNDAY PACKAGE COMPLETE ≠ SINGLE-COMMAND PREPARE DELIVERY
+PARTIAL PACKAGE ≠ PACKAGE COMPLETE
 RUNTIME / BRIDGE DIAGNOSTIC ≠ PACKAGE SUCCESS
-INFRASTRUCTURE PARTIAL PASS ≠ HUMAN ACCEPTANCE PASS
+IMAGE_GEN ≠ CONTROLLED KSB IMAGE
 ```
 
-If any mandatory package component cannot be produced, the orchestration SHALL report `PACKAGE STATE: INCOMPLETE` (or the exact authorized equivalent under KSB-ORCH-001), name the failed gate, and SHALL **not** represent the overall package as COMPLETE. A diagnostic failure response remains a **FAILED** Human acceptance test when the test requires the complete package.
+Press release remains a required package component and SHALL NOT be blocked by image queue/failure. Status SHALL NOT be blocked by image production.
 
-Press release remains a required package component and may still be prepared when image render is unavailable (§36.5–§36.6); that does **not** convert the package or Human acceptance result to PASS/COMPLETE.
+### 36.11 Three-step Human command contract (ECR-011 / CWC-CE-092)
+
+Canonical Human sequence:
+
+```text
+Prepare KSB Status → STATUS
+Next → PRESS RELEASE (~450–550 words)
+Next → CONTROLLED IMAGE
+```
+
+| Active package condition | `Next` means |
+|---|---|
+| STATUS complete; press release not returned | Return PRESS RELEASE (no render Issue) |
+| Press release complete; image not returned | Enter controlled image path (at most one render request) |
+| Image IN PROGRESS | Reconcile **existing** request; no duplicate Issue |
+| Package COMPLETE | Report complete / Human review required; do **not** start a new weekly cycle |
+
+Package continuity across steps SHALL preserve: cycle identity; status date; Bill A/B/C; certification/evidence basis; baseline ID; renderer ID; canonical SHA where applicable; render request ID once created.
+
+**KSB-089-D01:** SUPERSEDED by this three-step model (not the parked “Continue KSB Status” design).

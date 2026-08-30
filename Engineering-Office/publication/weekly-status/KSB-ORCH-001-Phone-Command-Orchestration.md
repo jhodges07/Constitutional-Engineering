@@ -4,22 +4,23 @@
 **Title:** KSB Phone-Command Orchestration / Baseline Continuity / Follow-Up Context  
 **Classification:** Engineering Procedure (Weekly Status Orchestration)  
 **Authority:** Constitutional Engineering Office  
-**Governing Standard:** STD-011 Part B Version 1.5.1 (operative packaging CONTROL — §36 / §36.9 / §36.10)  
-**Governing ECR:** ECR-007 (Implemented); ECR-008 (Human-accepted / Implemented locally)  
-**Governing Work Card:** CWC-CE-087; CWC-CE-088  
+**Governing Standard:** STD-011 Part B Version 1.6.0 (operative packaging CONTROL — §36 / §36.9 / §36.10 / §36.11)  
+**Governing ECR:** ECR-007 (Implemented); ECR-008 (Implemented); **ECR-011 (Human-accepted / CWC-CE-092)**  
+**Governing Work Card:** CWC-CE-087; CWC-CE-088; **CWC-CE-092**  
 **Related Failure:** KSB-POC-FAIL-001; KSB-POC-FAIL-002  
+**Related Defect Disposition:** KSB-089-D01 **SUPERSEDED** by three-step contract (ECR-011)  
 **Related Template:** KSB-PR-TMP-001  
 **Status:** Active  
-**Version:** 1.1.1  
+**Version:** 1.2.0  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Activation:** Human-accepted ECR-008 / CWC-CE-088 Bounded Continuation — STD-011 §36.9; CWC-CE-088 defect remediation — §36.10  
+**Activation:** Human-accepted ECR-011 / CWC-CE-092 three-step Human command contract  
 
 ```text
-ACTIVE UNDER STD-011 v1.5.1 §36 / §36.10 / ECR-008
-KSB SUNDAY PUBLICATION PACKAGE CONTRACT ACTIVE
-HUMAN ACCEPTANCE REQUIRES COMPLETE PACKAGE
-PRESERVES CWC-CE-087 FOLLOW-UP / CREATIVE / RENDER REQUIRED RULES
+ACTIVE UNDER STD-011 v1.6.0 §36 / §36.11 / ECR-011
+THREE-STEP HUMAN COMMAND CONTRACT ACTIVE
+Prepare → STATUS | Next → PRESS RELEASE | Next → CONTROLLED IMAGE
+KSB-089-D01 SUPERSEDED
 DOES NOT CHANGE CERTIFIED MATURITY
 DOES NOT PUBLISH
 DOES NOT REPLACE THE DETERMINISTIC RENDERER
@@ -32,12 +33,13 @@ GIT CANONICALIZATION PENDING HUMAN GIT GATE
 
 Make phone-first ChatGPT (and Cursor) orchestration of Kansas BlueprintLiberty Status (KSB Status) **deterministic** so that:
 
-1. `Prepare KSB Status` establishes a controlled cycle **and** targets the complete **KSB Sunday Publication Package**;  
-2. ordinary Sunday run prepares controlled status + ≈500-word press release + controlled KSB image without a second Human request;  
-3. reasonable follow-ups retain cycle/artifact identity;  
-4. “image” defaults to the **CONTROLLED KSB IMAGE**;  
-5. creative artwork cannot silently replace the controlled status image;  
-6. renderer unavailability yields an explicit controlled failure state and **INCOMPLETE** package, not a generative substitute.
+1. `Prepare KSB Status` establishes a controlled cycle and returns the **STATUS** product only;  
+2. contextual `Next` advances the **same** package to PRESS RELEASE, then CONTROLLED IMAGE;  
+3. status and press release are independent of image execution timing;  
+4. at most one render request exists per active package;  
+5. “image” defaults to the **CONTROLLED KSB IMAGE**;  
+6. creative artwork cannot silently replace the controlled status image;  
+7. renderer unavailability yields explicit IN PROGRESS / RENDER REQUIRED / BLOCKED states — not generative substitutes.
 
 ---
 
@@ -109,19 +111,35 @@ On successful Step-1 entry, the assistant SHALL create / retain an **Active KSB 
 | `certification_state` | as recorded |
 | `cycle_state` | ACTIVE |
 
-### 3.3 One-command semantics
-
-“One command” means the Human does **not** ordinarily need to separately request the press release or image.
-
-It does **NOT** mean bypassing required Human certification, Git, or publication gates.
-
-If certification is required mid-cycle:
+### 3.3 Three-step command contract (ECR-011 / CWC-CE-092)
 
 ```text
-HUMAN CERTIFICATION REQUIRED
+Prepare KSB Status → STATUS only (no render Issue)
+Next                 → PRESS RELEASE (~450–550 words; same package values)
+Next                 → CONTROLLED IMAGE path (≤1 render request; reuse if in progress)
 ```
 
-After the Human decides, the **same** Active cycle continues toward all three deliverables without requiring the Human to repeat `Prepare KSB Status`.
+#### Package phases (minimum)
+
+`KSB_STATUS_PENDING` · `KSB_STATUS_COMPLETE` · `KSB_PRESS_RELEASE_COMPLETE` · `KSB_IMAGE_REQUESTED` · `KSB_IMAGE_IN_PROGRESS` · `KSB_IMAGE_COMPLETE` · `KSB_PACKAGE_COMPLETE` · `KSB_IMAGE_BLOCKED`
+
+#### Continuity invariants
+
+Across all steps preserve: cycle identity; status date; Bill A/B/C; certification/evidence basis; baseline ID; renderer ID; canonical SHA (when set); render request ID once created.
+
+#### Duplicate-render rule
+
+While a render request exists for the active package and execution is QUEUED/IN_PROGRESS, `Next` SHALL reconcile that request and SHALL NOT create a second Issue, request ID, workflow_dispatch, or duplicate render.
+
+#### Package COMPLETE
+
+All three products returned → `READY FOR HUMAN REVIEW`. `Next` thereafter does **not** start a new weekly cycle (require explicit new `Prepare KSB Status`).
+
+Publication remains separately Human-controlled (NOT PERFORMED by this procedure).
+
+### 3.4 One-command semantics (historical / superseded delivery)
+
+ECR-008 “one command delivers all three products” delivery behavior is **superseded** by §3.3 for Human-facing progression. The Sunday **package** still requires all three products before publication readiness.
 
 ---
 
@@ -419,3 +437,4 @@ Technical ceremony remains behind this orchestration. Human certification and pu
 | 1.1.0 | 2026-08-30 | CWC-CE-088: single-command KSB Sunday Publication Package (status + ≈500-word press release + controlled image); COMPLETE/INCOMPLETE; certification continuity; ECR-008 Proposed for STD-011 binding. |
 | 1.1.0 | 2026-08-30 | Confirmed Active under STD-011 v1.5.0 §36.9 after Human acceptance / local implementation of ECR-008 (CWC-CE-088 Bounded Continuation). |
 | 1.1.1 | 2026-08-30 | CWC-CE-088 defect remediation: Human acceptance vs infrastructure (§7.3.1); complete package required for command PASS; records KSB-POC-FAIL-002; aligns to STD-011 v1.5.1 §36.10. |
+| 1.2.0 | 2026-08-30 | ECR-011 / CWC-CE-092: three-step Human command contract; KSB-089-D01 SUPERSEDED; Prepare returns STATUS only; Next advances PR then controlled image; no-duplicate-render. |
