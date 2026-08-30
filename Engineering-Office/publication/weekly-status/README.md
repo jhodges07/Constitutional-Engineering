@@ -8,9 +8,9 @@
 **Predecessors:** CWC-CE-071 (PASS); CWC-CE-072 (STOP/BLOCKED — path); CWC-CE-073 (canonical workspace); CWC-CE-074 (FULL PASS — HUMAN ACCEPTED); CWC-CE-075–077 (accepted); CWC-CE-078 (STD-011 Part B)  
 **Status:** Human-Accepted Informational Architecture / Directory Note — Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 2) — remains informational; does **not** become operative CONTROL  
-**Operative Packaging CONTROL:** STD-011 Version 1.1.0 Part B (ECR-004 / CWC-CE-078)  
+**Operative Packaging CONTROL:** STD-011 Version 1.2.1 Part B (ECR-004 / CWC-CE-078; date-format / public-image — CWC-CE-081; ISO-8601 `ww` — CWC-CE-082)  
 **Initial PUBLIC_URL_01:** BlueprintLiberty.com  
-**Version:** 0.3.0  
+**Version:** 0.3.2  
 **Effective Date:** 2026-08-30  
 **Canonical Local Repository Root:** `X:\GitHub\Constitutional-Engineering`
 
@@ -117,7 +117,7 @@ Each weekly Markdown status report should eventually contain at least:
 
 | Field | Role |
 |---|---|
-| Status Date | Variable (`STATUS_DATE`) |
+| Status Date | Variable (`STATUS_DATE`) — public representation `yyyy.mm.ww` (STD-011); `ww` = ISO-8601 week-of-year (CWC-CE-082); compact value only on public image |
 | Publication Week | Durable week identity |
 | Bill A Engineering Percentage | Variable (`BILL_A_PERCENT`) — Human/authorized source only |
 | Bill B Engineering Percentage | Variable (`BILL_B_PERCENT`) — Human/authorized source only |
@@ -167,10 +167,24 @@ Unless later changed by Human-authorized controlled change:
 
 ### 6.2 VARIABLE fields (initially authorized candidates only)
 
-- `STATUS_DATE`  
+- `STATUS_DATE` (public form `yyyy.mm.ww`; `yyyy`/`mm` calendar; `ww` ISO-8601; no legend on public image)  
 - `BILL_A_PERCENT`  
 - `BILL_B_PERCENT`  
 - `BILL_C_PERCENT`  
+
+Public FIXED Bill titles (STD-011 §26 / CWC-CE-081):
+
+- Bill A: `COMPREHENSIVE KANSAS TAX-SYSTEM REPLACEMENT`  
+- Bill B: `KANSAS PROPERTY-TAX ELIMINATION`  
+- Bill C: `KANSAS NBEF ACT` / `Kansas NBEF Act (Node-Based Educational Framework)`  
+
+Template engineering identity (not public image content):
+
+```text
+templates/BL-Weekly-Status-Template-v1.0.png
+```
+
+Public images SHALL NOT display local template filename/path, drive letters, date-format explanations, or other engineering metadata (STD-011 §25A).  
 
 Expansion of VARIABLE fields requires controlled Human authorization.
 
@@ -308,4 +322,5 @@ The original `D:\` copy remains intact pending separate Human cleanup authority.
 | 0.1.0 | 2026-08-30 | Initial architecture/directory note under CWC-CE-073. Not operative CONTROL. No weekly reports/images fabricated. |
 | 0.2.0 | 2026-08-30 | CWC-CE-075 pointer + CWC-CE-077 Human informational acceptance recorded. Remains Not Operative CONTROL. |
 | 0.3.0 | 2026-08-30 | CWC-CE-078: pointer to STD-011 Part B as operative packaging CONTROL; PUBLIC_URL_01 = BlueprintLiberty.com; README remains non-operative directory note. |
-| 0.3.0 | 2026-08-30 | CWC-CE-078: pointer to STD-011 Part B as operative packaging CONTROL; PUBLIC_URL_01 = BlueprintLiberty.com; README remains non-operative directory note. |
+| 0.3.1 | 2026-08-30 | CWC-CE-081: STATUS_DATE yyyy.mm.ww; public-image metadata exclusions; Bill A/B/C public titles; template path note; ww algorithm open. |
+| 0.3.2 | 2026-08-30 | CWC-CE-082: ISO-8601 `ww` Human authorization noted; remains Not Operative CONTROL. |

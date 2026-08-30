@@ -8,7 +8,7 @@
 **Predecessors:** CWC-CE-073 (architecture foundation); CWC-CE-074 (FULL PASS — HUMAN ACCEPTED: ChatGPT ↔ GitHub ↔ Cursor); CWC-CE-076 (WSGAP-001 / Option D)  
 **Status:** Human-Accepted Informational Engineering Definition / Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 1) — remains informational; does **not** become operative CONTROL  
-**Version:** 0.1.1  
+**Version:** 0.1.3  
 **Effective Date:** 2026-08-30  
 **Canonical Local Repository Root:** `X:\GitHub\Constitutional-Engineering`  
 **Remote:** `https://github.com/jhodges07/Constitutional-Engineering.git`
@@ -113,11 +113,11 @@ Neither may invent missing evidence.
 
 ## 7. Bill A / B / C Status Model (Candidate)
 
-| Bill | Candidate meaning (non-operative until HE confirms) | Notes from current CE evidence |
-|---|---|---|
-| Bill A | Kansas property-tax elimination mandate track (LOU-001 Bill A) | LOU-001 Draft 0.2 — HG-D1 **PENDING** |
-| Bill B | AGCL-constrained replacement architecture track (LOU-001 Bill B) | Same LOU — HG-D1 **PENDING** |
-| Bill C | Third public status track | **PUBLIC WEEKLY-STATUS TITLE PIN (CWC-CE-077):** `Kansas NBEF Act (Node-Based Educational Framework)`. This is a **FIXED public-status string** for weekly report/image architecture only. It does **not** constitute legislative acceptance, enact legislation, replace a future NBEF LOU/SPEC, or authorize statutory drafting. |
+| Bill | Public FIXED title / notes (informational; operative pins in STD-011 §26) |
+|---|---|
+| Bill A | `COMPREHENSIVE KANSAS TAX-SYSTEM REPLACEMENT` (CWC-CE-081). Engineering Definition relationship to LOU-001 remains separately controlled and is not rewritten by the public pin. |
+| Bill B | `KANSAS PROPERTY-TAX ELIMINATION` (CWC-CE-081). Engineering Definition relationship to LOU-001 remains separately controlled and is not rewritten by the public pin. |
+| Bill C | `KANSAS NBEF ACT` with identity `Kansas NBEF Act (Node-Based Educational Framework)` (CWC-CE-077/081). Public-status string only — not legislative acceptance. |
 
 Weekly public labels for Bill A/B/C titles remain **FIXED** visual/copy elements once HE-approved; maturity percentages remain **VARIABLE**.
 
@@ -166,7 +166,8 @@ Engineering-Office/publication/weekly-status/manifests/
 
 Proposed minimum fields:
 
-- Status Date (`STATUS_DATE`)  
+- Status Date (`STATUS_DATE`) — public representation `yyyy.mm.ww` (STD-011); `yyyy`/`mm` = calendar components; `ww` = ISO-8601 week-of-year (CWC-CE-082); compact value only on public image  
+
 - Publication Week id  
 - Evidence Cutoff  
 - Evidence citations  
@@ -339,3 +340,5 @@ CWC-CE-076 (First Controlled Weekly Status Package / Phone-Ready POC Preparation
 |---|---|---|
 | 0.1.0 | 2026-08-30 | Initial proposed production contract under CWC-CE-075. Not operative CONTROL. |
 | 0.1.1 | 2026-08-30 | CWC-CE-077: Human Engineer informational acceptance recorded; Bill C PUBLIC WEEKLY-STATUS TITLE PIN recorded. Remains Not Operative CONTROL. |
+| 0.1.2 | 2026-08-30 | CWC-CE-081: Bill A/B/C public title pins reconciled; STATUS_DATE yyyy.mm.ww note; remains Not Operative CONTROL (operative rules in STD-011 Part B). |
+| 0.1.3 | 2026-08-30 | CWC-CE-082: STATUS_DATE ISO-8601 `ww` Human authorization noted; remains Not Operative CONTROL. |

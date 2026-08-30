@@ -9,9 +9,9 @@
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
 **Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration  
 **Status:** Active  
-**Version:** 1.1.0  
+**Version:** 1.2.1  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -464,6 +464,8 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 0.0.0 | 2026-08-08 | Reserved placeholder formally classified under CER-001 remediation / CWC-CE-033. |
 | 1.0.0 | 2026-08-09 | Activated under ECR-003 / CWC-CE-066. Establishes Engineering Definition LOU Publication Package convention: Markdown authority, PDF derivative location/naming, generation method class, tooling gap reporting, verification/failure-stop, Git/publication boundaries, and public source/derivative distinction. |
 | 1.1.0 | 2026-08-30 | ECR-004 / CWC-CE-078: adds Part B Weekly Public Engineering Status package class; PUBLIC URL REQUIREMENT; FIXED/VARIABLE and percentage rules; Bill C public title pin recognition; preserves Part A LOU rules and WF-001 Human gates. |
+| 1.2.0 | 2026-08-30 | CWC-CE-081: STATUS_DATE = yyyy.mm.ww display form; public-image exclusion of engineering metadata; template identity without public rendering; Bill A/B/C public title pins; GitHub breadcrumb / Repo terminology / acronym readability; ww algorithm remains Human-decision open. |
+| 1.2.1 | 2026-08-30 | CWC-CE-082: Human-authorized ISO-8601 week-of-year for `ww` only; `yyyy`/`mm` remain calendar components; year-boundary rule; renderer may calculate `ww`; public-image explanation prohibition preserved. |
 
 ---
 
@@ -560,25 +562,143 @@ ONE APPROVED BASELINE
    - `BILL_B_PERCENT`  
    - `BILL_C_PERCENT`  
 
-3. FIXED visual elements (layout, typography, colors, titles, Bill title strings, Value Stream layout, motto, and other HE-approved visuals) SHALL NOT change during an ordinary weekly cycle.  
-4. Anti-drift validation is required before package acceptance. Failure stops publication.  
-5. Deterministic rendering (SVG or HTML/CSS→PNG or repository-authorized equivalent) is the intended mature method. Generative-image text rendering SHALL NOT be the authoritative renderer for controlled text or percentages.  
-6. Baseline ingest and renderer implementation require separately authorized CWCs when not already present.
+3. **`STATUS_DATE` public representation** for this package class SHALL be:
+
+   ```text
+   yyyy.mm.ww
+   ```
+
+   Where:
+
+   - `yyyy` = four-digit **calendar year** of the KSB Status date  
+   - `mm` = two-digit **calendar month** of the KSB Status date  
+   - `ww` = **ISO-8601 week-of-year number**, zero-padded to two digits (`01`–`53`)  
+
+   Human-approved display-form example: `2026.08.35`  
+
+   **Semantic boundary (mandatory):** Only `ww` uses ISO-8601 week-number calculation.  
+   `yyyy` and `mm` remain the ordinary calendar year and calendar month of the KSB Status date.  
+   This form is **NOT** an ISO week-date (`YYYY-Www-D`) representation.  
+   Implementations SHALL **NOT** substitute the ISO week-numbering year for `yyyy`.
+
+   **Year-boundary behavior:** Near a calendar-year boundary, `yyyy.mm` SHALL use calendar year/month of the KSB Status date, while `ww` SHALL use the ISO-8601 week-of-year number (which may belong to an adjacent ISO week-numbering year). The ISO week-numbering year SHALL NOT overwrite `yyyy`.
+
+   The public weekly image SHALL display only the compact date value (or an approved compact label containing that value).  
+   The public weekly image SHALL **NOT** contain:
+
+   - `yyyy` / `mm` / `ww` definitions;  
+   - ISO-8601 explanations;  
+   - week-number calculation notes;  
+   - template filename/path;  
+   - local filesystem information;  
+   - renderer-development information;  
+   - other engineering metadata prohibited by §25A.  
+
+   Do **not** create separate ordinary weekly variables for year, month, and week unless a later CONTROL requires them.  
+   The controlled public value remains the single VARIABLE `STATUS_DATE`.
+
+4. **Week-of-year (`ww`) algorithm authority (CWC-CE-082):** The Human Engineer authorizes **ISO-8601 week-of-year numbering** for the `ww` component only.  
+   A deterministic renderer **MAY** calculate `ww` mechanically from the KSB Status date under ISO-8601 week rules.  
+   Human-supplied complete `STATUS_DATE` values in `yyyy.mm.ww` form remain valid when they conform to this convention.  
+   No other week-number algorithm (Sunday-start, Monday-start-without-ISO, first-full-week variants outside ISO-8601, etc.) is authorized for this package class unless a later CONTROL expressly replaces this rule.
+
+5. FIXED visual elements (layout, typography, colors, titles, Bill title strings, Value Stream layout, motto, GitHub breadcrumb structure, PUBLIC URL region, and other HE-approved visuals) SHALL NOT change during an ordinary weekly cycle.  
+6. Anti-drift validation is required before package acceptance. Failure stops publication.  
+7. Deterministic rendering (SVG or HTML/CSS→PNG or repository-authorized equivalent) is the intended mature method. Generative-image text rendering SHALL NOT be the authoritative renderer for controlled text or percentages.  
+8. Baseline ingest and renderer implementation require separately authorized CWCs when not already present.
+
+---
+
+## 25A. Public Image Content Boundary (CWC-CE-081)
+
+### 25A.1 Engineering Metadata ≠ Public Image Content
+
+Engineering/configuration metadata MAY exist in baseline acceptance records, manifests, renderer configuration, controlled documentation, repository README files, and validation artifacts.
+
+It SHALL **NOT** be rendered on ordinary public weekly-status images merely because it is needed to engineer or validate the template.
+
+```text
+ENGINEERING METADATA
+≠
+PUBLIC IMAGE CONTENT
+```
+
+Only explicitly authorized public content may appear on the public weekly image.
+
+### 25A.2 Public-Image Exclusions
+
+Ordinary public weekly-status images SHALL **NOT** display:
+
+1. local template filename;  
+2. local template path;  
+3. drive letters;  
+4. `X:\GitHub` (or other local filesystem) paths;  
+5. filesystem instructions;  
+6. date-format explanation / `yyyy` / `mm` / `ww` definitions;  
+7. example-date explanation;  
+8. template-development notes;  
+9. renderer-development notes;  
+10. control-development notes.  
+
+The intended public weekly image ends with the approved public footer containing public-facing branding/content.  
+Development-metadata regions beneath that footer are outside the public-image composition and SHALL be removed before baseline acceptance.
+
+This section defines the requirement. Cleaning/cropping a Human-supplied candidate image requires separately authorized baseline-ingest work.
+
+### 25A.3 Template File Identity (Engineering Configuration)
+
+| Property | Value |
+|---|---|
+| Template source filename | `BL-Weekly-Status-Template-v1.0.png` |
+| Intended local template path | `Engineering-Office/publication/weekly-status/templates/BL-Weekly-Status-Template-v1.0.png` |
+| Controlled accepted baseline identity (conceptual) | `BL-WEEKLY-STATUS-BASELINE-v1.0` |
+
+Template filename/path are **engineering/template configuration**.  
+They SHALL **NOT** appear on the public image.  
+Presence of a template file does **not** close GAP-WS-003; baseline ingest requires a Human-approved cleaned public composition under separately authorized CWC.
+
+### 25A.4 GitHub Breadcrumb and Repository Terminology
+
+1. A thin public GitHub breadcrumb immediately above the `BlueprintLiberty.com` footer is an authorized public concept.  
+2. Its purpose is to help a reader find the minimum GitHub location(s) needed to inspect controlled public evidence.  
+3. The public image may use `Repo` provided it also includes the explanatory relationship:
+
+   ```text
+   Constitutional-Engineering Repo
+   =
+   Constitutional-Engineering Repository
+   ```
+
+4. Do **not** use the form `Repo (Repo)`.
+
+### 25A.5 Acronym Readability
+
+Where public-facing acronyms are used, the public image SHALL provide enough context for a reasonable reader to determine their meaning without requiring private engineering knowledge.  
+Visual redesign is not authorized solely by this clause; baseline/ingest CWCs reconcile the accepted composition.
 
 ---
 
 ## 26. Bill Title Pins (Public FIXED Copy)
 
-Initial Human-approved public FIXED Bill C title for weekly-status display:
+Human-approved public FIXED Bill titles for weekly-status display (CWC-CE-081):
+
+| Bill | Public FIXED title |
+|---|---|
+| Bill A | `COMPREHENSIVE KANSAS TAX-SYSTEM REPLACEMENT` |
+| Bill B | `KANSAS PROPERTY-TAX ELIMINATION` |
+| Bill C | `KANSAS NBEF ACT` |
+
+Controlled Bill C identity expansion (public readability):
 
 ```text
-Kansas NBEF Act (Node-Based Educational Framework)
+Kansas NBEF Act
+(Node-Based Educational Framework)
 ```
 
-1. This is a **public weekly-status title pin**, not legislative acceptance.  
-2. It does not create or accept an NBEF LOU/SPEC.  
-3. Bill A / Bill B public titles remain as HE-approved FIXED baseline copy.  
-4. Changing a Bill title pin requires Human Engineer authorization through controlled change.
+1. These are **public weekly-status title pins**, not legislative acceptance.  
+2. They do not create or accept an NBEF LOU/SPEC or tax LOU acceptance.  
+3. Changing a Bill title pin requires Human Engineer authorization through controlled change.  
+4. If a supplied visual mockup conflicts with these pins, do **not** silently edit the mockup; stop for Human disposition.
 
 ---
 

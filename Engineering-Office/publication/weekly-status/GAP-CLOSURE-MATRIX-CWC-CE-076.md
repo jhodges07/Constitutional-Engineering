@@ -6,9 +6,9 @@
 **Governing Work Card:** CWC-CE-076; CWC-CE-077 (Human acceptance / Git gate)  
 **Status:** Human-Accepted Informational Design Record / Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 3) — Option D accepted; remains informational  
-**Version:** 0.1.1  
+**Version:** 0.2.2  
 **Effective Date:** 2026-08-30  
-**Related ECR:** ECR-004 (Approved — HUMAN ACCEPTED / APPROVED FOR CONTROL IMPLEMENTATION; NOT YET IMPLEMENTED)
+**Related ECR:** ECR-004 (Implemented under CWC-CE-078 — STD-011 Part B Active for packaging rules; package generation / phone POC / publication remain separately gated; CWC-CE-081 → STD-011 v1.2.0 date-format / public-image content; CWC-CE-082 → STD-011 v1.2.1 ISO-8601 `ww`)
 
 ```text
 HUMAN-ACCEPTED DESIGN RECORD
@@ -236,3 +236,5 @@ NOW (after CWC-CE-078)
 | 0.1.0 | 2026-08-30 | Initial gap-closure matrix and Option D architecture under CWC-CE-076. Not operative. |
 | 0.1.1 | 2026-08-30 | CWC-CE-077: Human acceptance of Option D; Bill C PUBLIC WEEKLY-STATUS TITLE PIN; GAP-WS-005 title-pin / GAP-WS-006 closure recording. Remains Not Operative CONTROL. |
 | 0.2.0 | 2026-08-30 | CWC-CE-078: GAP-WS-001/002/009 CLOSED via STD-011 v1.1.0 Part B + PUBLIC URL REQUIREMENT; remaining POC blockers = baseline + renderer. |
+| 0.2.1 | 2026-08-30 | CWC-CE-081: Related ECR header residual retained as Implemented; note STD-011 v1.2.0 date-format / public-image exclusions; GAP-WS-003/004 remain OPEN; ww algorithm Human-decision open. |
+| 0.2.2 | 2026-08-30 | CWC-CE-082: ISO-8601 `ww` Human authorization recorded; ww algorithm blocker removed; GAP-WS-003/004 remain OPEN; remains Not Operative CONTROL. |

@@ -8,7 +8,7 @@
 **Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control  
 **Governing Work Card:** CWC-CE-066; CWC-CE-078  
 **Status:** Active  
-**Version:** 1.1.0  
+**Version:** 1.2.1  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -59,7 +59,8 @@ Engineering-Office/publication/weekly-status/
 Architecture note: `weekly-status/README.md` (README-PUB-WEEKLY-001 — informational).  
 Operative packaging CONTROL: **STD-011 Part B**.  
 Informational production contract: WSPC-001.  
-PUBLIC URL REQUIREMENT: every package exposes Human-approved PUBLIC NAVIGATION URLS in Markdown and image; initial pin `PUBLIC_URL_01` = BlueprintLiberty.com.
+PUBLIC URL REQUIREMENT: every package exposes Human-approved PUBLIC NAVIGATION URLS in Markdown and image; initial pin `PUBLIC_URL_01` = BlueprintLiberty.com.  
+STATUS_DATE public form: `yyyy.mm.ww` (STD-011 §25) — `yyyy`/`mm` calendar; `ww` = ISO-8601 week-of-year (CWC-CE-082); engineering metadata SHALL NOT appear on public images (STD-011 §25A).
 
 ---
 
@@ -77,3 +78,5 @@ Individual LOU publication packages and weekly-status packages are created only 
 |---|---|---|
 | 1.0.0 | 2026-08-09 | Initial publication-surface README under ECR-003 / CWC-CE-066. |
 | 1.1.0 | 2026-08-30 | ECR-004 / CWC-CE-078: catalog weekly-status package class and PUBLIC URL pointer; preserve LOU Part A surface. |
+| 1.2.0 | 2026-08-30 | CWC-CE-081: pointer to STD-011 v1.2.0 date-format / public-image exclusion rules. |
+| 1.2.1 | 2026-08-30 | CWC-CE-082: pointer to STD-011 v1.2.1 ISO-8601 `ww` authority. |

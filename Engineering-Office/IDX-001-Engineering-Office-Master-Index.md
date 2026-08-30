@@ -6,8 +6,8 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Status:** Active  
-**Version:** 1.3.1  
-**Effective Date:** 2026-08-09  
+**Version:** 1.4.2  
+**Effective Date:** 2026-08-30  
 **Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption; ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control  
 
 ---
@@ -506,7 +506,7 @@ Future types become active only through approved Engineering Office process and 
 | ECR-001 | Standard Numbering Resolution | Complete |
 | ECR-002 | Engineering Definition / LOU Controlled Adoption | Implemented (verification pending independent audit) |
 | ECR-003 | Engineering Definition LOU Publication-Package Control | Closed (Verified-Closed under CWC-CE-067) |
-| ECR-004 | Weekly Public Engineering Status Publication Control | Implemented under CWC-CE-078 (STD-011 v1.1.0 Part B; Verified-Closed disposition may remain pending HE verification gate) |
+| ECR-004 | Weekly Public Engineering Status Publication Control | Implemented under CWC-CE-078; STD-011 Part B amended to v1.2.0 under CWC-CE-081; ISO-8601 `ww` authorized under CWC-CE-082 (STD-011 v1.2.1); Verified-Closed disposition may remain pending HE verification gate |
 | CER-001 | Pre-Push Engineering Audit | Submitted |
 | CER-002 | Release Readiness Remediation | Submitted |
 
@@ -531,6 +531,8 @@ Future types become active only through approved Engineering Office process and 
 | 1.3.0 | 2026-08-09 | ECR-003 / CWC-CE-066: activate STD-011 Public Documentation for Engineering Definition LOU Publication Packages; catalog publication/definition/LOU-NNN derivative surface. |
 | 1.3.1 | 2026-08-09 | CWC-CE-067: ECR-003 disposition updated to Closed (Verified-Closed). |
 | 1.4.0 | 2026-08-30 | ECR-004 / CWC-CE-078: catalog STD-011 Part B Weekly Public Engineering Status packages; `publication/weekly-status/`; PUBLIC URL REQUIREMENT; ECR-004 Implemented. |
+| 1.4.1 | 2026-08-30 | CWC-CE-081: STD-011 Part B Version 1.2.0 date-format / public-image content amendment noted; ECR-004 Implementation State pointer updated. |
+| 1.4.2 | 2026-08-30 | CWC-CE-082: STD-011 Part B Version 1.2.1 ISO-8601 `ww` authority recorded; ECR-004 pointer updated. |
 
 ---
 

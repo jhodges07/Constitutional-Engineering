@@ -4,13 +4,13 @@
 **Title:** Weekly Public Engineering Status Publication Control  
 **Classification:** Engineering Change Request  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-076 — Weekly Status Authority-Gap Closure and Control Design; CWC-CE-077 — Weekly Status Architecture Git Gate and ECR-004 Control Acceptance Gate; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement  
+**Governing Work Card:** CWC-CE-076 — Weekly Status Authority-Gap Closure and Control Design; CWC-CE-077 — Weekly Status Architecture Git Gate and ECR-004 Control Acceptance Gate; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration  
 **Related Prior Work:** CWC-CE-073 (architecture); CWC-CE-074 (ChatGPT↔GitHub↔Cursor FULL PASS); CWC-CE-075 (WSPC-001 proposed production contract; OUTCOME B)  
 **Status:** Implemented  
-**Disposition:** HUMAN ACCEPTED — IMPLEMENTED UNDER CWC-CE-078 (Verified-Closed disposition pending separate HE verification gate if required by STD-014)  
-**Implementation State:** IMPLEMENTED — STD-011 Version 1.1.0 Part B  
+**Disposition:** HUMAN ACCEPTED — IMPLEMENTED UNDER CWC-CE-078 (Verified-Closed disposition pending separate HE verification gate if required by STD-014); STD-011 Part B amended under CWC-CE-081 to Version 1.2.0; ISO-8601 `ww` authorized under CWC-CE-082 (STD-011 Version 1.2.1)  
+**Implementation State:** IMPLEMENTED — STD-011 Version 1.2.1 Part B  
 **Operative Authority:** STD-011 Part B (Weekly Public Engineering Status packages) is Active packaging CONTROL; this ECR does not by itself authorize weekly package generation, phone POC, or publication  
-**Version:** 1.0.0  
+**Version:** 1.0.2  
 **Effective Date:** 2026-08-30  
 **Primary Category:** STD  
 **Secondary Categories:** ADM, REP, PUB  
@@ -27,12 +27,15 @@
 HUMAN ACCEPTED
 APPROVED FOR CONTROL IMPLEMENTATION
 IMPLEMENTED UNDER CWC-CE-078
-STD-011 VERSION 1.1.0 PART B ACTIVE FOR WEEKLY-STATUS PACKAGING RULES
+STD-011 VERSION 1.2.1 PART B ACTIVE FOR WEEKLY-STATUS PACKAGING RULES
+(CWC-CE-081 DATE-FORMAT / PUBLIC-IMAGE CONTENT; CWC-CE-082 ISO-8601 ww)
 WEEKLY PACKAGE GENERATION / PHONE POC / SOCIAL PUBLICATION NOT AUTHORIZED BY THIS ECR ALONE
 ```
 
 Human Engineer acceptance under CWC-CE-077 authorized controlled implementation.  
 CWC-CE-078 implements STD-011 Part B (including PUBLIC URL REQUIREMENT).  
+CWC-CE-081 amends STD-011 Part B to Version 1.2.0 (STATUS_DATE `yyyy.mm.ww`; public-image exclusions; Bill A/B/C pins; breadcrumb/Repo/acronym rules).  
+CWC-CE-082 records Human authorization of ISO-8601 week-of-year for `ww` only and advances STD-011 Part B to Version **1.2.1**.  
 Package generation, phone POC, and social-media publication remain separately authorized.
 
 ---
@@ -195,8 +198,8 @@ Verification Pass requires:
 | Date | 2026-08-30 |
 | Governing Acceptance | CWC-CE-077 |
 | Acceptance Basis | Explicit Human Engineer decisions in CWC-CE-077 Decision 4 (control-change intent accepted subject to scope verification against CWC-CE-076 Option D) |
-| Implementation State | **IMPLEMENTED** under CWC-CE-078 (STD-011 Version 1.1.0 Part B) |
-| STD-011 amendment | Completed under CWC-CE-078 |
+| Implementation State | **IMPLEMENTED** under CWC-CE-078 (STD-011 Version 1.2.1 Part B after CWC-CE-081/082 amendments) |
+| STD-011 amendment | Completed under CWC-CE-078; amended under CWC-CE-081 to Version 1.2.0; ISO-8601 `ww` under CWC-CE-082 to Version 1.2.1 |
 | PUBLIC URL REQUIREMENT | Integrated (`PUBLIC_URL_01` = BlueprintLiberty.com) |
 | Phone POC / weekly production / social publication | **Not** authorized by ECR acceptance or STD-011 amendment alone |
 
@@ -219,6 +222,41 @@ Scope verification under CWC-CE-077 confirmed ECR-004 does **not** materially ex
 
 ---
 
+## 10A. Amendment Record (CWC-CE-081)
+
+| Field | Value |
+|---|---|
+| Amending CWC | CWC-CE-081 |
+| STD-011 ending version (as of CWC-CE-081) | 1.2.0 |
+| STATUS_DATE display form | `yyyy.mm.ww` (compact on public image; no legend) |
+| Week-of-year (`ww`) algorithm (as of CWC-CE-081) | Was OPEN — superseded by §10B |
+| Public-image exclusions | Engineering metadata / development strip excluded (STD-011 §25A) |
+| Template identity | `BL-Weekly-Status-Template-v1.0.png` under `templates/` (not public content; not baseline) |
+| Baseline present | NO — GAP-WS-003 remains OPEN |
+| Renderer implemented | NO — GAP-WS-004 remains OPEN |
+
+---
+
+## 10B. Amendment Record (CWC-CE-082)
+
+| Field | Value |
+|---|---|
+| Amending CWC | CWC-CE-082 |
+| Human decision | ACCEPT CWC-CE-081 OUTCOME B; authorize ISO-8601 `ww` |
+| STD-011 ending version | **1.2.1** |
+| STATUS_DATE form | `yyyy.mm.ww` |
+| `yyyy` | Calendar year of KSB Status date (NOT ISO week-numbering year) |
+| `mm` | Calendar month of KSB Status date |
+| `ww` | ISO-8601 week-of-year number (`01`–`53`); renderer MAY calculate |
+| Year-boundary rule | Calendar `yyyy.mm` + ISO `ww`; do not overwrite `yyyy` with ISO week-year |
+| Public-image date explanations | Prohibited (compact value only) |
+| Baseline present | NO — GAP-WS-003 remains OPEN |
+| Renderer implemented | NO — GAP-WS-004 remains OPEN |
+
+ECR-004 alone still does **NOT** authorize weekly package generation, phone POC, renderer implementation, automated Bill percentages, social publication, or STD-002 activation.
+
+---
+
 ## 11. Version History
 
 | Version | Date | Summary |
@@ -226,3 +264,5 @@ Scope verification under CWC-CE-077 confirmed ECR-004 does **not** materially ex
 | 0.1.0-PROPOSED | 2026-08-30 | Proposed under CWC-CE-076. Not operative. Awaiting Human Engineer acceptance. |
 | 0.2.0 | 2026-08-30 | CWC-CE-077: Human Engineer acceptance recorded; Status Approved; APPROVED FOR CONTROL IMPLEMENTATION; NOT YET IMPLEMENTED; STD-011 unchanged. |
 | 1.0.0 | 2026-08-30 | CWC-CE-078: STD-011 Version 1.1.0 Part B implemented; PUBLIC URL REQUIREMENT integrated; Implementation State = IMPLEMENTED; packaging CONTROL active; package generation/POC/publication remain separately gated. |
+| 1.0.1 | 2026-08-30 | CWC-CE-081: records STD-011 Version 1.2.0 Part B amendment (date format / public-image content); GAP-WS-003/004 remain OPEN; ww algorithm Human-decision open. |
+| 1.0.2 | 2026-08-30 | CWC-CE-082: Human-authorized ISO-8601 `ww`; STD-011 Version 1.2.1; ww algorithm blocker removed; GAP-WS-003/004 remain OPEN. |
