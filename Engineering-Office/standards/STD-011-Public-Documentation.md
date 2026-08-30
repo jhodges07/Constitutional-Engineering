@@ -11,7 +11,7 @@
 **Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control  
 **Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package  
 **Status:** Active  
-**Version:** 1.5.0  
+**Version:** 1.5.1  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -469,6 +469,7 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.3.0 | 2026-08-30 | ECR-005 / CWC-CE-085: authorizes deterministic KSB maturity calculation under Active WSMAT-001; distinguishes CALCULATED vs CERTIFIED maturity; preserves Human certification; Bill identity integrity; no grandfathering of provisional percentages. |
 | 1.4.0 | 2026-08-30 | ECR-007 / CWC-CE-087: adds Part B §36 phone-command orchestration / follow-up context; binds Active KSB Cycle, controlled-image routing, creative-artwork firewall, renderer failure-safe (`KSB IMAGE: RENDER REQUIRED`), and Active KSB-ORCH-001. |
 | 1.5.0 | 2026-08-30 | ECR-008 / CWC-CE-088: `Prepare KSB Status` targets complete KSB Sunday Publication Package (controlled status + 450–550-word press release + controlled KSB image); COMPLETE/INCOMPLETE semantics; KSB-PR-TMP-001; preserves CWC-CE-087 firewalls. |
+| 1.5.1 | 2026-08-30 | CWC-CE-088 defect remediation: §36.10 Human acceptance requires complete package; diagnostics/partial infrastructure ≠ PASS (KSB-POC-FAIL-002). |
 
 ---
 
@@ -1038,3 +1039,22 @@ Generative/creative substitution SHALL **NOT** convert INCOMPLETE → COMPLETE.
 **Human certification continuity:** If certification is required mid-cycle, the workflow may stop at `HUMAN CERTIFICATION REQUIRED`. After the Human decides, the **same** Active KSB Cycle continues toward the complete Sunday package without requiring the Human to repeat `Prepare KSB Status` or separately request the press release/image.
 
 **Publication gate:** Successful package preparation ends at Human review/publication required. `Prepare KSB Status` does not itself publish.
+
+### 36.10 Human acceptance / complete-package command contract (CWC-CE-088)
+
+`Prepare KSB Status` **Human acceptance** succeeds only when the Human receives, through the ChatGPT command interaction, the complete Human-reviewable KSB Sunday Publication Package (§36.9):
+
+1. controlled KSB status (including controlled status date and certified Bill A/B/C maturity);  
+2. press release ≈500 words (450–550; KSB-PR-TMP-001);  
+3. controlled deterministic KSB image (baseline → renderer → anti-drift), returned in a usable form supported by the authorized bridge/artifact path.
+
+```text
+COMPLETE PACKAGE REQUIRED FOR COMMAND PASS
+PARTIAL PACKAGE ≠ PASS
+RUNTIME / BRIDGE DIAGNOSTIC ≠ PACKAGE SUCCESS
+INFRASTRUCTURE PARTIAL PASS ≠ HUMAN ACCEPTANCE PASS
+```
+
+If any mandatory package component cannot be produced, the orchestration SHALL report `PACKAGE STATE: INCOMPLETE` (or the exact authorized equivalent under KSB-ORCH-001), name the failed gate, and SHALL **not** represent the overall package as COMPLETE. A diagnostic failure response remains a **FAILED** Human acceptance test when the test requires the complete package.
+
+Press release remains a required package component and may still be prepared when image render is unavailable (§36.5–§36.6); that does **not** convert the package or Human acceptance result to PASS/COMPLETE.

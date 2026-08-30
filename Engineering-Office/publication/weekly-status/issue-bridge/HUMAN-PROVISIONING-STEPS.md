@@ -36,7 +36,7 @@ HUMAN DAILY-DRIVER WORKSTATION: PROHIBITED
 3. Create a venv and install (pin exactly; re-certify after install):
 
 ```text
-pip install Pillow==12.3.0 opencv-python==5.0.0 numpy==2.5.2
+pip install Pillow==12.3.0 opencv-python==5.0.0.93 numpy==2.5.2
 ```
 
 4. Confirm font file exists (do **not** copy fonts into Git):

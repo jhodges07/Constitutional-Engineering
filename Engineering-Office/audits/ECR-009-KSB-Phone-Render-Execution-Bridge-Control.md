@@ -6,14 +6,15 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001  
 **Governing Standards:** STD-011 Part B (§36 / §36.9); KSB-ORCH-001  
-**Governing Work Card:** CWC-CE-088 GitHub-Hosted Windows POC Acceleration Continuation  
+**Governing Work Card:** CWC-CE-088 Live Acceptance-Test Defect Remediation  
 **Predecessor:** ECR-008; CWC-CE-084; CWC-CE-074; KSB-TRIGGER-RETURN-001; KSB-ISSUE-BRIDGE-001  
 **Related Architecture:** KSB-ISSUE-BRIDGE-001; KSB-RENDER-BRIDGE-001; KSB-TRIGGER-RETURN-001  
+**Related Failure:** KSB-POC-FAIL-002  
 **Status:** Implemented  
-**Disposition:** HUMAN ACCEPTED — GIT CANONICAL (0.3.0) + HOSTED-WINDOWS NON-PRODUCTION POC PATH AUTHORIZED UNDER CWC-CE-088 (this revision pending Git handoff)  
-**Implementation State:** Issue-bridge canonical at `20fc998…`; hosted-Windows workflow change prepared locally for NON-PRODUCTION POC  
-**Operative Authority:** Hosted-Windows POC path authorized by Human Engineer direction (CWC-CE-088 acceleration); Git canonicalization of this revision pending CE-GitManager  
-**Version:** 0.3.1  
+**Disposition:** HUMAN ACCEPTED — GIT CANONICAL (0.3.0) + HOSTED-WINDOWS NON-PRODUCTION POC PATH (0.3.1) + DEPENDENCY PIN CORRECTION (this revision pending Git handoff)  
+**Implementation State:** Issue-bridge + hosted-Windows path at `9e7f5b40…` failed Test #1 on invalid OpenCV pin; active pin corrected to `opencv-python==5.0.0.93` under CWC-CE-088  
+**Operative Authority:** Hosted-Windows POC path authorized; OpenCV pin correction evidence-backed (PyPI / Test #1); Git canonicalization pending CE-GitManager  
+**Version:** 0.3.2  
 **Effective Date:** 2026-08-30  
 **Primary Category:** PUB  
 **Secondary Categories:** STD, ADM, SEC  
@@ -22,13 +23,14 @@
 
 ```text
 HUMAN ACCEPTED (0.3.0 architecture)
-0.3.1 — HOSTED WINDOWS NON-PRODUCTION POC PATH (Human-directed acceleration)
-SELF-HOSTED ISOLATED VM: FALLBACK / FUTURE DEPLOYMENT MODEL (not required for current POC)
+0.3.1 — HOSTED WINDOWS NON-PRODUCTION POC PATH
+0.3.2 — OPENCV PIN CORRECTION (opencv-python==5.0.0.93)
+TEST #1 FAIL RECORDED (KSB-POC-FAIL-002) — DO NOT ERASE
+SELF-HOSTED ISOLATED VM: FALLBACK / FUTURE DEPLOYMENT MODEL
 HUMAN WORKSTATION AS RUNNER: PROHIBITED
 NO MATURITY CHANGE (19/19/4)
 NO CWC-CE-086 CHANGE
 NO PUBLICATION AUTHORITY FROM HOSTED EXECUTION
-HOSTED DETERMINISM: REAL-RUN PROOF PENDING UNTIL PHONE/CHATGPT POC
 ```
 
 ---
@@ -40,6 +42,7 @@ HOSTED DETERMINISM: REAL-RUN PROOF PENDING UNTIL PHONE/CHATGPT POC
 | Accepted architecture | **0.3.0** Issue-trigger bridge |
 | Acceleration disposition | Human directs: **do not wait for local Windows VM**; use GitHub-hosted Windows for NON-PRODUCTION POC |
 | Revision | **0.3.1** — execution-host authority only; authorization/SHA/baseline/renderer/anti-drift unchanged |
+| Defect remediation | **0.3.2** — active OpenCV pin `opencv-python==5.0.0.93` (Test #1: `==5.0.0` no matching distribution); see `issue-bridge/DEPENDENCIES.md` |
 
 ---
 
@@ -84,8 +87,10 @@ Security-critical controls remain mandatory: actor allowlist + author_associatio
 | Component | Path |
 |---|---|
 | Gate / schema / RESULT | `Engineering-Office/publication/weekly-status/issue-bridge/` |
+| Active dependency lock | `…/issue-bridge/DEPENDENCIES.md` (`opencv-python==5.0.0.93`) |
 | Workflow | `.github/workflows/ksb-render-bridge.yml` |
 | Self-hosted provisioning (fallback) | `…/issue-bridge/HUMAN-PROVISIONING-STEPS.md` |
+| Acceptance Test #1 FAIL record | `…/weekly-status/KSB-POC-FAIL-002-Acceptance-Test-1.md` |
 
 ---
 
@@ -98,3 +103,4 @@ Security-critical controls remain mandatory: actor allowlist + author_associatio
 | 0.3.0-PROPOSED | 2026-08-30 | Issue-trigger architecture. |
 | 0.3.0 | 2026-08-30 | HUMAN ACCEPTED; Git-integrated at `20fc998…`. |
 | 0.3.1 | 2026-08-30 | GitHub-hosted Windows NON-PRODUCTION POC path; self-hosted remains fallback; Human workstation still prohibited. |
+| 0.3.2 | 2026-08-30 | Correct active OpenCV pin to `opencv-python==5.0.0.93` after Test #1 FAIL (`==5.0.0` unresolved); KSB-POC-FAIL-002 recorded. |

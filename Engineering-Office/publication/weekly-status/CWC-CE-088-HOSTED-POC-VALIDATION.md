@@ -39,6 +39,9 @@ NO GIT STAGE/COMMIT/PUSH BY CE-Engineer
 | Z | Python setup method | `actions/setup-python@v5` |
 | AA | Python target version | **3.12.10** (render); gate remains 3.11 |
 | AB | Dependency pins | `Pillow==12.3.0`, `opencv-python==5.0.0`, `numpy==2.5.2` |
+
+> **Historical note (KSB-POC-FAIL-002):** Row AB records the pin set as authored for the hosted-POC package that became SHA `9e7f5b40…`. Live Acceptance Test #1 failed because `opencv-python==5.0.0` has no matching PyPI distribution. Active authority after CWC-CE-088 defect remediation is `opencv-python==5.0.0.93` (`issue-bridge/DEPENDENCIES.md`). Do not rewrite this row to erase the failed pin.
+
 | AC | Font requirement preserved? | **YES** — fail-closed check for `arialbd.ttf` |
 | AD–AF | Baseline | `BL-WEEKLY-STATUS-BASELINE-v1.0` / `17F574D4…` / 1536×912 |
 | AG | Gate tests | **19/19 PASS** |

@@ -131,7 +131,7 @@ Exact Human steps: `HUMAN-PROVISIONING-STEPS.md`
 |---|---|
 | Python | 3.12.10 (Windows render target candidate) |
 | Pillow | 12.3.0 |
-| OpenCV (`cv2`) | 5.0.0 |
+| OpenCV (`cv2`) | **5.0.0.93** (PyPI `opencv-python`; module may report `5.0.0`) |
 | NumPy | 2.5.2 |
 
 Historical deterministic fixture SHA (fixture A, local suite):  

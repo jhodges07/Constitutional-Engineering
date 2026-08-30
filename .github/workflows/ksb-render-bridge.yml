@@ -121,7 +121,7 @@ jobs:
         shell: pwsh
         run: |
           python -m pip install --upgrade pip
-          python -m pip install Pillow==12.3.0 opencv-python==5.0.0 numpy==2.5.2
+          python -m pip install Pillow==12.3.0 opencv-python==5.0.0.93 numpy==2.5.2
           python -c "import sys,PIL,cv2,numpy; print('python',sys.version); print('Pillow',PIL.__version__); print('cv2',cv2.__version__); print('numpy',numpy.__version__)"
 
       - name: Verify Arial Bold (fail closed)

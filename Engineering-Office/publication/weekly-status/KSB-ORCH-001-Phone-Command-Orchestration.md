@@ -4,25 +4,25 @@
 **Title:** KSB Phone-Command Orchestration / Baseline Continuity / Follow-Up Context  
 **Classification:** Engineering Procedure (Weekly Status Orchestration)  
 **Authority:** Constitutional Engineering Office  
-**Governing Standard:** STD-011 Part B Version 1.5.0 (operative packaging CONTROL — §36 / §36.9)  
+**Governing Standard:** STD-011 Part B Version 1.5.1 (operative packaging CONTROL — §36 / §36.9 / §36.10)  
 **Governing ECR:** ECR-007 (Implemented); ECR-008 (Human-accepted / Implemented locally)  
 **Governing Work Card:** CWC-CE-087; CWC-CE-088  
-**Related Failure:** KSB-POC-FAIL-001  
+**Related Failure:** KSB-POC-FAIL-001; KSB-POC-FAIL-002  
 **Related Template:** KSB-PR-TMP-001  
 **Status:** Active  
-**Version:** 1.1.0  
+**Version:** 1.1.1  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Activation:** Human-accepted ECR-008 / CWC-CE-088 Bounded Continuation — STD-011 §36.9  
+**Activation:** Human-accepted ECR-008 / CWC-CE-088 Bounded Continuation — STD-011 §36.9; CWC-CE-088 defect remediation — §36.10  
 
 ```text
-ACTIVE UNDER STD-011 v1.5.0 §36 / ECR-008
+ACTIVE UNDER STD-011 v1.5.1 §36 / §36.10 / ECR-008
 KSB SUNDAY PUBLICATION PACKAGE CONTRACT ACTIVE
+HUMAN ACCEPTANCE REQUIRES COMPLETE PACKAGE
 PRESERVES CWC-CE-087 FOLLOW-UP / CREATIVE / RENDER REQUIRED RULES
 DOES NOT CHANGE CERTIFIED MATURITY
 DOES NOT PUBLISH
 DOES NOT REPLACE THE DETERMINISTIC RENDERER
-DOES NOT CLAIM LIVE PHONE RE-POC PASS
 GIT CANONICALIZATION PENDING HUMAN GIT GATE
 ```
 
@@ -266,6 +266,23 @@ Examples: `KSB IMAGE: RENDER REQUIRED` → package INCOMPLETE (status and press 
 
 Generative/creative substitution SHALL **NOT** convert INCOMPLETE → COMPLETE.
 
+### 7.3.1 Human acceptance vs infrastructure (CWC-CE-088 / KSB-POC-FAIL-002)
+
+`Prepare KSB Status` **Human acceptance** PASS requires the complete Human-reviewable package returned through the ChatGPT interaction (status + press release + controlled image).  
+
+Bridge/runtime partial success (Issue created, gate PASS, runner started, Python installed, diagnostics returned) SHALL **NOT** be reported as Human command PASS.  
+
+A runtime diagnostic SHALL **NOT** substitute for the requested package. When acceptance testing specifically requires the complete package, a diagnostic/INCOMPLETE result is still acceptance **FAIL**, even when failure reporting itself is correctly formed.
+
+Authorized incomplete/failure reporting remains:
+
+```text
+PACKAGE STATE: INCOMPLETE
+UNRESOLVED: <exact component>
+```
+
+including `KSB IMAGE: RENDER REQUIRED` when the controlled image cannot be produced. Equivalent package-generation failure wording may be used when already authorized; do not redefine failure reporting as package success.
+
 ### 7.4 Human-facing return structure
 
 ```text
@@ -401,3 +418,4 @@ Technical ceremony remains behind this orchestration. Human certification and pu
 | 1.0.0 | 2026-08-30 | Confirmed Active under STD-011 §36 after Human acceptance / local implementation of ECR-007 (CWC-CE-087 Bounded Continuation). |
 | 1.1.0 | 2026-08-30 | CWC-CE-088: single-command KSB Sunday Publication Package (status + ≈500-word press release + controlled image); COMPLETE/INCOMPLETE; certification continuity; ECR-008 Proposed for STD-011 binding. |
 | 1.1.0 | 2026-08-30 | Confirmed Active under STD-011 v1.5.0 §36.9 after Human acceptance / local implementation of ECR-008 (CWC-CE-088 Bounded Continuation). |
+| 1.1.1 | 2026-08-30 | CWC-CE-088 defect remediation: Human acceptance vs infrastructure (§7.3.1); complete package required for command PASS; records KSB-POC-FAIL-002; aligns to STD-011 v1.5.1 §36.10. |
