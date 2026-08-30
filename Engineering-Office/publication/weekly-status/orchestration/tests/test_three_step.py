@@ -58,7 +58,7 @@ def main() -> int:
         bill_b_percent=19,
         bill_c_percent=4,
         baseline_id="BL-WEEKLY-STATUS-BASELINE-v1.0",
-        renderer_id="ksb_renderer@1.1.0-CWC-CE-094",
+        renderer_id="ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE",
     )
     check("continuity_after_pr", True)
 
@@ -139,7 +139,7 @@ def main() -> int:
             bill_b_percent=19,
             bill_c_percent=4,
             baseline_id="BL-WEEKLY-STATUS-BASELINE-v1.0",
-            renderer_id="ksb_renderer@1.1.0-CWC-CE-094",
+            renderer_id="ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE",
         )
         check("reject_bill_a_drift", False)
     except CommandError:

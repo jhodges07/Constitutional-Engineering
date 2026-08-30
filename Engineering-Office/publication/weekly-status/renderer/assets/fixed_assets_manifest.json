@@ -1,0 +1,22 @@
+{
+  "manifest_id": "KSB-FIXED-ASSETS-CWC-CE-096",
+  "governing_ecr": "ECR-013",
+  "governing_cwc": "CWC-CE-096",
+  "canvas": { "width": 1536, "height": 912 },
+  "assets": [
+    {
+      "id": "FIXED-LAYER-v1.0-CWC-CE-096",
+      "path": "FIXED-LAYER-v1.0-CWC-CE-096.png",
+      "role": "CONTROLLED_FIXED_LAYER — clean visual structure with zero weekly variable ink; pasted onto blank canvas each render",
+      "sha256": "A445685853095203F4D30941AED33320EF1629E643BA0DA6D8FCF95860787E05",
+      "placement": { "x": 0, "y": 0 },
+      "dimensions": { "width": 1536, "height": 912 },
+      "not": "NOT a previous weekly output; NOT the populated BL-WEEKLY-STATUS-BASELINE-v1.0 used as canvas"
+    }
+  ],
+  "prohibited_as_canvas": [
+    "BL-WEEKLY-STATUS-BASELINE-v1.0.png",
+    "any prior KSB weekly output PNG",
+    "historical fixture 758AFA76…"
+  ]
+}

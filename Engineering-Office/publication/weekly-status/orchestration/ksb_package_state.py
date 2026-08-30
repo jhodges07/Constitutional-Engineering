@@ -101,7 +101,7 @@ class ThreeStepOrchestrator:
     """Deterministic Human-facing command interpreter."""
 
     BASELINE_ID = "BL-WEEKLY-STATUS-BASELINE-v1.0"
-    RENDERER_ID = "ksb_renderer@1.1.0-CWC-CE-094"
+    RENDERER_ID = "ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE"
     FORBIDDEN_IMAGE_SUBSTITUTES = frozenset(
         {"image_gen", "dalle", "generative_infographic", "creative_status_image"}
     )

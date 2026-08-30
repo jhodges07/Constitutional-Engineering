@@ -1,10 +1,15 @@
-"""Anti-drift validation: changed pixels may only occur in authorized variable regions."""
+"""Anti-drift validation: changed pixels may only occur in authorized regions.
+
+CWC-CE-097: ordinary comparison reference is the CLEAN MASTER TEMPLATE.
+Authorized region is the Kansas Legislative Engineering Status center panel
+where dynamic bill content is composed.
+"""
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Sequence, Tuple
+from typing import Any, Dict, List, Sequence, Tuple
 
 import numpy as np
 from PIL import Image
@@ -25,23 +30,14 @@ class AntiDriftResult:
 
 
 def authorized_rects_from_regions(regions: Dict[str, Any]) -> List[Rect]:
-    """Union of text + bar rectangles for the four variables (+ small antialias pad)."""
+    """Center-panel bounds (dynamic composition surface) with small pad."""
     pad = 2
-    rects: List[Rect] = []
-    v = regions["variables"]
-
-    def add(r: Dict[str, int]) -> None:
-        x = max(0, r["x"] - pad)
-        y = max(0, r["y"] - pad)
-        w = r["w"] + 2 * pad
-        h = r["h"] + 2 * pad
-        rects.append((x, y, w, h))
-
-    add(v["STATUS_DATE"]["region"])
-    for bill in ("BILL_A_PERCENT", "BILL_B_PERCENT", "BILL_C_PERCENT"):
-        add(v[bill]["text_region"])
-        add(v[bill]["bar"])
-    return rects
+    b = regions["center_panel"]["bounds"]
+    x = max(0, int(b["x"]) - pad)
+    y = max(0, int(b["y"]) - pad)
+    w = int(b["w"]) + 2 * pad
+    h = int(b["h"]) + 2 * pad
+    return [(x, y, w, h)]
 
 
 def _in_rects(x: int, y: int, rects: Sequence[Rect]) -> bool:
@@ -52,21 +48,23 @@ def _in_rects(x: int, y: int, rects: Sequence[Rect]) -> bool:
 
 
 def validate_anti_drift(
-    baseline_img: Image.Image | Path | str,
+    reference_img: Image.Image | Path | str,
     rendered_img: Image.Image | Path | str,
     authorized_rects: Sequence[Rect],
     *,
-    expected_size: Tuple[int, int] = (1536, 912),
+    expected_size: Tuple[int, int] | None = None,
 ) -> AntiDriftResult:
     def load(obj: Image.Image | Path | str) -> Image.Image:
         if isinstance(obj, Image.Image):
             return obj.convert("RGB")
         return Image.open(obj).convert("RGB")
 
-    base = load(baseline_img)
+    ref = load(reference_img)
     rend = load(rendered_img)
+    if expected_size is None:
+        expected_size = ref.size
 
-    if base.size != expected_size or rend.size != expected_size:
+    if ref.size != expected_size or rend.size != expected_size:
         return AntiDriftResult(
             pass_ok=False,
             total_changed=-1,
@@ -74,10 +72,10 @@ def validate_anti_drift(
             unauthorized_changed=-1,
             changed_bbox=None,
             authorized_rects=list(authorized_rects),
-            message=f"dimension FAIL: baseline={base.size} rendered={rend.size} expected={expected_size}",
+            message=f"dimension FAIL: ref={ref.size} rendered={rend.size} expected={expected_size}",
         )
 
-    a = np.asarray(base)
+    a = np.asarray(ref)
     b = np.asarray(rend)
     diff = np.any(a != b, axis=2)
     ys, xs = np.where(diff)

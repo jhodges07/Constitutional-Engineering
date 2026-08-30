@@ -2,47 +2,60 @@
 
 **Document ID:** README-PUB-WEEKLY-RENDERER-001  
 **Classification:** Implementation / Engineering Note (Not Operative CONTROL)  
-**Governing Work Card:** CWC-CE-084  
-**Operative Packaging CONTROL:** STD-011 Version 1.2.1 Part B  
-**Renderer version:** 1.1.0-CWC-CE-094  
+**Governing Work Card:** CWC-CE-084; CWC-CE-094; CWC-CE-096 (REJECTED); **CWC-CE-097 / CWC-CE-098**  
+**Operative Packaging CONTROL:** STD-011 Version 1.9.0 Part B  
+**Renderer version:** 2.0.0-CWC-CE-097-CANDIDATE (**HUMAN VISUALLY ACCEPTED — CWC-CE-098**)  
 
 ---
 
 ## Purpose
 
-Deterministically render Kansas BlueprintLiberty Status (KSB Status) public
-images from the Human-accepted visual baseline by substituting only the four
-authorized ordinary weekly VARIABLES.
+Deterministically construct Kansas BlueprintLiberty Status (KSB Status) public
+images from an **immutable clean master template** each render by copying the
+master, drawing the controlled center-panel content, and writing a new PNG.
 
 ```text
-HUMAN-ACCEPTED BASELINE
+CLEAN MASTER (1536 × 1024, blank center panel)
         ↓
-AUTHORIZED VARIABLE REGIONS
+IN-MEMORY COPY (master never overwritten)
         ↓
-HUMAN-APPROVED VARIABLE VALUES
+DYNAMIC CENTER PANEL (bills / bars / percents)
+        ↓
+NEW PNG
+```
+        ↓
+CURRENT CONTROLLED VARIABLES ONLY
         ↓
 DETERMINISTIC RENDERER
         ↓
-RENDERED CANDIDATE
+NEW PNG
         ↓
-ANTI-DRIFT VALIDATION
+ANTI-DRIFT vs FIXED LAYER
 ```
+
+**PROHIBITED as ordinary canvas:** previous weekly output PNG; populated
+`BL-WEEKLY-STATUS-BASELINE-v1.0`; plate-over / erase / cover / inpaint of
+historical weekly ink.
 
 Generative image models are **not** authorized for weekly production.
 
 ---
 
-## Baseline dependency (immutable)
+## Baseline vs fixed layer
 
 | Field | Value |
 |---|---|
 | Baseline ID | `BL-WEEKLY-STATUS-BASELINE-v1.0` |
+| Baseline role | Historical Human-accepted visual reference (NOT ordinary canvas) |
 | Path | `../baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png` |
 | SHA-256 | `17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9` |
 | Dimensions | 1536 × 912 |
+| Fixed layer ID | `FIXED-LAYER-v1.0-CWC-CE-096` |
+| Fixed layer path | `assets/FIXED-LAYER-v1.0-CWC-CE-096.png` |
+| Fixed layer SHA-256 | `A445685853095203F4D30941AED33320EF1629E643BA0DA6D8FCF95860787E05` |
 
 The renderer **SHALL NOT** modify the accepted baseline file.  
-Every render starts from a copy of the accepted baseline (never from last week’s PNG).
+Every render creates a **new blank canvas**, pastes the controlled fixed layer, and draws only current variables (never opens last week’s PNG or the populated baseline as canvas).
 
 ---
 
@@ -163,3 +176,4 @@ This CWC does not generate production packages.
 |---|---|---|
 | 1.0.0-CWC-CE-084 | 2026-08-30 | Initial deterministic renderer + anti-drift + NON-PRODUCTION tests. |
 | 1.1.0-CWC-CE-094 | 2026-08-30 | ECR-012: solid variable plate fill replaces ordinary Telea inpaint; fresh composition; baseline file unchanged. |
+| 2.0.0-CWC-CE-096-CANDIDATE | 2026-08-30 | ECR-013: blank canvas + fixed layer; populated baseline not canvas; Human visual acceptance required before activation. |

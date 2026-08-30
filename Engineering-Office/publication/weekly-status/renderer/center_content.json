@@ -1,0 +1,47 @@
+{
+  "content_id": "KSB-CENTER-PANEL-CONTENT-v1.0-CWC-CE-097",
+  "governing_cwc": "CWC-CE-097",
+  "governing_ecr": "ECR-014",
+  "note": "CONTROLLED DYNAMIC CONTENT (not weekly free-form variables). Titles from STD-011 §26. Descriptions migrated from Human-accepted baseline visual copy as controlled fixed public prose pending separate Human revision.",
+  "disclaimer": "Percentages reflect engineering maturity, not political odds of passage.",
+  "bottom_statement": "We do not write the law first and invent the engineering afterward.",
+  "engineered_label": "ENGINEERED",
+  "bills": {
+    "bill_a": {
+      "badge_text": "BILL A",
+      "title": "COMPREHENSIVE KANSAS TAX-SYSTEM REPLACEMENT",
+      "description": "Engineer a new Kansas tax structure built around property rights, transparent transaction taxation, taxpayer supremacy, controlled revenue distribution, debt discipline, exit mechanisms, and constitutional permanence.",
+      "badge_rgb": [0, 33, 111],
+      "title_rgb": [0, 70, 40],
+      "description_rgb": [20, 20, 30],
+      "percent_rgb": [5, 9, 94],
+      "bar_fill_rgb": [0, 33, 111],
+      "bar_track_rgb": [221, 221, 220],
+      "separator_rgb": [40, 70, 140]
+    },
+    "bill_b": {
+      "badge_text": "BILL B",
+      "title": "KANSAS PROPERTY-TAX ELIMINATION",
+      "description": "Eliminate recurring taxation of owned property while engineering replacement revenue and transition mechanisms for counties, cities, school districts, and other local governments.",
+      "badge_rgb": [21, 115, 26],
+      "title_rgb": [0, 70, 40],
+      "description_rgb": [20, 20, 30],
+      "percent_rgb": [21, 90, 40],
+      "bar_fill_rgb": [21, 115, 26],
+      "bar_track_rgb": [220, 220, 219],
+      "separator_rgb": [40, 70, 140]
+    },
+    "bill_c": {
+      "badge_text": "BILL C",
+      "title": "KANSAS NBEF ACT",
+      "description": "Determine how the Node-Based Educational Framework (NBEF) can be translated into Kansas law without destroying the structural controls that make NBEF work.",
+      "badge_rgb": [55, 28, 110],
+      "title_rgb": [0, 70, 40],
+      "description_rgb": [20, 20, 30],
+      "percent_rgb": [40, 20, 90],
+      "bar_fill_rgb": [55, 28, 110],
+      "bar_track_rgb": [218, 219, 218],
+      "separator_rgb": [40, 70, 140]
+    }
+  }
+}

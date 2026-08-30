@@ -4,27 +4,27 @@
 **Title:** KSB Phone-Command Orchestration / Baseline Continuity / Follow-Up Context  
 **Classification:** Engineering Procedure (Weekly Status Orchestration)  
 **Authority:** Constitutional Engineering Office  
-**Governing Standard:** STD-011 Part B Version 1.7.0 (operative packaging CONTROL — §36 / §36.9–§36.13)  
-**Governing ECR:** ECR-007 (Implemented); ECR-008 (Implemented); ECR-011 (Implemented); **ECR-012 (Human-accepted / CWC-CE-094)**  
-**Governing Work Card:** CWC-CE-087; CWC-CE-088; CWC-CE-092; **CWC-CE-094**  
+**Governing Standard:** STD-011 Part B Version 1.9.0 (operative packaging CONTROL — §36 / §36.9–§36.15)  
+**Governing ECR:** ECR-007 (Implemented); ECR-008 (Implemented); ECR-011 (Implemented); ECR-012 (Historical); ECR-013 (Historical / CE-096 visual REJECTED); **ECR-014 (CWC-CE-097 clean-master candidate — activation pending visual gate)**  
+**Governing Work Card:** CWC-CE-087; CWC-CE-088; CWC-CE-092; CWC-CE-094; CWC-CE-096; **CWC-CE-097**  
 **Related Failure:** KSB-POC-FAIL-001; KSB-POC-FAIL-002  
-**Related Defect Disposition:** KSB-089-D01 **SUPERSEDED**; KSB-HUMAN-DELIVERY-001/002 + KSB-RENDER-001 remediated under ECR-012  
+**Related Defect Disposition:** KSB-089-D01 **SUPERSEDED**; KSB-HUMAN-DELIVERY-001/002 remediated under ECR-012; **KSB-RENDER-002** remediating under ECR-014 (clean master); CWC-CE-096 Human visual **REJECTED**  
 **Related Template:** KSB-PR-TMP-001  
 **Status:** Active  
-**Version:** 1.3.0  
+**Version:** 1.5.0  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Activation:** Human-accepted ECR-012 / CWC-CE-094 Human-product delivery + fresh composition  
+**Activation:** Human-accepted ECR-014 / CWC-CE-097; **operational renderer activation requires Human visual acceptance of candidate PNG**  
 
 ```text
-ACTIVE UNDER STD-011 v1.7.0 §36 / §36.11–§36.13 / ECR-012
-THREE-STEP + SINGLE-COPY PR + INLINE IMAGE
-FRESH PLATE-FILL COMPOSITION (NO ORDINARY INPAINT)
-KSB-089-D01 SUPERSEDED
+ACTIVE UNDER STD-011 v1.9.0 §36 / §36.11–§36.15 / ECR-014
+THREE-STEP + SINGLE-COPY PR + INLINE IMAGE PRESERVED
+CLEAN MASTER + DYNAMIC CENTER PANEL
+CANDIDATE: ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
+CWC-CE-096 FIXED LAYER NOT ORDINARY INPUT
 DOES NOT CHANGE CERTIFIED MATURITY
 DOES NOT PUBLISH
-BASELINE v1.0 FILE UNCHANGED
-GIT CANONICALIZATION PENDING HUMAN GIT GATE
+GIT CANONICALIZATION PENDING HUMAN VISUAL GATE THEN CE-GitManager
 ```
 
 ---

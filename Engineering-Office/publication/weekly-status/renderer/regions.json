@@ -1,63 +1,85 @@
 {
+  "composition_model": "CLEAN_MASTER_TEMPLATE + DYNAMIC_CENTER_PANEL → NEW_PNG",
+  "composition_note": "CWC-CE-097/ECR-014: Ordinary render opens immutable clean master template, copies to memory, dynamically draws Kansas Legislative Engineering Status center panel (badges, titles, descriptions, tracks, fills, percentages, disclaimer, bottom statement). PROHIBITED: previous weekly PNG; populated BL-WEEKLY-STATUS-BASELINE-v1.0 as canvas; CWC-CE-096 FIXED-LAYER as canvas; plate-over historical bill content.",
+  "clean_master_id": "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE",
+  "clean_master_relpath": "templates/BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE.png",
+  "clean_master_sha256": "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C",
+  "clean_master_source_note": "Byte-identical to Human-provided templates/BL-Weekly-Status-Template-v1.0.png under CWC-CE-097; distinct controlled candidate identity (historical populated template/baseline not overwritten).",
+  "human_provided_template_relpath": "templates/BL-Weekly-Status-Template-v1.0.png",
   "baseline_id": "BL-WEEKLY-STATUS-BASELINE-v1.0",
   "baseline_relpath": "baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png",
   "baseline_sha256": "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9",
-  "composition_note": "CWC-CE-094/ECR-012: baseline PNG may contain baked placeholder variable raster (25/35/10). Ordinary weekly composition fills variable plates with plate_rgb / track_rgb then draws current values. No Telea inpaint.",
-  "canvas": { "width": 1536, "height": 912 },
+  "baseline_role": "HISTORICAL_HUMAN_ACCEPTED_VISUAL_REFERENCE — NOT ordinary render input",
+  "ce096_fixed_layer_relpath": "renderer/assets/FIXED-LAYER-v1.0-CWC-CE-096.png",
+  "ce096_fixed_layer_role": "HISTORICAL_CANDIDATE_EVIDENCE — NOT used by CWC-CE-097 renderer",
+  "center_content_relpath": "renderer/center_content.json",
+  "canvas": { "width": 1536, "height": 1024 },
+  "center_panel": {
+    "bounds": { "x": 397, "y": 364, "w": 684, "h": 439 },
+    "blank_rgb_min": [248, 248, 248],
+    "disclaimer_xy": [420, 755],
+    "bottom_statement_xy": [420, 775],
+    "disclaimer_font_size_px": 13,
+    "bottom_statement_font_size_px": 14,
+    "disclaimer_rgb": [30, 30, 40],
+    "bottom_statement_rgb": [0, 40, 90]
+  },
   "typography": {
     "font_family_authorized": "Arial Bold (Windows arialbd.ttf)",
     "font_path_windows": "C:\\\\Windows\\\\Fonts\\\\arialbd.ttf",
-    "font_rationale": "Baseline uses unidentified bold sans-serif; Arial Bold is the deterministic authorized substitute with size matched to measured glyph metrics. Not treated as material redesign under CWC-CE-084.",
-    "date_font_size_px": 18,
+    "font_path_regular_windows": "C:\\\\Windows\\\\Fonts\\\\arial.ttf",
+    "font_path_italic_windows": "C:\\\\Windows\\\\Fonts\\\\ariali.ttf",
+    "title_font_size_px": 15,
+    "description_font_size_px": 12,
     "percent_font_size_px": 34,
-    "date_color_rgb": [0, 0, 24],
-    "bill_a_color_rgb": [5, 9, 94],
-    "bill_b_color_rgb": [21, 90, 40],
-    "bill_c_color_rgb": [40, 20, 90]
+    "engineered_font_size_px": 11,
+    "badge_font_size_px": 12
   },
-  "variables": {
-    "STATUS_DATE": {
-      "placeholder_display": "Date: 2026.08.35",
-      "display_prefix": "Date: ",
-      "alignment": "left",
-      "plate_rgb": [128, 173, 228],
-      "region": { "x": 1280, "y": 14, "w": 250, "h": 30 },
-      "text_xy": [1286, 16]
+  "bills": {
+    "bill_a": {
+      "badge": { "x": 415, "y": 380, "w": 72, "h": 72, "radius": 10 },
+      "title_xy": [505, 382],
+      "description_box": { "x": 505, "y": 405, "w": 400, "h": 55 },
+      "bar": { "x": 505, "y": 468, "w": 330, "h": 12 },
+      "percent_right_xy": [1055, 382],
+      "engineered_right_xy": [1055, 422],
+      "separator_y": 495
     },
-    "BILL_A_PERCENT": {
-      "placeholder": 25,
-      "plate_rgb": [254, 254, 254],
-      "text_region": { "x": 970, "y": 448, "w": 105, "h": 40 },
-      "text_right_xy": [1072, 448],
-      "bar": {
-        "x": 530, "y": 475, "w": 330, "h": 12,
-        "track_rgb": [221, 221, 220],
-        "fill_rgb": [0, 33, 111]
-      }
+    "bill_b": {
+      "badge": { "x": 415, "y": 510, "w": 72, "h": 72, "radius": 10 },
+      "title_xy": [505, 512],
+      "description_box": { "x": 505, "y": 535, "w": 400, "h": 55 },
+      "bar": { "x": 505, "y": 598, "w": 330, "h": 12 },
+      "percent_right_xy": [1055, 512],
+      "engineered_right_xy": [1055, 552],
+      "separator_y": 625
     },
-    "BILL_B_PERCENT": {
-      "placeholder": 35,
-      "plate_rgb": [254, 254, 253],
-      "text_region": { "x": 970, "y": 578, "w": 105, "h": 40 },
-      "text_right_xy": [1072, 578],
-      "bar": {
-        "x": 530, "y": 604, "w": 330, "h": 12,
-        "track_rgb": [220, 220, 219],
-        "fill_rgb": [21, 115, 26]
-      }
-    },
-    "BILL_C_PERCENT": {
-      "placeholder": 10,
-      "plate_rgb": [255, 255, 254],
-      "text_region": { "x": 970, "y": 698, "w": 105, "h": 40 },
-      "text_right_xy": [1072, 698],
-      "bar": {
-        "x": 530, "y": 724, "w": 330, "h": 12,
-        "track_rgb": [218, 219, 218],
-        "fill_rgb": [55, 28, 110]
-      }
+    "bill_c": {
+      "badge": { "x": 415, "y": 640, "w": 72, "h": 72, "radius": 10 },
+      "title_xy": [505, 642],
+      "description_box": { "x": 505, "y": 665, "w": 400, "h": 55 },
+      "bar": { "x": 505, "y": 728, "w": 330, "h": 12 },
+      "percent_right_xy": [1055, 642],
+      "engineered_right_xy": [1055, 682],
+      "separator_y": 748
     }
   },
+  "weekly_variables": ["status_date", "bill_a_percent", "bill_b_percent", "bill_c_percent"],
+  "status_date_note": "Upper-right Date: 2026.08.35 and (Week 35 of 2026) remain in clean master as MIXED/STALE template content under CWC-CE-097 — NOT silently changed. Recommend separate CWC to move STATUS_DATE into dynamic contract.",
+  "stale_static_content_findings": [
+    {
+      "id": "KSB-STALE-BREADCRUMB-001",
+      "text": "Live 2026.10.05 Report (Files)",
+      "classification": "STALE_STATIC_TEMPLATE_CONTENT",
+      "action": "Do not silently change under CWC-CE-097; propose separate bounded correction"
+    },
+    {
+      "id": "KSB-DATE-TEMPLATE-001",
+      "text": "Date: 2026.08.35 / (Week 35 of 2026)",
+      "classification": "MIXED_FIXED_OR_STALE — weekly variable candidate still baked in clean master header",
+      "action": "Do not silently change; recommend dynamic STATUS_DATE under separate Human authority"
+    }
+  ],
   "percent_range": { "min": 0, "max": 100 },
   "output_filename_contract": "YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png"
 }

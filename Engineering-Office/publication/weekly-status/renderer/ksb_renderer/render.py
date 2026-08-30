@@ -1,4 +1,4 @@
-"""Deterministic KSB Status image renderer (baseline + four variables only)."""
+"""Deterministic KSB Status renderer — clean master + dynamic center panel (CWC-CE-097)."""
 
 from __future__ import annotations
 
@@ -7,20 +7,26 @@ import json
 from pathlib import Path
 from typing import Any, Dict, Mapping, Sequence, Tuple
 
-import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-from .contract import InputValidationError, NormalizedInput, validate_and_normalize
+from .contract import NormalizedInput, validate_and_normalize
 
-RENDERER_VERSION = "1.1.0-CWC-CE-094"
+RENDERER_VERSION = "2.0.0-CWC-CE-097-CANDIDATE"
+OPERATIONAL_STATUS = "HUMAN VISUALLY ACCEPTED — CWC-CE-098 CANONICAL"
 
 EXPECTED_BASELINE_SHA256 = (
     "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9"
 )
+EXPECTED_CLEAN_MASTER_SHA256 = (
+    "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C"
+)
+# Historical CE-096 asset — must not be used as ordinary render input
+PROHIBITED_CE096_FIXED_LAYER_SHA256 = (
+    "A445685853095203F4D30941AED33320EF1629E643BA0DA6D8FCF95860787E05"
+)
 
 
 def _repo_weekly_status_root() -> Path:
-    # .../publication/weekly-status/renderer/ksb_renderer/render.py
     return Path(__file__).resolve().parents[2]
 
 
@@ -34,6 +40,13 @@ def load_regions(path: Path | None = None) -> Dict[str, Any]:
         return json.load(f)
 
 
+def load_center_content(regions: Dict[str, Any], root: Path | None = None) -> Dict[str, Any]:
+    root = root or _repo_weekly_status_root()
+    path = root / regions["center_content_relpath"]
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
     with open(path, "rb") as f:
@@ -43,6 +56,7 @@ def sha256_file(path: Path) -> str:
 
 
 def verify_baseline_immutable(baseline_path: Path) -> str:
+    """Historical visual reference integrity only — NOT ordinary render input."""
     got = sha256_file(baseline_path)
     if got != EXPECTED_BASELINE_SHA256:
         raise RuntimeError(
@@ -51,66 +65,206 @@ def verify_baseline_immutable(baseline_path: Path) -> str:
     return got
 
 
-def _load_font(regions: Dict[str, Any], size: int) -> ImageFont.FreeTypeFont:
-    typo = regions["typography"]
-    font_path = Path(typo.get("font_path_windows", r"C:\Windows\Fonts\arialbd.ttf"))
-    if not font_path.is_file():
+def verify_clean_master(master_path: Path) -> str:
+    got = sha256_file(master_path)
+    if got != EXPECTED_CLEAN_MASTER_SHA256:
         raise RuntimeError(
-            f"Authorized font not found at {font_path}. "
-            "CWC-CE-084 requires Arial Bold (arialbd.ttf) as deterministic substitute."
+            f"CLEAN MASTER INTEGRITY FAILURE: expected {EXPECTED_CLEAN_MASTER_SHA256} got {got}"
         )
-    return ImageFont.truetype(str(font_path), size=size)
+    return got
 
 
-def _fill_region_plate(rgb: np.ndarray, x: int, y: int, w: int, h: int, plate_rgb: Sequence[int]) -> None:
-    """Deterministically clear a variable region by solid plate fill (no inpaint).
+def _load_font(path: str, size: int) -> ImageFont.FreeTypeFont:
+    fp = Path(path)
+    if not fp.is_file():
+        raise RuntimeError(f"Authorized font not found at {fp}")
+    return ImageFont.truetype(str(fp), size=size)
 
-    CWC-CE-094 / ECR-012: ordinary weekly composition MUST NOT depend on Telea
-    inpaint / pixel-surgery against baked historical values in the baseline PNG.
-    """
-    h_img, w_img = rgb.shape[:2]
-    x0, y0 = max(0, x), max(0, y)
-    x1, y1 = min(w_img, x + w), min(h_img, y + h)
-    if x1 <= x0 or y1 <= y0:
-        return
-    color = np.array(list(plate_rgb), dtype=np.uint8)
-    rgb[y0:y1, x0:x1] = color
+
+def _wrap_text(text: str, font: ImageFont.ImageFont, max_width: int, draw: ImageDraw.ImageDraw) -> list[str]:
+    words = text.split()
+    lines: list[str] = []
+    cur = ""
+    for w in words:
+        trial = w if not cur else f"{cur} {w}"
+        bbox = draw.textbbox((0, 0), trial, font=font)
+        if bbox[2] - bbox[0] <= max_width:
+            cur = trial
+        else:
+            if cur:
+                lines.append(cur)
+            cur = w
+    if cur:
+        lines.append(cur)
+    return lines
+
+
+def _draw_rounded_rect(
+    draw: ImageDraw.ImageDraw,
+    xy: Tuple[int, int, int, int],
+    radius: int,
+    fill: Sequence[int],
+) -> None:
+    draw.rounded_rectangle(list(xy), radius=radius, fill=tuple(fill))
 
 
 def _draw_bar(
     draw: ImageDraw.ImageDraw,
-    bar: Dict[str, Any],
+    x: int,
+    y: int,
+    w: int,
+    h: int,
     percent: int,
+    track_rgb: Sequence[int],
+    fill_rgb: Sequence[int],
 ) -> None:
-    x, y, w, h = bar["x"], bar["y"], bar["w"], bar["h"]
-    track = tuple(bar["track_rgb"])
-    fill = tuple(bar["fill_rgb"])
-    # Full track restore
-    draw.rounded_rectangle([x, y, x + w - 1, y + h - 1], radius=h // 2, fill=track)
+    draw.rounded_rectangle([x, y, x + w - 1, y + h - 1], radius=h // 2, fill=tuple(track_rgb))
     fill_w = int(round(w * (percent / 100.0)))
     if fill_w <= 0:
         return
     if fill_w >= w:
-        draw.rounded_rectangle([x, y, x + w - 1, y + h - 1], radius=h // 2, fill=fill)
+        draw.rounded_rectangle([x, y, x + w - 1, y + h - 1], radius=h // 2, fill=tuple(fill_rgb))
         return
-    # Draw fill as rounded on left; square cut on right of fill segment
-    draw.rounded_rectangle([x, y, x + fill_w - 1, y + h - 1], radius=h // 2, fill=fill)
-    # Cover right round of short fill if fill_w small — acceptable mechanical approximation
+    draw.rounded_rectangle([x, y, x + fill_w - 1, y + h - 1], radius=h // 2, fill=tuple(fill_rgb))
+
+
+def _draw_right_text(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    right_xy: Sequence[int],
+    font: ImageFont.ImageFont,
+    fill: Sequence[int],
+) -> None:
+    rx, ry = int(right_xy[0]), int(right_xy[1])
+    bbox = draw.textbbox((0, 0), text, font=font)
+    tw = bbox[2] - bbox[0]
+    draw.text((rx - tw, ry), text, font=font, fill=tuple(fill))
+
+
+def _compose_center_panel(
+    img: Image.Image,
+    regions: Dict[str, Any],
+    content: Dict[str, Any],
+    normalized: NormalizedInput,
+) -> None:
+    draw = ImageDraw.Draw(img)
+    typo = regions["typography"]
+    title_font = _load_font(typo["font_path_windows"], int(typo["title_font_size_px"]))
+    desc_font = _load_font(typo.get("font_path_regular_windows", typo["font_path_windows"]), int(typo["description_font_size_px"]))
+    pct_font = _load_font(typo["font_path_windows"], int(typo["percent_font_size_px"]))
+    eng_font = _load_font(typo["font_path_windows"], int(typo["engineered_font_size_px"]))
+    badge_font = _load_font(typo["font_path_windows"], int(typo["badge_font_size_px"]))
+    disc_font = _load_font(
+        typo.get("font_path_regular_windows", typo["font_path_windows"]),
+        int(regions["center_panel"]["disclaimer_font_size_px"]),
+    )
+    bottom_font = _load_font(
+        typo.get("font_path_italic_windows", typo["font_path_windows"]),
+        int(regions["center_panel"]["bottom_statement_font_size_px"]),
+    )
+
+    percents = {
+        "bill_a": normalized.bill_a_percent,
+        "bill_b": normalized.bill_b_percent,
+        "bill_c": normalized.bill_c_percent,
+    }
+    panel_x1 = regions["center_panel"]["bounds"]["x"] + regions["center_panel"]["bounds"]["w"]
+
+    for key in ("bill_a", "bill_b", "bill_c"):
+        layout = regions["bills"][key]
+        bill = content["bills"][key]
+        pct = percents[key]
+        b = layout["badge"]
+        _draw_rounded_rect(
+            draw,
+            (b["x"], b["y"], b["x"] + b["w"] - 1, b["y"] + b["h"] - 1),
+            int(b["radius"]),
+            bill["badge_rgb"],
+        )
+        # Center badge text
+        bb = draw.textbbox((0, 0), bill["badge_text"], font=badge_font)
+        bw, bh = bb[2] - bb[0], bb[3] - bb[1]
+        draw.text(
+            (b["x"] + (b["w"] - bw) // 2, b["y"] + (b["h"] - bh) // 2 - 2),
+            bill["badge_text"],
+            font=badge_font,
+            fill=(255, 255, 255),
+        )
+
+        tx, ty = layout["title_xy"]
+        draw.text((tx, ty), bill["title"], font=title_font, fill=tuple(bill["title_rgb"]))
+
+        box = layout["description_box"]
+        lines = _wrap_text(bill["description"], desc_font, int(box["w"]), draw)
+        ly = int(box["y"])
+        for line in lines[:4]:
+            draw.text((box["x"], ly), line, font=desc_font, fill=tuple(bill["description_rgb"]))
+            ly += int(typo["description_font_size_px"]) + 2
+
+        bar = layout["bar"]
+        _draw_bar(
+            draw,
+            bar["x"],
+            bar["y"],
+            bar["w"],
+            bar["h"],
+            pct,
+            bill["bar_track_rgb"],
+            bill["bar_fill_rgb"],
+        )
+
+        _draw_right_text(
+            draw, f"{pct}%", layout["percent_right_xy"], pct_font, bill["percent_rgb"]
+        )
+        _draw_right_text(
+            draw,
+            content["engineered_label"],
+            layout["engineered_right_xy"],
+            eng_font,
+            bill["percent_rgb"],
+        )
+
+        sep_y = int(layout["separator_y"])
+        draw.line(
+            [(b["x"], sep_y), (panel_x1 - 20, sep_y)],
+            fill=tuple(bill["separator_rgb"]),
+            width=1,
+        )
+
+    cp = regions["center_panel"]
+    dx, dy = cp["disclaimer_xy"]
+    draw.text((dx, dy), content["disclaimer"], font=disc_font, fill=tuple(cp["disclaimer_rgb"]))
+    bx, by = cp["bottom_statement_xy"]
+    draw.text(
+        (bx, by),
+        content["bottom_statement"],
+        font=bottom_font,
+        fill=tuple(cp["bottom_statement_rgb"]),
+    )
 
 
 def render_ksb_status(
     raw_input: Mapping[str, Any],
     *,
     baseline_path: Path | None = None,
+    clean_master_path: Path | None = None,
     regions_path: Path | None = None,
     output_path: Path | None = None,
+    fixed_layer_path: Path | None = None,
 ) -> Tuple[Image.Image, NormalizedInput, str]:
     """
-    Render from accepted baseline + Human-approved variables.
+    Open pristine clean master → copy → draw current center-panel content → new PNG.
 
-    Returns (RGB image, normalized input, baseline_sha).
-    Raises InputValidationError on bad input (fail closed).
+    ``baseline_path`` / historical baseline: integrity only, never canvas.
+    ``fixed_layer_path``: accepted for API compatibility; MUST NOT be used (CWC-CE-097).
+    Returns (RGB image, normalized input, clean_master_sha).
     """
+    if fixed_layer_path is not None:
+        raise RuntimeError(
+            "CWC-CE-097 PROHIBITS CWC-CE-096 fixed-layer as render input "
+            f"(got {fixed_layer_path})"
+        )
+
     root = _repo_weekly_status_root()
     regions = load_regions(regions_path)
     pct = regions["percent_range"]
@@ -118,73 +272,44 @@ def render_ksb_status(
         raw_input, percent_min=int(pct["min"]), percent_max=int(pct["max"])
     )
 
+    # Historical baseline integrity (not canvas)
     bpath = baseline_path or (root / regions["baseline_relpath"])
-    bsha = verify_baseline_immutable(bpath)
+    verify_baseline_immutable(bpath)
 
-    base = Image.open(bpath).convert("RGB")
+    master_path = clean_master_path or (root / regions["clean_master_relpath"])
+    master_sha = verify_clean_master(master_path)
+
+    # Refuse if caller somehow points master at CE-096 fixed layer
+    if master_sha == PROHIBITED_CE096_FIXED_LAYER_SHA256:
+        raise RuntimeError("CWC-CE-096 fixed layer SHA prohibited as clean master")
+
     exp_w = int(regions["canvas"]["width"])
     exp_h = int(regions["canvas"]["height"])
-    if base.size != (exp_w, exp_h):
-        raise RuntimeError(f"baseline dimensions {base.size} != {(exp_w, exp_h)}")
 
-    rgb = np.array(base)
-    v = regions["variables"]
+    # Fresh open of pristine clean master — never overwrite master
+    with Image.open(master_path) as master_im:
+        master_rgb = master_im.convert("RGB")
+        if master_rgb.size != (exp_w, exp_h):
+            raise RuntimeError(
+                f"clean master dimensions {master_rgb.size} != {(exp_w, exp_h)}"
+            )
+        canvas = master_rgb.copy()
 
-    # Clean variable plates (solid fill) — fresh composition; no prior-render / inpaint dependency
-    date_reg = v["STATUS_DATE"]["region"]
-    _fill_region_plate(
-        rgb,
-        date_reg["x"],
-        date_reg["y"],
-        date_reg["w"],
-        date_reg["h"],
-        v["STATUS_DATE"]["plate_rgb"],
-    )
-    for bill in ("BILL_A_PERCENT", "BILL_B_PERCENT", "BILL_C_PERCENT"):
-        tr = v[bill]["text_region"]
-        _fill_region_plate(rgb, tr["x"], tr["y"], tr["w"], tr["h"], v[bill]["plate_rgb"])
-        bar = v[bill]["bar"]
-        x, y, w, h = bar["x"], bar["y"], bar["w"], bar["h"]
-        rgb[y : y + h, x : x + w] = np.array(bar["track_rgb"], dtype=np.uint8)
-
-    img = Image.fromarray(rgb, mode="RGB")
-    draw = ImageDraw.Draw(img)
-    typo = regions["typography"]
-    date_font = _load_font(regions, int(typo["date_font_size_px"]))
-    pct_font = _load_font(regions, int(typo["percent_font_size_px"]))
-
-    # STATUS_DATE
-    date_text = v["STATUS_DATE"]["display_prefix"] + normalized.status_date_compact
-    dx, dy = v["STATUS_DATE"]["text_xy"]
-    draw.text((dx, dy), date_text, font=date_font, fill=tuple(typo["date_color_rgb"]))
-
-    # Percentages + bars
-    bills = [
-        ("BILL_A_PERCENT", normalized.bill_a_percent, "bill_a_color_rgb"),
-        ("BILL_B_PERCENT", normalized.bill_b_percent, "bill_b_color_rgb"),
-        ("BILL_C_PERCENT", normalized.bill_c_percent, "bill_c_color_rgb"),
-    ]
-    for key, pct_val, color_key in bills:
-        spec = v[key]
-        label = f"{pct_val}%"
-        # right-align to text_right_xy
-        rx, ry = spec["text_right_xy"]
-        bbox = draw.textbbox((0, 0), label, font=pct_font)
-        tw = bbox[2] - bbox[0]
-        draw.text((rx - tw, ry), label, font=pct_font, fill=tuple(typo[color_key]))
-        _draw_bar(draw, spec["bar"], pct_val)
+    content = load_center_content(regions, root)
+    _compose_center_panel(canvas, regions, content, normalized)
 
     if output_path is not None:
         output_path = Path(output_path)
+        if output_path.resolve() == master_path.resolve():
+            raise RuntimeError("REFUSING to overwrite clean master template")
         output_path.parent.mkdir(parents=True, exist_ok=True)
-        # Deterministic PNG encoding parameters
-        img.save(output_path, format="PNG", compress_level=9, optimize=False)
+        canvas.save(output_path, format="PNG", compress_level=9, optimize=False)
 
-    # Ending baseline immutability check
+    # Master immutability check
+    verify_clean_master(master_path)
     verify_baseline_immutable(bpath)
-    return img, normalized, bsha
+    return canvas, normalized, master_sha
 
 
 def production_output_name(calendar_date) -> str:
-    """Controlled weekly filename contract (STD-011); not renamed by KSB terminology."""
     return f"{calendar_date.isoformat()}-BlueprintLiberty-Weekly-Status.png"

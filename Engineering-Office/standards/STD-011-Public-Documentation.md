@@ -8,10 +8,10 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
-**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control; ECR-011 — KSB Three-Step Human Command Contract; ECR-012 — KSB Human Product Delivery and Fresh Deterministic Image Composition  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package; CWC-CE-092 — KSB Three-Step Human Command Contract; CWC-CE-094 — KSB Human Product Delivery and Fresh Deterministic Image Composition  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control; ECR-011 — KSB Three-Step Human Command Contract; ECR-012 — KSB Human Product Delivery and Fresh Deterministic Image Composition; ECR-013 — KSB True New-Image Blank-Canvas Composition; **ECR-014 — KSB Clean Master Template and Dynamic Center-Panel Composition**  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package; CWC-CE-092 — KSB Three-Step Human Command Contract; CWC-CE-094 — KSB Human Product Delivery and Fresh Deterministic Image Composition; CWC-CE-096 — KSB True New-Image Deterministic Composition; **CWC-CE-097 — KSB Clean Master Template Integration**  
 **Status:** Active  
-**Version:** 1.7.0  
+**Version:** 1.9.0  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -472,6 +472,8 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.5.1 | 2026-08-30 | CWC-CE-088 defect remediation: §36.10 Human acceptance requires complete package; diagnostics/partial infrastructure ≠ PASS (KSB-POC-FAIL-002). |
 | 1.6.0 | 2026-08-30 | ECR-011 / CWC-CE-092: three-step Human command contract (Prepare→STATUS; Next→press release; Next→controlled image); supersedes one-shot Prepare delivery; preserves Sunday package completeness and firewalls. |
 | 1.7.0 | 2026-08-30 | ECR-012 / CWC-CE-094: Command 2 single-copy press-release box; Command 3 inline controlled PNG; engineering artifact ≠ Human product; fresh plate-fill composition (no ordinary inpaint). |
+| 1.8.0 | 2026-08-30 | ECR-013 / CWC-CE-096: true new blank-canvas composition each render; fixed-layer asset; populated baseline not ordinary canvas; Human visual acceptance gate for candidate renderer. |
+| 1.9.0 | 2026-08-30 | ECR-014 / CWC-CE-097: clean master template (blank center panel) + dynamic center-panel composition; CE-096 fixed-layer path superseded after Human visual rejection. |
 
 ---
 
@@ -558,11 +560,18 @@ When a weekly package is prepared under §36.9, the status manifest SHOULD ident
 ## 25. Image Model and Anti-Drift
 
 ```text
-ONE APPROVED BASELINE
-+ CONTROLLED CONFIGURATION (including PUBLIC URL set)
-+ CONTROLLED VARIABLE VALUES
-= WEEKLY STATUS IMAGE
+CLEAN MASTER TEMPLATE (immutable; blank Kansas Legislative Engineering Status panel)
++ CONTROLLED DESIGN SPECIFICATION
++ CONTROLLED CENTER-PANEL CONTENT (titles/descriptions/badges/tracks)
++ CURRENT CONTROLLED VARIABLE VALUES (status_date contract retained; percents)
+= WEEKLY STATUS IMAGE (NEW PNG EVERY RENDER)
 ```
+
+**Clean master role (CWC-CE-097 / ECR-014):** Ordinary weekly render input. Center status panel starts blank. Master file SHALL NOT be overwritten by render.
+
+**Baseline role:** `BL-WEEKLY-STATUS-BASELINE-v1.0` remains historical Human-accepted visual reference (integrity). It SHALL NOT be the ordinary weekly composition input.
+
+**CWC-CE-096 fixed layer:** Historical candidate evidence only — SHALL NOT be ordinary render input.
 
 1. Approved visual baseline resides under `baseline/` with identifier, version, provenance, and checksum.  
 2. Ordinary weekly VARIABLE fields are limited to:
@@ -1095,9 +1104,9 @@ Package continuity across steps SHALL preserve: cycle identity; status date; Bil
 
 GitHub Actions ZIP/artifact / RESULT.json / hashes remain **engineering evidence**. They SHALL NOT be the ordinary primary Human-facing substitute for the visible PNG.
 
-### 36.13 Fresh deterministic composition (ECR-012 / CWC-CE-094)
+### 36.13 Fresh deterministic composition (ECR-012 / CWC-CE-094) — HISTORICAL
 
-Weekly controlled images SHALL be freshly composed:
+Weekly controlled images under ECR-012 used:
 
 ```text
 CONTROLLED BASELINE (appearance / anti-drift reference)
@@ -1107,6 +1116,53 @@ CONTROLLED BASELINE (appearance / anti-drift reference)
 → NEW PNG
 ```
 
-Ordinary weekly composition SHALL NOT depend on Telea inpaint, painting-over prior weekly ink, or the previous week’s output file. Historical placeholder raster that may exist inside the accepted baseline PNG SHALL be cleared by solid plate fill before current values are drawn.
+Ordinary weekly composition SHALL NOT depend on Telea inpaint. ECR-012 prohibited painting-over prior weekly output files. Historical placeholder raster inside the accepted baseline PNG was cleared by solid plate fill before current values were drawn.
+
+**Supersession:** Ordinary weekly architecture under **ECR-013 / CWC-CE-096** (§36.14) replaces plate-over-populated-baseline as the authorized ordinary path.
+
+### 36.14 True new-image blank-canvas composition (ECR-013 / CWC-CE-096)
+
+Every ordinary KSB render SHALL create a **new image from scratch**:
+
+```text
+Image.new BLANK 1536×912
++ CONTROLLED FIXED LAYER (zero weekly variable ink)
++ CURRENT CONTROLLED VARIABLES ONLY
+→ DETERMINISTIC COMPOSITOR
+→ NEW PNG
+```
+
+PROHIBITED as ordinary composition canvas:
+
+1. previous weekly KSB output PNG;  
+2. populated `BL-WEEKLY-STATUS-BASELINE-v1.0`;  
+3. any architecture whose primary method is erase / cover / inpaint / enlarge-mask of historical weekly variable pixels on a populated raster.
+
+Historical weekly variable pixels on the new canvas before current variables are drawn SHALL be **zero** (never drawn — not merely masked).
+
+Anti-drift for ordinary renders SHALL compare against the controlled **fixed layer** (authorized variable rectangles only).
+
+Candidate renderer identity for this change: `ksb_renderer@2.0.0-CWC-CE-096-CANDIDATE`.  
+Automated test PASS does **not** constitute operational acceptance; Human visual acceptance is required before activation.
+
+**Supersession:** CWC-CE-096 Human visual acceptance = REJECTED. Ordinary path under **ECR-014 / CWC-CE-097** (§36.15) supersedes fixed-layer paste for activation.
+
+Generative image creation SHALL NOT substitute for this path.
+
+### 36.15 Clean master + dynamic center panel (ECR-014 / CWC-CE-097)
+
+Every ordinary KSB render SHALL:
+
+```text
+OPEN CLEAN MASTER TEMPLATE (pristine)
+→ COPY INTO RENDER MEMORY
+→ DYNAMICALLY DRAW KANSAS LEGISLATIVE ENGINEERING STATUS CENTER PANEL
+→ WRITE NEW PNG (never overwrite master)
+```
+
+The clean master center panel SHALL contain zero Bill A/B/C weekly status rendering before composition. Progress tracks begin empty; fills and percentages are functions of current controlled maturity only.
+
+Candidate renderer: `ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE`.  
+Human visual acceptance required before operational activation.
 
 Generative image creation SHALL NOT substitute for this path.

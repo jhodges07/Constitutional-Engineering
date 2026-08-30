@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Render job helper: verify baseline, invoke existing renderer, write RESULT.json.
+"""Render job helper: verify clean master, invoke renderer, write RESULT.json.
 
 Consumes ONLY gate-normalized JSON — never raw Issue text.
+CWC-CE-097: clean master is ordinary render input; baseline is historical integrity only.
 """
 
 from __future__ import annotations
@@ -25,6 +26,9 @@ from ksb_issue_bridge.constants import (  # noqa: E402
     BASELINE_ID,
     BASELINE_SHA256,
     BASELINE_WIDTH,
+    CLEAN_MASTER_HEIGHT,
+    CLEAN_MASTER_SHA256,
+    CLEAN_MASTER_WIDTH,
 )
 from ksb_issue_bridge.result import build_result, write_result  # noqa: E402
 
@@ -77,9 +81,22 @@ def main() -> int:
         "bill_c_percent": request["bill_c_percent"],
     }
     out_png = out_dir / "ksb-status.png"
+    regions = load_regions()
+    clean_master = _WEEKLY / regions["clean_master_relpath"]
+
+    if not clean_master.is_file():
+        print("CLEAN MASTER missing", file=sys.stderr)
+        return 3
+    if _sha256_file(clean_master) != CLEAN_MASTER_SHA256:
+        print(f"CLEAN MASTER HASH MISMATCH got={_sha256_file(clean_master)}", file=sys.stderr)
+        return 4
+    with Image.open(clean_master) as im:
+        if im.size != (CLEAN_MASTER_WIDTH, CLEAN_MASTER_HEIGHT):
+            print(f"CLEAN MASTER DIM MISMATCH {im.size}", file=sys.stderr)
+            return 5
 
     try:
-        img, _norm, _bsha = render_ksb_status(
+        img, _norm, _msha = render_ksb_status(
             payload, baseline_path=baseline, output_path=out_png
         )
     except Exception as exc:
@@ -102,9 +119,8 @@ def main() -> int:
     out_digest = _sha256_file(out_png)
     ow, oh = img.size
 
-    regions = load_regions()
     rects = authorized_rects_from_regions(regions)
-    ad = validate_anti_drift(baseline, out_png, rects)
+    ad = validate_anti_drift(clean_master, out_png, rects)
     anti = "PASS" if ad.pass_ok else "FAIL"
     if not ad.pass_ok:
         print(f"ANTI-DRIFT FAILED: {ad.message}", file=sys.stderr)
