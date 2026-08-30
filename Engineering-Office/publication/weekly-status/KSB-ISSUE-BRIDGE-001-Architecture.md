@@ -284,7 +284,9 @@ Runner registration remains **separately Human-gated** after ECR-009 ACCEPT — 
 ISSUE # → REQUEST ID → ACTIONS RUN → ARTIFACT
 ```
 
-Run **discovery** does not require `workflow_dispatch`. Real download remains **REAL-RUN PROOF PENDING**.
+**Correlation implementation note (CWC-CE-090 / KSB-089-D02):** workflow Issue lifecycle commands SHALL pass explicit `-R ${{ github.repository }}` (trusted Actions context). They SHALL NOT rely on cwd/.git inference. Issue payload MUST NOT supply repository identity.
+
+Run **discovery** does not require `workflow_dispatch`. Real download remains **REAL-RUN PROOF PENDING** until Human-authorized Test #3 after D02 Git canonicalization.
 
 ---
 

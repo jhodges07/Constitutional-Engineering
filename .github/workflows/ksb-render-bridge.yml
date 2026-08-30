@@ -82,12 +82,15 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Explicit -R from trusted github.repository (CWC-CE-090 / KSB-089-D02).
+          # Do not infer repository from cwd/.git — Issue payload must never supply repo.
           BODY="KSB render gate REJECTED before Windows execution.
           code=${{ steps.validate.outputs.reject_code }}
           This Issue is an EXECUTION REQUEST only — not engineering truth or publication."
-          gh issue comment "${{ github.event.issue.number }}" --body "$BODY"
-          gh issue edit "${{ github.event.issue.number }}" --add-label "ksb-render:rejected-auth" || true
-          gh issue close "${{ github.event.issue.number }}" --reason "not planned" || gh issue close "${{ github.event.issue.number }}"
+          gh issue comment -R "${{ github.repository }}" "${{ github.event.issue.number }}" --body "$BODY"
+          gh issue edit -R "${{ github.repository }}" "${{ github.event.issue.number }}" --add-label "ksb-render:rejected-auth" || true
+          gh issue close -R "${{ github.repository }}" "${{ github.event.issue.number }}" --reason "not planned" \
+            || gh issue close -R "${{ github.repository }}" "${{ github.event.issue.number }}"
 
   render:
     name: render-github-hosted-windows
@@ -179,6 +182,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # CWC-CE-090 / KSB-089-D02: explicit -R from trusted github.repository.
+          # Hosted Windows job checkouts use path: workflow-src / render-src, so
+          # GITHUB_WORKSPACE root is not a git worktree; gh must not infer repo from cwd.
+          $repo = "${{ github.repository }}"
+          $issue = "${{ github.event.issue.number }}"
           $body = @"
           KSB render EXECUTION RESULT (non-canonical artifact; NON-PRODUCTION POC).
           request_id=${{ needs.gate.outputs.request_id }}
@@ -189,7 +197,8 @@ jobs:
           run_url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           STOP before publication. Temporary artifact ≠ canonical weekly image.
           "@
-          gh issue comment "${{ github.event.issue.number }}" --body $body
-          gh issue edit "${{ github.event.issue.number }}" --add-label "ksb-render:succeeded" 2>$null
-          gh issue close "${{ github.event.issue.number }}" --reason "completed" 2>$null
-          if ($LASTEXITCODE -ne 0) { gh issue close "${{ github.event.issue.number }}" }
+          gh issue comment -R $repo $issue --body $body
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          gh issue edit -R $repo $issue --add-label "ksb-render:succeeded" 2>$null
+          gh issue close -R $repo $issue --reason "completed" 2>$null
+          if ($LASTEXITCODE -ne 0) { gh issue close -R $repo $issue }
