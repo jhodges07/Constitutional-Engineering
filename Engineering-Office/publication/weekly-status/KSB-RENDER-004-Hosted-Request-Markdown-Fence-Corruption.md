@@ -83,3 +83,21 @@ Fence-safe construction:
 6. Post-create: read back Issue body and re-parse before trusting workflow.
 
 See: `issue-bridge/FENCE-SAFE-HOSTED-REQUEST-PROCEDURE.md`
+
+---
+
+## Hosted acceptance disposition (CWC-CE-105)
+
+**Status:** CLOSED BY HOSTED TEST  
+
+| Field | Value |
+|---|---|
+| Acceptance CWC | CWC-CE-104 |
+| Closure CWC | CWC-CE-105 |
+| Request | KSB-RENDER-2026-08-30-007 |
+| Issue | #8 |
+| Run | 33340965250 |
+| Pre-submit / readback | PASS (OPENING_BACKTICK_COUNT=3) |
+| Hosted gate | PASS |
+
+Immutable failure evidence (Issue #7 / run 33339896335) remains preserved.

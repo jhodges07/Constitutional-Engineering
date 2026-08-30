@@ -51,3 +51,21 @@ Clean-master rendering architecture was not at fault.
 - No new Issue field.  
 - No redefinition of baseline_id to mean clean master.  
 - Documentation + gate error message clarified; negative tests added.
+
+---
+
+## Hosted acceptance disposition (CWC-CE-105)
+
+**Status:** CLOSED BY HOSTED TEST  
+
+| Field | Value |
+|---|---|
+| Acceptance CWC | CWC-CE-104 |
+| Closure CWC | CWC-CE-105 |
+| Request | KSB-RENDER-2026-08-30-007 |
+| Issue | #8 |
+| Run | 33340965250 |
+| baseline_id submitted | BL-WEEKLY-STATUS-BASELINE-v1.0 |
+| Hosted gate | PASS |
+
+Immutable failure evidence (Issue #6 / run 33339179855) remains preserved.
