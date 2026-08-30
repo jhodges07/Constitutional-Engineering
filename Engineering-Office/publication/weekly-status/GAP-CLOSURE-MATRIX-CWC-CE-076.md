@@ -48,7 +48,7 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 | GAP-WS-004 | Deterministic renderer not authorized/implemented | **CLOSED (CWC-CE-084):** deterministic renderer + anti-drift validator implemented and locally validated under `publication/weekly-status/renderer/` | **NO** | Soft (Git remote integration may remain pending Human Git gate) | Implement deterministic renderer after baseline | Human Engineer + CE-Engineer | CWC-CE-084 | Template/baseline renders only VARIABLE + controlled config; anti-drift PASS; tests PASS |
 | GAP-WS-005 | Bill C identity not controlled | **Title-pin portion CLOSED (CWC-CE-077):** FIXED public title `Kansas NBEF Act (Node-Based Educational Framework)` Human-accepted. Engineering-truth LOU/SPEC still future. | Title pin **NO** longer POC blocker | Durable engineering-truth object still open | HE pin public FIXED title (done); later LOU/SPEC for engineering truth | Human Engineer | CWC-CE-077 title pin; later NBEF LOU if needed | Written HE acceptance of FIXED Bill C title string recorded; **not** legislative enactment |
 | GAP-WS-006 | Architecture not on origin/main | **CLOSED (CWC-CE-077)** | **CLOSED** | Soft | Commit informational architecture | Human Engineer Git gate | CWC-CE-077 | `git ls-tree origin/main` lists README + WSPC-001 + WSGAP-001 + ECR-004 |
-| GAP-WS-007 | No automated % CONTROL | None; STD-011 / WSPC require HE % | **NO** — MAY REMAIN HUMAN-GATED DURING POC | Deferred maturity for automation | Keep HE-supplied/approved percentages | Human Engineer | Deferred; optional future CONTROL | N/A for POC |
+| GAP-WS-007 | No automated % CONTROL | **VALIDATED LOCALLY / PENDING-GIT-CANONICALIZATION (CWC-CE-085):** ECR-005 Implemented; STD-011 v1.3.0; WSMAT-001 Active; Bill identity reconciled; first recalc; Human CERTIFIED 19/19/4; first KSB package generated+anti-drift PASS. **NOT CLOSED** — requires Human Git gates making control+package canonical on origin/main, then final matrix CLOSE edit | Soft until Git | Soft | Human Git HG-4/HG-5 then close gap | Human Engineer | CWC-CE-085 | Prior criteria + CERTIFIED maturity + Git on origin/main + matrix CLOSE |
 | GAP-WS-008 | STD-002 Reserved | Reserved; WF-001 gates Active | **NO** — MAY REMAIN HUMAN-GATED DURING POC | Deferred | Retain WF-001 HG-4/HG-5; do not invent STD-002 | Human Engineer | Deferred STD-002 activation | N/A for POC |
 | GAP-WS-009 | PUBLIC URL CONTROL | **CLOSED (CWC-CE-078):** STD-011 §28 PUBLIC URL REQUIREMENT; `PUBLIC_URL_01` = BlueprintLiberty.com | **NO** | **NO** for initial pin | Integrate PUBLIC URL REQUIREMENT into STD-011 | Human Engineer + CE-Engineer | CWC-CE-078 | STD-011 §28 Active; initial pin recorded |
 
@@ -58,7 +58,7 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 |---|---|
 | MUST CLOSE BEFORE PHONE POC | *(none remaining in gap matrix — phone POC still requires separately authorized CWC)* |
 | CLOSED (packaging / URL / title / GitHub architecture / baseline / renderer) | GAP-WS-001, GAP-WS-002, GAP-WS-003, GAP-WS-004, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-009 |
-| MAY REMAIN HUMAN-GATED DURING PHONE POC | GAP-WS-007, GAP-WS-008 |
+| MAY REMAIN HUMAN-GATED DURING PHONE POC | GAP-WS-007 (Git canonicalization for gap CLOSE), GAP-WS-008 |
 | DEFERRED PRODUCTION MATURITY ITEM | Automated %, STD-002 activation, dedicated weekly STD (Option B), recurring schedule, autonomous publication, NBEF engineering-truth LOU/SPEC |
 | SUPERSEDED / NOT ACTUALLY REQUIRED | None identified |
 

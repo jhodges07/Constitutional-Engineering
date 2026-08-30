@@ -8,10 +8,10 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
-**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation  
 **Status:** Active  
-**Version:** 1.2.1  
+**Version:** 1.3.0  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -64,7 +64,7 @@ The two package classes **SHALL NOT** silently inherit requirements that are ina
 4. Automatic publication upon HG-D1 acceptance or upon weekly package creation  
 5. Installation or download of software tooling  
 6. Autonomous social-media posting, scheduled publication, or AI self-approval  
-7. Automated Bill maturity-percentage formulas (unless a later Active CONTROL expressly authorizes them)  
+7. Automated Bill maturity-percentage formulas **except** as expressly authorized by Active **WSMAT-001 — KSB Status Maturity Measurement** under ECR-005 (CALCULATED maturity remains non-operative for weekly VARIABLE use until Human CERTIFIED KSB MATURITY for that cycle)  
 8. Legislative acceptance implied by public Bill title pins  
 
 ### 2.3 Authority Position
@@ -466,6 +466,7 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.1.0 | 2026-08-30 | ECR-004 / CWC-CE-078: adds Part B Weekly Public Engineering Status package class; PUBLIC URL REQUIREMENT; FIXED/VARIABLE and percentage rules; Bill C public title pin recognition; preserves Part A LOU rules and WF-001 Human gates. |
 | 1.2.0 | 2026-08-30 | CWC-CE-081: STATUS_DATE = yyyy.mm.ww display form; public-image exclusion of engineering metadata; template identity without public rendering; Bill A/B/C public title pins; GitHub breadcrumb / Repo terminology / acronym readability; ww algorithm remains Human-decision open. |
 | 1.2.1 | 2026-08-30 | CWC-CE-082: Human-authorized ISO-8601 week-of-year for `ww` only; `yyyy`/`mm` remain calendar components; year-boundary rule; renderer may calculate `ww`; public-image explanation prohibition preserved. |
+| 1.3.0 | 2026-08-30 | ECR-005 / CWC-CE-085: authorizes deterministic KSB maturity calculation under Active WSMAT-001; distinguishes CALCULATED vs CERTIFIED maturity; preserves Human certification; Bill identity integrity; no grandfathering of provisional percentages. |
 
 ---
 
@@ -704,10 +705,24 @@ Kansas NBEF Act
 
 ## 27. Percentage Authority
 
-1. `BILL_A_PERCENT`, `BILL_B_PERCENT`, and `BILL_C_PERCENT` are ordinary weekly VARIABLE fields.  
-2. Until a later Active CONTROL expressly authorizes deterministic calculation, percentages SHALL be **HUMAN-SUPPLIED** or **HUMAN-APPROVED**.  
-3. AI-proposed percentages are non-operative until Human approval.  
-4. This standard does not create an automatic maturity formula.
+1. `BILL_A_PERCENT`, `BILL_B_PERCENT`, and `BILL_C_PERCENT` are ordinary weekly VARIABLE fields for Weekly Public Engineering Status packages.
+
+2. When **WSMAT-001 — KSB Status Maturity Measurement** is Active:
+   1. Authorized AI evaluators SHALL produce **CALCULATED MATURITY** by applying Active WSMAT-001 to a recorded evidence snapshot.
+   2. CALCULATED MATURITY is non-operative for package VARIABLE fields until the Human Engineer issues **CERTIFIED KSB MATURITY** for that KSB Status cycle (ACCEPT or MODIFY).
+   3. REJECT returns the cycle to recalculation or Human disposition; silence is not certification.
+   4. If Human MODIFIES a value, the package/certification record SHALL retain both calculated and certified values and a brief disposition reason.
+   5. Algorithm, weighting, stage model, and gate rules SHALL NOT be silently altered; changes require controlled ECR/STD/WSMAT amendment.
+
+3. When WSMAT-001 is **not** Active, percentages SHALL be **HUMAN-SUPPLIED** or **HUMAN-APPROVED** only.
+
+4. AI/ChatGPT MAY measure and propose; AI SHALL NOT certify, satisfy Human Gates, invent evidence, bypass hard gates, or publish uncertified maturity.
+
+5. Bill identifiers used in maturity calculation SHALL match STD-011 §26 public Bill title pins and the same legislative object across LOU/SPEC/CWC/drafting/Git/publication. WSMAT-001 activation requires Bill A/B identity integrity as required by ECR-005.
+
+6. Provisional/sample percentages produced before WSMAT-001 Active (including any CWC-CE-085 provisional values) are **not grandfathered**. The first cycle under Active WSMAT-001 SHALL recalculate Bills A/B/C from zero.
+
+7. Detailed stage criteria, hard-gate ceilings, rounding (`round_half_up` of `100 × credited_stage_units / 13`), and evidence-snapshot requirements are normative in Active WSMAT-001 and are incorporated by reference.
 
 ---
 

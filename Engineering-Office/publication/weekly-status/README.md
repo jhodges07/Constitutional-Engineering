@@ -8,7 +8,7 @@
 **Predecessors:** CWC-CE-071 (PASS); CWC-CE-072 (STOP/BLOCKED — path); CWC-CE-073 (canonical workspace); CWC-CE-074 (FULL PASS — HUMAN ACCEPTED); CWC-CE-075–077 (accepted); CWC-CE-078 (STD-011 Part B)  
 **Status:** Human-Accepted Informational Architecture / Directory Note — Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 2) — remains informational; does **not** become operative CONTROL  
-**Operative Packaging CONTROL:** STD-011 Version 1.2.1 Part B (ECR-004 / CWC-CE-078; date-format / public-image — CWC-CE-081; ISO-8601 `ww` — CWC-CE-082)  
+**Operative Packaging CONTROL:** STD-011 Version 1.3.0 Part B (ECR-004 packaging; ECR-005 / WSMAT-001 maturity measurement; CWC-CE-081–085)  
 **Initial PUBLIC_URL_01:** BlueprintLiberty.com  
 **Version:** 0.3.5  
 **Effective Date:** 2026-08-30  
@@ -196,8 +196,9 @@ Only fields explicitly designated VARIABLE may change during an ordinary weekly 
 
 ### 6.4 Percentage authority
 
-No AI system (CE-Engineer, CE-GitManager, ChatGPT, Cursor, or other) is authorized by this workspace to invent legislative engineering percentages.  
-The visual/report system **consumes** percentages supplied by an authorized status source or the Human Engineer.
+Under STD-011 v1.3.0 / Active WSMAT-001, authorized AI evaluators **MEASURE AND CALCULATE** maturity; the Human Engineer **CERTIFIES** (ACCEPT / MODIFY / REJECT).  
+CALCULATED maturity is non-operative for weekly VARIABLE fields until CERTIFIED. Silence is not certification.  
+No AI system may invent evidence, bypass hard gates, or certify its own percentages.
 
 ### 6.5 Deterministic rendering direction
 
