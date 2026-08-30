@@ -91,13 +91,17 @@ class CommandResult:
     create_render_request: bool
     message: str
     package: Mapping[str, Any]
+    # CWC-CE-094 Human-product presentation contracts
+    press_release_presentation: str = ""
+    image_presentation: str = ""
+    zip_is_primary_human_product: bool = False
 
 
 class ThreeStepOrchestrator:
     """Deterministic Human-facing command interpreter."""
 
     BASELINE_ID = "BL-WEEKLY-STATUS-BASELINE-v1.0"
-    RENDERER_ID = "ksb_renderer@1.0.0-CWC-CE-084"
+    RENDERER_ID = "ksb_renderer@1.1.0-CWC-CE-094"
     FORBIDDEN_IMAGE_SUBSTITUTES = frozenset(
         {"image_gen", "dalle", "generative_infographic", "creative_status_image"}
     )
@@ -213,10 +217,13 @@ class ThreeStepOrchestrator:
             phase=pkg.phase,
             create_render_request=False,
             message=(
-                "KSB PRESS RELEASE returned (~450–550 words from same status evidence). "
+                "KSB PRESS RELEASE — deliver entire publishable text in ONE SINGLE-COPY BOX. "
                 "Stop. Await Next for controlled image."
             ),
             package=pkg.snapshot(),
+            press_release_presentation="SINGLE_COPY_BOX",
+            image_presentation="",
+            zip_is_primary_human_product=False,
         )
 
     def _image_path(
@@ -265,8 +272,15 @@ class ThreeStepOrchestrator:
                     product=Product.IMAGE,
                     phase=pkg.phase,
                     create_render_request=False,
-                    message="KSB IMAGE returned. PACKAGE COMPLETE — HUMAN REVIEW REQUIRED. Publication NOT performed.",
+                    message=(
+                        "KSB IMAGE — display controlled PNG INLINE in the ChatGPT reply. "
+                        "ZIP/Actions artifact is engineering evidence only, not the primary Human product. "
+                        "PACKAGE COMPLETE — HUMAN REVIEW REQUIRED. Publication NOT performed."
+                    ),
                     package=pkg.snapshot(),
+                    press_release_presentation="",
+                    image_presentation="INLINE_PNG",
+                    zip_is_primary_human_product=False,
                 )
             raise CommandError(f"unknown image_execution_status: {image_execution_status}")
 

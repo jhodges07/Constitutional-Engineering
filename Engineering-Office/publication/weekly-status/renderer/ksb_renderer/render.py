@@ -5,15 +5,14 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-from typing import Any, Dict, Mapping, Tuple
+from typing import Any, Dict, Mapping, Sequence, Tuple
 
-import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 from .contract import InputValidationError, NormalizedInput, validate_and_normalize
 
-RENDERER_VERSION = "1.0.0-CWC-CE-084"
+RENDERER_VERSION = "1.1.0-CWC-CE-094"
 
 EXPECTED_BASELINE_SHA256 = (
     "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9"
@@ -63,25 +62,19 @@ def _load_font(regions: Dict[str, Any], size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(str(font_path), size=size)
 
 
-def _clear_region_inpaint(rgb: np.ndarray, x: int, y: int, w: int, h: int) -> None:
-    """Deterministically clear text/ink in a region via Telea inpaint (baseline-local)."""
+def _fill_region_plate(rgb: np.ndarray, x: int, y: int, w: int, h: int, plate_rgb: Sequence[int]) -> None:
+    """Deterministically clear a variable region by solid plate fill (no inpaint).
+
+    CWC-CE-094 / ECR-012: ordinary weekly composition MUST NOT depend on Telea
+    inpaint / pixel-surgery against baked historical values in the baseline PNG.
+    """
     h_img, w_img = rgb.shape[:2]
     x0, y0 = max(0, x), max(0, y)
     x1, y1 = min(w_img, x + w), min(h_img, y + h)
-    crop = rgb[y0:y1, x0:x1]
-    if crop.size == 0:
+    if x1 <= x0 or y1 <= y0:
         return
-    # Anomaly vs median of crop luminance → ink / antialias
-    lum = crop.astype(np.float32).mean(axis=2)
-    med = float(np.median(lum))
-    mask = (np.abs(lum - med) >= 14).astype(np.uint8) * 255
-    if int(mask.sum()) == 0:
-        return
-    kernel = np.ones((2, 2), np.uint8)
-    mask = cv2.dilate(mask, kernel, iterations=1)
-    bgr = cv2.cvtColor(crop, cv2.COLOR_RGB2BGR)
-    out = cv2.inpaint(bgr, mask, inpaintRadius=3, flags=cv2.INPAINT_TELEA)
-    rgb[y0:y1, x0:x1] = cv2.cvtColor(out, cv2.COLOR_BGR2RGB)
+    color = np.array(list(plate_rgb), dtype=np.uint8)
+    rgb[y0:y1, x0:x1] = color
 
 
 def _draw_bar(
@@ -137,11 +130,19 @@ def render_ksb_status(
     rgb = np.array(base)
     v = regions["variables"]
 
-    # Clear variable text regions (runtime plates from baseline; not stored visual authority)
-    _clear_region_inpaint(rgb, **v["STATUS_DATE"]["region"])
+    # Clean variable plates (solid fill) — fresh composition; no prior-render / inpaint dependency
+    date_reg = v["STATUS_DATE"]["region"]
+    _fill_region_plate(
+        rgb,
+        date_reg["x"],
+        date_reg["y"],
+        date_reg["w"],
+        date_reg["h"],
+        v["STATUS_DATE"]["plate_rgb"],
+    )
     for bill in ("BILL_A_PERCENT", "BILL_B_PERCENT", "BILL_C_PERCENT"):
-        _clear_region_inpaint(rgb, **v[bill]["text_region"])
-        # Clear bar area to track color before redraw (deterministic rectangle restore)
+        tr = v[bill]["text_region"]
+        _fill_region_plate(rgb, tr["x"], tr["y"], tr["w"], tr["h"], v[bill]["plate_rgb"])
         bar = v[bill]["bar"]
         x, y, w, h = bar["x"], bar["y"], bar["w"], bar["h"]
         rgb[y : y + h, x : x + w] = np.array(bar["track_rgb"], dtype=np.uint8)

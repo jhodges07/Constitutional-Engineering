@@ -4,7 +4,7 @@
 **Classification:** Implementation / Engineering Note (Not Operative CONTROL)  
 **Governing Work Card:** CWC-CE-084  
 **Operative Packaging CONTROL:** STD-011 Version 1.2.1 Part B  
-**Renderer version:** 1.0.0-CWC-CE-084  
+**Renderer version:** 1.1.0-CWC-CE-094  
 
 ---
 
@@ -162,3 +162,4 @@ This CWC does not generate production packages.
 | Version | Date | Summary |
 |---|---|---|
 | 1.0.0-CWC-CE-084 | 2026-08-30 | Initial deterministic renderer + anti-drift + NON-PRODUCTION tests. |
+| 1.1.0-CWC-CE-094 | 2026-08-30 | ECR-012: solid variable plate fill replaces ordinary Telea inpaint; fresh composition; baseline file unchanged. |

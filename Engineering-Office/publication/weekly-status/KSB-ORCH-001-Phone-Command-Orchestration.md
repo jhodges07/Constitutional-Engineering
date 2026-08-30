@@ -4,26 +4,26 @@
 **Title:** KSB Phone-Command Orchestration / Baseline Continuity / Follow-Up Context  
 **Classification:** Engineering Procedure (Weekly Status Orchestration)  
 **Authority:** Constitutional Engineering Office  
-**Governing Standard:** STD-011 Part B Version 1.6.0 (operative packaging CONTROL — §36 / §36.9 / §36.10 / §36.11)  
-**Governing ECR:** ECR-007 (Implemented); ECR-008 (Implemented); **ECR-011 (Human-accepted / CWC-CE-092)**  
-**Governing Work Card:** CWC-CE-087; CWC-CE-088; **CWC-CE-092**  
+**Governing Standard:** STD-011 Part B Version 1.7.0 (operative packaging CONTROL — §36 / §36.9–§36.13)  
+**Governing ECR:** ECR-007 (Implemented); ECR-008 (Implemented); ECR-011 (Implemented); **ECR-012 (Human-accepted / CWC-CE-094)**  
+**Governing Work Card:** CWC-CE-087; CWC-CE-088; CWC-CE-092; **CWC-CE-094**  
 **Related Failure:** KSB-POC-FAIL-001; KSB-POC-FAIL-002  
-**Related Defect Disposition:** KSB-089-D01 **SUPERSEDED** by three-step contract (ECR-011)  
+**Related Defect Disposition:** KSB-089-D01 **SUPERSEDED**; KSB-HUMAN-DELIVERY-001/002 + KSB-RENDER-001 remediated under ECR-012  
 **Related Template:** KSB-PR-TMP-001  
 **Status:** Active  
-**Version:** 1.2.0  
+**Version:** 1.3.0  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Activation:** Human-accepted ECR-011 / CWC-CE-092 three-step Human command contract  
+**Activation:** Human-accepted ECR-012 / CWC-CE-094 Human-product delivery + fresh composition  
 
 ```text
-ACTIVE UNDER STD-011 v1.6.0 §36 / §36.11 / ECR-011
-THREE-STEP HUMAN COMMAND CONTRACT ACTIVE
-Prepare → STATUS | Next → PRESS RELEASE | Next → CONTROLLED IMAGE
+ACTIVE UNDER STD-011 v1.7.0 §36 / §36.11–§36.13 / ECR-012
+THREE-STEP + SINGLE-COPY PR + INLINE IMAGE
+FRESH PLATE-FILL COMPOSITION (NO ORDINARY INPAINT)
 KSB-089-D01 SUPERSEDED
 DOES NOT CHANGE CERTIFIED MATURITY
 DOES NOT PUBLISH
-DOES NOT REPLACE THE DETERMINISTIC RENDERER
+BASELINE v1.0 FILE UNCHANGED
 GIT CANONICALIZATION PENDING HUMAN GIT GATE
 ```
 
@@ -131,11 +131,17 @@ Across all steps preserve: cycle identity; status date; Bill A/B/C; certificatio
 
 While a render request exists for the active package and execution is QUEUED/IN_PROGRESS, `Next` SHALL reconcile that request and SHALL NOT create a second Issue, request ID, workflow_dispatch, or duplicate render.
 
-#### Package COMPLETE
+#### Human-product presentation (ECR-012)
 
-All three products returned → `READY FOR HUMAN REVIEW`. `Next` thereafter does **not** start a new weekly cycle (require explicit new `Prepare KSB Status`).
+| Step | Presentation |
+|---|---|
+| Prepare → STATUS | Direct reply text |
+| Next → PRESS RELEASE | **ONE SINGLE-COPY BOX** with complete publishable release |
+| Next → IMAGE | **INLINE** controlled PNG in reply; ZIP/artifact = engineering evidence only |
 
-Publication remains separately Human-controlled (NOT PERFORMED by this procedure).
+#### Fresh composition
+
+Each Command-3 image is a new deterministic PNG from baseline + clean variable plates + current variables. No ordinary inpaint. No dependency on prior weekly render output.
 
 ### 3.4 One-command semantics (historical / superseded delivery)
 
@@ -438,3 +444,4 @@ Technical ceremony remains behind this orchestration. Human certification and pu
 | 1.1.0 | 2026-08-30 | Confirmed Active under STD-011 v1.5.0 §36.9 after Human acceptance / local implementation of ECR-008 (CWC-CE-088 Bounded Continuation). |
 | 1.1.1 | 2026-08-30 | CWC-CE-088 defect remediation: Human acceptance vs infrastructure (§7.3.1); complete package required for command PASS; records KSB-POC-FAIL-002; aligns to STD-011 v1.5.1 §36.10. |
 | 1.2.0 | 2026-08-30 | ECR-011 / CWC-CE-092: three-step Human command contract; KSB-089-D01 SUPERSEDED; Prepare returns STATUS only; Next advances PR then controlled image; no-duplicate-render. |
+| 1.3.0 | 2026-08-30 | ECR-012 / CWC-CE-094: single-copy press-release box; inline controlled image; fresh plate-fill composition; ZIP not primary Human product. |

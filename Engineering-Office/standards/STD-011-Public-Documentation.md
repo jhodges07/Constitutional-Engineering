@@ -8,10 +8,10 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
-**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control; ECR-011 — KSB Three-Step Human Command Contract  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package; CWC-CE-092 — KSB Three-Step Human Command Contract  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control; ECR-011 — KSB Three-Step Human Command Contract; ECR-012 — KSB Human Product Delivery and Fresh Deterministic Image Composition  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package; CWC-CE-092 — KSB Three-Step Human Command Contract; CWC-CE-094 — KSB Human Product Delivery and Fresh Deterministic Image Composition  
 **Status:** Active  
-**Version:** 1.6.0  
+**Version:** 1.7.0  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -471,6 +471,7 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.5.0 | 2026-08-30 | ECR-008 / CWC-CE-088: `Prepare KSB Status` targets complete KSB Sunday Publication Package (controlled status + 450–550-word press release + controlled KSB image); COMPLETE/INCOMPLETE semantics; KSB-PR-TMP-001; preserves CWC-CE-087 firewalls. |
 | 1.5.1 | 2026-08-30 | CWC-CE-088 defect remediation: §36.10 Human acceptance requires complete package; diagnostics/partial infrastructure ≠ PASS (KSB-POC-FAIL-002). |
 | 1.6.0 | 2026-08-30 | ECR-011 / CWC-CE-092: three-step Human command contract (Prepare→STATUS; Next→press release; Next→controlled image); supersedes one-shot Prepare delivery; preserves Sunday package completeness and firewalls. |
+| 1.7.0 | 2026-08-30 | ECR-012 / CWC-CE-094: Command 2 single-copy press-release box; Command 3 inline controlled PNG; engineering artifact ≠ Human product; fresh plate-fill composition (no ordinary inpaint). |
 
 ---
 
@@ -892,7 +893,7 @@ Informational artifacts remain non-operative unless later Human-authorized promo
 ## 36. Phone-Command Orchestration and Follow-Up Context
 
 **Governing procedure:** Active **KSB-ORCH-001 — KSB Phone-Command Orchestration Procedure**.  
-**Governing ECR:** ECR-007; ECR-008; **ECR-011**.
+**Governing ECR:** ECR-007; ECR-008; ECR-011; **ECR-012**.
 
 ### 36.1 Human trigger
 
@@ -1083,3 +1084,29 @@ Next → CONTROLLED IMAGE
 Package continuity across steps SHALL preserve: cycle identity; status date; Bill A/B/C; certification/evidence basis; baseline ID; renderer ID; canonical SHA where applicable; render request ID once created.
 
 **KSB-089-D01:** SUPERSEDED by this three-step model (not the parked “Continue KSB Status” design).
+
+### 36.12 Human-product presentation (ECR-012 / CWC-CE-094)
+
+| Step | Human product | Presentation rule |
+|---|---|---|
+| 1 | STATUS | Displayed directly in the ChatGPT reply |
+| 2 | PRESS RELEASE | Entire publishable text in **exactly one** copyable text/code box |
+| 3 | CONTROLLED IMAGE | Controlled PNG displayed **inline** in the reply |
+
+GitHub Actions ZIP/artifact / RESULT.json / hashes remain **engineering evidence**. They SHALL NOT be the ordinary primary Human-facing substitute for the visible PNG.
+
+### 36.13 Fresh deterministic composition (ECR-012 / CWC-CE-094)
+
+Weekly controlled images SHALL be freshly composed:
+
+```text
+CONTROLLED BASELINE (appearance / anti-drift reference)
++ CLEAN VARIABLE PLATES (plate_rgb / track_rgb)
++ CURRENT CONTROLLED VARIABLES
+→ DETERMINISTIC COMPOSITOR
+→ NEW PNG
+```
+
+Ordinary weekly composition SHALL NOT depend on Telea inpaint, painting-over prior weekly ink, or the previous week’s output file. Historical placeholder raster that may exist inside the accepted baseline PNG SHALL be cleared by solid plate fill before current values are drawn.
+
+Generative image creation SHALL NOT substitute for this path.

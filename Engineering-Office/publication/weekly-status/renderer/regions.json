@@ -2,6 +2,7 @@
   "baseline_id": "BL-WEEKLY-STATUS-BASELINE-v1.0",
   "baseline_relpath": "baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png",
   "baseline_sha256": "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9",
+  "composition_note": "CWC-CE-094/ECR-012: baseline PNG may contain baked placeholder variable raster (25/35/10). Ordinary weekly composition fills variable plates with plate_rgb / track_rgb then draws current values. No Telea inpaint.",
   "canvas": { "width": 1536, "height": 912 },
   "typography": {
     "font_family_authorized": "Arial Bold (Windows arialbd.ttf)",
@@ -19,11 +20,13 @@
       "placeholder_display": "Date: 2026.08.35",
       "display_prefix": "Date: ",
       "alignment": "left",
+      "plate_rgb": [128, 173, 228],
       "region": { "x": 1280, "y": 14, "w": 250, "h": 30 },
       "text_xy": [1286, 16]
     },
     "BILL_A_PERCENT": {
       "placeholder": 25,
+      "plate_rgb": [254, 254, 254],
       "text_region": { "x": 970, "y": 448, "w": 105, "h": 40 },
       "text_right_xy": [1072, 448],
       "bar": {
@@ -34,6 +37,7 @@
     },
     "BILL_B_PERCENT": {
       "placeholder": 35,
+      "plate_rgb": [254, 254, 253],
       "text_region": { "x": 970, "y": 578, "w": 105, "h": 40 },
       "text_right_xy": [1072, 578],
       "bar": {
@@ -44,6 +48,7 @@
     },
     "BILL_C_PERCENT": {
       "placeholder": 10,
+      "plate_rgb": [255, 255, 254],
       "text_region": { "x": 970, "y": 698, "w": 105, "h": 40 },
       "text_right_xy": [1072, 698],
       "bar": {

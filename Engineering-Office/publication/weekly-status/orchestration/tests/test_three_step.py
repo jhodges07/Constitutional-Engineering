@@ -48,6 +48,8 @@ def main() -> int:
     check("first_next_press", r2.product == Product.PRESS_RELEASE)
     check("first_next_no_render", r2.create_render_request is False)
     check("first_next_phase", r2.phase == PackagePhase.PRESS_RELEASE_COMPLETE)
+    check("single_copy_box_contract", r2.press_release_presentation == "SINGLE_COPY_BOX")
+    check("pr_zip_not_primary", r2.zip_is_primary_human_product is False)
 
     # Continuity after PR
     orch.assert_continuity(
@@ -56,7 +58,7 @@ def main() -> int:
         bill_b_percent=19,
         bill_c_percent=4,
         baseline_id="BL-WEEKLY-STATUS-BASELINE-v1.0",
-        renderer_id="ksb_renderer@1.0.0-CWC-CE-084",
+        renderer_id="ksb_renderer@1.1.0-CWC-CE-094",
     )
     check("continuity_after_pr", True)
 
@@ -87,6 +89,8 @@ def main() -> int:
     check("image_complete_product", r5.product == Product.IMAGE)
     check("package_complete_phase", r5.phase == PackagePhase.PACKAGE_COMPLETE)
     check("image_complete_no_new_render", r5.create_render_request is False)
+    check("inline_png_contract", r5.image_presentation == "INLINE_PNG")
+    check("image_zip_not_primary", r5.zip_is_primary_human_product is False)
 
     # Next after complete does not start new cycle
     r6 = orch.next_command()
@@ -135,7 +139,7 @@ def main() -> int:
             bill_b_percent=19,
             bill_c_percent=4,
             baseline_id="BL-WEEKLY-STATUS-BASELINE-v1.0",
-            renderer_id="ksb_renderer@1.0.0-CWC-CE-084",
+            renderer_id="ksb_renderer@1.1.0-CWC-CE-094",
         )
         check("reject_bill_a_drift", False)
     except CommandError:
