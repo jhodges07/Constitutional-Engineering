@@ -6,7 +6,7 @@
 **Governing Work Card:** CWC-CE-076; CWC-CE-077 (Human acceptance / Git gate)  
 **Status:** Human-Accepted Informational Design Record / Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 3) — Option D accepted; remains informational  
-**Version:** 0.2.2  
+**Version:** 0.2.5  
 **Effective Date:** 2026-08-30  
 **Related ECR:** ECR-004 (Implemented under CWC-CE-078 — STD-011 Part B Active for packaging rules; package generation / phone POC / publication remain separately gated; CWC-CE-081 → STD-011 v1.2.0 date-format / public-image content; CWC-CE-082 → STD-011 v1.2.1 ISO-8601 `ww`)
 
@@ -44,7 +44,7 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 |---|---|---|---|---|---|---|---|---|
 | GAP-WS-001 | STD-011 does not govern weekly-status | **CLOSED (CWC-CE-078):** STD-011 v1.1.0 Part B Active | **NO** | **NO** (packaging CONTROL present) | Implement STD-011 Part B | Human Engineer + CE-Engineer | CWC-CE-078 | STD-011 Active text includes weekly-status package class |
 | GAP-WS-002 | No ECR/CONTROL activates weekly-status | **CLOSED (CWC-CE-078):** ECR-004 Implemented; STD-011 Part B operative for packaging rules | **NO** | Soft (Verified-Closed may remain pending) | Approve + implement ECR-004 | Human Engineer | CWC-CE-077 accept; CWC-CE-078 implement | ECR Implemented; STD-011 Part B present |
-| GAP-WS-003 | Approved visual baseline absent | `baseline/` empty | **YES — HARD** | **YES — HARD** | HE supplies approved mockup; controlled ingest | Human Engineer | Baseline ingest CWC (or combined with renderer) | File in `baseline/` + acceptance record + checksum |
+| GAP-WS-003 | Approved visual baseline absent | **CLOSED (CWC-CE-083):** Human-accepted `BL-WEEKLY-STATUS-BASELINE-v1.0` SHA-256 `17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9` | **NO** | Soft (Git remote integration may remain pending Human Git gate) | HE accept exact artifact (done) | Human Engineer | CWC-CE-083 | File in `baseline/` + acceptance record + checksum + HE acceptance |
 | GAP-WS-004 | Deterministic renderer not authorized/implemented | Packaging CONTROL exists; renderer not implemented | **YES for image half** | **YES** until implemented | Implement deterministic renderer after baseline | Human Engineer | Renderer CWC after baseline | Template renders only VARIABLE + controlled config; anti-drift PASS |
 | GAP-WS-005 | Bill C identity not controlled | **Title-pin portion CLOSED (CWC-CE-077):** FIXED public title `Kansas NBEF Act (Node-Based Educational Framework)` Human-accepted. Engineering-truth LOU/SPEC still future. | Title pin **NO** longer POC blocker | Durable engineering-truth object still open | HE pin public FIXED title (done); later LOU/SPEC for engineering truth | Human Engineer | CWC-CE-077 title pin; later NBEF LOU if needed | Written HE acceptance of FIXED Bill C title string recorded; **not** legislative enactment |
 | GAP-WS-006 | Architecture not on origin/main | **CLOSED (CWC-CE-077)** | **CLOSED** | Soft | Commit informational architecture | Human Engineer Git gate | CWC-CE-077 | `git ls-tree origin/main` lists README + WSPC-001 + WSGAP-001 + ECR-004 |
@@ -56,8 +56,8 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 
 | Classification | Gaps |
 |---|---|
-| MUST CLOSE BEFORE PHONE POC | GAP-WS-003 (baseline), GAP-WS-004 (renderer implementation) |
-| CLOSED (packaging / URL / title / GitHub architecture) | GAP-WS-001, GAP-WS-002, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-009 |
+| MUST CLOSE BEFORE PHONE POC | GAP-WS-004 (renderer implementation) |
+| CLOSED (packaging / URL / title / GitHub architecture / baseline) | GAP-WS-001, GAP-WS-002, GAP-WS-003, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-009 |
 | MAY REMAIN HUMAN-GATED DURING PHONE POC | GAP-WS-007, GAP-WS-008 |
 | DEFERRED PRODUCTION MATURITY ITEM | Automated %, STD-002 activation, dedicated weekly STD (Option B), recurring schedule, autonomous publication, NBEF engineering-truth LOU/SPEC |
 | SUPERSEDED / NOT ACTUALLY REQUIRED | None identified |
@@ -145,7 +145,29 @@ baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.acceptance.md
 
 ### 6.4 Current status
 
-**AWAITING HUMAN-SUPPLIED APPROVED MOCKUP**
+**HUMAN-ACCEPTED BASELINE — GAP-WS-003 CLOSED**
+
+Accepted path:
+
+```text
+Engineering-Office/publication/weekly-status/baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png
+```
+
+Accepted SHA-256:
+
+```text
+17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9
+```
+
+Companion record:
+
+```text
+baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.acceptance.md
+```
+
+Human Engineer accepted the exact artifact as `BL-WEEKLY-STATUS-BASELINE-v1.0` on 2026-08-30 under CWC-CE-083.  
+Git stage/commit/push of the accepted baseline package remains a separate Human Git gate unless expressly authorized.  
+**GAP-WS-004 remains OPEN** (deterministic renderer not implemented).
 
 ---
 
@@ -218,14 +240,13 @@ A successful phone POC **SHALL NOT** automatically authorize recurring weekly pr
 ## 10. Distance to First Phone POC
 
 ```text
-NOW (after CWC-CE-078)
- → HE Git gate for CWC-CE-078 STD-011 / index / pointer package
- → HE supply + accept visual baseline (GAP-WS-003)
- → Later CWC: deterministic renderer (GAP-WS-004)
+NOW (after CWC-CE-083 Human baseline acceptance)
+ → HE Git gate for accepted baseline + acceptance/control records (if not yet on origin/main)
+ → Later CWC: deterministic renderer (GAP-WS-004) — recommended CWC-CE-084
  → Later CWC: FIRST PHONE POC
 ```
 
-**Not ready to execute phone POC under CWC-CE-078.** Packaging CONTROL and PUBLIC URL REQUIREMENT are implemented; baseline + renderer remain hard prerequisites.
+**Not ready to execute phone POC.** Packaging CONTROL, PUBLIC URL REQUIREMENT, and Human-accepted visual baseline are present; **GAP-WS-004 (renderer)** remains the hard prerequisite.
 
 ---
 
@@ -238,3 +259,6 @@ NOW (after CWC-CE-078)
 | 0.2.0 | 2026-08-30 | CWC-CE-078: GAP-WS-001/002/009 CLOSED via STD-011 v1.1.0 Part B + PUBLIC URL REQUIREMENT; remaining POC blockers = baseline + renderer. |
 | 0.2.1 | 2026-08-30 | CWC-CE-081: Related ECR header residual retained as Implemented; note STD-011 v1.2.0 date-format / public-image exclusions; GAP-WS-003/004 remain OPEN; ww algorithm Human-decision open. |
 | 0.2.2 | 2026-08-30 | CWC-CE-082: ISO-8601 `ww` Human authorization recorded; ww algorithm blocker removed; GAP-WS-003/004 remain OPEN; remains Not Operative CONTROL. |
+| 0.2.3 | 2026-08-30 | CWC-CE-083: candidate baseline prepared (dev-strip crop); acceptance pending; GAP-WS-003 remains OPEN; GAP-WS-004 remains OPEN. |
+| 0.2.4 | 2026-08-30 | CWC-CE-083 Cont. #2: header parenthetical removed; candidate SHA `17F574D4…`; GAP-WS-003 remains OPEN. |
+| 0.2.5 | 2026-08-30 | CWC-CE-083: Human acceptance of SHA `17F574D4…` as `BL-WEEKLY-STATUS-BASELINE-v1.0`; **GAP-WS-003 CLOSED**; GAP-WS-004 remains OPEN. |

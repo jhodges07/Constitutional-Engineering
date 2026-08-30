@@ -10,7 +10,7 @@
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 2) — remains informational; does **not** become operative CONTROL  
 **Operative Packaging CONTROL:** STD-011 Version 1.2.1 Part B (ECR-004 / CWC-CE-078; date-format / public-image — CWC-CE-081; ISO-8601 `ww` — CWC-CE-082)  
 **Initial PUBLIC_URL_01:** BlueprintLiberty.com  
-**Version:** 0.3.2  
+**Version:** 0.3.4  
 **Effective Date:** 2026-08-30  
 **Canonical Local Repository Root:** `X:\GitHub\Constitutional-Engineering`
 
@@ -142,9 +142,9 @@ ONE APPROVED BASELINE
 = WEEKLY STATUS IMAGE
 ```
 
-- Approved baseline: stored under `baseline/` when Human-supplied.  
+- Approved / Human-accepted baseline: `baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png` (SHA-256 `17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9`).  
 - Weekly generated image: stored under `images/`.  
-- **AWAITING HUMAN-SUPPLIED APPROVED MOCKUP** — CWC-CE-073 does not fabricate a replacement mockup.
+- **CWC-CE-083:** **GAP-WS-003 CLOSED** on Human acceptance of the exact baseline artifact; **GAP-WS-004 remains OPEN** (renderer).
 
 ### 6.1 FIXED fields (ordinary weekly cycle — do not change)
 
@@ -324,3 +324,5 @@ The original `D:\` copy remains intact pending separate Human cleanup authority.
 | 0.3.0 | 2026-08-30 | CWC-CE-078: pointer to STD-011 Part B as operative packaging CONTROL; PUBLIC_URL_01 = BlueprintLiberty.com; README remains non-operative directory note. |
 | 0.3.1 | 2026-08-30 | CWC-CE-081: STATUS_DATE yyyy.mm.ww; public-image metadata exclusions; Bill A/B/C public titles; template path note; ww algorithm open. |
 | 0.3.2 | 2026-08-30 | CWC-CE-082: ISO-8601 `ww` Human authorization noted; remains Not Operative CONTROL. |
+| 0.3.3 | 2026-08-30 | CWC-CE-083: candidate baseline path noted; GAP-WS-003 remains OPEN pending HE acceptance. |
+| 0.3.4 | 2026-08-30 | CWC-CE-083: Human accepted baseline SHA `17F574D4…`; GAP-WS-003 CLOSED. |
