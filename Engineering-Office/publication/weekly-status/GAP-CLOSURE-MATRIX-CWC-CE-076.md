@@ -42,22 +42,24 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 
 | Gap ID | Description | Current state | POC blocker? | Production blocker? | Required disposition | Responsible authority | Proposed CWC/action | Closure evidence required |
 |---|---|---|---|---|---|---|---|---|
-| GAP-WS-001 | STD-011 does not govern weekly-status | True (STD-011 §2 LOU-only) | **YES** (unless HE records explicit temporary waiver) | **YES** | Approve ECR-004; implement STD-011 extension | Human Engineer + CE-Engineer under later CWC | HE accept ECR-004 → implementation CWC | STD-011 Active text includes weekly-status package class |
-| GAP-WS-002 | No ECR/CONTROL activates weekly-status | True (ECR-004 only Proposed) | **YES** (same as 001) | **YES** | Approve ECR-004 (or dedicated STD path) | Human Engineer | HE disposition on ECR-004 | ECR Status ≠ Proposed; Verified implementation recorded |
-| GAP-WS-003 | Approved visual baseline absent | `baseline/` empty | **YES — HARD** | **YES — HARD** | HE supplies approved mockup; controlled ingest | Human Engineer | Baseline ingest CWC (or section of next CWC) | File in `baseline/` + acceptance record + checksum |
-| GAP-WS-004 | Deterministic renderer not authorized/implemented | Not implemented | **YES for image half** (design OK; impl later) | **YES** until implemented | Define min renderer now; implement in later CWC | Human Engineer | Renderer implementation CWC after baseline exists | Template renders only VARIABLE fields; anti-drift PASS |
+| GAP-WS-001 | STD-011 does not govern weekly-status | **CLOSED (CWC-CE-078):** STD-011 v1.1.0 Part B Active | **NO** | **NO** (packaging CONTROL present) | Implement STD-011 Part B | Human Engineer + CE-Engineer | CWC-CE-078 | STD-011 Active text includes weekly-status package class |
+| GAP-WS-002 | No ECR/CONTROL activates weekly-status | **CLOSED (CWC-CE-078):** ECR-004 Implemented; STD-011 Part B operative for packaging rules | **NO** | Soft (Verified-Closed may remain pending) | Approve + implement ECR-004 | Human Engineer | CWC-CE-077 accept; CWC-CE-078 implement | ECR Implemented; STD-011 Part B present |
+| GAP-WS-003 | Approved visual baseline absent | `baseline/` empty | **YES — HARD** | **YES — HARD** | HE supplies approved mockup; controlled ingest | Human Engineer | Baseline ingest CWC (or combined with renderer) | File in `baseline/` + acceptance record + checksum |
+| GAP-WS-004 | Deterministic renderer not authorized/implemented | Packaging CONTROL exists; renderer not implemented | **YES for image half** | **YES** until implemented | Implement deterministic renderer after baseline | Human Engineer | Renderer CWC after baseline | Template renders only VARIABLE + controlled config; anti-drift PASS |
 | GAP-WS-005 | Bill C identity not controlled | **Title-pin portion CLOSED (CWC-CE-077):** FIXED public title `Kansas NBEF Act (Node-Based Educational Framework)` Human-accepted. Engineering-truth LOU/SPEC still future. | Title pin **NO** longer POC blocker | Durable engineering-truth object still open | HE pin public FIXED title (done); later LOU/SPEC for engineering truth | Human Engineer | CWC-CE-077 title pin; later NBEF LOU if needed | Written HE acceptance of FIXED Bill C title string recorded; **not** legislative enactment |
-| GAP-WS-006 | Architecture not on origin/main | Closed by CWC-CE-077 Git package when push succeeds | **CLOSED** after successful push | Soft | Commit CWC-CE-075/076 informational package | Human Engineer Git gate | CWC-CE-077 | `git ls-tree origin/main` lists README + WSPC-001 + WSGAP-001 + ECR-004 |
-| GAP-WS-007 | No automated % CONTROL | None; WSPC requires HE % | **NO** — MAY REMAIN HUMAN-GATED DURING POC | Deferred maturity for automation | Keep HE-supplied/approved percentages | Human Engineer | Deferred; optional future CONTROL | N/A for POC |
+| GAP-WS-006 | Architecture not on origin/main | **CLOSED (CWC-CE-077)** | **CLOSED** | Soft | Commit informational architecture | Human Engineer Git gate | CWC-CE-077 | `git ls-tree origin/main` lists README + WSPC-001 + WSGAP-001 + ECR-004 |
+| GAP-WS-007 | No automated % CONTROL | None; STD-011 / WSPC require HE % | **NO** — MAY REMAIN HUMAN-GATED DURING POC | Deferred maturity for automation | Keep HE-supplied/approved percentages | Human Engineer | Deferred; optional future CONTROL | N/A for POC |
 | GAP-WS-008 | STD-002 Reserved | Reserved; WF-001 gates Active | **NO** — MAY REMAIN HUMAN-GATED DURING POC | Deferred | Retain WF-001 HG-4/HG-5; do not invent STD-002 | Human Engineer | Deferred STD-002 activation | N/A for POC |
+| GAP-WS-009 | PUBLIC URL CONTROL | **CLOSED (CWC-CE-078):** STD-011 §28 PUBLIC URL REQUIREMENT; `PUBLIC_URL_01` = BlueprintLiberty.com | **NO** | **NO** for initial pin | Integrate PUBLIC URL REQUIREMENT into STD-011 | Human Engineer + CE-Engineer | CWC-CE-078 | STD-011 §28 Active; initial pin recorded |
 
 ### Classification summary
 
 | Classification | Gaps |
 |---|---|
-| MUST CLOSE BEFORE PHONE POC | GAP-WS-001/002 (or named HE waiver), GAP-WS-003, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-004 **implementation** (minimum renderer) |
+| MUST CLOSE BEFORE PHONE POC | GAP-WS-003 (baseline), GAP-WS-004 (renderer implementation) |
+| CLOSED (packaging / URL / title / GitHub architecture) | GAP-WS-001, GAP-WS-002, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-009 |
 | MAY REMAIN HUMAN-GATED DURING PHONE POC | GAP-WS-007, GAP-WS-008 |
-| DEFERRED PRODUCTION MATURITY ITEM | Automated %, STD-002 activation, dedicated weekly STD (Option B), recurring schedule, autonomous publication |
+| DEFERRED PRODUCTION MATURITY ITEM | Automated %, STD-002 activation, dedicated weekly STD (Option B), recurring schedule, autonomous publication, NBEF engineering-truth LOU/SPEC |
 | SUPERSEDED / NOT ACTUALLY REQUIRED | None identified |
 
 ---
@@ -216,16 +218,14 @@ A successful phone POC **SHALL NOT** automatically authorize recurring weekly pr
 ## 10. Distance to First Phone POC
 
 ```text
-NOW
- → HE Git gate: commit CWC-CE-075 informational artifacts (+ optional CWC-CE-076 design artifacts)
- → HE accept ECR-004 (or named waiver)
- → HE supply + accept visual baseline
- → HE pin Bill C FIXED title
- → Later CWC: implement STD-011 weekly rules (if not waived) + minimum renderer
- → Later CWC: FIRST PHONE POC (new number; not this CWC)
+NOW (after CWC-CE-078)
+ → HE Git gate for CWC-CE-078 STD-011 / index / pointer package
+ → HE supply + accept visual baseline (GAP-WS-003)
+ → Later CWC: deterministic renderer (GAP-WS-004)
+ → Later CWC: FIRST PHONE POC
 ```
 
-**Not ready to execute phone POC under CWC-CE-076.**
+**Not ready to execute phone POC under CWC-CE-078.** Packaging CONTROL and PUBLIC URL REQUIREMENT are implemented; baseline + renderer remain hard prerequisites.
 
 ---
 
@@ -235,3 +235,4 @@ NOW
 |---|---|---|
 | 0.1.0 | 2026-08-30 | Initial gap-closure matrix and Option D architecture under CWC-CE-076. Not operative. |
 | 0.1.1 | 2026-08-30 | CWC-CE-077: Human acceptance of Option D; Bill C PUBLIC WEEKLY-STATUS TITLE PIN; GAP-WS-005 title-pin / GAP-WS-006 closure recording. Remains Not Operative CONTROL. |
+| 0.2.0 | 2026-08-30 | CWC-CE-078: GAP-WS-001/002/009 CLOSED via STD-011 v1.1.0 Part B + PUBLIC URL REQUIREMENT; remaining POC blockers = baseline + renderer. |

@@ -20,7 +20,7 @@
 1. This document is **engineering definition only**.  
 2. It is **not** STD-011 body text, not an ECR, not a SPEC, not an LOU, and **not** operative CONTROL.  
 3. It does **not** authorize weekly production, Git advancement, Facebook posting, percentage invention, baseline alteration, or CWC-CE-076.  
-4. Promotion to operative authority requires separately Human-authorized CONTROL/SPEC/ECR (or HE-accepted equivalent) work.
+4. Promotion to operative packaging CONTROL for weekly-status occurred under ECR-004 / CWC-CE-078 via STD-011 Part B. WSPC-001 itself remains informational unless later Human-authorized promotion of this contract text occurs.
 
 **Governing public-representation rule:**
 

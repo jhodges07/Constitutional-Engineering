@@ -4,19 +4,20 @@
 **Title:** Weekly Public Engineering Status Publication Control  
 **Classification:** Engineering Change Request  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-076 — Weekly Status Authority-Gap Closure and Control Design; CWC-CE-077 — Weekly Status Architecture Git Gate and ECR-004 Control Acceptance Gate  
+**Governing Work Card:** CWC-CE-076 — Weekly Status Authority-Gap Closure and Control Design; CWC-CE-077 — Weekly Status Architecture Git Gate and ECR-004 Control Acceptance Gate; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement  
 **Related Prior Work:** CWC-CE-073 (architecture); CWC-CE-074 (ChatGPT↔GitHub↔Cursor FULL PASS); CWC-CE-075 (WSPC-001 proposed production contract; OUTCOME B)  
-**Status:** Approved  
-**Disposition:** HUMAN ACCEPTED — APPROVED FOR CONTROL IMPLEMENTATION  
-**Implementation State:** NOT YET IMPLEMENTED  
-**Operative Authority:** NONE — STD-011 not yet amended; ECR acceptance alone does not activate weekly-status CONTROL  
-**Version:** 0.2.0  
-**Effective Date:** 2026-08-30 (Human acceptance of change intent; operative packaging rules await implementation CWC)  
+**Status:** Implemented  
+**Disposition:** HUMAN ACCEPTED — IMPLEMENTED UNDER CWC-CE-078 (Verified-Closed disposition pending separate HE verification gate if required by STD-014)  
+**Implementation State:** IMPLEMENTED — STD-011 Version 1.1.0 Part B  
+**Operative Authority:** STD-011 Part B (Weekly Public Engineering Status packages) is Active packaging CONTROL; this ECR does not by itself authorize weekly package generation, phone POC, or publication  
+**Version:** 1.0.0  
+**Effective Date:** 2026-08-30  
 **Primary Category:** STD  
 **Secondary Categories:** ADM, REP, PUB  
 **Requestor:** Human Engineer  
 **Preparing Agent:** CE-Engineer  
 **Acceptance Recording Agent:** CE-GitManager  
+**Implementation Agent:** CE-Engineer  
 
 ---
 
@@ -25,13 +26,14 @@
 ```text
 HUMAN ACCEPTED
 APPROVED FOR CONTROL IMPLEMENTATION
-NOT YET IMPLEMENTED
-STD-011 NOT MODIFIED BY CWC-CE-077
+IMPLEMENTED UNDER CWC-CE-078
+STD-011 VERSION 1.1.0 PART B ACTIVE FOR WEEKLY-STATUS PACKAGING RULES
+WEEKLY PACKAGE GENERATION / PHONE POC / SOCIAL PUBLICATION NOT AUTHORIZED BY THIS ECR ALONE
 ```
 
-Human Engineer acceptance under CWC-CE-077 authorizes a **later** controlled implementation of the approved STD-011 extension.  
-This ECR remains **non-operative for packaging** until that implementation CWC is completed and verified.  
-CWC-CE-077 does **not** amend STD-011, authorize a phone POC, authorize weekly production, or authorize social-media publication.
+Human Engineer acceptance under CWC-CE-077 authorized controlled implementation.  
+CWC-CE-078 implements STD-011 Part B (including PUBLIC URL REQUIREMENT).  
+Package generation, phone POC, and social-media publication remain separately authorized.
 
 ---
 
@@ -193,17 +195,34 @@ Verification Pass requires:
 | Date | 2026-08-30 |
 | Governing Acceptance | CWC-CE-077 |
 | Acceptance Basis | Explicit Human Engineer decisions in CWC-CE-077 Decision 4 (control-change intent accepted subject to scope verification against CWC-CE-076 Option D) |
-| Implementation State | **NOT YET IMPLEMENTED** |
-| STD-011 amendment | Deferred to a separately authorized implementation CWC |
-| Phone POC / weekly production / social publication | **Not** authorized by this acceptance |
+| Implementation State | **IMPLEMENTED** under CWC-CE-078 (STD-011 Version 1.1.0 Part B) |
+| STD-011 amendment | Completed under CWC-CE-078 |
+| PUBLIC URL REQUIREMENT | Integrated (`PUBLIC_URL_01` = BlueprintLiberty.com) |
+| Phone POC / weekly production / social publication | **Not** authorized by ECR acceptance or STD-011 amendment alone |
 
 Scope verification under CWC-CE-077 confirmed ECR-004 does **not** materially exceed the CWC-CE-076 Option D boundaries (Human supremacy; public representation ≠ engineering truth; evidence → AI proposal → HE-approved status → mechanical representation; AI cannot approve itself; HE-gated percentages; WF-001 Git gates; Human-controlled publication; FIXED anti-drift; VARIABLE fields limited to STATUS_DATE / BILL_A_PERCENT / BILL_B_PERCENT / BILL_C_PERCENT; phone as trigger only; POC ≠ production; no scheduled automation; no autonomous social publication).
 
 ---
 
-## 10. Version History
+## 10. Implementation Record (CWC-CE-078)
+
+| Field | Value |
+|---|---|
+| Implementing CWC | CWC-CE-078 |
+| STD-011 ending version | 1.1.0 |
+| Part B sections | §§21–35 |
+| PUBLIC URL pin | `PUBLIC_URL_01` = BlueprintLiberty.com |
+| Bill C public title pin preserved | Kansas NBEF Act (Node-Based Educational Framework) |
+| Baseline present | NO — next hard prerequisite |
+| Renderer implemented | NO — deferred to later CWC after baseline ingest |
+| Weekly package fabricated | NO |
+
+---
+
+## 11. Version History
 
 | Version | Date | Summary |
 |---|---|---|
 | 0.1.0-PROPOSED | 2026-08-30 | Proposed under CWC-CE-076. Not operative. Awaiting Human Engineer acceptance. |
 | 0.2.0 | 2026-08-30 | CWC-CE-077: Human Engineer acceptance recorded; Status Approved; APPROVED FOR CONTROL IMPLEMENTATION; NOT YET IMPLEMENTED; STD-011 unchanged. |
+| 1.0.0 | 2026-08-30 | CWC-CE-078: STD-011 Version 1.1.0 Part B implemented; PUBLIC URL REQUIREMENT integrated; Implementation State = IMPLEMENTED; packaging CONTROL active; package generation/POC/publication remain separately gated. |

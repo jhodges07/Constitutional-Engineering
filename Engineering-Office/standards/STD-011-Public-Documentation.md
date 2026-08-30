@@ -7,37 +7,735 @@
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
-**Status:** Reserved  
-**Version:** 0.0.0  
-**Effective Date:** 2026-08-08  
+**Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement  
+**Status:** Active  
+**Version:** 1.1.0  
+**Effective Date:** 2026-08-30  
 
 ---
 
 ## 1. Purpose
 
-Govern public-facing documentation quality, disclaimers, and publication packaging rules.
+This standard governs public-facing documentation quality, disclaimers, and publication packaging rules for the Constitutional Engineering Office.
 
-This document is a Reserved placeholder in the official Engineering Office standards sequence.
+This Version establishes controlled conventions for **two distinct package classes**:
 
----
+**A. ENGINEERING DEFINITION LOU PUBLICATION PACKAGES** (Part A — §§3–20)  
 
-## 2. Reserved Status
+including Markdown authority, PDF derivative rules, location/naming, generation requirements, verification, Git/publication boundaries, and public GitHub access relationships.
 
-1. Identifier `STD-011` is allocated and shall not be reused for a different standard subject.  
-2. Normative body content is not yet authored.  
-3. Until Status becomes Active, operators shall follow WF-001/WF-002 publication gates and applicable manager publication standards.  
-4. Activation requires approved Engineering Office process and IDX-001 update.
+**B. WEEKLY PUBLIC ENGINEERING STATUS PACKAGES** (Part B — §§21–35)  
 
----
+including weekly Markdown/image pairing, baseline/anti-drift rules, FIXED/VARIABLE fields, PUBLIC URL configuration, percentage authority, Git/publication boundaries, and truth-model separation.
 
-## 3. Non-Authority Rule
+This standard does **not** publish any LOU or weekly status. Generation, Git action, and publication each require separately authorized controlled work under WF-001.
 
-This Reserved placeholder does not authorize exceptions to Active architecture, policy, standards, or workflows.
+The two package classes **SHALL NOT** silently inherit requirements that are inappropriate to the other class.
 
 ---
 
-## 4. Version History
+## 2. Scope
+
+### 2.1 In Scope
+
+**Part A — LOU packages:**
+
+1. Accepted Engineering Definition Letters of Understanding (`LOU-NNN`) under TMP-002 / README-DEF-001  
+2. Non-authoritative PDF publication derivatives of accepted LOUs  
+3. Engineering Definition LOU Publication Packages  
+4. Source ↔ derivative ↔ publication traceability for LOUs  
+5. Relationship of LOU publication packages to WF-001 Git and publication gates  
+
+**Part B — Weekly Public Engineering Status packages:**
+
+6. BlueprintLiberty Weekly Public Engineering Status packages under `Engineering-Office/publication/weekly-status/`  
+7. Weekly Markdown report / status-image pairing and manifests  
+8. Approved visual baseline and anti-drift rules  
+9. Controlled PUBLIC NAVIGATION URL configuration  
+10. Relationship of weekly-status packages to WF-001 Git and publication gates  
+
+### 2.2 Out of Scope
+
+1. Legislative publication packages governed by manager-local standards (e.g., KLS-006), unless an Active control expressly makes them applicable  
+2. Requirements/SPEC publication packages (future extension may be authorized by later ECR)  
+3. AGCL / NBBF / NBEF / CDT normative-control publication ownership  
+4. Automatic publication upon HG-D1 acceptance or upon weekly package creation  
+5. Installation or download of software tooling  
+6. Autonomous social-media posting, scheduled publication, or AI self-approval  
+7. Automated Bill maturity-percentage formulas (unless a later Active CONTROL expressly authorizes them)  
+8. Legislative acceptance implied by public Bill title pins  
+
+### 2.3 Authority Position
+
+This standard is subordinate to ARCH-001 and POL-001 and is consistent with STD-001, STD-014, STD-015, WF-001, and WF-002.  
+It does not authorize Controlled Execution, Git advancement, or publication by itself.
+
+### 2.4 Package-Class Separation
+
+1. Part A rules apply to LOU publication packages only.  
+2. Part B rules apply to Weekly Public Engineering Status packages only.  
+3. LOU Markdown remains Engineering Definition source authority.  
+4. Weekly Markdown reports are durable **public-status records**, not LOU sources and not engineering-truth sources.  
+5. Informational artifacts (WSPC-001, README-PUB-WEEKLY-001, WSGAP-001) do not become operative CONTROL by reference.
+
+---
+
+## 3. Governing Principle (Part A — LOU Packages)
+
+```text
+ACCEPTED MARKDOWN
+        ↓
+CONTROLLED ENGINEERING DEFINITION SOURCE
+        ↓
+PDF GENERATION
+        ↓
+VERIFIED PDF DERIVATIVE
+        ↓
+PUBLICATION PACKAGE
+        ↓
+CONTROLLED GIT ACTION
+        ↓
+PUBLIC GITHUB SURFACE
+```
+
+1. Accepted LOU Markdown is the controlling Engineering Definition source.  
+2. The PDF is a **non-authoritative publication derivative**.  
+3. The PDF shall not become an independently edited source of Engineering Definition.  
+4. Public GitHub presence does not create engineering authority (POL-001 / ARCH-001).  
+5. Sections 3–20 apply to **LOU packages only**, unless a clause expressly states otherwise.
+
+---
+
+## 4. Authoritative Source
+
+1. The authoritative Engineering Definition source for an LOU is the accepted Markdown artifact stored under:
+
+   `Engineering-Office/definition/`
+
+2. Filename form remains:
+
+   `LOU-NNN-Short-Title.md`
+
+3. HG-D1 acceptance is recorded in the LOU per TMP-002 / WF-001.  
+4. Substantive corrections shall be made only in the controlled Markdown source and shall flow through the applicable Engineering Definition lifecycle (and re-acceptance when required) before PDF regeneration.
+
+---
+
+## 5. PDF Derivative Status
+
+1. A PDF produced under this standard is a **publication derivative**, not an Engineering Definition source.  
+2. Readers and operators shall treat conflicts between Markdown and PDF as evidence of derivative failure.  
+3. The Markdown controls until a corrected derivative is regenerated and verified.  
+4. Manual editing of PDF content to change substantive Engineering Definition is prohibited.
+
+---
+
+## 6. PDF Location
+
+LOU PDF derivatives and package companion files shall reside under:
+
+```text
+Engineering-Office/publication/definition/LOU-NNN/
+```
+
+Examples:
+
+```text
+Engineering-Office/publication/definition/LOU-002/
+```
+
+Rules:
+
+1. Do not store authoritative LOU Markdown under `publication/`.  
+2. Do not treat files under `publication/` as Engineering Definition sources.  
+3. The `Engineering-Office/definition/` directory remains the LOU system of record.  
+4. Directory creation for a specific LOU occurs when a separately authorized package-generation CWC produces that LOU’s package (this standard defines the location; it does not itself create package contents).
+
+---
+
+## 7. PDF Filename Convention
+
+Deterministic filename form:
+
+```text
+LOU-NNN-<Short-Title-Slug>-v<Version-Slug>-HG-D1-<Acceptance-Slug>.pdf
+```
+
+Where:
+
+| Token | Rule |
+|---|---|
+| `LOU-NNN` | Exact Document ID |
+| `<Short-Title-Slug>` | Source Markdown short-title segment with spaces/unsafe characters replaced by hyphens |
+| `<Version-Slug>` | Accepted version string with spaces replaced by hyphens (example: `Draft-0.5`) |
+| `<Acceptance-Slug>` | `ACCEPTED` when HG-D1 = Accepted |
+
+Example for LOU-002 Draft 0.5:
+
+```text
+LOU-002-Constitutional-Engineering-Master-Plan-vDraft-0.5-HG-D1-ACCEPTED.pdf
+```
+
+Companion files for the same package use the same basename with suffixes:
+
+| File | Suffix |
+|---|---|
+| Publication manifest | `.publication-manifest.md` |
+| Verification record | `.verification.md` |
+
+---
+
+## 8. Version and HG-D1 Representation
+
+Every LOU PDF derivative shall identify, on a cover page or first-page header block:
+
+1. Document ID (`LOU-NNN`)  
+2. Document title  
+3. Accepted version  
+4. HG-D1 status (`ACCEPTED` / other disposition only if expressly authorized for publication)  
+5. Acceptance date when recorded on the source LOU  
+6. Controlling Markdown repository-relative path  
+7. Statement that Markdown is authoritative and PDF is a publication derivative  
+8. Statement that HG-D1 acceptance does not authorize Controlled Execution  
+
+If any required identification element is missing, verification fails.
+
+---
+
+## 9. Source Traceability
+
+A reader or auditor must be able to determine:
+
+```text
+HUMAN ENGINEER DECISION
+        ↓
+HG-D1 ACCEPTED LOU
+        ↓
+CONTROLLED MARKDOWN
+        ↓
+DERIVATIVE GENERATION
+        ↓
+PDF
+        ↓
+DERIVATIVE VERIFICATION
+        ↓
+PUBLICATION AUTHORIZATION
+        ↓
+GIT COMMIT
+        ↓
+GITHUB PUBLICATION
+```
+
+Minimum machine-readable package fields (manifest):
+
+- LOU ID  
+- Source Markdown path  
+- Source version  
+- HG-D1 status  
+- Acceptance date (if recorded)  
+- Source SHA-256  
+- PDF path  
+- PDF SHA-256  
+- Generation method / tool identity and version when available  
+- Generation datetime (UTC or local with timezone)  
+- Verification result (`Pass` / `Fail`)  
+- Governing CWC-CE for package generation  
+- Publication authorization status  
+
+---
+
+## 10. Engineering Definition LOU Publication Package
+
+An **Engineering Definition LOU Publication Package** for an accepted LOU shall contain or reference:
+
+1. Accepted Markdown source path (authoritative; remains in `definition/`)  
+2. Verified PDF derivative (under §6)  
+3. Publication manifest (§9)  
+4. Verification record (§12)  
+5. LOU ID, source version, and HG-D1 acceptance status  
+6. Explicit source/derivative relationship statement  
+
+The package may also include hash listings for all package files when required by the authorizing CWC-CE or release workflow.
+
+This standard defines the package concept. Package construction requires a separately authorized CWC-CE.
+
+---
+
+## 11. PDF Generation Method
+
+### 11.1 Required Capabilities
+
+Any authorized generation method shall:
+
+1. Be capable of reproducible generation for a fixed source revision  
+2. Preserve headings  
+3. Preserve paragraphs  
+4. Preserve lists  
+5. Preserve tables  
+6. Preserve code/preformatted blocks where present  
+7. Preserve page readability  
+8. Support required source/version/acceptance identification (§8)  
+9. Avoid substantive transformation of accepted content  
+
+### 11.2 Authorized Method Class
+
+The authorized generation method class for Engineering Definition LOU PDFs is:
+
+**Controlled Markdown → PDF conversion using a Human Engineer–authorized local toolchain**, with exact tool identity, version, and command/parameters recorded in the publication manifest.
+
+Candidate toolchain (when locally available and expressly authorized for use by the package-generation CWC-CE):
+
+1. **pandoc** Markdown-to-PDF conversion with fixed, recorded options  
+
+Other toolchains may be used only if:
+
+1. Human Engineer expressly authorizes the toolchain in the package-generation CWC-CE; **and**  
+2. The toolchain satisfies §11.1; **and**  
+3. The toolchain identity/version/parameters are recorded in the package manifest.
+
+### 11.3 Current Local Tooling Status (as of CWC-CE-066 inspection)
+
+Inspection of the controlled local environment under CWC-CE-066 found:
+
+- `pandoc`: **not found** on PATH  
+- Common Python Markdown/PDF libraries (`markdown`, `weasyprint`, `reportlab`, `fpdf`): **not available** in the inspected Python environment  
+- No Engineering Office `tools/` PDF toolchain directory present  
+
+Therefore:
+
+**PDF GENERATION TOOLING FOR PRODUCTION LOU PACKAGES IS CURRENTLY UNRESOLVED.**
+
+This standard defines the method class and verification rules. It does **not** fabricate successful local tooling.  
+A future package-generation CWC-CE must either:
+
+1. use a later-verified locally available authorized toolchain; or  
+2. obtain separate Human Engineer authorization to acquire/install a conforming toolchain under controlled process;
+
+before generating a production LOU PDF.
+
+### 11.4 Prohibitions
+
+1. Do not install or download software under a CWC that prohibits installation.  
+2. Do not generate a production LOU PDF when tooling is unresolved.  
+3. Do not claim verification Pass without actual generation and checks.
+
+---
+
+## 12. Derivative Verification
+
+### 12.1 Required Checks
+
+Before publication authorization, verification shall confirm:
+
+1. Source Markdown path and version match the HG-D1 accepted LOU  
+2. PDF filename conforms to §7  
+3. Cover/header identification conforms to §8  
+4. Source SHA-256 matches the accepted Markdown revision used for generation  
+5. PDF SHA-256 is recorded  
+6. Structural correspondence is checked for material loss, including at minimum:
+   - top-level heading inventory presence  
+   - presence of major sections required by the source  
+   - tables/lists/code blocks not silently dropped where the toolchain claims support  
+7. Sampled human-readable review of critical sections (identity metadata, acceptance record, authority boundaries)  
+8. No evidence of independent substantive PDF editing  
+
+Verification outcomes: `Pass` / `Fail` / `Not performed`.
+
+### 12.2 Failure Stop Rule
+
+If PDF generation loses, changes, truncates, reorders, or materially misrepresents source content, **verification fails and publication stops**.
+
+Failed derivatives shall not be published.  
+Remediation occurs by correcting generation parameters/toolchain or correcting the Markdown source through the applicable Engineering Definition lifecycle, then regenerating.
+
+Unperformed verification shall be labeled `Not performed` and does not authorize publication.
+
+---
+
+## 13. Public Markdown and Public PDF Models
+
+### 13.1 Public Markdown Model
+
+```text
+GitHub visitor
+        ↓
+Repository
+        ↓
+Accepted LOU Markdown in Engineering-Office/definition/
+        ↓
+Readable rendered Markdown
+```
+
+Public Markdown is the controlling Engineering Definition text as rendered by GitHub.  
+It remains subject to repository Git controls and does not by itself constitute legal enactment or Controlled Execution authorization.
+
+### 13.2 Public PDF Model
+
+```text
+GitHub visitor
+        ↓
+PDF publication derivative under Engineering-Office/publication/definition/LOU-NNN/
+        ↓
+Open / download PDF
+```
+
+Public PDF is a convenience derivative for open/download readability.  
+Public visitors shall be able to distinguish:
+
+**CONTROLLED SOURCE** (`definition/`)  
+
+from:
+
+**PUBLICATION DERIVATIVE** (`publication/definition/`).
+
+---
+
+## 14. Git and Publication Control Boundaries
+
+1. PDF generation does **not** authorize stage, commit, push, release, or publication.  
+2. Git Commit requires Human Engineer approval under WF-001 HG-4 / STD-002 (when Active) / applicable Git standards.  
+3. Git Push requires Human Engineer approval under WF-001 HG-5.  
+4. Publication requires explicit Publication Approval under WF-001 §14 after Human Acceptance of the publication package work.  
+5. HG-D1 LOU acceptance does **not** authorize package generation, Git advancement, or publication.  
+6. WF-002 release-baseline rules may apply when LOU publication is included in a certified baseline; they do not replace this standard’s derivative rules.
+
+---
+
+## 15. Human Authorization Points
+
+| Step | Authorization required |
+|---|---|
+| Accept LOU Engineering Definition | HG-D1 |
+| Generate/verify publication package | Separately approved CWC-CE |
+| Resolve/install PDF toolchain (if needed) | Separately approved Human Engineer / CWC-CE authorization |
+| Stage/commit package + source | HG-4 / explicit HE commit authorization |
+| Push to remote | HG-5 / explicit HE push authorization |
+| Publish as public package | WF-001 Publication Approval |
+
+Silence is not authorization.
+
+---
+
+## 16. Reusability
+
+This convention applies to all future accepted Engineering Definition LOUs (`LOU-NNN`), including subordinate LOUs, unless a later Active control expressly establishes a different requirement for a specific LOU class.
+
+---
+
+## 17. Disclaimers (Minimum)
+
+Publication packages and public derivatives shall not imply:
+
+1. Legal enactment  
+2. Constitutional amendment  
+3. Controlled Execution authorization  
+4. Requirements/SPEC acceptance  
+5. Implementation authorization  
+6. That PDF supersedes Markdown  
+
+---
+
+## 18. Relationship to Reserved History
+
+Identifier `STD-011` was previously Reserved (Version 0.0.0).  
+Version 1.0.0 activates normative body content for Engineering Definition LOU publication packages under ECR-003 / CWC-CE-066.  
+Version 1.1.0 adds Part B Weekly Public Engineering Status packages under ECR-004 / CWC-CE-078, including the PUBLIC URL REQUIREMENT, without weakening Part A LOU rules.
+
+Broader public-documentation topics beyond these package classes may be added by later approved ECR revision of this standard.
+
+---
+
+## 19. Nonconformance
+
+Nonconforming publication derivatives, missing verification, or independent PDF editing are engineering defects requiring corrective controlled work.  
+They shall not be treated as accepted Engineering Definition.
+
+Nonconforming weekly-status packages (anti-drift failure, unauthorized URL change, missing Human-approved percentages, missing PUBLIC URL exposure, or unpaired Markdown/image) are engineering defects.  
+They shall not be treated as authorized public weekly status and shall not be published.
+
+---
+
+## 20. Version History
 
 | Version | Date | Summary |
 |---|---|---|
 | 0.0.0 | 2026-08-08 | Reserved placeholder formally classified under CER-001 remediation / CWC-CE-033. |
+| 1.0.0 | 2026-08-09 | Activated under ECR-003 / CWC-CE-066. Establishes Engineering Definition LOU Publication Package convention: Markdown authority, PDF derivative location/naming, generation method class, tooling gap reporting, verification/failure-stop, Git/publication boundaries, and public source/derivative distinction. |
+| 1.1.0 | 2026-08-30 | ECR-004 / CWC-CE-078: adds Part B Weekly Public Engineering Status package class; PUBLIC URL REQUIREMENT; FIXED/VARIABLE and percentage rules; Bill C public title pin recognition; preserves Part A LOU rules and WF-001 Human gates. |
+
+---
+
+# PART B — WEEKLY PUBLIC ENGINEERING STATUS PACKAGES
+
+## 21. Weekly-Status Governing Principle
+
+```text
+CONTROLLED REPOSITORY EVIDENCE
+        ↓
+AI-DERIVED EVIDENCE
+        ↓
+AI-PROPOSED ASSESSMENT
+        ↓
+HUMAN-APPROVED STATUS
+        ↓
+MECHANICALLY GENERATED PUBLIC REPRESENTATION
+        ↓
+HUMAN GIT GATES (WF-001 HG-4 / HG-5)
+        ↓
+HUMAN PUBLICATION GATE (WF-001 HG-6)
+```
+
+1. A PUBLIC REPRESENTATION SHALL NOT BECOME A SOURCE OF ENGINEERING TRUTH.  
+2. ENGINEERING TRUTH SHALL FLOW FROM CONTROLLED REPOSITORY EVIDENCE INTO THE PUBLIC REPRESENTATION.  
+3. AI SHALL NOT approve itself.  
+4. Facebook, X, Substack, websites, and similar platforms are publication **destinations**, not systems of record.  
+5. WSPC-001 remains informational engineering definition unless later Human-authorized promotion occurs through controlled process.
+
+---
+
+## 22. Weekly Package Root and Naming
+
+Package root:
+
+```text
+Engineering-Office/publication/weekly-status/
+```
+
+Required pairing for an authorized weekly package:
+
+```text
+reports/YYYY-MM-DD-BlueprintLiberty-Weekly-Status.md
+images/YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png
+manifests/<corresponding-manifest>
+```
+
+Optional supporting locations: `baseline/`, `archive/`, `integration-test/` (non-production).
+
+Historical weekly reports and images **SHALL NOT** be silently overwritten.
+
+---
+
+## 23. Weekly Package Contents
+
+An authorized Weekly Public Engineering Status package shall contain or reference:
+
+1. Status manifest  
+2. Markdown weekly report  
+3. Corresponding weekly status image  
+4. Evidence references / source commit references as applicable  
+5. Human acceptance state  
+6. Git traceability (after commit)  
+7. Publication authorization state  
+
+Package construction requires a separately authorized CWC-CE. This standard defines the package class; it does not fabricate weekly packages.
+
+---
+
+## 24. Markdown Report Authority
+
+1. The Markdown weekly report is the durable weekly **public-status record**.  
+2. It is **not** an Engineering Definition LOU source.  
+3. It is **not** the authoritative source for underlying engineering truth.  
+4. It SHALL reference its corresponding image with a repository-relative Markdown image link using the same `YYYY-MM-DD`.  
+5. Minimum content targets include Status Date, Publication Week, Bill A/B/C engineering percentages, evidence references, concise public narrative, image reference, Human acceptance state, publication authorization state, PUBLIC NAVIGATION URL section, and post-commit Git SHA when available.
+
+---
+
+## 25. Image Model and Anti-Drift
+
+```text
+ONE APPROVED BASELINE
++ CONTROLLED CONFIGURATION (including PUBLIC URL set)
++ CONTROLLED VARIABLE VALUES
+= WEEKLY STATUS IMAGE
+```
+
+1. Approved visual baseline resides under `baseline/` with identifier, version, provenance, and checksum.  
+2. Ordinary weekly VARIABLE fields are limited to:
+
+   - `STATUS_DATE`  
+   - `BILL_A_PERCENT`  
+   - `BILL_B_PERCENT`  
+   - `BILL_C_PERCENT`  
+
+3. FIXED visual elements (layout, typography, colors, titles, Bill title strings, Value Stream layout, motto, and other HE-approved visuals) SHALL NOT change during an ordinary weekly cycle.  
+4. Anti-drift validation is required before package acceptance. Failure stops publication.  
+5. Deterministic rendering (SVG or HTML/CSS→PNG or repository-authorized equivalent) is the intended mature method. Generative-image text rendering SHALL NOT be the authoritative renderer for controlled text or percentages.  
+6. Baseline ingest and renderer implementation require separately authorized CWCs when not already present.
+
+---
+
+## 26. Bill Title Pins (Public FIXED Copy)
+
+Initial Human-approved public FIXED Bill C title for weekly-status display:
+
+```text
+Kansas NBEF Act (Node-Based Educational Framework)
+```
+
+1. This is a **public weekly-status title pin**, not legislative acceptance.  
+2. It does not create or accept an NBEF LOU/SPEC.  
+3. Bill A / Bill B public titles remain as HE-approved FIXED baseline copy.  
+4. Changing a Bill title pin requires Human Engineer authorization through controlled change.
+
+---
+
+## 27. Percentage Authority
+
+1. `BILL_A_PERCENT`, `BILL_B_PERCENT`, and `BILL_C_PERCENT` are ordinary weekly VARIABLE fields.  
+2. Until a later Active CONTROL expressly authorizes deterministic calculation, percentages SHALL be **HUMAN-SUPPLIED** or **HUMAN-APPROVED**.  
+3. AI-proposed percentages are non-operative until Human approval.  
+4. This standard does not create an automatic maturity formula.
+
+---
+
+## 28. PUBLIC URL REQUIREMENT
+
+Every Weekly Public Engineering Status package SHALL expose the Human-approved PUBLIC NAVIGATION URL set in **both**:
+
+1. the Markdown weekly status report; and  
+2. the corresponding public weekly status image.
+
+### 28.1 Initial PUBLIC URL PIN
+
+| Slot | Display Label | Destination Intent |
+|---|---|---|
+| `PUBLIC_URL_01` | `BlueprintLiberty.com` | Human-approved BlueprintLiberty public website |
+
+Initial authorized set contains only `PUBLIC_URL_01`. Unused slots SHALL NOT be displayed.
+
+### 28.2 Markdown URL Requirement
+
+1. The Markdown report SHALL include a clearly identifiable public navigation section (preferred heading: `Learn More / Project URLs`, or equivalent).  
+2. Each enabled PUBLIC URL SHALL appear as a usable Markdown hyperlink.  
+3. Display text for `PUBLIC_URL_01` SHALL be `BlueprintLiberty.com`.  
+4. PUBLIC NAVIGATION URLS SHALL NOT be confused with ENGINEERING EVIDENCE URLS.
+
+### 28.3 Image URL Requirement
+
+1. The weekly status image SHALL visibly display each enabled PUBLIC URL as human-readable controlled text.  
+2. For the initial baseline, `BlueprintLiberty.com` SHALL appear in the controlled visual URL/footer region.  
+3. Long GitHub URLs SHALL NOT substitute for the public project URL on the image.  
+4. Engineering evidence URLs belong in the report/manifest as appropriate, not as replacements for PUBLIC NAVIGATION URLS.
+
+### 28.4 PUBLIC NAVIGATION vs ENGINEERING EVIDENCE
+
+| Class | Purpose |
+|---|---|
+| PUBLIC NAVIGATION URLS | Human-approved project destinations for the public |
+| ENGINEERING EVIDENCE URLS | Repository commits, controlled documents, evidence references, traceability links |
+
+These classes SHALL NOT be conflated.
+
+### 28.5 URL Control / Configuration Model
+
+Candidate logical slots: `PUBLIC_URL_01`, `PUBLIC_URL_02`, `PUBLIC_URL_03`, …
+
+Minimum deterministic properties per enabled slot:
+
+| Property | Rule |
+|---|---|
+| `slot_id` | e.g. `PUBLIC_URL_01` |
+| `display_label` | Human-readable label (e.g. `BlueprintLiberty.com`) |
+| `destination_url` | Human-approved destination corresponding to the public website |
+| `order` | Display order among enabled slots |
+| `enabled` | `true` / `false` (disabled slots not displayed) |
+
+PUBLIC URL values are **controlled configuration / baseline content**, not ordinary weekly maturity variables.
+
+### 28.6 URL Authority
+
+An ordinary weekly cycle SHALL NOT invent, add, remove, rename, reorder, redirect, or substitute a PUBLIC URL.  
+Such changes require Human Engineer authorization through the applicable controlled change mechanism (ECR / CWC as required).
+
+---
+
+## 29. Weekly Git and Publication Boundaries
+
+1. Creating weekly package files does **not** authorize stage, commit, push, or publication.  
+2. Git Commit requires Human Engineer approval under WF-001 HG-4.  
+3. Git Push requires Human Engineer approval under WF-001 HG-5.  
+4. Publication requires explicit Human Publication Approval under WF-001 HG-6.  
+5. STD-002 remains Reserved unless later activated; operators follow WF-001 + POL-001 + HE Git gates.  
+6. ChatGPT ↔ GitHub ↔ Cursor interchange capability (CWC-CE-074) does **not** grant unrestricted write authority.  
+7. Automatic Facebook / X / Substack / website posting, scheduled publication, and autonomous AI publication are **not** authorized by this standard.
+
+---
+
+## 30. Weekly Human Authorization Points
+
+| Step | Authorization required |
+|---|---|
+| Trigger weekly preparation | Approved CWC-CE or explicit HE command under controlling CWC |
+| Accept evidence digest / candidate narrative / percentages | Human Engineer |
+| Accept weekly package (Markdown + image + manifest) | Human Engineer package acceptance |
+| Stage/commit weekly package | HG-4 / explicit HE commit authorization |
+| Push to remote | HG-5 / explicit HE push authorization |
+| Publish to platforms | HG-6 / explicit HE publication authorization |
+| Change PUBLIC URL set or Bill title pins | Human Engineer controlled change |
+| Change visual baseline | Human Engineer controlled baseline ingest/replacement |
+
+Silence is not authorization.
+
+---
+
+## 31. Baseline Ingest Requirement
+
+1. Controlled image packages require an HE-approved baseline under `baseline/`.  
+2. Conceptual baseline identity: `BL-WEEKLY-STATUS-BASELINE-v1.0` (exact filename per ingest CWC).  
+3. Baseline SHALL define or include controlled visual regions for:
+
+   - `BlueprintLiberty.com` (PUBLIC_URL_01 display)  
+   - `STATUS_DATE`  
+   - `BILL_A_PERCENT`  
+   - `BILL_B_PERCENT`  
+   - `BILL_C_PERCENT`  
+
+4. This standard does **not** fabricate the Human-approved mockup.  
+5. Absence of an accepted baseline is a hard prerequisite gap for controlled image production.
+
+---
+
+## 32. Deterministic Renderer Authority Position
+
+1. Sufficient packaging CONTROL now exists for a **later** CWC to implement a deterministic renderer after baseline ingest.  
+2. Minimum renderer target: approved baseline/template + approved controlled configuration + approved weekly variables → deterministic weekly image.  
+3. Preferred: SVG or HTML/CSS → PNG.  
+4. Renderer implementation is **out of scope** for CWC-CE-078 when no Human-supplied approved baseline is present.
+
+---
+
+## 33. POC vs Recurring Production
+
+1. A phone POC CWC does not authorize recurring weekly production.  
+2. A successful phone POC does not authorize scheduled automation or autonomous publication.  
+3. Recurring production requires HE-authorized standing process under this standard plus applicable CWC triggers.
+
+---
+
+## 34. Weekly-Status Disclaimers (Minimum)
+
+Weekly Public Engineering Status packages shall not imply:
+
+1. Legal enactment  
+2. Constitutional amendment  
+3. Legislative acceptance of Bill A / Bill B / Bill C / NBEF  
+4. Controlled Execution authorization  
+5. That public representation supersedes controlled repository evidence  
+6. That AI approval replaces Human Engineer approval  
+
+---
+
+## 35. Relationship to Informational Artifacts
+
+| Artifact | Role |
+|---|---|
+| WSPC-001 | Informational production-contract definition |
+| README-PUB-WEEKLY-001 | Informational architecture / directory note |
+| WSGAP-001 | Informational gap-closure / design record |
+| ECR-004 | Change authorization for Part B |
+| STD-011 Part B | Operative packaging CONTROL for weekly-status packages |
+
+Informational artifacts remain non-operative unless later Human-authorized promotion occurs through controlled process.

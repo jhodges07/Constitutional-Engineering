@@ -4,11 +4,13 @@
 **Title:** Weekly Public Engineering Status Workspace  
 **Classification:** Informational Architecture / Directory Note  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-073 (architecture); CWC-CE-075 (production-contract definition pointer); CWC-CE-077 (Human informational acceptance / Git gate)  
-**Predecessors:** CWC-CE-071 (PASS); CWC-CE-072 (STOP/BLOCKED — path); CWC-CE-073 (canonical workspace); CWC-CE-074 (FULL PASS — HUMAN ACCEPTED); CWC-CE-076 (WSGAP-001)  
+**Governing Work Card:** CWC-CE-073 (architecture); CWC-CE-075 (WSPC-001 pointer); CWC-CE-077 (Human informational acceptance / Git gate); CWC-CE-078 (STD-011 Part B implementation pointer)  
+**Predecessors:** CWC-CE-071 (PASS); CWC-CE-072 (STOP/BLOCKED — path); CWC-CE-073 (canonical workspace); CWC-CE-074 (FULL PASS — HUMAN ACCEPTED); CWC-CE-075–077 (accepted); CWC-CE-078 (STD-011 Part B)  
 **Status:** Human-Accepted Informational Architecture / Directory Note — Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 2) — remains informational; does **not** become operative CONTROL  
-**Version:** 0.2.0  
+**Operative Packaging CONTROL:** STD-011 Version 1.1.0 Part B (ECR-004 / CWC-CE-078)  
+**Initial PUBLIC_URL_01:** BlueprintLiberty.com  
+**Version:** 0.3.0  
 **Effective Date:** 2026-08-30  
 **Canonical Local Repository Root:** `X:\GitHub\Constitutional-Engineering`
 
@@ -25,7 +27,16 @@ Engineering-Office/publication/weekly-status/PRODUCTION-CONTRACT-CWC-CE-075.md
 **Document ID:** WSPC-001  
 **Classification:** Informational Engineering Definition — Proposed / Not Operative CONTROL  
 
+Operative weekly-status packaging CONTROL is **STD-011 Part B**.  
 This README remains an architecture/directory note. WSPC-001 does **not** become operative CONTROL by being referenced here.
+
+Gap-closure design record (informational):
+
+```text
+Engineering-Office/publication/weekly-status/GAP-CLOSURE-MATRIX-CWC-CE-076.md
+```
+
+**Document ID:** WSGAP-001
 
 ---
 
@@ -47,9 +58,10 @@ This document **defines architecture**. It is **not** STD-011 body text, not an 
 ## 2. Authority Boundary / No Silent Promotion
 
 1. Research, architecture, templates, mockups, manifests, and directories identified here do **not** silently become operative CONTROL.  
-2. STD-011 presently governs Engineering Definition LOU PDF publication packages under `publication/definition/LOU-NNN/`. Extension of STD-011 (or a dedicated CONTROL) to weekly-status is a **separately Human-authorized** change.  
-3. Presence of this workspace does **not** authorize staging, commit, push, Facebook posting, or public release.  
-4. A public representation (Facebook, website, etc.) is an **output/view**, not engineering truth.
+2. STD-011 Part B presently governs Weekly Public Engineering Status packaging. Extension of STD-011 beyond Active text requires separately Human-authorized ECR.  
+3. Presence of this workspace does **not** by itself authorize staging, commit, push, Facebook posting, or public release.  
+4. A public representation (Facebook, website, etc.) is an **output/view**, not engineering truth.  
+5. PUBLIC NAVIGATION URLS (initial: BlueprintLiberty.com) are controlled configuration under STD-011 §28 and are not ordinary weekly maturity variables.
 
 **Principle:**
 
@@ -294,5 +306,6 @@ The original `D:\` copy remains intact pending separate Human cleanup authority.
 | Version | Date | Summary |
 |---|---|---|
 | 0.1.0 | 2026-08-30 | Initial architecture/directory note under CWC-CE-073. Not operative CONTROL. No weekly reports/images fabricated. |
-| 0.2.0 | 2026-08-30 | CWC-CE-075: informational pointer to WSPC-001 proposed production contract. Authority class unchanged (not operative CONTROL). |
-| 0.2.0 | 2026-08-30 | CWC-CE-077: Human Engineer informational acceptance of README-PUB-WEEKLY-001 v0.2.0 recorded. Remains Not Operative CONTROL. |
+| 0.2.0 | 2026-08-30 | CWC-CE-075 pointer + CWC-CE-077 Human informational acceptance recorded. Remains Not Operative CONTROL. |
+| 0.3.0 | 2026-08-30 | CWC-CE-078: pointer to STD-011 Part B as operative packaging CONTROL; PUBLIC_URL_01 = BlueprintLiberty.com; README remains non-operative directory note. |
+| 0.3.0 | 2026-08-30 | CWC-CE-078: pointer to STD-011 Part B as operative packaging CONTROL; PUBLIC_URL_01 = BlueprintLiberty.com; README remains non-operative directory note. |

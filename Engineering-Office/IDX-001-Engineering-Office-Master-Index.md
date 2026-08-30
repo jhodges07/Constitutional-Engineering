@@ -6,9 +6,9 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001 — Constitutional Engineering Architecture  
 **Status:** Active  
-**Version:** 1.2.0  
-**Effective Date:** 2026-08-08  
-**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
+**Version:** 1.3.1  
+**Effective Date:** 2026-08-09  
+**Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption; ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control  
 
 ---
 
@@ -162,7 +162,7 @@ CWC-CE remains Controlled Execution authorization.
 | STD-008 | Legislative Lifecycle | Engineering Standard | Active | Constitutional Engineering Office |
 | STD-009 | Charter Authoring | Engineering Standard | Reserved | Constitutional Engineering Office |
 | STD-010 | Budget Authoring | Engineering Standard | Reserved | Constitutional Engineering Office |
-| STD-011 | Public Documentation | Engineering Standard | Reserved | Constitutional Engineering Office |
+| STD-011 | Public Documentation | Engineering Standard | Active | Constitutional Engineering Office |
 | STD-012 | Template Standards | Engineering Standard | Reserved | Constitutional Engineering Office |
 | STD-013 | Audit Requirements | Engineering Standard | Reserved | Constitutional Engineering Office |
 | STD-014 | Engineering Change Management | Engineering Standard | Active | Constitutional Engineering Office |
@@ -175,7 +175,7 @@ CWC-CE remains Controlled Execution authorization.
 - `Active` = populated governing standard content exists  
 - `Reserved` = identifier and filename exist in the official sequence; body content not yet authored  
 
-Official standards sequence is maintained under STD-014 and ECR-001 history through STD-013, extended by later approved standard creations STD-014 and STD-015.
+Official standards sequence is maintained under STD-014 and ECR-001 history through STD-013, extended by later approved standard creations STD-014 and STD-015, and by ECR-003 activation of STD-011.
 
 ---
 
@@ -228,6 +228,8 @@ Official standards sequence is maintained under STD-014 and ECR-001 history thro
 5. Storage: `Engineering-Office/definition/`  
 6. Template: TMP-002  
 7. Directory note: `Engineering-Office/definition/README.md`  
+8. Publication derivatives (PDF packages): governed by STD-011 Part A; stored under `Engineering-Office/publication/definition/LOU-NNN/` (non-authoritative)  
+9. Weekly Public Engineering Status packages: governed by STD-011 Part B; stored under `Engineering-Office/publication/weekly-status/` (public-status records / controlled images; not LOU sources)  
 
 ### 7B.3 Authority Position
 
@@ -450,6 +452,8 @@ Relationship rules:
 8. ECR is required only for controlled changes under STD-014.  
 9. CER records implementation under STD-015.  
 10. `Engineering-Office/definition/` stores LOU instances.  
+11. `Engineering-Office/publication/definition/LOU-NNN/` stores non-authoritative LOU PDF publication packages under STD-011 Part A.  
+12. `Engineering-Office/publication/weekly-status/` stores Weekly Public Engineering Status packages under STD-011 Part B (Markdown/image/manifest/baseline surfaces).  
 
 ---
 
@@ -487,7 +491,9 @@ Future types become active only through approved Engineering Office process and 
 | STD-001 | Engineering Workflow | Active |
 | STD-002 through STD-007 | Reserved standards in official sequence | Reserved |
 | STD-008 | Legislative Lifecycle | Active |
-| STD-009 through STD-013 | Reserved standards in official sequence | Reserved |
+| STD-009 through STD-010 | Reserved standards in official sequence | Reserved |
+| STD-011 | Public Documentation (Part A: LOU Publication Packages; Part B: Weekly Public Engineering Status Packages) | Active |
+| STD-012 through STD-013 | Reserved standards in official sequence | Reserved |
 | STD-014 | Engineering Change Management | Active |
 | STD-015 | Constitutional Engineering Reports | Active |
 | WF-001 | Engineering Office Operating Workflow | Active |
@@ -499,6 +505,8 @@ Future types become active only through approved Engineering Office process and 
 | SPEC series | Structured Requirements reuse under STD-001 | Active convention |
 | ECR-001 | Standard Numbering Resolution | Complete |
 | ECR-002 | Engineering Definition / LOU Controlled Adoption | Implemented (verification pending independent audit) |
+| ECR-003 | Engineering Definition LOU Publication-Package Control | Closed (Verified-Closed under CWC-CE-067) |
+| ECR-004 | Weekly Public Engineering Status Publication Control | Implemented under CWC-CE-078 (STD-011 v1.1.0 Part B; Verified-Closed disposition may remain pending HE verification gate) |
 | CER-001 | Pre-Push Engineering Audit | Submitted |
 | CER-002 | Release Readiness Remediation | Submitted |
 
@@ -520,6 +528,9 @@ Future types become active only through approved Engineering Office process and 
 | 1.0.0 | 2026-08-08 | Initial Engineering Office Master Index establishing the authoritative governing-document catalog. |
 | 1.1.0 | 2026-08-08 | CER-001 remediation: catalog ARCH-002/003/004, TMP-001, WF-002, CER-001/CER-002; correct TMP series posture; mark CDT reserved/empty; expand baseline listing. |
 | 1.2.0 | 2026-08-08 | ECR-002 / CWC-CE-054: catalog LOU convention, TMP-002, definition/ surface, SPEC Requirements reuse; dual-phase hierarchy. |
+| 1.3.0 | 2026-08-09 | ECR-003 / CWC-CE-066: activate STD-011 Public Documentation for Engineering Definition LOU Publication Packages; catalog publication/definition/LOU-NNN derivative surface. |
+| 1.3.1 | 2026-08-09 | CWC-CE-067: ECR-003 disposition updated to Closed (Verified-Closed). |
+| 1.4.0 | 2026-08-30 | ECR-004 / CWC-CE-078: catalog STD-011 Part B Weekly Public Engineering Status packages; `publication/weekly-status/`; PUBLIC URL REQUIREMENT; ECR-004 Implemented. |
 
 ---
 
