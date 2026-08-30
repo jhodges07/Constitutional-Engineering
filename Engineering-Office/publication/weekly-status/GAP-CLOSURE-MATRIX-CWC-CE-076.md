@@ -6,7 +6,7 @@
 **Governing Work Card:** CWC-CE-076; CWC-CE-077 (Human acceptance / Git gate)  
 **Status:** Human-Accepted Informational Design Record / Not Operative CONTROL  
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 3) — Option D accepted; remains informational  
-**Version:** 0.2.6  
+**Version:** 0.2.7  
 **Effective Date:** 2026-08-30  
 **Related ECR:** ECR-004 (Implemented under CWC-CE-078 — STD-011 Part B Active for packaging rules; package generation / phone POC / publication remain separately gated; CWC-CE-081 → STD-011 v1.2.0 date-format / public-image content; CWC-CE-082 → STD-011 v1.2.1 ISO-8601 `ww`)
 
@@ -48,7 +48,7 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 | GAP-WS-004 | Deterministic renderer not authorized/implemented | **CLOSED (CWC-CE-084):** deterministic renderer + anti-drift validator implemented and locally validated under `publication/weekly-status/renderer/` | **NO** | Soft (Git remote integration may remain pending Human Git gate) | Implement deterministic renderer after baseline | Human Engineer + CE-Engineer | CWC-CE-084 | Template/baseline renders only VARIABLE + controlled config; anti-drift PASS; tests PASS |
 | GAP-WS-005 | Bill C identity not controlled | **Title-pin portion CLOSED (CWC-CE-077):** FIXED public title `Kansas NBEF Act (Node-Based Educational Framework)` Human-accepted. Engineering-truth LOU/SPEC still future. | Title pin **NO** longer POC blocker | Durable engineering-truth object still open | HE pin public FIXED title (done); later LOU/SPEC for engineering truth | Human Engineer | CWC-CE-077 title pin; later NBEF LOU if needed | Written HE acceptance of FIXED Bill C title string recorded; **not** legislative enactment |
 | GAP-WS-006 | Architecture not on origin/main | **CLOSED (CWC-CE-077)** | **CLOSED** | Soft | Commit informational architecture | Human Engineer Git gate | CWC-CE-077 | `git ls-tree origin/main` lists README + WSPC-001 + WSGAP-001 + ECR-004 |
-| GAP-WS-007 | No automated % CONTROL | **VALIDATED LOCALLY / PENDING-GIT-CANONICALIZATION (CWC-CE-085):** ECR-005 Implemented; STD-011 v1.3.0; WSMAT-001 Active; Bill identity reconciled; first recalc; Human CERTIFIED 19/19/4; first KSB package generated+anti-drift PASS. **NOT CLOSED** — requires Human Git gates making control+package canonical on origin/main, then final matrix CLOSE edit | Soft until Git | Soft | Human Git HG-4/HG-5 then close gap | Human Engineer | CWC-CE-085 | Prior criteria + CERTIFIED maturity + Git on origin/main + matrix CLOSE |
+| GAP-WS-007 | No automated % CONTROL | **CLOSED (CWC-CE-085):** ECR-005 Implemented; STD-011 v1.3.0; WSMAT-001 Active v1.0.0; Bill A/B identity reconciled (LOU-001 Draft 0.3); first authoritative recalculation; Human CERTIFIED 19/19/4; first KSB package anti-drift PASS; canonical on origin/main commit `6268e2294b3126fe2affac0cb2effddcec11aabc` (2026-08-30) | **NO** | Soft (ongoing recalculation cycles remain Human-certified) | Close after Git canonicalization | Human Engineer | CWC-CE-085 | Prior criteria + CERTIFIED maturity + Git on origin/main + matrix CLOSE |
 | GAP-WS-008 | STD-002 Reserved | Reserved; WF-001 gates Active | **NO** — MAY REMAIN HUMAN-GATED DURING POC | Deferred | Retain WF-001 HG-4/HG-5; do not invent STD-002 | Human Engineer | Deferred STD-002 activation | N/A for POC |
 | GAP-WS-009 | PUBLIC URL CONTROL | **CLOSED (CWC-CE-078):** STD-011 §28 PUBLIC URL REQUIREMENT; `PUBLIC_URL_01` = BlueprintLiberty.com | **NO** | **NO** for initial pin | Integrate PUBLIC URL REQUIREMENT into STD-011 | Human Engineer + CE-Engineer | CWC-CE-078 | STD-011 §28 Active; initial pin recorded |
 
@@ -57,8 +57,8 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 | Classification | Gaps |
 |---|---|
 | MUST CLOSE BEFORE PHONE POC | *(none remaining in gap matrix — phone POC still requires separately authorized CWC)* |
-| CLOSED (packaging / URL / title / GitHub architecture / baseline / renderer) | GAP-WS-001, GAP-WS-002, GAP-WS-003, GAP-WS-004, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-009 |
-| MAY REMAIN HUMAN-GATED DURING PHONE POC | GAP-WS-007 (Git canonicalization for gap CLOSE), GAP-WS-008 |
+| CLOSED (packaging / URL / title / GitHub architecture / baseline / renderer / maturity CONTROL) | GAP-WS-001, GAP-WS-002, GAP-WS-003, GAP-WS-004, GAP-WS-005 (title pin), GAP-WS-006, GAP-WS-007, GAP-WS-009 |
+| MAY REMAIN HUMAN-GATED DURING PHONE POC | GAP-WS-008 |
 | DEFERRED PRODUCTION MATURITY ITEM | Automated %, STD-002 activation, dedicated weekly STD (Option B), recurring schedule, autonomous publication, NBEF engineering-truth LOU/SPEC |
 | SUPERSEDED / NOT ACTUALLY REQUIRED | None identified |
 
@@ -66,9 +66,9 @@ maps to HE trigger → evidence → AI proposal → HE approval → mechanical r
 
 ## 3. Percentage Authority Decision
 
-**POC:** HE-SUPPLIED / HE-APPROVED percentages only.  
-**Automated calculation:** DEFERRED PRODUCTION MATURITY ITEM.  
-Do **not** create an operative maturity formula under CWC-CE-076.
+**Active CONTROL (after CWC-CE-085 / ECR-005):** CALCULATED maturity under **WSMAT-001** may be produced; weekly VARIABLE use requires **Human CERTIFIED KSB MATURITY** for that cycle.  
+**GAP-WS-007:** **CLOSED** after Git canonicalization of ECR-005 / STD-011 v1.3.0 / WSMAT-001 / first certified KSB package.  
+Do **not** treat certification as LOU acceptance, HG-D1 passage, or publication authorization.
 
 ---
 
@@ -215,7 +215,7 @@ Before the first phone test CWC may be authorized, close or expressly waive:
 4. GAP-WS-005 — FIXED Bill C title pin  
 5. GAP-WS-004 — minimum deterministic render path implemented and verified once  
 
-May remain Human-gated: GAP-WS-007, GAP-WS-008.
+May remain Human-gated: GAP-WS-008.
 
 ### Intended phone path (not authorized by this CWC)
 
@@ -262,3 +262,4 @@ NOW (after CWC-CE-084 local renderer validation)
 | 0.2.4 | 2026-08-30 | CWC-CE-083 Cont. #2: header parenthetical removed; candidate SHA `17F574D4…`; GAP-WS-003 remains OPEN. |
 | 0.2.5 | 2026-08-30 | CWC-CE-083: Human acceptance of SHA `17F574D4…` as `BL-WEEKLY-STATUS-BASELINE-v1.0`; **GAP-WS-003 CLOSED**; GAP-WS-004 remains OPEN. |
 | 0.2.6 | 2026-08-30 | CWC-CE-084: deterministic renderer + anti-drift validated locally; **GAP-WS-004 CLOSED** (Git gate separate). |
+| 0.2.7 | 2026-08-30 | CWC-CE-085 Git gate: first KSB package + maturity CONTROL canonical on origin/main `6268e22…`; **GAP-WS-007 CLOSED**. |
