@@ -1,0 +1,298 @@
+# BlueprintLiberty Weekly Public Engineering Status — Workspace
+
+**Document ID:** README-PUB-WEEKLY-001  
+**Title:** Weekly Public Engineering Status Workspace  
+**Classification:** Informational Architecture / Directory Note  
+**Authority:** Constitutional Engineering Office  
+**Governing Work Card:** CWC-CE-073 (architecture); CWC-CE-075 (production-contract definition pointer); CWC-CE-077 (Human informational acceptance / Git gate)  
+**Predecessors:** CWC-CE-071 (PASS); CWC-CE-072 (STOP/BLOCKED — path); CWC-CE-073 (canonical workspace); CWC-CE-074 (FULL PASS — HUMAN ACCEPTED); CWC-CE-076 (WSGAP-001)  
+**Status:** Human-Accepted Informational Architecture / Directory Note — Not Operative CONTROL  
+**Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 2) — remains informational; does **not** become operative CONTROL  
+**Version:** 0.2.0  
+**Effective Date:** 2026-08-30  
+**Canonical Local Repository Root:** `X:\GitHub\Constitutional-Engineering`
+
+---
+
+## 0. Production Contract Pointer (Informational)
+
+Proposed Weekly Status Production Contract (CWC-CE-075):
+
+```text
+Engineering-Office/publication/weekly-status/PRODUCTION-CONTRACT-CWC-CE-075.md
+```
+
+**Document ID:** WSPC-001  
+**Classification:** Informational Engineering Definition — Proposed / Not Operative CONTROL  
+
+This README remains an architecture/directory note. WSPC-001 does **not** become operative CONTROL by being referenced here.
+
+---
+
+## 1. Purpose
+
+Establish the controlled local foundation for a repeatable **BlueprintLiberty.com Weekly Public Engineering Status** product.
+
+Intended weekly pairing:
+
+- one Markdown status report; and
+- one corresponding status image;
+
+with permanent historical retention in Git.
+
+This document **defines architecture**. It is **not** STD-011 body text, not an ECR, not a SPEC, and not publication authorization.
+
+---
+
+## 2. Authority Boundary / No Silent Promotion
+
+1. Research, architecture, templates, mockups, manifests, and directories identified here do **not** silently become operative CONTROL.  
+2. STD-011 presently governs Engineering Definition LOU PDF publication packages under `publication/definition/LOU-NNN/`. Extension of STD-011 (or a dedicated CONTROL) to weekly-status is a **separately Human-authorized** change.  
+3. Presence of this workspace does **not** authorize staging, commit, push, Facebook posting, or public release.  
+4. A public representation (Facebook, website, etc.) is an **output/view**, not engineering truth.
+
+**Principle:**
+
+> A PUBLIC REPRESENTATION SHALL NOT BECOME A SOURCE OF ENGINEERING TRUTH.  
+> ENGINEERING TRUTH SHALL FLOW FROM CONTROLLED REPOSITORY EVIDENCE INTO THE PUBLIC REPRESENTATION.
+
+---
+
+## 3. Directory Structure
+
+```text
+Engineering-Office/publication/weekly-status/
+  README.md          ← this architecture note
+  baseline/          ← approved visual baseline / mockup (Human-supplied)
+  manifests/         ← weekly or package manifests (when authorized)
+  reports/           ← durable weekly Markdown status records
+  images/            ← weekly rendered status images
+  archive/           ← optional long-term archive placements when authorized
+```
+
+Empty subdirectories are established as logical locations. Production weekly reports/images are **not** fabricated under CWC-CE-073.
+
+---
+
+## 4. Naming Standard (Proposed)
+
+### 4.1 Markdown report
+
+```text
+reports/YYYY-MM-DD-BlueprintLiberty-Weekly-Status.md
+```
+
+### 4.2 Status image
+
+```text
+images/YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png
+```
+
+### 4.3 Report ↔ image reference (conceptual)
+
+```markdown
+![BlueprintLiberty Weekly Engineering Status](../images/YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png)
+```
+
+Use the same `YYYY-MM-DD` in both filenames for a given week.  
+Historical weekly reports **SHALL NOT** be silently overwritten when a later week is produced.
+
+---
+
+## 5. Weekly Markdown Record — Required Content (Target)
+
+Each weekly Markdown status report should eventually contain at least:
+
+| Field | Role |
+|---|---|
+| Status Date | Variable (`STATUS_DATE`) |
+| Publication Week | Durable week identity |
+| Bill A Engineering Percentage | Variable (`BILL_A_PERCENT`) — Human/authorized source only |
+| Bill B Engineering Percentage | Variable (`BILL_B_PERCENT`) — Human/authorized source only |
+| Bill C Engineering Percentage | Variable (`BILL_C_PERCENT`) — Human/authorized source only |
+| Repository / status evidence references | Traceability to controlled evidence |
+| Concise public status narrative | Public-facing summary |
+| Corresponding image reference | Relative Markdown image link |
+| Human acceptance state | Acceptance / pending |
+| Publication authorization state | Authorized / not authorized |
+| Publication destinations (when known) | Facebook / other — destinations only |
+| Git commit SHA after controlled publication commit | Post-commit traceability |
+
+The Markdown file is the durable weekly public-status record. Platforms are destinations, not the system of record.
+
+---
+
+## 6. Controlled Image Model
+
+```text
+ONE APPROVED BASELINE
++ CONTROLLED VARIABLE VALUES
+= WEEKLY STATUS IMAGE
+```
+
+- Approved baseline: stored under `baseline/` when Human-supplied.  
+- Weekly generated image: stored under `images/`.  
+- **AWAITING HUMAN-SUPPLIED APPROVED MOCKUP** — CWC-CE-073 does not fabricate a replacement mockup.
+
+### 6.1 FIXED fields (ordinary weekly cycle — do not change)
+
+Unless later changed by Human-authorized controlled change:
+
+- image dimensions / aspect ratio  
+- overall layout  
+- title  
+- section positions  
+- typography specification  
+- approved colors  
+- icons / icon specification  
+- Value Stream layout  
+- repository names and descriptions  
+- Bill A / Bill B / Bill C titles  
+- BlueprintLiberty.com spelling and placement  
+- approved motto  
+- fixed explanatory text  
+- other Human-approved visual elements  
+
+### 6.2 VARIABLE fields (initially authorized candidates only)
+
+- `STATUS_DATE`  
+- `BILL_A_PERCENT`  
+- `BILL_B_PERCENT`  
+- `BILL_C_PERCENT`  
+
+Expansion of VARIABLE fields requires controlled Human authorization.
+
+### 6.3 Anti-drift rule
+
+A Weekly Public Engineering Status artifact **SHALL NOT** redesign, reinterpret, restyle, add, remove, reposition, rename, or silently modify a FIXED visual element.  
+Only fields explicitly designated VARIABLE may change during an ordinary weekly status cycle.
+
+### 6.4 Percentage authority
+
+No AI system (CE-Engineer, CE-GitManager, ChatGPT, Cursor, or other) is authorized by this workspace to invent legislative engineering percentages.  
+The visual/report system **consumes** percentages supplied by an authorized status source or the Human Engineer.
+
+### 6.5 Deterministic rendering direction
+
+Mature system **SHOULD NOT** depend on generative-image text rendering for controlled text or percentages.  
+Intended support: SVG, HTML/CSS→image, or another repository-authorized deterministic format with placeholders such as:
+
+```text
+{{STATUS_DATE}}
+{{BILL_A_PERCENT}}
+{{BILL_B_PERCENT}}
+{{BILL_C_PERCENT}}
+```
+
+Renderer implementation is **out of scope** for CWC-CE-073.
+
+---
+
+## 7. ChatGPT / Cursor / GitHub Operating Model (Architecture Target)
+
+```text
+CURSOR AI
+    ↕
+LOCAL WORKING REPOSITORIES
+X:\GitHub
+    ↕
+GITHUB
+    ↕
+CHATGPT
+    ↕
+HUMAN ENGINEER
+```
+
+- GitHub is the shared controlled interchange between ChatGPT and Cursor.  
+- ChatGPT is **not** assumed to have direct filesystem access to `X:\GitHub`.  
+- ChatGPT GitHub access requires separate capability testing and Human authorization before production reliance.
+
+Desired future capability sequence:
+
+1. ChatGPT reads authorized GitHub repositories.  
+2. ChatGPT evaluates repository evidence for weekly status.  
+3. Controlled percentages come from authorized evidence or Human acceptance.  
+4. ChatGPT drafts the weekly Markdown report.  
+5. Controlled image template receives approved variable values.  
+6. Markdown + image are written to this workspace through an authorized GitHub/local workflow.  
+7. Human Engineer reviews.  
+8. Human Engineer authorizes publication.  
+9. Human Engineer publishes to Facebook / other platforms.  
+10. GitHub retains the historical weekly record.
+
+---
+
+## 8. Sunday Operating Model (Architecture Target — Not Scheduled)
+
+```text
+SUNDAY
+→ Read repository status
+→ Reconcile controlled evidence
+→ Determine candidate Bill A/B/C maturity
+→ Human acceptance of percentages
+→ Generate weekly Markdown status
+→ Render weekly image from approved baseline
+→ Validate fixed text/layout
+→ Human publication review
+→ Commit/push controlled weekly package (when separately authorized)
+→ Human publishes to Facebook/other platforms
+→ Archive remains permanently addressable in GitHub
+```
+
+CWC-CE-073 does **not** schedule automation and does **not** publish.
+
+---
+
+## 9. Future Automation Boundaries
+
+Automation **MAY** eventually (under later Human-authorized CONTROL):
+
+- collect repository evidence;  
+- identify changes since previous Sunday;  
+- draft status narrative;  
+- calculate candidate maturity when a future CONTROL authorizes calculation;  
+- populate approved percentages;  
+- render deterministic image;  
+- create Markdown;  
+- validate filenames / BlueprintLiberty.com spelling / image↔report pairing;  
+- prepare Git changes;  
+- present the package for Human acceptance.  
+
+Automation **SHALL NOT** silently:
+
+- change engineering truth;  
+- approve itself;  
+- publish itself;  
+- invent percentages;  
+- alter the fixed visual baseline; or  
+- bypass Human publication authority.
+
+---
+
+## 10. Platforms
+
+Facebook, X, Substack, websites, and similar are **publication destinations**.  
+The Git-controlled weekly status package remains the traceable historical record.
+
+---
+
+## 11. Canonical Workspace Note
+
+Canonical local GitHub workspace for this repository:
+
+```text
+X:\GitHub\Constitutional-Engineering
+```
+
+Established under CWC-CE-073 by preservation-safe copy from `D:\Constitutional-Engineering`.  
+The original `D:\` copy remains intact pending separate Human cleanup authority.
+
+---
+
+## 12. Version History
+
+| Version | Date | Summary |
+|---|---|---|
+| 0.1.0 | 2026-08-30 | Initial architecture/directory note under CWC-CE-073. Not operative CONTROL. No weekly reports/images fabricated. |
+| 0.2.0 | 2026-08-30 | CWC-CE-075: informational pointer to WSPC-001 proposed production contract. Authority class unchanged (not operative CONTROL). |
+| 0.2.0 | 2026-08-30 | CWC-CE-077: Human Engineer informational acceptance of README-PUB-WEEKLY-001 v0.2.0 recorded. Remains Not Operative CONTROL. |
