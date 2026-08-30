@@ -11,10 +11,10 @@
 **Related Defect Disposition:** KSB-089-D01 **SUPERSEDED**; KSB-HUMAN-DELIVERY-001/002 remediated under ECR-012; **KSB-RENDER-002** remediating under ECR-014 (clean master); CWC-CE-096 Human visual **REJECTED**  
 **Related Template:** KSB-PR-TMP-001  
 **Status:** Active  
-**Version:** 1.5.1  
+**Version:** 1.5.2  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Activation:** Human-accepted ECR-014 / CWC-CE-097; CWC-CE-098 canonicalization; **CWC-CE-099 baseline_id contract clarification**  
+**Activation:** Human-accepted ECR-014 / CWC-CE-097; CWC-CE-098 canonicalization; CWC-CE-099 baseline_id contract; **CWC-CE-102 fence-safe Issue body construction (KSB-RENDER-004)**  
 
 ```text
 ACTIVE UNDER STD-011 v1.9.0 §36 / §36.11–§36.15 / ECR-014
@@ -23,6 +23,7 @@ CLEAN MASTER + DYNAMIC CENTER PANEL
 CANDIDATE: ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
 Issue baseline_id = BL-WEEKLY-STATUS-BASELINE-v1.0 (HISTORICAL)
 Clean master ≠ baseline_id (CWC-CE-099 / KSB-RENDER-003)
+Fence-safe Issue body (CWC-CE-102 / KSB-RENDER-004)
 DOES NOT CHANGE CERTIFIED MATURITY
 DOES NOT PUBLISH
 ```
@@ -419,6 +420,24 @@ Technical ceremony remains behind this orchestration. Human certification and pu
 
 ---
 
+## 13.5 Fence-safe hosted render Issue construction (CWC-CE-102 / KSB-RENDER-004)
+
+Issue #7 / KSB-RENDER-2026-08-30-006 failed because PowerShell treated backticks as escapes when assembling the Issue body, collapsing the required opening fence ```ksb-render-request to a single backtick. The gate never reached baseline_id validation.
+
+**SHALL:**
+
+1. Write request JSON to a UTF-8 file (no markdown fences in shell-interpolated strings).  
+2. Build the Issue body with `issue-bridge/scripts/write_ksb_issue_body.py` (uses Python `BODY_FENCE_*` constants / `build_issue_body`).  
+3. Require pre-submission: fence parse PASS + JSON PASS + envelope PASS (`--allowed-sha`).  
+4. Create the Issue only via `gh issue create … --body-file <path>` (never interpolate fences through `--body` / `python -c` under PowerShell).  
+5. Read back the created Issue body and re-parse before trusting workflow execution.
+
+**SHALL NOT:** embed triple-backtick fences in PowerShell double-quoted or `python -c` strings; weaken the gate parser to accept single-backtick fences; reopen Issue #7.
+
+Authoritative procedure: `issue-bridge/FENCE-SAFE-HOSTED-REQUEST-PROCEDURE.md`.
+
+---
+
 ## 14. Operator return states (minimum)
 
 | State | Meaning |
@@ -446,3 +465,5 @@ Technical ceremony remains behind this orchestration. Human certification and pu
 | 1.1.1 | 2026-08-30 | CWC-CE-088 defect remediation: Human acceptance vs infrastructure (§7.3.1); complete package required for command PASS; records KSB-POC-FAIL-002; aligns to STD-011 v1.5.1 §36.10. |
 | 1.2.0 | 2026-08-30 | ECR-011 / CWC-CE-092: three-step Human command contract; KSB-089-D01 SUPERSEDED; Prepare returns STATUS only; Next advances PR then controlled image; no-duplicate-render. |
 | 1.3.0 | 2026-08-30 | ECR-012 / CWC-CE-094: single-copy press-release box; inline controlled image; fresh plate-fill composition; ZIP not primary Human product. |
+| 1.5.1 | 2026-08-30 | CWC-CE-099: baseline_id = historical BL-WEEKLY-STATUS-BASELINE-v1.0; clean master not Issue baseline_id (KSB-RENDER-003). |
+| 1.5.2 | 2026-08-30 | CWC-CE-102: fence-safe hosted Issue body construction; pre-submit + post-create readback (KSB-RENDER-004). |
