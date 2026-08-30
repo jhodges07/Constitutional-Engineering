@@ -8,10 +8,10 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
-**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control; ECR-008 — KSB Single-Command Sunday Publication Package Control  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration; CWC-CE-088 — KSB Single-Command Sunday Publication Package  
 **Status:** Active  
-**Version:** 1.4.0  
+**Version:** 1.5.0  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -468,6 +468,7 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.2.1 | 2026-08-30 | CWC-CE-082: Human-authorized ISO-8601 week-of-year for `ww` only; `yyyy`/`mm` remain calendar components; year-boundary rule; renderer may calculate `ww`; public-image explanation prohibition preserved. |
 | 1.3.0 | 2026-08-30 | ECR-005 / CWC-CE-085: authorizes deterministic KSB maturity calculation under Active WSMAT-001; distinguishes CALCULATED vs CERTIFIED maturity; preserves Human certification; Bill identity integrity; no grandfathering of provisional percentages. |
 | 1.4.0 | 2026-08-30 | ECR-007 / CWC-CE-087: adds Part B §36 phone-command orchestration / follow-up context; binds Active KSB Cycle, controlled-image routing, creative-artwork firewall, renderer failure-safe (`KSB IMAGE: RENDER REQUIRED`), and Active KSB-ORCH-001. |
+| 1.5.0 | 2026-08-30 | ECR-008 / CWC-CE-088: `Prepare KSB Status` targets complete KSB Sunday Publication Package (controlled status + 450–550-word press release + controlled KSB image); COMPLETE/INCOMPLETE semantics; KSB-PR-TMP-001; preserves CWC-CE-087 firewalls. |
 
 ---
 
@@ -528,12 +529,16 @@ An authorized Weekly Public Engineering Status package shall contain or referenc
 1. Status manifest  
 2. Markdown weekly report  
 3. Corresponding weekly status image  
-4. Evidence references / source commit references as applicable  
-5. Human acceptance state  
-6. Git traceability (after commit)  
-7. Publication authorization state  
+4. Press release (when produced under §36.9 — KSB Sunday Publication Package)  
+5. Evidence references / source commit references as applicable  
+6. Human acceptance state  
+7. Git traceability (after commit)  
+8. Publication authorization state  
+9. Package completion state (`COMPLETE` / `INCOMPLETE`) when prepared under §36.9  
 
 Package construction requires a separately authorized CWC-CE. This standard defines the package class; it does not fabricate weekly packages.
+
+When a weekly package is prepared under §36.9, the status manifest SHOULD identify the paired report, press release, controlled image, package completion state, and applicable validation identity for retrospective audit.
 
 ---
 
@@ -873,7 +878,9 @@ Weekly Public Engineering Status packages shall not imply:
 | WSGAP-001 | Informational gap-closure / design record |
 | ECR-004 | Change authorization for Part B |
 | ECR-007 | Change authorization for Part B §36 phone-command orchestration |
-| KSB-ORCH-001 | Operative phone-command / follow-up orchestration procedure (under ECR-007) |
+| ECR-008 | Change authorization for Part B §36 KSB Sunday Publication Package / single-command complete package |
+| KSB-ORCH-001 | Operative phone-command / follow-up / Sunday-package orchestration procedure (under ECR-007 / ECR-008) |
+| KSB-PR-TMP-001 | Operative KSB press-release structure template (under ECR-008) |
 | STD-011 Part B | Operative packaging CONTROL for weekly-status packages |
 
 Informational artifacts remain non-operative unless later Human-authorized promotion occurs through controlled process.
@@ -883,7 +890,7 @@ Informational artifacts remain non-operative unless later Human-authorized promo
 ## 36. Phone-Command Orchestration and Follow-Up Context
 
 **Governing procedure:** Active **KSB-ORCH-001 — KSB Phone-Command Orchestration Procedure**.  
-**Governing ECR:** ECR-007.
+**Governing ECR:** ECR-007; ECR-008.
 
 ### 36.1 Human trigger
 
@@ -893,9 +900,22 @@ The Human command:
 Prepare KSB Status
 ```
 
-(and authorized equivalents such as “Prepare this week’s BlueprintLiberty status”) establishes an **Active KSB Cycle Context** under Active KSB-ORCH-001.
+(and authorized equivalents such as “Prepare this week’s BlueprintLiberty status”) establishes an **Active KSB Cycle Context** under Active KSB-ORCH-001 and targets the ordinary Human-reviewable **KSB Sunday Publication Package** (§36.9), not status alone.
 
-The Human SHALL NOT be required to additionally specify GitHub paths, baseline identity, renderer invocation, FIXED/VARIABLE theory, or “do not redesign the image” for ordinary cycle operation. Technical ceremony remains behind the command. Human certification, Git, and publication gates remain where this standard and WF-001 require them.
+Ordinary controlled sequence (Human need not recite):
+
+```text
+Prepare KSB Status
+ → Active KSB Cycle
+ → (Human certification if required; context persists)
+ → CONTROLLED KSB STATUS
+ → ≈500-WORD PRESS RELEASE (450–550 words)
+ → CONTROLLED KSB IMAGE (baseline → renderer → anti-drift)
+ → PACKAGE VALIDATION (COMPLETE / INCOMPLETE)
+ → STOP FOR HUMAN REVIEW/PUBLICATION
+```
+
+The Human SHALL NOT be required to additionally specify GitHub paths, baseline identity, renderer invocation, FIXED/VARIABLE theory, “do not redesign the image,” or a second ordinary request for the press release or KSB image. Technical ceremony remains behind the command. Human certification, Git, and publication gates remain where this standard and WF-001 require them. Preparation does **not** authorize HG-6 publication.
 
 ### 36.2 Active-cycle follow-up context
 
@@ -942,35 +962,79 @@ If the ChatGPT/phone (or other) execution environment cannot invoke the authoriz
 
 ```text
 KSB IMAGE: RENDER REQUIRED
+PACKAGE STATE: INCOMPLETE
 ```
 
 (or the exact authorized equivalent under KSB-ORCH-001).
 
-The operator SHALL preserve controlled status values, baseline identity, rendering requirement, and workflow context, and SHALL identify the controlled render bridge (e.g., Cursor / local CE-Engineer / authorized interchange).
+The operator SHALL preserve controlled status values, baseline identity, rendering requirement, and workflow context, and SHALL identify the controlled render bridge (e.g., Cursor / local CE-Engineer / authorized interchange). Status and press release may be prepared where otherwise authorized. The package **cannot** become COMPLETE without the controlled image.
 
 **Substituting generative/creative artwork and presenting it as the KSB status image is prohibited.**  
 A visible incomplete controlled workflow is preferable to a visually complete uncontrolled artifact.
 
-### 36.6 Press-release follow-up
+### 36.6 Press release (ordinary deliverable + follow-up)
 
-After an Active KSB Cycle, a request such as “Create a press release and image to support it” SHALL by default:
+Under `Prepare KSB Status`, a press release is a **mandatory ordinary deliverable** of the KSB Sunday Publication Package (§36.9), not merely an optional follow-up.
 
-1. create press-release prose from the controlled KSB status;  
-2. preserve certified / controlled status values;  
-3. use the controlled KSB image;  
-4. if rendering is unavailable, report `KSB IMAGE: RENDER REQUIRED`;  
-5. **not** generate a replacement infographic as the status image.
+1. Target length: approximately **500** words; controlled tolerance **450–550** words.  
+2. Structure: Active **KSB-PR-TMP-001**.  
+3. Facts SHALL derive from the controlled KSB status and canonical evidence only.  
+4. Path convention: `press-releases/YYYY-MM-DD-BlueprintLiberty-KSB-Press-Release.md`.  
+5. Follow-up requests (e.g., “Create a press release and image to support it,” “Shorten the press release”) remain valid for editorial refinement within the Active cycle.  
+6. If rendering is unavailable, report `KSB IMAGE: RENDER REQUIRED` and `PACKAGE STATE: INCOMPLETE`; do **not** generate a replacement infographic as the status image.
 
 Press-release text is publication/supporting prose and does **not** become engineering truth. It SHALL NOT silently alter percentages, Bill identities, status date, maturity meaning, or certification state.
+
+```text
+CONTROLLED REPOSITORY EVIDENCE
+ → CONTROLLED STATUS
+ → PRESS RELEASE
+```
+
+Never reverse. Inconsistent derived claims SHALL be rejected or corrected; controlled evidence wins.
 
 ### 36.7 Social-media follow-up
 
 During an Active cycle, requests such as “Give me the image for Facebook,” “Prepare the Facebook post,” or “Give me the social-media status” remain bound to the controlled KSB cycle unless the Human explicitly requests a separate creative artifact.
 
-A social-media package may contain: controlled KSB image (or RENDER REQUIRED state); controlled status values; Human-reviewable supporting prose; controlled public URL; controlled status date.  
+A social-media package may contain: controlled KSB image (or RENDER REQUIRED state); controlled status values; Human-reviewable supporting prose / press release; controlled public URL; controlled status date.  
 
 Social-media publication (WF-001 HG-6) does not modify engineering evidence and is not authorized by this section alone.
 
 ### 36.8 Procedure detail
 
-Operator states, cycle field inventory, phone-first ceremony rules, and scenario routing detail are controlled by Active **KSB-ORCH-001**. Conflicts between informal operator guidance and this section escalate to the Human Engineer; this section and §25 control packaging truth.
+Operator states, cycle field inventory, phone-first ceremony rules, COMPLETE/INCOMPLETE classification, and scenario routing detail are controlled by Active **KSB-ORCH-001**. Conflicts between informal operator guidance and this section escalate to the Human Engineer; this section and §25 control packaging truth.
+
+### 36.9 KSB Sunday Publication Package
+
+**Package identity:** `KSB Sunday Publication Package` — ordinary weekly Human-reviewable publication set within the Weekly Public Engineering Status package class.
+
+| Deliverable | Requirement |
+|---|---|
+| A — Controlled KSB Status | Manifest + Markdown report (§22–§24); evidence-derived; maturity ≠ political probability |
+| B — Press release | ≈500 words (450–550); KSB-PR-TMP-001; derived from controlled status (§36.6) |
+| C — Controlled KSB Status Image | Accepted baseline → four VARIABLES → deterministic renderer → anti-drift PASS (§25 / §36.3–§36.5) |
+
+**COMPLETE** only if all are true:
+
+1. controlled status exists;  
+2. required maturity certification for the cycle is satisfied;  
+3. press release exists within controlled requirements and reconciles with controlled status/evidence;  
+4. controlled KSB image exists;  
+5. deterministic renderer validation passes;  
+6. anti-drift validation passes;  
+7. required manifest/package references are present (§23);  
+8. applicable package validation passes.
+
+If any mandatory condition fails:
+
+```text
+PACKAGE STATE: INCOMPLETE
+UNRESOLVED: <exact component>
+```
+
+Generative/creative substitution SHALL **NOT** convert INCOMPLETE → COMPLETE.
+
+**Human certification continuity:** If certification is required mid-cycle, the workflow may stop at `HUMAN CERTIFICATION REQUIRED`. After the Human decides, the **same** Active KSB Cycle continues toward the complete Sunday package without requiring the Human to repeat `Prepare KSB Status` or separately request the press release/image.
+
+**Publication gate:** Successful package preparation ends at Human review/publication required. `Prepare KSB Status` does not itself publish.

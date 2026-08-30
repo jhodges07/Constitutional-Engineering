@@ -1,0 +1,147 @@
+# KSB Issue-trigger render bridge (local implementation; remote execution Human-gated)
+#
+# Permissions rationale:
+#   contents: read  — checkout trusted workflow tree + pinned SHA only
+#   issues: write   — comment/label/close execution-request Issues (correlation + lifecycle)
+# No contents: write. No pull-requests. No workflow_dispatch / repository_dispatch.
+
+name: ksb-render-bridge
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: ksb-render-issue-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+run-name: "KSB-RENDER issue-${{ github.event.issue.number }}"
+
+jobs:
+  gate:
+    name: gate-authorize-validate
+    runs-on: ubuntu-latest
+    outputs:
+      authorized: ${{ steps.validate.outputs.authorized }}
+      request_id: ${{ steps.validate.outputs.request_id }}
+      canonical_sha: ${{ steps.validate.outputs.canonical_sha }}
+      artifact_name: ${{ steps.validate.outputs.artifact_name }}
+      reject_code: ${{ steps.validate.outputs.reject_code }}
+    steps:
+      - name: Checkout workflow tree (trusted scripts only)
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Materialize event JSON
+        run: |
+          mkdir -p bridge-work
+          cp "$GITHUB_EVENT_PATH" bridge-work/event.json
+
+      - name: Gate validate
+        id: validate
+        env:
+          AUTHORIZED_KSB_RENDER_ACTORS: ${{ vars.AUTHORIZED_KSB_RENDER_ACTORS }}
+          ALLOWED_KSB_CANONICAL_SHAS: ${{ vars.ALLOWED_KSB_CANONICAL_SHAS }}
+        run: |
+          set +e
+          python Engineering-Office/publication/weekly-status/issue-bridge/scripts/run_gate.py \
+            --event-json bridge-work/event.json \
+            --out bridge-work/normalized.json \
+            --github-output "$GITHUB_OUTPUT"
+          code=$?
+          set -e
+          # run_gate writes authorized=true|false; always continue so reject lifecycle can run
+          if [ "$code" -ne 0 ] && ! grep -q '^authorized=' "$GITHUB_OUTPUT"; then
+            echo "authorized=false" >> "$GITHUB_OUTPUT"
+            echo "reject_code=GATE_FAILED" >> "$GITHUB_OUTPUT"
+          fi
+          exit 0
+
+      - name: Upload normalized request (authorized only)
+        if: steps.validate.outputs.authorized == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ksb-normalized-${{ steps.validate.outputs.request_id }}
+          path: bridge-work/normalized.json
+          if-no-files-found: error
+
+      - name: Reject Issue lifecycle
+        if: steps.validate.outputs.authorized != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY="KSB render gate REJECTED before Windows execution.
+          code=${{ steps.validate.outputs.reject_code }}
+          This Issue is an EXECUTION REQUEST only — not engineering truth or publication."
+          gh issue comment "${{ github.event.issue.number }}" --body "$BODY"
+          gh issue edit "${{ github.event.issue.number }}" --add-label "ksb-render:rejected-auth" || true
+          gh issue close "${{ github.event.issue.number }}" --reason "not planned" || gh issue close "${{ github.event.issue.number }}"
+
+  render:
+    name: render-isolated-windows
+    needs: gate
+    if: needs.gate.outputs.authorized == 'true'
+    runs-on: [self-hosted, Windows, ksb-render-windows]
+    steps:
+      - name: Checkout workflow tree (bridge scripts)
+        uses: actions/checkout@v4
+        with:
+          path: workflow-src
+
+      - name: Checkout pinned canonical SHA (renderer + baseline)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.gate.outputs.canonical_sha }}
+          path: render-src
+
+      - name: Download normalized request
+        uses: actions/download-artifact@v4
+        with:
+          name: ksb-normalized-${{ needs.gate.outputs.request_id }}
+          path: bridge-work
+
+      - name: Render + anti-drift + RESULT
+        shell: pwsh
+        env:
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          $py = "python"
+          & $py "workflow-src/Engineering-Office/publication/weekly-status/issue-bridge/scripts/run_render.py" `
+            --normalized "bridge-work/normalized.json" `
+            --baseline "render-src/Engineering-Office/publication/weekly-status/baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png" `
+            --out-dir "bridge-out" `
+            --run-id $env:RUN_ID
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Upload controlled artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ needs.gate.outputs.artifact_name }}
+          path: |
+            bridge-out/ksb-status.png
+            bridge-out/RESULT.json
+          if-no-files-found: error
+
+      - name: Correlate Issue → run → artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BODY="KSB render EXECUTION RESULT (non-canonical artifact).
+          request_id=${{ needs.gate.outputs.request_id }}
+          run_id=${{ github.run_id }}
+          canonical_sha=${{ needs.gate.outputs.canonical_sha }}
+          artifact_name=${{ needs.gate.outputs.artifact_name }}
+          run_url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          STOP before publication. Temporary artifact ≠ canonical weekly image."
+          gh issue comment "${{ github.event.issue.number }}" --body "$BODY"
+          gh issue edit "${{ github.event.issue.number }}" --add-label "ksb-render:succeeded" || true
+          gh issue close "${{ github.event.issue.number }}" --reason "completed" || gh issue close "${{ github.event.issue.number }}"
