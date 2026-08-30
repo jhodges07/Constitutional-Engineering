@@ -8,10 +8,10 @@
 **Governing Policy:** POL-001 — Engineering Office Governance Policy  
 **Governing Index:** IDX-001 — Engineering Office Master Index  
 **Governing Workflows:** WF-001 — Engineering Office Operating Workflow; WF-002 — Engineering Release Workflow (when release baselines apply)  
-**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control  
-**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation  
+**Governing Change:** ECR-003 — Engineering Definition LOU Publication-Package Control; ECR-004 — Weekly Public Engineering Status Publication Control; ECR-005 — KSB Status Maturity Measurement Control; ECR-007 — KSB Phone-Command Orchestration Control  
+**Governing Work Card:** CWC-CE-066 — Engineering Definition LOU Publication-Package Control Definition; CWC-CE-078 — Implement Weekly Status Publication Control and Public URL Requirement; CWC-CE-081 — Weekly Status Date Format and Public-Image Content Control Update; CWC-CE-082 — ISO Week Authority Integration; CWC-CE-085 — KSB Maturity Control Authorization / Implementation; CWC-CE-087 — KSB Phone-Command Orchestration  
 **Status:** Active  
-**Version:** 1.3.0  
+**Version:** 1.4.0  
 **Effective Date:** 2026-08-30  
 
 ---
@@ -26,9 +26,9 @@ This Version establishes controlled conventions for **two distinct package class
 
 including Markdown authority, PDF derivative rules, location/naming, generation requirements, verification, Git/publication boundaries, and public GitHub access relationships.
 
-**B. WEEKLY PUBLIC ENGINEERING STATUS PACKAGES** (Part B — §§21–35)  
+**B. WEEKLY PUBLIC ENGINEERING STATUS PACKAGES** (Part B — §§21–36)  
 
-including weekly Markdown/image pairing, baseline/anti-drift rules, FIXED/VARIABLE fields, PUBLIC URL configuration, percentage authority, Git/publication boundaries, and truth-model separation.
+including weekly Markdown/image pairing, baseline/anti-drift rules, FIXED/VARIABLE fields, PUBLIC URL configuration, percentage authority, Git/publication boundaries, truth-model separation, and phone-command / follow-up orchestration.
 
 This standard does **not** publish any LOU or weekly status. Generation, Git action, and publication each require separately authorized controlled work under WF-001.
 
@@ -467,6 +467,7 @@ They shall not be treated as authorized public weekly status and shall not be pu
 | 1.2.0 | 2026-08-30 | CWC-CE-081: STATUS_DATE = yyyy.mm.ww display form; public-image exclusion of engineering metadata; template identity without public rendering; Bill A/B/C public title pins; GitHub breadcrumb / Repo terminology / acronym readability; ww algorithm remains Human-decision open. |
 | 1.2.1 | 2026-08-30 | CWC-CE-082: Human-authorized ISO-8601 week-of-year for `ww` only; `yyyy`/`mm` remain calendar components; year-boundary rule; renderer may calculate `ww`; public-image explanation prohibition preserved. |
 | 1.3.0 | 2026-08-30 | ECR-005 / CWC-CE-085: authorizes deterministic KSB maturity calculation under Active WSMAT-001; distinguishes CALCULATED vs CERTIFIED maturity; preserves Human certification; Bill identity integrity; no grandfathering of provisional percentages. |
+| 1.4.0 | 2026-08-30 | ECR-007 / CWC-CE-087: adds Part B §36 phone-command orchestration / follow-up context; binds Active KSB Cycle, controlled-image routing, creative-artwork firewall, renderer failure-safe (`KSB IMAGE: RENDER REQUIRED`), and Active KSB-ORCH-001. |
 
 ---
 
@@ -871,6 +872,105 @@ Weekly Public Engineering Status packages shall not imply:
 | README-PUB-WEEKLY-001 | Informational architecture / directory note |
 | WSGAP-001 | Informational gap-closure / design record |
 | ECR-004 | Change authorization for Part B |
+| ECR-007 | Change authorization for Part B §36 phone-command orchestration |
+| KSB-ORCH-001 | Operative phone-command / follow-up orchestration procedure (under ECR-007) |
 | STD-011 Part B | Operative packaging CONTROL for weekly-status packages |
 
 Informational artifacts remain non-operative unless later Human-authorized promotion occurs through controlled process.
+
+---
+
+## 36. Phone-Command Orchestration and Follow-Up Context
+
+**Governing procedure:** Active **KSB-ORCH-001 — KSB Phone-Command Orchestration Procedure**.  
+**Governing ECR:** ECR-007.
+
+### 36.1 Human trigger
+
+The Human command:
+
+```text
+Prepare KSB Status
+```
+
+(and authorized equivalents such as “Prepare this week’s BlueprintLiberty status”) establishes an **Active KSB Cycle Context** under Active KSB-ORCH-001.
+
+The Human SHALL NOT be required to additionally specify GitHub paths, baseline identity, renderer invocation, FIXED/VARIABLE theory, or “do not redesign the image” for ordinary cycle operation. Technical ceremony remains behind the command. Human certification, Git, and publication gates remain where this standard and WF-001 require them.
+
+### 36.2 Active-cycle follow-up context
+
+While the cycle is Active, follow-up requests concerning the status, report, image, graphic, press release, social-media post, weekly update, Facebook post, publication material, or supporting media SHALL retain that cycle’s controlled artifact identity **without** requiring the Human to repeat the trigger phrase.
+
+An Active cycle ends when:
+
+1. the workflow is completed and the Human closes the cycle; **or**  
+2. the Human explicitly changes subject/workflow; **or**  
+3. another controlled workflow supersedes it; **or**  
+4. the Human explicitly requests a separate artifact class (e.g., distinct creative artwork); **or**  
+5. a new `Prepare KSB Status` starts a **new** cycle (prior cycle preserved historically).
+
+### 36.3 Controlled KSB image routing (DEFAULT)
+
+Ambiguous requests for “the image,” “status image,” “weekly image,” “Facebook image,” “social-media image,” “graphic,” “image to support it,” or reasonably equivalent wording DEFAULT to the **CONTROLLED KSB IMAGE**.
+
+The authoritative controlled KSB image SHALL originate from:
+
+```text
+ACCEPTED KSB BASELINE
+ → AUTHORIZED VARIABLE INPUT
+ → DETERMINISTIC RENDERER
+ → ANTI-DRIFT VALIDATION
+```
+
+Generic / generative image creation SHALL **NOT** substitute for this path as the weekly status image (§25.7 remains binding).
+
+### 36.4 Creative-artwork firewall
+
+```text
+CONTROLLED KSB IMAGE
+≠
+CREATIVE SUPPORTING ARTWORK
+```
+
+Creative image generation may occur only when Human intent clearly requests a separate creative artifact (for example: “Create a separate political satire image,” “Give me another illustration,” “Make a new artistic image about property taxes”).  
+
+Such artwork SHALL be labeled as **not** the controlled KSB status image and SHALL NOT replace or inherit KSB engineering authority.
+
+### 36.5 Renderer failure-safe (mandatory)
+
+If the ChatGPT/phone (or other) execution environment cannot invoke the authorized deterministic renderer:
+
+```text
+KSB IMAGE: RENDER REQUIRED
+```
+
+(or the exact authorized equivalent under KSB-ORCH-001).
+
+The operator SHALL preserve controlled status values, baseline identity, rendering requirement, and workflow context, and SHALL identify the controlled render bridge (e.g., Cursor / local CE-Engineer / authorized interchange).
+
+**Substituting generative/creative artwork and presenting it as the KSB status image is prohibited.**  
+A visible incomplete controlled workflow is preferable to a visually complete uncontrolled artifact.
+
+### 36.6 Press-release follow-up
+
+After an Active KSB Cycle, a request such as “Create a press release and image to support it” SHALL by default:
+
+1. create press-release prose from the controlled KSB status;  
+2. preserve certified / controlled status values;  
+3. use the controlled KSB image;  
+4. if rendering is unavailable, report `KSB IMAGE: RENDER REQUIRED`;  
+5. **not** generate a replacement infographic as the status image.
+
+Press-release text is publication/supporting prose and does **not** become engineering truth. It SHALL NOT silently alter percentages, Bill identities, status date, maturity meaning, or certification state.
+
+### 36.7 Social-media follow-up
+
+During an Active cycle, requests such as “Give me the image for Facebook,” “Prepare the Facebook post,” or “Give me the social-media status” remain bound to the controlled KSB cycle unless the Human explicitly requests a separate creative artifact.
+
+A social-media package may contain: controlled KSB image (or RENDER REQUIRED state); controlled status values; Human-reviewable supporting prose; controlled public URL; controlled status date.  
+
+Social-media publication (WF-001 HG-6) does not modify engineering evidence and is not authorized by this section alone.
+
+### 36.8 Procedure detail
+
+Operator states, cycle field inventory, phone-first ceremony rules, and scenario routing detail are controlled by Active **KSB-ORCH-001**. Conflicts between informal operator guidance and this section escalate to the Human Engineer; this section and §25 control packaging truth.
