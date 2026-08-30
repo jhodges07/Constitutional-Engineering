@@ -14,6 +14,7 @@ from .constants import (
     BASELINE_ID,
     BODY_FENCE_END,
     BODY_FENCE_START,
+    CLEAN_MASTER_ID,
     ENVELOPE_KEYS,
     PUBLICATION_REQUEST_TYPE,
     RENDER_PAYLOAD_KEYS,
@@ -169,9 +170,17 @@ def validate_envelope(
         raise GateReject("UNAUTHORIZED_SHA", "canonical_sha not in allowlist")
 
     if data["baseline_id"] != BASELINE_ID:
-        raise GateReject("INVALID_INPUT", "baseline_id mismatch")
+        raise GateReject(
+            "INVALID_INPUT",
+            f"baseline_id mismatch: got={data['baseline_id']!r} expected={BASELINE_ID!r} "
+            f"(baseline_id is HISTORICAL visual baseline; clean master "
+            f"{CLEAN_MASTER_ID!r} is selected by renderer_id, not baseline_id)",
+        )
     if data["renderer_id"] != RENDERER_ID:
-        raise GateReject("INVALID_INPUT", "renderer_id mismatch")
+        raise GateReject(
+            "INVALID_INPUT",
+            f"renderer_id mismatch: got={data['renderer_id']!r} expected={RENDERER_ID!r}",
+        )
 
     payload = data["render_payload"]
     if not isinstance(payload, dict):

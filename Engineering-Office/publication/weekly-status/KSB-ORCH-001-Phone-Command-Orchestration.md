@@ -11,20 +11,20 @@
 **Related Defect Disposition:** KSB-089-D01 **SUPERSEDED**; KSB-HUMAN-DELIVERY-001/002 remediated under ECR-012; **KSB-RENDER-002** remediating under ECR-014 (clean master); CWC-CE-096 Human visual **REJECTED**  
 **Related Template:** KSB-PR-TMP-001  
 **Status:** Active  
-**Version:** 1.5.0  
+**Version:** 1.5.1  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Activation:** Human-accepted ECR-014 / CWC-CE-097; **operational renderer activation requires Human visual acceptance of candidate PNG**  
+**Activation:** Human-accepted ECR-014 / CWC-CE-097; CWC-CE-098 canonicalization; **CWC-CE-099 baseline_id contract clarification**  
 
 ```text
 ACTIVE UNDER STD-011 v1.9.0 §36 / §36.11–§36.15 / ECR-014
 THREE-STEP + SINGLE-COPY PR + INLINE IMAGE PRESERVED
 CLEAN MASTER + DYNAMIC CENTER PANEL
 CANDIDATE: ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
-CWC-CE-096 FIXED LAYER NOT ORDINARY INPUT
+Issue baseline_id = BL-WEEKLY-STATUS-BASELINE-v1.0 (HISTORICAL)
+Clean master ≠ baseline_id (CWC-CE-099 / KSB-RENDER-003)
 DOES NOT CHANGE CERTIFIED MATURITY
 DOES NOT PUBLISH
-GIT CANONICALIZATION PENDING HUMAN VISUAL GATE THEN CE-GitManager
 ```
 
 ---
@@ -103,9 +103,10 @@ On successful Step-1 entry, the assistant SHALL create / retain an **Active KSB 
 | `bill_a_percent` | certified integer |
 | `bill_b_percent` | certified integer |
 | `bill_c_percent` | certified integer |
-| `baseline_id` | `BL-WEEKLY-STATUS-BASELINE-v1.0` |
+| `baseline_id` | `BL-WEEKLY-STATUS-BASELINE-v1.0` (**HISTORICAL** visual baseline — Issue field; CWC-CE-099: NOT clean master) |
 | `baseline_sha256` | accepted SHA |
-| `renderer_id` | `ksb_renderer` / CWC-CE-084 |
+| `renderer_id` | `ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE` (binds clean-master render path) |
+| `clean_master_id` | `BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE` (render source; **not** an Issue `baseline_id` value) |
 | `package_paths` | manifest / report / press-release / image (or RENDER REQUIRED) |
 | `package_state` | COMPLETE / INCOMPLETE |
 | `certification_state` | as recorded |

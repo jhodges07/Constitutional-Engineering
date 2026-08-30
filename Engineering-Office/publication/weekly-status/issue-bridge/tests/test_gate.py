@@ -162,6 +162,23 @@ def main() -> int:
         except GateReject as exc:
             check(label, exc.code == expect, exc.code)
 
+    # CWC-CE-099: clean master ID must NOT be accepted as baseline_id
+    try:
+        req = _request()
+        req["baseline_id"] = "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE"
+        gate_issue_event(
+            _event(body=build_issue_body(req)),
+            authorized_actors=[ACTOR],
+            allowed_shas=[CANON],
+        )
+        check("reject_clean_master_as_baseline_id", False, "should reject")
+    except GateReject as exc:
+        check(
+            "reject_clean_master_as_baseline_id",
+            exc.code == "INVALID_INPUT" and "baseline_id mismatch" in exc.message,
+            f"{exc.code}: {exc.message}",
+        )
+
     # Hostile / path / shell
     for label, mutate in [
         (
