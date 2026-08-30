@@ -1,0 +1,7 @@
+{
+  "status_date": "2026-08-30",
+  "bill_a_percent": 25,
+  "bill_b_percent": 35,
+  "bill_c_percent": 10,
+  "_comment": "NON-PRODUCTION fixture A — placeholder-equivalent values (calendar date maps to STATUS_DATE compact form)"
+}

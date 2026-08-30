@@ -10,7 +10,7 @@
 **Human Acceptance:** ACCEPTED 2026-08-30 under CWC-CE-077 (Decision 2) — remains informational; does **not** become operative CONTROL  
 **Operative Packaging CONTROL:** STD-011 Version 1.2.1 Part B (ECR-004 / CWC-CE-078; date-format / public-image — CWC-CE-081; ISO-8601 `ww` — CWC-CE-082)  
 **Initial PUBLIC_URL_01:** BlueprintLiberty.com  
-**Version:** 0.3.4  
+**Version:** 0.3.5  
 **Effective Date:** 2026-08-30  
 **Canonical Local Repository Root:** `X:\GitHub\Constitutional-Engineering`
 
@@ -144,7 +144,8 @@ ONE APPROVED BASELINE
 
 - Approved / Human-accepted baseline: `baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png` (SHA-256 `17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9`).  
 - Weekly generated image: stored under `images/`.  
-- **CWC-CE-083:** **GAP-WS-003 CLOSED** on Human acceptance of the exact baseline artifact; **GAP-WS-004 remains OPEN** (renderer).
+- **CWC-CE-083:** **GAP-WS-003 CLOSED** on Human acceptance of the exact baseline artifact.  
+- **CWC-CE-084:** deterministic renderer under `renderer/` locally validated; **GAP-WS-004 CLOSED** (Git gate separate).
 
 ### 6.1 FIXED fields (ordinary weekly cycle — do not change)
 
@@ -326,3 +327,4 @@ The original `D:\` copy remains intact pending separate Human cleanup authority.
 | 0.3.2 | 2026-08-30 | CWC-CE-082: ISO-8601 `ww` Human authorization noted; remains Not Operative CONTROL. |
 | 0.3.3 | 2026-08-30 | CWC-CE-083: candidate baseline path noted; GAP-WS-003 remains OPEN pending HE acceptance. |
 | 0.3.4 | 2026-08-30 | CWC-CE-083: Human accepted baseline SHA `17F574D4…`; GAP-WS-003 CLOSED. |
+| 0.3.5 | 2026-08-30 | CWC-CE-084: renderer pointer; GAP-WS-004 CLOSED locally. |

@@ -10,7 +10,7 @@
 **Disposition:** HUMAN ACCEPTED — IMPLEMENTED UNDER CWC-CE-078 (Verified-Closed disposition pending separate HE verification gate if required by STD-014); STD-011 Part B amended under CWC-CE-081 to Version 1.2.0; ISO-8601 `ww` authorized under CWC-CE-082 (STD-011 Version 1.2.1)  
 **Implementation State:** IMPLEMENTED — STD-011 Version 1.2.1 Part B  
 **Operative Authority:** STD-011 Part B (Weekly Public Engineering Status packages) is Active packaging CONTROL; this ECR does not by itself authorize weekly package generation, phone POC, or publication  
-**Version:** 1.0.3  
+**Version:** 1.0.4  
 **Effective Date:** 2026-08-30  
 **Primary Category:** STD  
 **Secondary Categories:** ADM, REP, PUB  
@@ -273,6 +273,22 @@ ECR-004 alone still does **NOT** authorize weekly package generation, phone POC,
 
 ---
 
+## 10D. Amendment Record (CWC-CE-084 — Deterministic Renderer)
+
+| Field | Value |
+|---|---|
+| Amending CWC | CWC-CE-084 |
+| Renderer location | `Engineering-Office/publication/weekly-status/renderer/` |
+| Renderer version | 1.0.0-CWC-CE-084 |
+| Variables | `STATUS_DATE`, `BILL_A_PERCENT`, `BILL_B_PERCENT`, `BILL_C_PERCENT` only |
+| Anti-drift | Implemented; unauthorized pixels must be 0 |
+| Local test suite | PASS (NON-PRODUCTION) |
+| GAP-WS-004 | **CLOSED** (local); Git integration separate |
+| Production KSB Status | **NOT** generated under this CWC |
+| Phone POC | **NOT** authorized by this amendment |
+
+---
+
 ## 11. Version History
 
 | Version | Date | Summary |
@@ -283,3 +299,4 @@ ECR-004 alone still does **NOT** authorize weekly package generation, phone POC,
 | 1.0.1 | 2026-08-30 | CWC-CE-081: records STD-011 Version 1.2.0 Part B amendment (date format / public-image content); GAP-WS-003/004 remain OPEN; ww algorithm Human-decision open. |
 | 1.0.2 | 2026-08-30 | CWC-CE-082: Human-authorized ISO-8601 `ww`; STD-011 Version 1.2.1; ww algorithm blocker removed; GAP-WS-003/004 remain OPEN. |
 | 1.0.3 | 2026-08-30 | CWC-CE-083: Human-accepted visual baseline `BL-WEEKLY-STATUS-BASELINE-v1.0` SHA `17F574D4…`; GAP-WS-003 CLOSED; GAP-WS-004 remains OPEN. |
+| 1.0.4 | 2026-08-30 | CWC-CE-084: deterministic renderer + anti-drift locally validated; GAP-WS-004 CLOSED (Git gate separate); no production KSB Status. |

@@ -1,0 +1,58 @@
+{
+  "baseline_id": "BL-WEEKLY-STATUS-BASELINE-v1.0",
+  "baseline_relpath": "baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png",
+  "baseline_sha256": "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9",
+  "canvas": { "width": 1536, "height": 912 },
+  "typography": {
+    "font_family_authorized": "Arial Bold (Windows arialbd.ttf)",
+    "font_path_windows": "C:\\\\Windows\\\\Fonts\\\\arialbd.ttf",
+    "font_rationale": "Baseline uses unidentified bold sans-serif; Arial Bold is the deterministic authorized substitute with size matched to measured glyph metrics. Not treated as material redesign under CWC-CE-084.",
+    "date_font_size_px": 18,
+    "percent_font_size_px": 34,
+    "date_color_rgb": [0, 0, 24],
+    "bill_a_color_rgb": [5, 9, 94],
+    "bill_b_color_rgb": [21, 90, 40],
+    "bill_c_color_rgb": [40, 20, 90]
+  },
+  "variables": {
+    "STATUS_DATE": {
+      "placeholder_display": "Date: 2026.08.35",
+      "display_prefix": "Date: ",
+      "alignment": "left",
+      "region": { "x": 1280, "y": 14, "w": 250, "h": 30 },
+      "text_xy": [1286, 16]
+    },
+    "BILL_A_PERCENT": {
+      "placeholder": 25,
+      "text_region": { "x": 970, "y": 448, "w": 105, "h": 40 },
+      "text_right_xy": [1072, 448],
+      "bar": {
+        "x": 530, "y": 475, "w": 330, "h": 12,
+        "track_rgb": [221, 221, 220],
+        "fill_rgb": [0, 33, 111]
+      }
+    },
+    "BILL_B_PERCENT": {
+      "placeholder": 35,
+      "text_region": { "x": 970, "y": 578, "w": 105, "h": 40 },
+      "text_right_xy": [1072, 578],
+      "bar": {
+        "x": 530, "y": 604, "w": 330, "h": 12,
+        "track_rgb": [220, 220, 219],
+        "fill_rgb": [21, 115, 26]
+      }
+    },
+    "BILL_C_PERCENT": {
+      "placeholder": 10,
+      "text_region": { "x": 970, "y": 698, "w": 105, "h": 40 },
+      "text_right_xy": [1072, 698],
+      "bar": {
+        "x": 530, "y": 724, "w": 330, "h": 12,
+        "track_rgb": [218, 219, 218],
+        "fill_rgb": [55, 28, 110]
+      }
+    }
+  },
+  "percent_range": { "min": 0, "max": 100 },
+  "output_filename_contract": "YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png"
+}

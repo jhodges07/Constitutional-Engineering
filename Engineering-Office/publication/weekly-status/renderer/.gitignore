@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+tests/_non_production_output/*.png
+tests/_non_production_output/*.json
+!tests/_non_production_output/.gitignore

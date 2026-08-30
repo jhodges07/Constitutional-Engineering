@@ -1,0 +1,7 @@
+{
+  "status_date": "2026-12-31",
+  "bill_a_percent": 0,
+  "bill_b_percent": 100,
+  "bill_c_percent": 1,
+  "_comment": "NON-PRODUCTION fixture D — boundary percentages + year-boundary calendar date"
+}
