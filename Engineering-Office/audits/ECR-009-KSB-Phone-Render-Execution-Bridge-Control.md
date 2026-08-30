@@ -6,67 +6,58 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Architecture:** ARCH-001  
 **Governing Standards:** STD-011 Part B (§36 / §36.9); KSB-ORCH-001  
-**Governing Work Card:** CWC-CE-088 Bounded Implementation Execution / Stale-State Correction  
+**Governing Work Card:** CWC-CE-088 GitHub-Hosted Windows POC Acceleration Continuation  
 **Predecessor:** ECR-008; CWC-CE-084; CWC-CE-074; KSB-TRIGGER-RETURN-001; KSB-ISSUE-BRIDGE-001  
 **Related Architecture:** KSB-ISSUE-BRIDGE-001; KSB-RENDER-BRIDGE-001; KSB-TRIGGER-RETURN-001  
 **Status:** Implemented  
-**Disposition:** HUMAN ACCEPTED — LOCALLY IMPLEMENTED UNDER CWC-CE-088 (Git canonicalization / remote Actions / isolated runner pending separate Human gates)  
-**Implementation State:** IMPLEMENTED LOCALLY — Issue-bridge gate/schema/RESULT/workflow prepared; local security tests; renderer regression; remote real-run pending Human infrastructure + Git gates  
-**Operative Authority:** Locally Active for implementation package (not yet executable on GitHub until Human Git + runner + variable gates)  
-**Version:** 0.3.0  
+**Disposition:** HUMAN ACCEPTED — GIT CANONICAL (0.3.0) + HOSTED-WINDOWS NON-PRODUCTION POC PATH AUTHORIZED UNDER CWC-CE-088 (this revision pending Git handoff)  
+**Implementation State:** Issue-bridge canonical at `20fc998…`; hosted-Windows workflow change prepared locally for NON-PRODUCTION POC  
+**Operative Authority:** Hosted-Windows POC path authorized by Human Engineer direction (CWC-CE-088 acceleration); Git canonicalization of this revision pending CE-GitManager  
+**Version:** 0.3.1  
 **Effective Date:** 2026-08-30  
 **Primary Category:** PUB  
 **Secondary Categories:** STD, ADM, SEC  
 **Requestor:** Human Engineer  
 **Preparing Agent:** CE-Engineer  
-**Acceptance Recording Agent:** CE-Engineer  
-**Implementation Agent:** CE-Engineer  
 
 ```text
-HUMAN ACCEPTED
-APPROVED FOR CONTROL IMPLEMENTATION
-IMPLEMENTED LOCALLY UNDER CWC-CE-088
-STALE PRIOR "PROPOSED — READY FOR HUMAN DECISION" REPORT: SUPERSEDED
-ISSUE-TRIGGER ARCHITECTURE: AUTHORITATIVE
-WORKFLOW_DISPATCH: NOT EXPOSED / NOT REQUIRED
-ISOLATED WINDOWS RUNNER: REQUIRED (HUMAN WORKSTATION PROHIBITED)
+HUMAN ACCEPTED (0.3.0 architecture)
+0.3.1 — HOSTED WINDOWS NON-PRODUCTION POC PATH (Human-directed acceleration)
+SELF-HOSTED ISOLATED VM: FALLBACK / FUTURE DEPLOYMENT MODEL (not required for current POC)
+HUMAN WORKSTATION AS RUNNER: PROHIBITED
 NO MATURITY CHANGE (19/19/4)
 NO CWC-CE-086 CHANGE
-NO GIT ADVANCEMENT — NOT CANONICAL ON origin/main UNTIL HUMAN GIT GATES
-NO REMOTE ACTIONS EXECUTION UNTIL HUMAN GIT + RUNNER + VARIABLE GATES
-NO PUBLICATION
-NO FINAL LIVE KSB PHONE POC CLAIMED
+NO PUBLICATION AUTHORITY FROM HOSTED EXECUTION
+HOSTED DETERMINISM: REAL-RUN PROOF PENDING UNTIL PHONE/CHATGPT POC
 ```
 
 ---
 
-## 0. Human acceptance record
+## 0. Human acceptance / acceleration record
 
 | Field | Value |
 |---|---|
-| Accepted version | **0.3.0** |
-| Human disposition | **ACCEPT** (“I concur.” — confirmed as ECR-009 v0.3.0 ACCEPT) |
-| Acceptance date | 2026-08-30 |
-| Architecture changed by acceptance? | **No** — acceptance state only; substantive Issue-trigger controls unchanged |
-| Next gates | Isolated Windows runner provisioning; GitHub Actions variables; runner registration; Git deploy of workflow |
-
-Silence ≠ ACCEPT. This record documents an explicit Human ACCEPT already given.
+| Accepted architecture | **0.3.0** Issue-trigger bridge |
+| Acceleration disposition | Human directs: **do not wait for local Windows VM**; use GitHub-hosted Windows for NON-PRODUCTION POC |
+| Revision | **0.3.1** — execution-host authority only; authorization/SHA/baseline/renderer/anti-drift unchanged |
 
 ---
 
 ## 1. Problem (unchanged substantive)
 
-ECR-008 / STD-011 1.5.0 require a complete KSB Sunday Publication Package from `Prepare KSB Status`, including the controlled deterministic image. ChatGPT cannot run the local Python renderer in-channel. Direct Actions dispatch is not exposed. ChatGPT can create/close Issues and inspect Actions runs/artifacts.
+ECR-008 / STD-011 1.5.0 require a complete KSB Sunday Publication Package from `Prepare KSB Status`, including the controlled deterministic image. ChatGPT cannot run the local Python renderer in-channel.
 
 ---
 
-## 2. Authorized architecture (accepted)
+## 2. Authorized architecture
 
 ```text
 ChatGPT → controlled [KSB-RENDER] Issue
  → Actions issues:opened
- → GitHub-hosted gate (auth + schema)
- → isolated Windows render job
+ → GitHub-hosted gate (auth + schema)  [ubuntu-latest]
+ → Windows render job
+      NON-PRODUCTION POC: GitHub-hosted windows-2022
+      FALLBACK / FUTURE: self-hosted [self-hosted, Windows, ksb-render-windows]
  → existing ksb_renderer @ pinned canonical_sha
  → PNG + RESULT.json artifact
  → Issue comment correlation
@@ -74,22 +65,27 @@ ChatGPT → controlled [KSB-RENDER] Issue
  → Human review (no auto-publication)
 ```
 
-Mandatory verified-capability statements remain as in 0.3.0-PROPOSED (Issue write verified; dispatch not exposed/not required; artifact APIs exposed; real-run pending).
+### 2.1 Execution host (0.3.1)
 
-Security-critical controls remain mandatory: actor allowlist + author_association; two-job gate/render; pinned SHA; four-variable firewall; isolated runner (not Human workstation); RESULT↔PNG reconciliation; no main-branch trigger; no creative recovery.
+| Host | Authority |
+|---|---|
+| GitHub-hosted `windows-2022` | **Authorized for NON-PRODUCTION KSB bridge POC** after workflow Git integration + SHA allowlist update + real-run certification |
+| Self-hosted `ksb-render-windows` | Remains valid **fallback / future** deployment model; not required for current POC path |
+| Human daily-driver workstation | **PROHIBITED** |
+
+Hosted execution MUST pass deterministic / anti-drift / font / baseline evidence on the real run before being treated as certified. Local tests ≠ hosted certification.
+
+Security-critical controls remain mandatory: actor allowlist + author_association; two-job gate/render; pinned SHA; four-variable firewall; RESULT↔PNG reconciliation; no main-branch trigger; no creative recovery; no publication from bridge success.
 
 ---
 
-## 3. Local implementation package (this CWC)
+## 3. Implementation package
 
 | Component | Path |
 |---|---|
 | Gate / schema / RESULT | `Engineering-Office/publication/weekly-status/issue-bridge/` |
-| Workflow (local) | `.github/workflows/ksb-render-bridge.yml` |
-| Runner specification | `…/issue-bridge/ISOLATED-WINDOWS-RUNNER-SPEC.md` |
-| Human admin gate | `…/issue-bridge/HUMAN-ADMIN-GATE.md` |
-
-Remote execution requires separate Human gates (Git deploy, variables, isolated runner). Local implementation does **not** equal remote PASS.
+| Workflow | `.github/workflows/ksb-render-bridge.yml` |
+| Self-hosted provisioning (fallback) | `…/issue-bridge/HUMAN-PROVISIONING-STEPS.md` |
 
 ---
 
@@ -100,4 +96,5 @@ Remote execution requires separate Human gates (Git deploy, variables, isolated 
 | 0.1.0-PROPOSED | 2026-08-30 | Runtime-bridge discovery. |
 | 0.2.0-PROPOSED | 2026-08-30 | Live ChatGPT proof gate. |
 | 0.3.0-PROPOSED | 2026-08-30 | Issue-trigger architecture. |
-| 0.3.0 | 2026-08-30 | **HUMAN ACCEPTED**; local implementation under CWC-CE-088; version unchanged (acceptance ≠ new ECR revision). |
+| 0.3.0 | 2026-08-30 | HUMAN ACCEPTED; Git-integrated at `20fc998…`. |
+| 0.3.1 | 2026-08-30 | GitHub-hosted Windows NON-PRODUCTION POC path; self-hosted remains fallback; Human workstation still prohibited. |

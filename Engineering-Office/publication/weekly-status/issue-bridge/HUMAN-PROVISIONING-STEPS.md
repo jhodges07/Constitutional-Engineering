@@ -6,10 +6,13 @@
 **Discovery:** No repository Actions runners (`total_count=0`). No Hyper-V VMs visible to CE-Engineer. Daily-driver workstation **must not** be registered.
 
 ```text
-ISOLATED WINDOWS RUNNER: HUMAN PROVISIONING REQUIRED
+ISOLATED WINDOWS RUNNER: HUMAN PROVISIONING REQUIRED FOR SELF-HOSTED FALLBACK PATH
+CURRENT CWC-CE-088 POC PATH: GITHUB-HOSTED windows-2022 (ECR-009 0.3.1)
+SELF-HOSTED VM: NOT REQUIRED FOR CURRENT POC / FALLBACK ONLY
 HUMAN DAILY-DRIVER WORKSTATION: PROHIBITED
 ```
 
+**Status note (2026-08-30):** For the NON-PRODUCTION KSB bridge POC, Human directed GitHub-hosted Windows acceleration. This document remains the **self-hosted fallback / future** procedure. Do not delete.
 ---
 
 ## A. Create isolated Windows environment

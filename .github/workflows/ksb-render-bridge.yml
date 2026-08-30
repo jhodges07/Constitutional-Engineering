@@ -1,9 +1,14 @@
-# KSB Issue-trigger render bridge (local implementation; remote execution Human-gated)
+# KSB Issue-trigger render bridge
 #
 # Permissions rationale:
 #   contents: read  — checkout trusted workflow tree + pinned SHA only
 #   issues: write   — comment/label/close execution-request Issues (correlation + lifecycle)
 # No contents: write. No pull-requests. No workflow_dispatch / repository_dispatch.
+#
+# Render host (ECR-009 §2.1 / NON-PRODUCTION POC):
+#   GitHub-hosted windows-2022 — preferred stable Windows image label.
+#   Self-hosted ksb-render-windows remains fallback architecture (not required for current POC).
+#   Human daily-driver workstation: PROHIBITED.
 
 name: ksb-render-bridge
 
@@ -58,7 +63,6 @@ jobs:
             --github-output "$GITHUB_OUTPUT"
           code=$?
           set -e
-          # run_gate writes authorized=true|false; always continue so reject lifecycle can run
           if [ "$code" -ne 0 ] && ! grep -q '^authorized=' "$GITHUB_OUTPUT"; then
             echo "authorized=false" >> "$GITHUB_OUTPUT"
             echo "reject_code=GATE_FAILED" >> "$GITHUB_OUTPUT"
@@ -86,10 +90,10 @@ jobs:
           gh issue close "${{ github.event.issue.number }}" --reason "not planned" || gh issue close "${{ github.event.issue.number }}"
 
   render:
-    name: render-isolated-windows
+    name: render-github-hosted-windows
     needs: gate
     if: needs.gate.outputs.authorized == 'true'
-    runs-on: [self-hosted, Windows, ksb-render-windows]
+    runs-on: windows-2022
     steps:
       - name: Checkout workflow tree (bridge scripts)
         uses: actions/checkout@v4
@@ -108,13 +112,52 @@ jobs:
           name: ksb-normalized-${{ needs.gate.outputs.request_id }}
           path: bridge-work
 
+      - name: Setup controlled Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.10"
+
+      - name: Install controlled dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install Pillow==12.3.0 opencv-python==5.0.0 numpy==2.5.2
+          python -c "import sys,PIL,cv2,numpy; print('python',sys.version); print('Pillow',PIL.__version__); print('cv2',cv2.__version__); print('numpy',numpy.__version__)"
+
+      - name: Verify Arial Bold (fail closed)
+        shell: pwsh
+        run: |
+          $font = 'C:\Windows\Fonts\arialbd.ttf'
+          if (-not (Test-Path $font)) {
+            Write-Error "GITHUB-HOSTED FONT COMPATIBILITY GAP: missing $font"
+            exit 91
+          }
+          Get-Item $font | Format-List FullName, Length, LastWriteTime
+
+      - name: Record hosted runtime evidence
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path bridge-out | Out-Null
+          $lines = @(
+            "runner=windows-2022",
+            "canonical_sha=${{ needs.gate.outputs.canonical_sha }}",
+            "request_id=${{ needs.gate.outputs.request_id }}",
+            "run_id=$env:GITHUB_RUN_ID",
+            "python=$(python -c 'import sys; print(sys.version.split()[0])')",
+            "Pillow=$(python -c 'import PIL; print(PIL.__version__)')",
+            "opencv=$(python -c 'import cv2; print(cv2.__version__)')",
+            "numpy=$(python -c 'import numpy; print(numpy.__version__)')",
+            "arialbd=C:\Windows\Fonts\arialbd.ttf present"
+          )
+          $lines | Set-Content -Encoding utf8 bridge-out/HOSTED_RUNTIME.txt
+          Get-Content bridge-out/HOSTED_RUNTIME.txt
+
       - name: Render + anti-drift + RESULT
         shell: pwsh
         env:
           RUN_ID: ${{ github.run_id }}
         run: |
-          $py = "python"
-          & $py "workflow-src/Engineering-Office/publication/weekly-status/issue-bridge/scripts/run_render.py" `
+          python "workflow-src/Engineering-Office/publication/weekly-status/issue-bridge/scripts/run_render.py" `
             --normalized "bridge-work/normalized.json" `
             --baseline "render-src/Engineering-Office/publication/weekly-status/baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png" `
             --out-dir "bridge-out" `
@@ -128,20 +171,25 @@ jobs:
           path: |
             bridge-out/ksb-status.png
             bridge-out/RESULT.json
+            bridge-out/HOSTED_RUNTIME.txt
           if-no-files-found: error
 
       - name: Correlate Issue → run → artifact
-        shell: bash
+        shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BODY="KSB render EXECUTION RESULT (non-canonical artifact).
+          $body = @"
+          KSB render EXECUTION RESULT (non-canonical artifact; NON-PRODUCTION POC).
           request_id=${{ needs.gate.outputs.request_id }}
           run_id=${{ github.run_id }}
           canonical_sha=${{ needs.gate.outputs.canonical_sha }}
           artifact_name=${{ needs.gate.outputs.artifact_name }}
+          runner=windows-2022
           run_url=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-          STOP before publication. Temporary artifact ≠ canonical weekly image."
-          gh issue comment "${{ github.event.issue.number }}" --body "$BODY"
-          gh issue edit "${{ github.event.issue.number }}" --add-label "ksb-render:succeeded" || true
-          gh issue close "${{ github.event.issue.number }}" --reason "completed" || gh issue close "${{ github.event.issue.number }}"
+          STOP before publication. Temporary artifact ≠ canonical weekly image.
+          "@
+          gh issue comment "${{ github.event.issue.number }}" --body $body
+          gh issue edit "${{ github.event.issue.number }}" --add-label "ksb-render:succeeded" 2>$null
+          gh issue close "${{ github.event.issue.number }}" --reason "completed" 2>$null
+          if ($LASTEXITCODE -ne 0) { gh issue close "${{ github.event.issue.number }}" }
