@@ -11,13 +11,17 @@ from PIL import Image, ImageDraw, ImageFont
 
 from .contract import NormalizedInput, validate_and_normalize
 
-RENDERER_VERSION = "2.0.0-CWC-CE-097-CANDIDATE"
-OPERATIONAL_STATUS = "HUMAN VISUALLY ACCEPTED — CWC-CE-098 CANONICAL"
+RENDERER_VERSION = "2.1.0-CWC-CE-107-CANDIDATE"
+OPERATIONAL_STATUS = "TECHNICAL CANDIDATE — HUMAN VISUAL PENDING (CWC-CE-107)"
 
 EXPECTED_BASELINE_SHA256 = (
     "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9"
 )
 EXPECTED_CLEAN_MASTER_SHA256 = (
+    "29E243233AB0872FFF2323ACC882FC477F71865CE072C4416EEFBDEC8F8576E0"
+)
+# Historical CE-097 clean master — preserved; not ordinary input under CE-107
+HISTORICAL_CE097_CLEAN_MASTER_SHA256 = (
     "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C"
 )
 # Historical CE-096 asset — must not be used as ordinary render input
@@ -139,6 +143,21 @@ def _draw_right_text(
     bbox = draw.textbbox((0, 0), text, font=font)
     tw = bbox[2] - bbox[0]
     draw.text((rx - tw, ry), text, font=font, fill=tuple(fill))
+
+
+def _compose_status_date(
+    img: Image.Image,
+    regions: Dict[str, Any],
+    normalized: NormalizedInput,
+) -> None:
+    """Draw compact Date: yyyy.mm.ww from status_date (DYNAMIC)."""
+    sd = regions["status_date"]
+    draw = ImageDraw.Draw(img)
+    typo = regions["typography"]
+    font = _load_font(typo["font_path_windows"], int(sd["font_size_px"]))
+    text = f"{sd['label_prefix']}{normalized.status_date_compact}"
+    x, y = int(sd["xy"][0]), int(sd["xy"][1])
+    draw.text((x, y), text, font=font, fill=tuple(sd["rgb"]))
 
 
 def _compose_center_panel(
@@ -296,6 +315,7 @@ def render_ksb_status(
         canvas = master_rgb.copy()
 
     content = load_center_content(regions, root)
+    _compose_status_date(canvas, regions, normalized)
     _compose_center_panel(canvas, regions, content, normalized)
 
     if output_path is not None:

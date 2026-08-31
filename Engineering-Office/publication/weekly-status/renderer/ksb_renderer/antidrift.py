@@ -30,14 +30,30 @@ class AntiDriftResult:
 
 
 def authorized_rects_from_regions(regions: Dict[str, Any]) -> List[Rect]:
-    """Center-panel bounds (dynamic composition surface) with small pad."""
+    """Dynamic surfaces: center panel + STATUS_DATE (CWC-CE-107)."""
     pad = 2
+    rects: List[Rect] = []
     b = regions["center_panel"]["bounds"]
-    x = max(0, int(b["x"]) - pad)
-    y = max(0, int(b["y"]) - pad)
-    w = int(b["w"]) + 2 * pad
-    h = int(b["h"]) + 2 * pad
-    return [(x, y, w, h)]
+    rects.append(
+        (
+            max(0, int(b["x"]) - pad),
+            max(0, int(b["y"]) - pad),
+            int(b["w"]) + 2 * pad,
+            int(b["h"]) + 2 * pad,
+        )
+    )
+    sd = regions.get("status_date") or {}
+    ab = sd.get("authorized_bounds")
+    if ab:
+        rects.append(
+            (
+                max(0, int(ab["x"]) - pad),
+                max(0, int(ab["y"]) - pad),
+                int(ab["w"]) + 2 * pad,
+                int(ab["h"]) + 2 * pad,
+            )
+        )
+    return rects
 
 
 def _in_rects(x: int, y: int, rects: Sequence[Rect]) -> bool:

@@ -68,7 +68,7 @@ def main() -> int:
     check("opening_backtick_count_3", BODY_FENCE_START.count(chr(96)) == 3)
     check("baseline_unchanged", BASELINE_ID == "BL-WEEKLY-STATUS-BASELINE-v1.0")
     check("clean_master_not_baseline", CLEAN_MASTER_ID != BASELINE_ID)
-    check("renderer_unchanged", RENDERER_ID == "ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE")
+    check("renderer_active", RENDERER_ID == "ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE")
 
     # --- Reproduce CWC-CE-101 PowerShell corruption ---
     intended = chr(96) * 3 + "ksb-render-request"

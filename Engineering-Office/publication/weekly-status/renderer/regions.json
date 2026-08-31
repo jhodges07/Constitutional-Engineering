@@ -1,85 +1,107 @@
-{
-  "composition_model": "CLEAN_MASTER_TEMPLATE + DYNAMIC_CENTER_PANEL → NEW_PNG",
-  "composition_note": "CWC-CE-097/ECR-014: Ordinary render opens immutable clean master template, copies to memory, dynamically draws Kansas Legislative Engineering Status center panel (badges, titles, descriptions, tracks, fills, percentages, disclaimer, bottom statement). PROHIBITED: previous weekly PNG; populated BL-WEEKLY-STATUS-BASELINE-v1.0 as canvas; CWC-CE-096 FIXED-LAYER as canvas; plate-over historical bill content.",
-  "clean_master_id": "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE",
-  "clean_master_relpath": "templates/BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE.png",
-  "clean_master_sha256": "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C",
-  "clean_master_source_note": "Byte-identical to Human-provided templates/BL-Weekly-Status-Template-v1.0.png under CWC-CE-097; distinct controlled candidate identity (historical populated template/baseline not overwritten).",
-  "human_provided_template_relpath": "templates/BL-Weekly-Status-Template-v1.0.png",
-  "baseline_id": "BL-WEEKLY-STATUS-BASELINE-v1.0",
-  "baseline_relpath": "baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png",
-  "baseline_sha256": "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9",
-  "baseline_role": "HISTORICAL_HUMAN_ACCEPTED_VISUAL_REFERENCE — NOT ordinary render input",
-  "ce096_fixed_layer_relpath": "renderer/assets/FIXED-LAYER-v1.0-CWC-CE-096.png",
-  "ce096_fixed_layer_role": "HISTORICAL_CANDIDATE_EVIDENCE — NOT used by CWC-CE-097 renderer",
-  "center_content_relpath": "renderer/center_content.json",
-  "canvas": { "width": 1536, "height": 1024 },
-  "center_panel": {
-    "bounds": { "x": 397, "y": 364, "w": 684, "h": 439 },
-    "blank_rgb_min": [248, 248, 248],
-    "disclaimer_xy": [420, 755],
-    "bottom_statement_xy": [420, 775],
-    "disclaimer_font_size_px": 13,
-    "bottom_statement_font_size_px": 14,
-    "disclaimer_rgb": [30, 30, 40],
-    "bottom_statement_rgb": [0, 40, 90]
-  },
-  "typography": {
-    "font_family_authorized": "Arial Bold (Windows arialbd.ttf)",
-    "font_path_windows": "C:\\\\Windows\\\\Fonts\\\\arialbd.ttf",
-    "font_path_regular_windows": "C:\\\\Windows\\\\Fonts\\\\arial.ttf",
-    "font_path_italic_windows": "C:\\\\Windows\\\\Fonts\\\\ariali.ttf",
-    "title_font_size_px": 15,
-    "description_font_size_px": 12,
-    "percent_font_size_px": 34,
-    "engineered_font_size_px": 11,
-    "badge_font_size_px": 12
-  },
-  "bills": {
-    "bill_a": {
-      "badge": { "x": 415, "y": 380, "w": 72, "h": 72, "radius": 10 },
-      "title_xy": [505, 382],
-      "description_box": { "x": 505, "y": 405, "w": 400, "h": 55 },
-      "bar": { "x": 505, "y": 468, "w": 330, "h": 12 },
-      "percent_right_xy": [1055, 382],
-      "engineered_right_xy": [1055, 422],
-      "separator_y": 495
-    },
-    "bill_b": {
-      "badge": { "x": 415, "y": 510, "w": 72, "h": 72, "radius": 10 },
-      "title_xy": [505, 512],
-      "description_box": { "x": 505, "y": 535, "w": 400, "h": 55 },
-      "bar": { "x": 505, "y": 598, "w": 330, "h": 12 },
-      "percent_right_xy": [1055, 512],
-      "engineered_right_xy": [1055, 552],
-      "separator_y": 625
-    },
-    "bill_c": {
-      "badge": { "x": 415, "y": 640, "w": 72, "h": 72, "radius": 10 },
-      "title_xy": [505, 642],
-      "description_box": { "x": 505, "y": 665, "w": 400, "h": 55 },
-      "bar": { "x": 505, "y": 728, "w": 330, "h": 12 },
-      "percent_right_xy": [1055, 642],
-      "engineered_right_xy": [1055, 682],
-      "separator_y": 748
-    }
-  },
-  "weekly_variables": ["status_date", "bill_a_percent", "bill_b_percent", "bill_c_percent"],
-  "status_date_note": "Upper-right Date: 2026.08.35 and (Week 35 of 2026) remain in clean master as MIXED/STALE template content under CWC-CE-097 — NOT silently changed. Recommend separate CWC to move STATUS_DATE into dynamic contract.",
-  "stale_static_content_findings": [
-    {
-      "id": "KSB-STALE-BREADCRUMB-001",
-      "text": "Live 2026.10.05 Report (Files)",
-      "classification": "STALE_STATIC_TEMPLATE_CONTENT",
-      "action": "Do not silently change under CWC-CE-097; propose separate bounded correction"
-    },
-    {
-      "id": "KSB-DATE-TEMPLATE-001",
-      "text": "Date: 2026.08.35 / (Week 35 of 2026)",
-      "classification": "MIXED_FIXED_OR_STALE — weekly variable candidate still baked in clean master header",
-      "action": "Do not silently change; recommend dynamic STATUS_DATE under separate Human authority"
-    }
-  ],
-  "percent_range": { "min": 0, "max": 100 },
-  "output_filename_contract": "YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png"
-}
+{
+  "composition_model": "CLEAN_MASTER_TEMPLATE + DYNAMIC_CENTER_PANEL + DYNAMIC_STATUS_DATE → NEW_PNG",
+  "composition_note": "CWC-CE-107: Successor clean master (public crop; blank date; stable breadcrumb). Ordinary render opens immutable clean master, copies, draws STATUS_DATE from status_date and center panel. PROHIBITED: previous weekly PNG; populated baseline as canvas; CE-096 fixed layer; plate-over; Telea.",
+  "clean_master_id": "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE",
+  "clean_master_relpath": "templates/BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE.png",
+  "clean_master_sha256": "29E243233AB0872FFF2323ACC882FC477F71865CE072C4416EEFBDEC8F8576E0",
+  "clean_master_source_note": "Built from immutable v1.0-CANDIDATE (01C29A8A…) by CWC-CE-107 build_ce107_clean_master.py: crop metadata strip; blank baked date; replace stale dated breadcrumb leaf with FIXED 'Report Files'.",
+  "historical_clean_master_id": "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE",
+  "historical_clean_master_relpath": "templates/BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE.png",
+  "historical_clean_master_sha256": "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C",
+  "human_provided_template_relpath": "templates/BL-Weekly-Status-Template-v1.0.png",
+  "baseline_id": "BL-WEEKLY-STATUS-BASELINE-v1.0",
+  "baseline_relpath": "baseline/BL-WEEKLY-STATUS-BASELINE-v1.0.png",
+  "baseline_sha256": "17F574D4AE505F028054FD4DD97874AA199859D08C2842D380317EDDCC4035B9",
+  "baseline_role": "HISTORICAL_HUMAN_ACCEPTED_VISUAL_REFERENCE — NOT ordinary render input",
+  "ce096_fixed_layer_relpath": "renderer/assets/FIXED-LAYER-v1.0-CWC-CE-096.png",
+  "ce096_fixed_layer_role": "HISTORICAL_CANDIDATE_EVIDENCE — NOT used by ordinary renderer",
+  "center_content_relpath": "renderer/center_content.json",
+  "canvas": { "width": 1536, "height": 912 },
+  "status_date": {
+    "classification": "DYNAMIC",
+    "source": "render_payload.status_date → format_status_date (yyyy.mm.ww)",
+    "label_prefix": "Date: ",
+    "xy": [1288, 14],
+    "font_size_px": 18,
+    "rgb": [20, 20, 30],
+    "authorized_bounds": { "x": 1275, "y": 8, "w": 250, "h": 50 },
+    "display_rule": "Compact Date: yyyy.mm.ww only — no (Week NN of YYYY) parenthetical"
+  },
+  "github_breadcrumb": {
+    "classification": "FIXED",
+    "purpose": "PUBLIC_NAVIGATION — thin GitHub evidence breadcrumb (STD-011 §25A.4)",
+    "stale_leaf_remediation": "Live 2026.10.05 Report (Files) → Report Files (no weekly date)",
+    "public_navigation_url": "https://github.com/jhodges07/Constitutional-Engineering/tree/main/Engineering-Office/publication/weekly-status",
+    "engineering_evidence_urls": "Issue/run/artifact URLs remain engineering evidence — not required on public image"
+  },
+  "center_panel": {
+    "bounds": { "x": 397, "y": 364, "w": 684, "h": 439 },
+    "blank_rgb_min": [248, 248, 248],
+    "disclaimer_xy": [420, 755],
+    "bottom_statement_xy": [420, 775],
+    "disclaimer_font_size_px": 13,
+    "bottom_statement_font_size_px": 14,
+    "disclaimer_rgb": [30, 30, 40],
+    "bottom_statement_rgb": [0, 40, 90]
+  },
+  "typography": {
+    "font_family_authorized": "Arial Bold (Windows arialbd.ttf)",
+    "font_path_windows": "C:\\\\Windows\\\\Fonts\\\\arialbd.ttf",
+    "font_path_regular_windows": "C:\\\\Windows\\\\Fonts\\\\arial.ttf",
+    "font_path_italic_windows": "C:\\\\Windows\\\\Fonts\\\\ariali.ttf",
+    "title_font_size_px": 15,
+    "description_font_size_px": 12,
+    "percent_font_size_px": 34,
+    "engineered_font_size_px": 11,
+    "badge_font_size_px": 12
+  },
+  "bills": {
+    "bill_a": {
+      "badge": { "x": 415, "y": 380, "w": 72, "h": 72, "radius": 10 },
+      "title_xy": [505, 382],
+      "description_box": { "x": 505, "y": 405, "w": 400, "h": 55 },
+      "bar": { "x": 505, "y": 468, "w": 330, "h": 12 },
+      "percent_right_xy": [1055, 382],
+      "engineered_right_xy": [1055, 422],
+      "separator_y": 495
+    },
+    "bill_b": {
+      "badge": { "x": 415, "y": 510, "w": 72, "h": 72, "radius": 10 },
+      "title_xy": [505, 512],
+      "description_box": { "x": 505, "y": 535, "w": 400, "h": 55 },
+      "bar": { "x": 505, "y": 598, "w": 330, "h": 12 },
+      "percent_right_xy": [1055, 512],
+      "engineered_right_xy": [1055, 552],
+      "separator_y": 625
+    },
+    "bill_c": {
+      "badge": { "x": 415, "y": 640, "w": 72, "h": 72, "radius": 10 },
+      "title_xy": [505, 642],
+      "description_box": { "x": 505, "y": 665, "w": 400, "h": 55 },
+      "bar": { "x": 505, "y": 728, "w": 330, "h": 12 },
+      "percent_right_xy": [1055, 642],
+      "engineered_right_xy": [1055, 682],
+      "separator_y": 748
+    }
+  },
+  "weekly_variables": ["status_date", "bill_a_percent", "bill_b_percent", "bill_c_percent"],
+  "dynamic_regions": ["center_panel", "status_date"],
+  "fixed_public_content": [
+    "header",
+    "value_stream",
+    "left_foundation",
+    "right_why_this_matters",
+    "github_breadcrumb_structure",
+    "minimum_url_pattern",
+    "navy_footer_blueprintliberty_motto"
+  ],
+  "removed_from_public_image": [
+    "local_template_filename",
+    "local_template_path_X_GitHub",
+    "yyyy.mm.ww_date_explanation_metadata",
+    "Week_NN_of_YYYY_parenthetical",
+    "stale_Live_dated_report_breadcrumb_leaf"
+  ],
+  "percent_range": { "min": 0, "max": 100 },
+  "output_filename_contract": "YYYY-MM-DD-BlueprintLiberty-Weekly-Status.png"
+}

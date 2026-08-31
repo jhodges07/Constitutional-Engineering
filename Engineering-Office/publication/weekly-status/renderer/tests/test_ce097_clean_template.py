@@ -51,14 +51,14 @@ def main() -> int:
     rects = authorized_rects_from_regions(regions)
     bounds = regions["center_panel"]["bounds"]
 
-    check("renderer_identity", RENDERER_VERSION == "2.0.0-CWC-CE-097-CANDIDATE")
-    check("candidate_label", "HUMAN VISUALLY ACCEPTED" in OPERATIONAL_STATUS)
+    check("renderer_identity", RENDERER_VERSION == "2.1.0-CWC-CE-107-CANDIDATE")
+    check("candidate_label", "CWC-CE-107" in OPERATIONAL_STATUS)
     check("clean_master_exists", master.is_file(), str(master))
     verify_clean_master(master)
     verify_baseline_immutable(baseline)
     check("clean_master_sha", sha256_file(master) == EXPECTED_CLEAN_MASTER_SHA256)
     check("baseline_sha_preserved", sha256_file(baseline) == EXPECTED_BASELINE_SHA256)
-    check("dims", Image.open(master).size == (1536, 1024))
+    check("dims", Image.open(master).size == (1536, 912))
 
     # Blank center panel
     a = np.asarray(Image.open(master).convert("RGB"))

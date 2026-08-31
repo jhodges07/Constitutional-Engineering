@@ -26,7 +26,7 @@ def _request(**overrides):
         "request_id": "KSB-RENDER-2026-08-30-001",
         "canonical_sha": CANON,
         "baseline_id": "BL-WEEKLY-STATUS-BASELINE-v1.0",
-        "renderer_id": "ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE",
+        "renderer_id": "ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE",
         "render_payload": {
             "status_date": "2026-08-30",
             "bill_a_percent": 19,

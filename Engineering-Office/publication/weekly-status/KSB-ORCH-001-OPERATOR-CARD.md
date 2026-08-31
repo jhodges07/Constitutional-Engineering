@@ -1,7 +1,7 @@
-# ChatGPT / Phone Operator Card — KSB Status (CWC-CE-102)
+# ChatGPT / Phone Operator Card — KSB Status (CWC-CE-108)
 
 **Document ID:** KSB-ORCH-001-OPERATOR-CARD  
-**Governing Procedure:** KSB-ORCH-001 **v1.5.2** — STD-011 **v1.9.0** / ECR-014 / **CWC-CE-099** / **CWC-CE-102**  
+**Governing Procedure:** KSB-ORCH-001 **v1.5.2** — STD-011 **v1.9.0** / ECR-014 / ECR-015 / **CWC-CE-099** / **CWC-CE-102** / **CWC-CE-107–108**  
 **Human-facing sequence:** `Prepare KSB Status` → `Next` → `Next`  
 
 ---
@@ -25,12 +25,15 @@ Issue field baseline_id  = BL-WEEKLY-STATUS-BASELINE-v1.0
   → HISTORICAL visual baseline identity (gate-enforced)
   → NOT the clean master
 
-Clean master identity    = BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE
-  → Active pristine RENDER SOURCE
+Clean master identity    = BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE
+  → Active pristine RENDER SOURCE (CWC-CE-107 / ECR-015)
   → Selected by renderer_id → repository renderer config
   → NEVER place this string in baseline_id
 
-Issue field renderer_id  = ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
+Historical clean master  = BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE
+  → IMMUTABLE evidence only (do not overwrite)
+
+Issue field renderer_id  = ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE
 ```
 
 Issue #6 failed because `baseline_id` was set to the clean-master ID.
@@ -43,9 +46,10 @@ Issue #6 failed because `baseline_id` was set to the clean-master ID.
 STATUS DATE: 2026-08-30
 BILL A/B/C: 19% / 19% / 4%
 baseline_id (Issue): BL-WEEKLY-STATUS-BASELINE-v1.0
-CLEAN MASTER (render source): BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE
-RENDERER: ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
-CANONICAL SHA (current): 037e81143c3b56c624d67b2ab5e28963a3d4a3d3
+CLEAN MASTER (render source): BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE
+RENDERER: ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE
+HUMAN-ACCEPTED CANDIDATE SHA: 5FEECAA3267D07A996968DC4116A0C8AFB8E7181D187302B06401886960D80CC
+CANONICAL SHA: origin/main HEAD after CWC-CE-108 (ALLOWED_KSB_CANONICAL_SHAS)
 ```
 
 ---

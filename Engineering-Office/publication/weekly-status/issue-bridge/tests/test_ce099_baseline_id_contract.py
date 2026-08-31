@@ -75,12 +75,16 @@ def _event(req: dict, number: int = 6):
 
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
-    master = _WEEKLY / "templates" / "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE.png"
+    historical_master = (
+        _WEEKLY / "templates" / "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE.png"
+    )
+    master = _WEEKLY / "templates" / "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE.png"
+    hist_before = sha256_file(historical_master)
     sha_before = sha256_file(master)
 
     check("expected_baseline_id", BASELINE_ID == "BL-WEEKLY-STATUS-BASELINE-v1.0")
     check("clean_master_not_baseline_field", CLEAN_MASTER_ID != BASELINE_ID)
-    check("renderer_id", RENDERER_ID == "ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE")
+    check("renderer_id", RENDERER_ID == "ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE")
 
     # --- Reproduce Issue #6 ---
     bad = _req(baseline_id=CLEAN_MASTER_ID)
@@ -189,10 +193,26 @@ def main() -> int:
     render_ksb_status(payload, output_path=p2)
     s1, s2 = sha256_file(p1), sha256_file(p2)
     check("determinism", s1 == s2, f"{s1}")
-    check("visual_sha_matches_ce097_accepted", s1 == ACCEPTED_VISUAL_SHA, f"got={s1}")
+    # CWC-CE-107 public-image cleanup changes PNG bytes vs CE-097 hosted accept SHA
+    check(
+        "visual_sha_is_ce107_candidate",
+        s1 == "5FEECAA3267D07A996968DC4116A0C8AFB8E7181D187302B06401886960D80CC",
+        f"got={s1}",
+    )
+    check(
+        "visual_sha_differs_from_ce097_hosted_accept",
+        s1 != ACCEPTED_VISUAL_SHA,
+        "CE-107 candidate must not silently claim CE-097 byte identity",
+    )
     sha_after = sha256_file(master)
     check("master_immutable", sha_before == sha_after == CLEAN_MASTER_SHA256 == EXPECTED_CLEAN_MASTER_SHA256)
     check("clean_master_sha_constant", CLEAN_MASTER_SHA256 == EXPECTED_CLEAN_MASTER_SHA256)
+    check(
+        "historical_ce097_master_immutable",
+        hist_before
+        == sha256_file(historical_master)
+        == "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C",
+    )
 
     # Write machine-usable example for ChatGPT
     example = {

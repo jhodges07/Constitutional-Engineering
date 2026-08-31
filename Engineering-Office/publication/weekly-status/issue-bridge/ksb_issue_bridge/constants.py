@@ -9,12 +9,12 @@ CWC-CE-099 identity contract (authoritative for hosted Issues):
 
   CLEAN_MASTER_ID
       = active pristine render-source template identity
-      = BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE
+      = BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE
       Selected by renderer_id → renderer regions.json (NOT by baseline_id field)
 
   renderer_id
-      = ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
-      Binds the clean-master composition path
+      = ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE
+      Binds the clean-master composition path (CWC-CE-107 public-image cleanup candidate)
 
 Do NOT place CLEAN_MASTER_ID in the Issue baseline_id field (KSB-RENDER-003 / Issue #6).
 """
@@ -33,13 +33,19 @@ BASELINE_WIDTH = 1536
 BASELINE_HEIGHT = 912
 
 # Active clean master (render source). NOT a baseline_id value.
-CLEAN_MASTER_ID = "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE"
-CLEAN_MASTER_SHA256 = "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C"
+CLEAN_MASTER_ID = "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE"
+CLEAN_MASTER_SHA256 = "29E243233AB0872FFF2323ACC882FC477F71865CE072C4416EEFBDEC8F8576E0"
 CLEAN_MASTER_WIDTH = 1536
-CLEAN_MASTER_HEIGHT = 1024
+CLEAN_MASTER_HEIGHT = 912
 
-# Canonicalized clean-master renderer (CWC-CE-097/098). Human visual accepted.
-RENDERER_ID = "ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE"
+# Historical CE-097 clean master (immutable evidence; not ordinary input under CE-107)
+HISTORICAL_CE097_CLEAN_MASTER_ID = "BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE"
+HISTORICAL_CE097_CLEAN_MASTER_SHA256 = (
+    "01C29A8A20CA4D1798E4A407431B0A7FA1BD58F798D5837AD2A1CC1BF9E1D05C"
+)
+
+# Public-image cleanup candidate renderer (CWC-CE-107). Human visual PENDING.
+RENDERER_ID = "ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE"
 
 TITLE_PREFIX = "[KSB-RENDER] "
 REQUEST_ID_RE = re.compile(r"^KSB-RENDER-\d{4}-\d{2}-\d{2}-\d{3}$")

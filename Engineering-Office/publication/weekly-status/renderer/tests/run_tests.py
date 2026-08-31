@@ -81,7 +81,7 @@ def main() -> int:
             norm.status_date_compact,
         )
         check("status_date_expected_A", norm.status_date_compact == "2026.08.35", norm.status_date_compact)
-        check("dims_A", img1.size == (1536, 1024), str(img1.size))
+        check("dims_A", img1.size == (1536, 912), str(img1.size))
     except Exception:
         check("fixture_A_block", False, traceback.format_exc())
 
@@ -91,7 +91,7 @@ def main() -> int:
         img, norm, _ = render_ksb_status(inp, output_path=p)
         ad = validate_anti_drift(master, p, rects)
         check("antidrift_B", ad.pass_ok, ad.message)
-        check("dims_B", img.size == (1536, 1024), str(img.size))
+        check("dims_B", img.size == (1536, 912), str(img.size))
         check("status_date_B", norm.status_date_compact == "2026.01.03", norm.status_date_compact)
     except Exception:
         check("fixture_B_block", False, traceback.format_exc())
