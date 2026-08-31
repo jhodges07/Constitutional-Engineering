@@ -8,18 +8,22 @@
 **Governing Standards:** STD-011 Part B §§25 / 25A  
 **Governing Work Card:** **CWC-CE-107**  
 **Canonicalization Work Card:** **CWC-CE-108**  
+**Hosted Acceptance Work Cards:** **CWC-CE-109** / **CWC-CE-110**  
 **Predecessor:** ECR-014 / CWC-CE-097–106 (hosted-render POC COMPLETE)  
-**Status:** **HUMAN-ACCEPTED** (visual) — **CANONICALIZED under CWC-CE-108**  
+**Status:** **HUMAN-ACCEPTED** (local + hosted) — **HOSTED ACCEPTANCE SATISFIED** (CWC-CE-109/110)  
 **Version:** **1.0.0**  
 **Effective Date:** 2026-08-30  
 **Preparing Agent:** CE-Engineer  
-**Canonicalization Agent:** CE-GitManager (CWC-CE-108)  
+**Canonicalization Agent:** CE-GitManager (CWC-CE-108; hosted closure CWC-CE-110)  
 
 ```text
-HUMAN VISUAL ACCEPTANCE = ACCEPT (Human Engineer: "I concur." / CWC-CE-108)
-TECHNICAL CANDIDATE = PASS (CWC-CE-107)
+LOCAL HUMAN VISUAL ACCEPTANCE = ACCEPT (CWC-CE-107 / CWC-CE-108)
+HOSTED ACCEPTANCE RENDER = PASS (CWC-CE-109)
+HOSTED HUMAN VISUAL ACCEPTANCE = ACCEPT (CWC-CE-110; "I concur.")
+PUBLIC-IMAGE CLEANUP ACCEPTANCE CYCLE = COMPLETE
 PUBLICATION = NOT AUTHORIZED
 HOSTED-RENDER POC = COMPLETE (unchanged)
+ORCH IDENTITY SYNC = OPEN (separate CWC-CE-111)
 ```
 
 ---
@@ -81,6 +85,18 @@ No maturity change · no hosted Issue under CE-107/108 · no publication · no b
 
 ## 6. Activation gate (satisfied)
 
-1. Human visual ACCEPT of CWC-CE-107 candidate — **DONE**  
-2. CE-GitManager canonicalize scoped package — **CWC-CE-108**  
-3. Hosted acceptance render with new `renderer_id` / clean master — **separate CWC if required before publication**
+1. Human visual ACCEPT of CWC-CE-107 candidate — **DONE** (CWC-CE-108)  
+2. CE-GitManager canonicalize scoped package — **DONE** (CWC-CE-108)  
+3. Hosted acceptance render with new `renderer_id` / clean master — **DONE** (CWC-CE-109)  
+4. Human hosted visual ACCEPT of hosted PNG — **DONE** (CWC-CE-110; “I concur.”)  
+
+| Hosted identity | Value |
+|---|---|
+| Request | KSB-RENDER-2026-08-30-008 |
+| Issue | #9 |
+| Run | 33343921319 |
+| Tested canonical SHA | `db67fafde9a01fdaeecfb7c15e70d82054f00485` |
+| Hosted PNG SHA-256 | `5FEECAA3267D07A996968DC4116A0C8AFB8E7181D187302B06401886960D80CC` |
+| Deterministic vs CE-107 local candidate | PASS (exact equality) |
+
+**Note:** Lifecycle terminology used here is repository-equivalent to “hosted acceptance requirement satisfied.” Publication / HG-6 remain separately Human-controlled. ORCH phone-procedure identity residual remains OPEN for CWC-CE-111.
