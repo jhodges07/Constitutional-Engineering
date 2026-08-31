@@ -3,11 +3,18 @@
 **Status Date:** 2026.08.35  
 **Calendar Date:** 2026-08-30  
 **Publication Week:** ISO week 35 of 2026 (calendar year/month 2026-08)  
-**Package Class:** Weekly Public Engineering Status  
-**Governing Work Card:** CWC-CE-085 — First Phone-Originated KSB Status POC  
-**Governing CONTROL:** STD-011 Version 1.3.0 Part B; WSMAT-001 Version 1.0.0  
+**Package Class:** Weekly Public Engineering Status / KSB Sunday Publication Package  
+**Package Identity:** `KSB-PACKAGE-2026-08-30`  
+**Governing Work Card (package refresh):** CWC-CE-114  
+**Preceding readiness audit:** CWC-CE-113  
+**Maturity origin work card:** CWC-CE-085  
+**Governing CONTROL:** STD-011 Version 1.9.0 Part B; WSMAT-001 Version 1.0.0; ECR-015  
 
 ![BlueprintLiberty Weekly Engineering Status](../images/2026-08-30-BlueprintLiberty-Weekly-Status.png)
+
+**Controlled image SHA-256:** `5FEECAA3267D07A996968DC4116A0C8AFB8E7181D187302B06401886960D80CC`  
+**Press release:** `../press-releases/2026-08-30-BlueprintLiberty-KSB-Press-Release.md`  
+**Manifest:** `../manifests/2026-08-30-BlueprintLiberty-Weekly-Status.md`
 
 ---
 
@@ -30,7 +37,7 @@ These percentages are **CERTIFIED KSB MATURITY** values under STD-011 §27 / WSM
 
 ## Concise Public Narrative
 
-BlueprintLiberty’s first phone-originated Kansas BlueprintLiberty Status package reports engineering maturity for three Kansas legislative engineering objects under active Constitutional Engineering Office controls.
+BlueprintLiberty’s Kansas BlueprintLiberty Status package reports engineering maturity for three Kansas legislative engineering objects under active Constitutional Engineering Office controls.
 
 Bills A and B share a Draft Letter of Understanding (LOU-001 Draft 0.3) that remains **not Human-accepted**. Bill C is identified by its public title pin; a Bill C legislative LOU has not been accepted. Hard gate HG-D1 remains unsatisfied for all three bills. Downstream maturity stages that require accepted LOU authority therefore receive no maturity credit.
 
@@ -43,11 +50,14 @@ Bills A and B share a Draft Letter of Understanding (LOU-001 Draft 0.3) that rem
 | `KSB-MATURITY-CALC-001-CWC-CE-085.md` | Evidence snapshot + calculated maturity ledgers |
 | `KSB-MATURITY-CERT-001-CWC-CE-085.md` | Human certification record |
 | `WSMAT-001-KSB-Status-Maturity-Measurement.md` | Active maturity algorithm |
-| `STD-011` v1.3.0 Part B | Packaging / percentage authority |
+| `STD-011` v1.9.0 Part B | Packaging / percentage / Sunday package authority |
 | `ECR-005` | Maturity-control change record |
+| `ECR-015` | Public-image cleanup (HUMAN-ACCEPTED; hosted acceptance satisfied) |
 | `definition/LOU-001-…` Draft 0.3 | Recognized draft LOU (NOT ACCEPTED) for Bills A/B |
-| Baseline `BL-WEEKLY-STATUS-BASELINE-v1.0` | Immutable visual baseline SHA-256 `17F574D4…` |
-| Repository evaluation HEAD | `c99c0b33ef3f923e979a8136cad1e8f07ab42dba` (pre-commit) |
+| Baseline `BL-WEEKLY-STATUS-BASELINE-v1.0` | HISTORICAL visual baseline identity (Issue `baseline_id`) |
+| Clean master `…-v1.1-CWC-CE-107-CANDIDATE` | Active render source (SHA `29E24323…`) |
+| Renderer `ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE` | Active controlled renderer |
+| Repository HEAD at CWC-CE-114 start | `c6d82ac103a96bc4b8a2a8239279ff90ef76aaf9` |
 
 ---
 
@@ -55,11 +65,12 @@ Bills A and B share a Draft Letter of Understanding (LOU-001 Draft 0.3) that rem
 
 | Item | State |
 |---|---|
-| Maturity percentages | **HUMAN CERTIFIED** (ACCEPT) |
-| Weekly package generation | Authorized under CWC-CE-085 for local generation/validation |
+| Maturity percentages | **HUMAN CERTIFIED** (ACCEPT 19/19/4) |
+| Controlled image (cleanup) | **HUMAN-/HOSTED-ACCEPTED** (CWC-CE-107→110; SHA `5FEECAA3…`) |
+| Weekly package refresh | Authorized under **CWC-CE-114** (local correction; Git pending) |
 | LOU HG-D1 (Bill A/B/C) | **NOT PASSED** |
-| Package Git advancement | **PENDING Human Git gate** |
-| Publication (HG-6) | **NOT AUTHORIZED** |
+| Package Git advancement | **PENDING** CE-GitManager canonicalize after CWC-CE-114 |
+| Publication (HG-6) | **NOT AUTHORIZED** / **NOT PASSED** |
 
 ---
 
@@ -67,7 +78,7 @@ Bills A and B share a Draft Letter of Understanding (LOU-001 Draft 0.3) that rem
 
 **NOT AUTHORIZED.**
 
-Generation is not publication. Facebook, website upload, social posting, email release, and public LOU review are not authorized by this package alone.
+Package completeness does not authorize publication. Facebook, website upload, social posting, email release, and public LOU review are not authorized by this package alone.
 
 ---
 
@@ -79,6 +90,8 @@ Generation is not publication. Facebook, website upload, social posting, email r
 
 ## Git Traceability
 
-Post-commit Git SHA: *not available — package not yet committed*
+Starting canonical SHA for CWC-CE-114: `c6d82ac103a96bc4b8a2a8239279ff90ef76aaf9`  
+Post-package-refresh Git SHA: *pending CE-GitManager canonicalize*
 
-Manifest: `../manifests/2026-08-30-BlueprintLiberty-Weekly-Status.md`
+Manifest: `../manifests/2026-08-30-BlueprintLiberty-Weekly-Status.md`  
+Package validation: `../validations/2026-08-30-BlueprintLiberty-Weekly-Status-PACKAGE-VALIDATION.md`
