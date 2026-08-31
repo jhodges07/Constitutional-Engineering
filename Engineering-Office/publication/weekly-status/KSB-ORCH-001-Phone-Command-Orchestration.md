@@ -20,7 +20,7 @@
 ACTIVE UNDER STD-011 v1.9.0 §36 / §36.11–§36.15 / ECR-014
 THREE-STEP + SINGLE-COPY PR + INLINE IMAGE PRESERVED
 CLEAN MASTER + DYNAMIC CENTER PANEL
-CANDIDATE: ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE
+CANDIDATE: ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE
 Issue baseline_id = BL-WEEKLY-STATUS-BASELINE-v1.0 (HISTORICAL)
 Clean master ≠ baseline_id (CWC-CE-099 / KSB-RENDER-003)
 Fence-safe Issue body (CWC-CE-102 / KSB-RENDER-004)
@@ -106,8 +106,8 @@ On successful Step-1 entry, the assistant SHALL create / retain an **Active KSB 
 | `bill_c_percent` | certified integer |
 | `baseline_id` | `BL-WEEKLY-STATUS-BASELINE-v1.0` (**HISTORICAL** visual baseline — Issue field; CWC-CE-099: NOT clean master) |
 | `baseline_sha256` | accepted SHA |
-| `renderer_id` | `ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE` (binds clean-master render path) |
-| `clean_master_id` | `BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.0-CANDIDATE` (render source; **not** an Issue `baseline_id` value) |
+| `renderer_id` | `ksb_renderer@2.1.0-CWC-CE-107-CANDIDATE` (binds clean-master render path) |
+| `clean_master_id` | `BL-WEEKLY-STATUS-CLEAN-TEMPLATE-v1.1-CWC-CE-107-CANDIDATE` (render source; **not** an Issue `baseline_id` value) |
 | `package_paths` | manifest / report / press-release / image (or RENDER REQUIRED) |
 | `package_state` | COMPLETE / INCOMPLETE |
 | `certification_state` | as recorded |
@@ -467,3 +467,4 @@ Authoritative procedure: `issue-bridge/FENCE-SAFE-HOSTED-REQUEST-PROCEDURE.md`.
 | 1.3.0 | 2026-08-30 | ECR-012 / CWC-CE-094: single-copy press-release box; inline controlled image; fresh plate-fill composition; ZIP not primary Human product. |
 | 1.5.1 | 2026-08-30 | CWC-CE-099: baseline_id = historical BL-WEEKLY-STATUS-BASELINE-v1.0; clean master not Issue baseline_id (KSB-RENDER-003). |
 | 1.5.2 | 2026-08-30 | CWC-CE-102: fence-safe hosted Issue body construction; pre-submit + post-create readback (KSB-RENDER-004). |
+| 1.5.2 | 2026-08-30 | CWC-CE-111: synchronize active clean-master / renderer identities to v1.1 / 2.1.0 (ECR-015 accepted; no behavior change). |
