@@ -118,7 +118,7 @@ On successful Step-1 entry, the assistant SHALL create / retain an **Active KSB 
 ```text
 Prepare KSB Status → STATUS only (no render Issue)
 Next                 → PRESS RELEASE (~450–550 words; same package values)
-Next                 → CONTROLLED IMAGE path (≤1 render request; reuse if in progress)
+Next                 → CONTROLLED IMAGE (exact package PNG; ≤1 render request only if absent)
 ```
 
 #### Package phases (minimum)
@@ -133,17 +133,23 @@ Across all steps preserve: cycle identity; status date; Bill A/B/C; certificatio
 
 While a render request exists for the active package and execution is QUEUED/IN_PROGRESS, `Next` SHALL reconcile that request and SHALL NOT create a second Issue, request ID, workflow_dispatch, or duplicate render.
 
+#### Existing package image delivery (CWC-CE-118)
+
+When `images/{status_date}-BlueprintLiberty-Weekly-Status.png` already exists under the weekly-status package root, final `Next` SHALL resolve and verify that exact artifact (SHA-256 and 1536×912 when required) and present it INLINE. It SHALL NOT create a new render request, invoke image search, or substitute another photograph.
+
+If the expected artifact is missing or identity verification fails: return a controlled failure (`DELIVERY BLOCKED` / `IDENTITY VERIFICATION FAILED`). Do not fall back to image search, image generation, stock photos, or Capitol web results.
+
 #### Human-product presentation (ECR-012)
 
 | Step | Presentation |
 |---|---|
 | Prepare → STATUS | Direct reply text |
 | Next → PRESS RELEASE | **ONE SINGLE-COPY BOX** with complete publishable release |
-| Next → IMAGE | **INLINE** controlled PNG in reply; ZIP/artifact = engineering evidence only |
+| Next → IMAGE | **INLINE** exact controlled package PNG in reply; ZIP/artifact = engineering evidence only |
 
 #### Fresh composition
 
-Each Command-3 image is a new deterministic PNG from baseline + clean variable plates + current variables. No ordinary inpaint. No dependency on prior weekly render output.
+When a new controlled render is required (package image absent), Command-3 produces a new deterministic PNG from baseline + clean variable plates + current variables. No ordinary inpaint. No dependency on prior weekly render output as a substitute for the current package artifact.
 
 ### 3.4 One-command semantics (historical / superseded delivery)
 
@@ -176,6 +182,10 @@ Uses accepted baseline; deterministic renderer; only authorized VARIABLE regions
 ### 5.2 CREATIVE SUPPORTING ARTWORK
 
 Independently generated visual material. Not the KSB Status image. No KSB engineering authority. Allowed only when Human intent **clearly** requests separate creative artwork.
+
+### 5.3 Image-search / web-photo firewall (CWC-CE-118)
+
+For final `Next` → CONTROLLED IMAGE, the presentation layer SHALL NOT use generic image search, web image results, stock photographs, Kansas Capitol search results, or any uncontrolled attachment as a substitute for the package-controlled PNG.
 
 ### 5.3 Ambiguous “image” resolution (DEFAULT)
 
@@ -468,3 +478,4 @@ Authoritative procedure: `issue-bridge/FENCE-SAFE-HOSTED-REQUEST-PROCEDURE.md`.
 | 1.5.1 | 2026-08-30 | CWC-CE-099: baseline_id = historical BL-WEEKLY-STATUS-BASELINE-v1.0; clean master not Issue baseline_id (KSB-RENDER-003). |
 | 1.5.2 | 2026-08-30 | CWC-CE-102: fence-safe hosted Issue body construction; pre-submit + post-create readback (KSB-RENDER-004). |
 | 1.5.2 | 2026-08-30 | CWC-CE-111: synchronize active clean-master / renderer identities to v1.1 / 2.1.0 (ECR-015 accepted; no behavior change). |
+| 1.5.2 | 2026-08-30 | CWC-CE-118: final Next prefers exact existing package PNG; image-search / web-photo / image-gen substitutes prohibited; fail visibly if identity missing. |

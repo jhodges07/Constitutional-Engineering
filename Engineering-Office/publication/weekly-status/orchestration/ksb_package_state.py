@@ -2,13 +2,23 @@
 
 Human products advance one boundary per command. GitHub render mechanics are
 subordinate and MUST NOT start at Step 1 or Step 2.
+
+CWC-CE-118: final Next prefers exact existing package PNG (verified) over new
+render / image search / image generation.
 """
 
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass, field
 from enum import Enum
-from typing import Any, Mapping, Optional
+from pathlib import Path
+from typing import Any, Mapping, Optional, Tuple
+
+try:
+    from PIL import Image
+except ImportError:  # pragma: no cover
+    Image = None  # type: ignore
 
 
 class PackagePhase(str, Enum):
@@ -95,6 +105,54 @@ class CommandResult:
     press_release_presentation: str = ""
     image_presentation: str = ""
     zip_is_primary_human_product: bool = False
+    # CWC-CE-118 controlled-image delivery identity
+    controlled_image_path: str = ""
+    controlled_image_sha256: str = ""
+    controlled_image_width: int = 0
+    controlled_image_height: int = 0
+
+
+def package_image_relpath(status_date: str) -> str:
+    """Canonical package image path relative to weekly-status root."""
+    return f"images/{status_date}-BlueprintLiberty-Weekly-Status.png"
+
+
+def verify_controlled_package_image(
+    image_path: Path,
+    *,
+    expected_sha256: Optional[str] = None,
+    expected_size: Tuple[int, int] = (1536, 912),
+) -> Tuple[str, int, int]:
+    """
+    Verify controlled package PNG bytes.
+
+    Returns (sha256_upper, width, height).
+    Raises CommandError on missing/invalid artifact — never invent a substitute.
+    """
+    if not image_path.is_file():
+        raise CommandError(
+            "KSB CONTROLLED IMAGE: DELIVERY BLOCKED — expected artifact missing: "
+            f"{image_path.as_posix()}"
+        )
+    raw = image_path.read_bytes()
+    sha = hashlib.sha256(raw).hexdigest().upper()
+    if expected_sha256 is not None and sha != expected_sha256.upper():
+        raise CommandError(
+            "KSB CONTROLLED IMAGE: IDENTITY VERIFICATION FAILED — "
+            f"expected SHA {expected_sha256.upper()} got {sha}"
+        )
+    if Image is None:
+        raise CommandError(
+            "KSB CONTROLLED IMAGE: DELIVERY BLOCKED — Pillow unavailable for dimension verify"
+        )
+    with Image.open(image_path) as im:
+        width, height = im.size
+    if (width, height) != expected_size:
+        raise CommandError(
+            "KSB CONTROLLED IMAGE: IDENTITY VERIFICATION FAILED — "
+            f"expected dimensions {expected_size[0]}×{expected_size[1]} got {width}×{height}"
+        )
+    return sha, width, height
 
 
 class ThreeStepOrchestrator:
@@ -103,11 +161,28 @@ class ThreeStepOrchestrator:
     BASELINE_ID = "BL-WEEKLY-STATUS-BASELINE-v1.0"
     RENDERER_ID = "ksb_renderer@2.0.0-CWC-CE-097-CANDIDATE"
     FORBIDDEN_IMAGE_SUBSTITUTES = frozenset(
-        {"image_gen", "dalle", "generative_infographic", "creative_status_image"}
+        {
+            "image_gen",
+            "dalle",
+            "generative_infographic",
+            "creative_status_image",
+            # CWC-CE-118 — presentation substitutes prohibited on final Next
+            "image_search",
+            "web_image_search",
+            "web_search",
+            "stock_photo",
+            "capitol_photo",
+            "kansas_capitol_search",
+            "generic_image_search",
+            "bing_image_search",
+            "google_image_search",
+        }
     )
+    WEEKLY_STATUS_ROOT = Path(__file__).resolve().parents[1]
 
-    def __init__(self) -> None:
+    def __init__(self, *, weekly_status_root: Optional[Path] = None) -> None:
         self._active: Optional[PackageState] = None
+        self._weekly_root = Path(weekly_status_root) if weekly_status_root else self.WEEKLY_STATUS_ROOT
 
     @property
     def active(self) -> Optional[PackageState]:
@@ -163,13 +238,20 @@ class ThreeStepOrchestrator:
         proposed_render_request_id: Optional[str] = None,
         proposed_issue_number: Optional[int] = None,
         allow_image_substitute: Optional[str] = None,
+        expected_image_sha256: Optional[str] = None,
+        require_existing_package_image: bool = False,
     ) -> CommandResult:
         """Contextual Next: PR → image path → reuse in-progress → completed package."""
         if self._active is None:
             raise CommandError("Next with no active KSB package")
 
-        if allow_image_substitute and allow_image_substitute.lower() in self.FORBIDDEN_IMAGE_SUBSTITUTES:
-            raise CommandError("generative/creative image substitution prohibited")
+        if allow_image_substitute:
+            key = allow_image_substitute.lower().strip()
+            if key in self.FORBIDDEN_IMAGE_SUBSTITUTES:
+                raise CommandError(
+                    "KSB CONTROLLED IMAGE: substitute prohibited — "
+                    "no image_search / image_gen / stock / Capitol photo fallback"
+                )
 
         pkg = self._active
         phase = pkg.phase
@@ -188,6 +270,8 @@ class ThreeStepOrchestrator:
                 image_execution_status=image_execution_status,
                 proposed_render_request_id=proposed_render_request_id,
                 proposed_issue_number=proposed_issue_number,
+                expected_image_sha256=expected_image_sha256,
+                require_existing_package_image=require_existing_package_image,
             )
 
         if phase in (PackagePhase.IMAGE_COMPLETE, PackagePhase.PACKAGE_COMPLETE):
@@ -226,6 +310,45 @@ class ThreeStepOrchestrator:
             zip_is_primary_human_product=False,
         )
 
+    def _deliver_existing_package_image(
+        self,
+        pkg: PackageState,
+        *,
+        expected_image_sha256: Optional[str],
+    ) -> CommandResult:
+        rel = package_image_relpath(pkg.identity.status_date)
+        image_path = self._weekly_root / rel
+        sha, width, height = verify_controlled_package_image(
+            image_path,
+            expected_sha256=expected_image_sha256,
+        )
+        pkg.phase = PackagePhase.PACKAGE_COMPLETE
+        pkg.image_returned = True
+        pkg.artifact_name = image_path.name
+        pkg.history.append("NEXT→CONTROLLED_PACKAGE_IMAGE(exact)")
+        return CommandResult(
+            product=Product.IMAGE,
+            phase=pkg.phase,
+            create_render_request=False,
+            message=(
+                "KSB IMAGE — display this exact controlled PNG INLINE in the ChatGPT reply. "
+                f"ARTIFACT: {rel} "
+                f"SHA-256: {sha} "
+                f"DIMS: {width}×{height}. "
+                "Do NOT image_search. Do NOT image_gen. Do NOT substitute Capitol/stock photos. "
+                "ZIP/Actions artifact is engineering evidence only. "
+                "PACKAGE COMPLETE — HUMAN REVIEW REQUIRED. Publication NOT performed."
+            ),
+            package=pkg.snapshot(),
+            press_release_presentation="",
+            image_presentation="INLINE_PNG",
+            zip_is_primary_human_product=False,
+            controlled_image_path=rel.replace("\\", "/"),
+            controlled_image_sha256=sha,
+            controlled_image_width=width,
+            controlled_image_height=height,
+        )
+
     def _image_path(
         self,
         pkg: PackageState,
@@ -233,8 +356,19 @@ class ThreeStepOrchestrator:
         image_execution_status: Optional[str],
         proposed_render_request_id: Optional[str],
         proposed_issue_number: Optional[int],
+        expected_image_sha256: Optional[str] = None,
+        require_existing_package_image: bool = False,
     ) -> CommandResult:
         status = (image_execution_status or "").strip().upper()
+
+        # CWC-CE-118: prefer exact existing package PNG before any new render / search.
+        if not pkg.render_request_id and not status:
+            rel = package_image_relpath(pkg.identity.status_date)
+            candidate = self._weekly_root / rel
+            if candidate.is_file() or require_existing_package_image:
+                return self._deliver_existing_package_image(
+                    pkg, expected_image_sha256=expected_image_sha256
+                )
 
         # Already have a request — never mint another
         if pkg.render_request_id:

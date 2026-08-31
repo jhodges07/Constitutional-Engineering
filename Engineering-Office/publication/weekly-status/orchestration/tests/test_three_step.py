@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,8 +34,16 @@ def check(name: str, ok: bool, detail: str = "") -> None:
         raise SystemExit(1)
 
 
+def _orch_empty_root() -> ThreeStepOrchestrator:
+    """Empty weekly-status root so render-path tests are not short-circuited by a package PNG."""
+    tmp = tempfile.TemporaryDirectory()
+    orch = ThreeStepOrchestrator(weekly_status_root=Path(tmp.name))
+    orch._tmpdir = tmp  # keep alive for test duration  # type: ignore[attr-defined]
+    return orch
+
+
 def main() -> int:
-    orch = ThreeStepOrchestrator()
+    orch = _orch_empty_root()
 
     # Prepare → STATUS only; no render
     r1 = orch.prepare_ksb_status(**CERT)
@@ -62,7 +71,7 @@ def main() -> int:
     )
     check("continuity_after_pr", True)
 
-    # Second Next → image path; at most one create
+    # Second Next → image path; at most one create (no package PNG on empty root)
     r3 = orch.next_command()
     check("second_next_enters_image", r3.create_render_request is True)
     check("second_next_product", r3.product == Product.IMAGE_IN_PROGRESS)
@@ -98,7 +107,7 @@ def main() -> int:
     check("after_complete_no_render", r6.create_render_request is False)
 
     # Negative: Next with no package
-    orch2 = ThreeStepOrchestrator()
+    orch2 = _orch_empty_root()
     try:
         orch2.next_command()
         check("reject_next_no_package", False)
@@ -106,7 +115,7 @@ def main() -> int:
         check("reject_next_no_package", True)
 
     # Negative: maturity mutation
-    orch3 = ThreeStepOrchestrator()
+    orch3 = _orch_empty_root()
     orch3.prepare_ksb_status(**CERT)
     try:
         orch3.mutate_press_release_maturity(80)
@@ -120,7 +129,7 @@ def main() -> int:
         check("reject_image_maturity_mutation", True)
 
     # Negative: generative substitute
-    orch4 = ThreeStepOrchestrator()
+    orch4 = _orch_empty_root()
     orch4.prepare_ksb_status(**CERT)
     orch4.next_command()
     try:
@@ -130,7 +139,7 @@ def main() -> int:
         check("reject_image_gen", True)
 
     # Negative: continuity break
-    orch5 = ThreeStepOrchestrator()
+    orch5 = _orch_empty_root()
     orch5.prepare_ksb_status(**CERT)
     try:
         orch5.assert_continuity(
@@ -145,8 +154,8 @@ def main() -> int:
     except CommandError:
         check("reject_bill_a_drift", True)
 
-    # Human simplicity path representation
-    orch6 = ThreeStepOrchestrator()
+    # Human simplicity path representation (empty root → render intent on final Next)
+    orch6 = _orch_empty_root()
     path = []
     path.append(("Prepare KSB Status", orch6.prepare_ksb_status(**CERT).product.value))
     path.append(("Next", orch6.next_command().product.value))
@@ -163,7 +172,7 @@ def main() -> int:
     )
 
     # IMAGE BLOCKED path
-    orch7 = ThreeStepOrchestrator()
+    orch7 = _orch_empty_root()
     orch7.prepare_ksb_status(**CERT)
     orch7.next_command()
     orch7.next_command()

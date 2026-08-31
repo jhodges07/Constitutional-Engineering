@@ -1,7 +1,7 @@
-# ChatGPT / Phone Operator Card — KSB Status (CWC-CE-108)
+# ChatGPT / Phone Operator Card — KSB Status (CWC-CE-108 / CWC-CE-118)
 
 **Document ID:** KSB-ORCH-001-OPERATOR-CARD  
-**Governing Procedure:** KSB-ORCH-001 **v1.5.2** — STD-011 **v1.9.0** / ECR-014 / ECR-015 / **CWC-CE-099** / **CWC-CE-102** / **CWC-CE-107–108**  
+**Governing Procedure:** KSB-ORCH-001 **v1.5.2** — STD-011 **v1.9.0** / ECR-014 / ECR-015 / **CWC-CE-099** / **CWC-CE-102** / **CWC-CE-107–108** / **CWC-CE-118**  
 **Human-facing sequence:** `Prepare KSB Status` → `Next` → `Next`  
 
 ---
@@ -10,9 +10,9 @@
 
 1. **Prepare KSB Status** → STATUS only. No PR. No image. No render Issue.  
 2. **First Next** → press release in **ONE SINGLE-COPY BOX**. No render Issue.  
-3. **Second Next** → controlled PNG **INLINE**. At most one render request.  
+3. **Second Next** → exact controlled package PNG **INLINE** (path + SHA from package). Prefer existing verified package image; create a render request only if that artifact is absent.  
 4. ZIP / artifact = engineering evidence only.  
-5. Controlled image = clean master (via **renderer_id**) + dynamic center panel. **Never** image_gen.  
+5. Controlled image = package artifact (or clean master via **renderer_id** + plates when render is required). **Never** image_gen. **Never** image_search / web photos / Kansas Capitol stock substitutes. If identity verify fails → `KSB CONTROLLED IMAGE: IDENTITY VERIFICATION FAILED` / `DELIVERY BLOCKED` — fail visibly; no substitute.  
 6. Preserve certified maturity (currently 19/19/4).  
 7. **Fence-safe Issue bodies (CWC-CE-102 / KSB-RENDER-004):** never put ```ksb-render-request fences in PowerShell `python -c` / double-quoted strings. Write JSON → `write_ksb_issue_body.py` → `gh … --body-file`. Pre-submit parse PASS required. Post-create body readback required. Issue #7 evidence: single-backtick corruption.  
 
