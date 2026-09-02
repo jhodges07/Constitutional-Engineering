@@ -2,10 +2,10 @@
 
 **Document ID:** README-DEF-WORKING-BILL-A-001  
 **Classification:** Informational Directory Note  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation; audit not executed)  
-**Governing LOU candidate:** LOU-004 Draft 0.7 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation); CWC-CE-127 (Domain 01 evidence execution); CWC-CE-128 (Domain 01 evidence closure / reconciliation)  
+**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Status:** Active (directory note only)  
-**Version:** 1.6.0  
+**Version:** 1.8.0  
 **Effective Date:** 2026-09-02  
 
 Path: `Engineering-Office/definition/working/bill-a/`
@@ -28,14 +28,22 @@ This directory is separate from CWC-CE-070 Master Plan `WD-MP-*` files in the pa
 | `WD-BILL-A-010-Q-BILL-A-003-Revenue-Claim-Exception-Boundary.md` | Q-BILL-A-003 ask-cycle / exception model (historical) |
 | `WD-BILL-A-011-Git-Handoff-CWC-CE-123.md` | CWC-CE-123 ask-cycle Git handoff |
 | `WD-BILL-A-012-Q-BILL-A-003-Human-Intent-Uniform-Excise-Audit.md` | Q-BILL-A-003 Human Intent (excise domain; controlling) |
-| `WD-BILL-A-013-Kansas-Excise-Audit-Requirement.md` | Domain 01 EXCISE requirement — subordinate; audit not executed |
+| `WD-BILL-A-013-Kansas-Excise-Audit-Requirement.md` | Domain 01 EXCISE requirement — subordinate; CWC-CE-127 executed Domain 01 |
 | `WD-BILL-A-014-Git-Handoff-Q-BILL-A-003-Recording.md` | Q-BILL-A-003 recording Git handoff |
 | `WD-BILL-A-015-Q-BILL-A-004-Human-Intent-Kansas-Legal-Revenue-Scope.md` | Q-BILL-A-004 Human Intent source of record |
-| `WD-BILL-A-016-Kansas-Legal-Revenue-Scope-Audit-Architecture.md` | KLRS / Universe audit architecture — audit not executed |
+| `WD-BILL-A-016-Kansas-Legal-Revenue-Scope-Audit-Architecture.md` | KLRS / Universe audit architecture — Domain 01 executed; remaining domains not executed |
 | `WD-BILL-A-017-Git-Handoff-CWC-CE-124.md` | CWC-CE-124 Git handoff |
 | `WD-BILL-A-018-Q-BILL-A-005-Human-Intent-Closed-Demand-Authority.md` | Q-BILL-A-005 Human Intent — Option (a) |
-| `WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md` | Candidate 32-field master register — **empty** |
-| `WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md` | Completeness protocol / Domain 01-first order — **not certified** |
+| `WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md` | Candidate 32-field master register — schema authority; Domain 01 execution in WD-BILL-A-022 |
+| `WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md` | Completeness protocol / Domain 01-first order — Universe **not certified** |
 | `WD-BILL-A-021-Git-Handoff-CWC-CE-125.md` | CWC-CE-125 Git handoff — **no commit/push** |
+| `WD-BILL-A-022-Domain-01-Master-Register-Execution.md` | Domain 01 32-field execution instance — dispositions **BLANK** |
+| `WD-BILL-A-023-Domain-01-Excise-Evidence-Audit.md` | Domain 01 Human-readable audit; beyond-gasoline **YES — VERIFIED** |
+| `WD-BILL-A-024-Domain-01-Source-Register.md` | Domain 01 PRIMARY-LEGAL / GOV-DATA locators |
+| `WD-BILL-A-025-Domain-01-Completeness-Reconciliation.md` | Domain 01 completeness: substantially complete with explicit gaps |
+| `WD-BILL-A-026-Domain-01-Conflict-Unknown-Register.md` | Domain 01 source conflicts and unknowns |
+| `WD-BILL-A-027-Git-Handoff-CWC-CE-127.md` | CWC-CE-127 Git handoff — **no commit/push** |
+| `WD-BILL-A-028-Domain-01-Evidence-Closure-Reconciliation.md` | CWC-CE-128 Domain 01 closure / reconciliation — dispositions **BLANK** |
+| `WD-BILL-A-029-Git-Handoff-CWC-CE-128.md` | CWC-CE-128 Git handoff — **no commit/push** |
 
-**Control snapshot:** HG-D1 NOT PASSED · maturity **19% unchanged** · no SPEC · no legislative draft · no publication · Q-BILL-A-001–005 **RECORDED** · Option (a) · schema locked as candidate · registers **empty** · audits **not executed** · motor fuel **not RETAINED** · criminal-enforcement intent is **not** a statute · no commit/push.
+**Control snapshot:** HG-D1 NOT PASSED · maturity **19% unchanged** · no SPEC · no legislative draft · no publication · Q-BILL-A-001–005 **RECORDED** · Option (a) · schema locked as candidate · Domain 01 **executed** and **closure applied** (dispositions **BLANK**) · Universe **not certified** · motor fuel **not RETAINED** · criminal-enforcement intent is **not** a statute · no commit/push.

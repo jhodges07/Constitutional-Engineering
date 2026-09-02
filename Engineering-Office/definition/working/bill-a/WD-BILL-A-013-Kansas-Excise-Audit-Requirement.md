@@ -4,24 +4,21 @@
 **Title:** Kansas Excise and Materially Equivalent Excise-Type Claim — Audit Requirement and Evidence Plan  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-123 (defines requirement; does **not** execute the audit); CWC-CE-124 (reconciles this file as **subordinate** to Kansas Legal Revenue Scope — does **not** rewrite Q-BILL-A-003)  
+**Governing Work Card:** CWC-CE-123 (defines requirement; does **not** execute the audit); CWC-CE-124 (reconciles this file as **subordinate** to Kansas Legal Revenue Scope — does **not** rewrite Q-BILL-A-003); CWC-CE-127 (Domain 01 evidence **executed**; dispositions remain BLANK); CWC-CE-128 (Domain 01 closure; dispositions remain BLANK)  
 **Governing Human Intent:** WD-BILL-A-012 / Q-BILL-A-003; parent architecture WD-BILL-A-016 / Q-BILL-A-004  
-**Governing LOU candidate:** LOU-004 Draft 0.6 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / REQUIREMENT DEFINED — AUDIT **NOT PERFORMED** — SUBORDINATE TO WD-BILL-A-016 — NOT ACCEPTED  
-**Version:** 0.2.0  
+**Status:** WORKING / REQUIREMENT DEFINED — DOMAIN 01 AUDIT **EXECUTED IN WD-BILL-A-022/023** — SUBORDINATE TO WD-BILL-A-016 — NOT ACCEPTED  
+**Version:** 0.4.0  
 **Effective Date:** 2026-09-01  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-013-Kansas-Excise-Audit-Requirement.md  
 **Source ID:** SRC-BILL-A-018  
 
 ```text
 AUDIT REQUIREMENT / EVIDENCE PLAN
-AUDIT NOT EXECUTED UNDER CWC-CE-123 OR CWC-CE-124
-SUBORDINATE DOMAIN OF KANSAS LEGAL REVENUE SCOPE (WD-BILL-A-016)
+DOMAIN 01 EXECUTED UNDER CWC-CE-127 (WD-BILL-A-022/023)
+HUMAN INTENT IN THIS FILE UNCHANGED
 MOTOR FUEL IS NOT RETAINED
-NO KANSAS INVENTORY INVENTED
-NO RATES / COLLECTIONS / FUND DESTINATIONS INVENTED
-AI SYNTHESIS IS NOT KANSAS-LAW EVIDENCE
 NO RETAIN / TRANSFORM / DISAPPEAR DISPOSITIONS
 NOT A SPEC
 NOT HG-D1 / HG-D2
@@ -40,7 +37,10 @@ Executing that statewide audit would materially broaden CWC-CE-123 (Definition r
 
 **Required unanswered evidence question (do not answer from AI memory):** Do Kansans currently pay excise taxes or materially equivalent excise-type claims **beyond motor-fuel / gasoline taxation**?
 
-**Recommended next controlled work:** not a standalone full-state excise execution card. See WD-BILL-A-016 §8 (methodology CWC first, then Domain EXCISE execution into the master KLRS register). Exact CWC number: **not assigned here**.
+**CWC-CE-127 working answer (not a disposition; not a rewrite of this requirement):** YES — VERIFIED. Source of record: WD-BILL-A-023. Human Intent in WD-BILL-A-012 is unchanged.  
+**CWC-CE-128:** Finding **unchanged**. Closure: WD-BILL-A-028. Count 14. Gaming referred.
+
+**Recommended next controlled work:** Domain 01 additional evidence closure, then Domain 02 — **not self-authorized**. See WD-BILL-A-023 §R.
 
 ---
 
@@ -126,6 +126,9 @@ PASS of the **audit work card** (not this CWC) would require:
 
 This CWC-CE-123 recording does **not** pass those criteria because the audit is **not executed**.
 
+**CWC-CE-127 cross-reference (does not rewrite this requirement):** Domain 01 execution is recorded in WD-BILL-A-022/023. Human Intent and the fourteen-question requirement remain as written.  
+**CWC-CE-128:** closure recorded in WD-BILL-A-028. Dispositions BLANK. Motor fuel not RETAINED.
+
 ---
 
 ## 6. Version History
@@ -134,3 +137,5 @@ This CWC-CE-123 recording does **not** pass those criteria because the audit is 
 |---|---|---|
 | 0.1.0 | 2026-09-01 | Defined audit requirement and evidence plan after Q-BILL-A-003 Human Intent. Audit not performed. |
 | 0.2.0 | 2026-09-02 | CWC-CE-124: reconciled as subordinate Domain EXCISE of WD-BILL-A-016. Narrow Q-004 marked superseded historically. Beyond-motor-fuel question preserved. Audit still not performed. Motor fuel not RETAINED. |
+| 0.3.0 | 2026-09-02 | CWC-CE-127: status/cross-reference only. Domain 01 executed in WD-BILL-A-022/023. Human Intent unchanged. Dispositions BLANK. Motor fuel not RETAINED. |
+| 0.4.0 | 2026-09-02 | CWC-CE-128: status/cross-reference only. Closure in WD-BILL-A-028. Finding unchanged. |

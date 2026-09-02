@@ -4,11 +4,11 @@
 **Title:** Bill A Evidence Register / Research Annex Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125  
-**Governing LOU candidate:** LOU-004 Draft 0.7 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128  
+**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 0.7.0  
+**Version:** 0.9.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-003-Evidence-Register.md  
 
@@ -77,7 +77,14 @@ Do not treat AI summaries of H.R. 25 as primary evidence. Do not silently alter 
 | SRC-BILL-A-020 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-016-Kansas-Legal-Revenue-Scope-Audit-Architecture.md` | CE — Bill A Definition Engineer | 2026-09-02 | KLRS audit architecture, discovery paths, completeness controls, C+B recommendation; CWC-CE-125 Option (a) refinement | Audit **not executed**; no Kansas findings | Architecture defined; findings EMPTY | Non-authoritative plan — **not** Kansas-law evidence |
 | SRC-BILL-A-021 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-018-Q-BILL-A-005-Human-Intent-Closed-Demand-Authority.md` | Human Engineer (statement); CE — Bill A Definition Engineer (recorder) | 2026-09-02 | Q-BILL-A-005 Option (a) — KLRS = compulsory demand-authority; Universe remains auditable | Does not invent inventory, dispositions, Kansas law, or criminal statutes | Human statement recorded | Human Intent only — not Kansas law; **not a criminal statute** |
 | SRC-BILL-A-022 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md` | CE — Bill A Definition Engineer | 2026-09-02 | Candidate 32-field master register schema; Domains 01–12 | Register **EMPTY** | Schema locked as candidate | Non-authoritative schema — **not** findings |
-| SRC-BILL-A-023 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md` | CE — Bill A Definition Engineer | 2026-09-02 | Completeness protocol CMP-A–U; Domain 01-first execution order | Completeness **not certified**; audit **not executed** | Method defined | Non-authoritative method |
+| SRC-BILL-A-023 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md` | CE — Bill A Definition Engineer | 2026-09-02 | Completeness protocol CMP-A–U; Domain 01-first execution order | Completeness **not certified**; Domain 01 later executed under CWC-CE-127 | Method defined | Non-authoritative method |
+| SRC-BILL-A-024 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-022-Domain-01-Master-Register-Execution.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 01 32-field execution instance | Dispositions BLANK; Universe not complete | Domain 01 rows populated | Working register — not LOU acceptance |
+| SRC-BILL-A-025 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-023-Domain-01-Excise-Evidence-Audit.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 01 audit; beyond-gasoline YES — VERIFIED | Not a RETAIN; gaps explicit | Evidence audit executed | Non-authoritative working finding |
+| SRC-BILL-A-026 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-024-Domain-01-Source-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 01 locators SRC-BILL-A-027 et seq. | See WD-BILL-A-026 conflicts | Locators recorded | Points to PRIMARY-LEGAL / GOV-DATA |
+| SRC-BILL-A-054 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-025-Domain-01-Completeness-Reconciliation.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 01 CMP-A–U application | Universe not certified | Domain 01 substantially complete with gaps | Non-authoritative method application |
+| SRC-BILL-A-074 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-028-Domain-01-Evidence-Closure-Reconciliation.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 01 closure / reconciliation | Dispositions BLANK; not LOU-accepted | Closure executed | Non-authoritative working finding |
+
+PRIMARY-LEGAL / GOV-DATA Domain 01 locators: **SRC-BILL-A-027 through SRC-BILL-A-053** (CWC-CE-127) and **SRC-BILL-A-055 through SRC-BILL-A-073** (CWC-CE-128) in WD-BILL-A-024. They establish working current-state evidence for Domain 01 only. They are **not** accepted LOU-004 provisions.
 
 ### External AI provenance (SRC-BILL-A-010)
 
@@ -98,11 +105,12 @@ SRC-BILL-A-012, SRC-BILL-A-013, SRC-BILL-A-017, SRC-BILL-A-019, and SRC-BILL-A-0
 
 ## 4. Empty required classes (Kansas / fiscal)
 
-No Kansas PRIMARY-LEGAL revenue-claim inventory, GOV-DATA fiscal quantities, SECONDARY-ANALYSIS, TESTIMONY, HISTORICAL, or SCRIPTURE items are verified into LOU-004 Draft 0.7 as accepted facts.
+H.R. 25 IH (SRC-BILL-A-015) remains the PRIMARY-LEGAL **federal model** pin. It does **not** fill Kansas law.
 
-H.R. 25 IH (SRC-BILL-A-015) is the first PRIMARY-LEGAL **federal model** pin. It does **not** fill Kansas PRIMARY-LEGAL inventory.
+**CWC-CE-127:** Domain 01 PRIMARY-LEGAL / GOV-DATA locators and working findings are in WD-BILL-A-022 through WD-BILL-A-026. They are **not** verified into LOU-004 as accepted facts.  
+**CWC-CE-128:** Closure locators SRC-BILL-A-055–073 and WD-BILL-A-028. Domains 02–12 remain empty. Statewide Government Revenue Universe remains uncertified.
 
-### 4.1 Kansas excise audit evidence needs (WD-BILL-A-013) — findings EMPTY
+### 4.1 Kansas excise audit evidence needs (WD-BILL-A-013) — Domain 01 executed; gaps remain
 
 These are **requirements to collect evidence in a later Human-authorized audit CWC**, not findings. Candidate source *types* (not verified locators, not statute numbers, not rates): WD-BILL-A-013 §3.
 
@@ -144,3 +152,5 @@ Parent of Domain EXCISE. Full table: WD-BILL-A-016 §10 (EV-KLRS-001–015). Com
 | 0.5.0 | 2026-09-01 | SRC-BILL-A-017/018; EV-KS-REV-001–012 pointed at WD-BILL-A-013. Audit not executed. No Kansas inventory invented. |
 | 0.6.0 | 2026-09-02 | SRC-BILL-A-019/020; EV-KLRS pointed at WD-BILL-A-016. Comprehensive audit not executed. No Kansas inventory invented. |
 | 0.7.0 | 2026-09-02 | SRC-BILL-A-021–023; Q-005 Option (a); schema/completeness locked; register empty; audit not executed. |
+| 0.8.0 | 2026-09-02 | CWC-CE-127: Domain 01 sources SRC-BILL-A-024–054 / 027–053. Findings not accepted into LOU-004. |
+| 0.9.0 | 2026-09-02 | CWC-CE-128: SRC-BILL-A-055–073 / 074. Findings not accepted into LOU-004. |

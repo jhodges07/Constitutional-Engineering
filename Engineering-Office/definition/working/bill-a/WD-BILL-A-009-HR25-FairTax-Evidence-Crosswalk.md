@@ -4,11 +4,11 @@
 **Title:** H.R. 25 FairTax Evidence Crosswalk — Kansas Mirror Trace Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121 (Definition workspace origin); Human Q-BILL-A-002 reply 2026-09-01; CWC-CE-123 (exception boundary)  
-**Governing LOU candidate:** LOU-004 Draft 0.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121 (Definition workspace origin); Human Q-BILL-A-002 reply 2026-09-01; CWC-CE-123 (exception boundary); CWC-CE-127; CWC-CE-128  
+**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / INCOMPLETE — NOT ACCEPTED — NOT PRIMARY EVIDENCE BY ITSELF  
-**Version:** 0.3.0  
+**Version:** 0.5.0  
 **Effective Date:** 2026-09-01  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-009-HR25-FairTax-Evidence-Crosswalk.md  
 **Source ID:** SRC-BILL-A-014 (this register); primary text = SRC-BILL-A-015  
@@ -87,7 +87,7 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 | XW-HR25-004 | Proposed IRC §102 — Intermediate and export sales; business purpose; investment purpose | Business-purpose and investment-purpose purchases not taxed as final consumption | **KANSAS MIRROR** exact economic standard | “Export,” federal trade definitions | KS nexus / sourcing `[LEGAL EFFECT UNKNOWN]` | None | PARTIAL |
 | XW-HR25-005 | Proposed IRC §103 / conversion rules; §202 business-use conversion credit | Business↔personal conversion taxation/credit | **KANSAS MIRROR** | Federal credit administration | KS credit/admin `[LEGAL EFFECT UNKNOWN]` | None | NOT STARTED (locator known) |
 | XW-HR25-006 | Proposed IRC §705 — Mixed use property | Allocation for mixed business/personal use | **KANSAS MIRROR** — do not invent separate KS allocation system | Federal computation month rules | `[LEGAL EFFECT UNKNOWN]` | None | PARTIAL |
-| XW-HR25-007 | Proposed IRC §702 — Gaming activities (chance; chances not taxable property/service; tax on taxable gaming services) | Chance (lottery/raffle/chips/wagers) not §101 taxable property/service; separate tax on taxable gaming services of gaming sponsor | **KANSAS MIRROR** classification for KS Lottery, casino, horse-racing, sports wager, raffle, etc. | “Secretary,” federal 23% gaming-services rate, federal remittance | KS Lottery / Racing & Gaming law interaction `[TO BE VERIFIED]`; rate adaptation OPEN | None on classification; rate not Human-set here | PARTIAL — note: IH index/cross-ref may say §701(a) for gaming sponsor while gaming body text is §702 — **VERIFY against IH PDF** |
+| XW-HR25-007 | Proposed IRC §702 — Gaming activities (chance; chances not taxable property/service; tax on taxable gaming services of gaming sponsor) | Chance (lottery/raffle/chips/wagers) not §101 taxable property/service; separate tax on taxable gaming services of gaming sponsor | **KANSAS MIRROR** classification for KS Lottery, casino, horse-racing, sports wager, raffle, etc. | “Secretary,” federal 23% gaming-services rate, federal remittance | **CWC-CE-128:** Kansas lottery/casino is a **state-owned** lottery gaming operation with a contracted manager (74-8734 / 74-8711). Pathway classified as enterprise / governmental share of gaming revenue and **referred to Domain 08** (privilege fee to Domain 05). Not forced into Domain 01. H.R. 25 remains federal model only. KS Lottery / Racing & Gaming Kansas-mirror drafting still `[TO BE VERIFIED]`; rate adaptation OPEN | None on classification; rate not Human-set here | PARTIAL — IH index/cross-ref may say §701(a) for gaming sponsor while gaming body text is §702 — **VERIFY against IH PDF**. Current-state Kansas mechanism evidenced; not a Bill A gaming disposition |
 | XW-HR25-008 | Proposed IRC §§201–207 credits/refunds; registration/documentation elsewhere in subtitle | Credits, refunds, anti-avoidance/support mechanisms preserving economic boundary | **KANSAS MIRROR** where economic; adapt administration | Federal Sales Tax Bureau / Secretary / administration credit | KS DOR / constitutional `[LEGAL EFFECT UNKNOWN]` | None yet | NOT STARTED |
 | XW-HR25-009 | Family consumption allowance / rebate (§§301 et seq.) | Federal prebate / poverty-level rebate | **NOT DISPOSED by Human reply** — OPEN HUMAN DECISION | SSN / lawful-resident / federal poverty metrics | KS constitutional gift/rebate issues `[LEGAL EFFECT UNKNOWN]` | None authorized | CONFLICT / UNKNOWN — Human silent |
 | XW-HR25-010 | Act Title I repeals (income, payroll, estate/gift); Title IV Sixteenth Amendment sunset | Federal repeal / sunset architecture | **OUT OF SCOPE as federal repeal**; KS income/other tax disposition via Kansas inventory classification — **not invented** | Entirely federal constitutional/machinery | KS income-tax repeal is CURRENT KANSAS LAW question + Human disposition | Not a FairTax-base deviation | BLOCKED pending KS inventory evidence |
@@ -102,8 +102,8 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 1. Attach verbatim operative excerpts (or PDF pinpoint cites with line-stable quotes) for every priority row from `BILLS-119hr25ih.pdf` — not from AI paraphrase.  
 2. Resolve IH internal cross-reference inconsistency (gaming sponsor §701(a) vs §702 body) against the PDF.  
 3. Enumerate remaining H.R. 25 subtitle sections (financial intermediation, government enterprises, not-for-profits, imports, housing, etc.) into additional XW rows.  
-4. Build Kansas revenue-claim inventory from PRIMARY-LEGAL / GOV-DATA only — **do not invent**.  
-5. Classify each inventoried Kansas claim under Human disposition vocabulary: REMAIN / TRANSFORM / DISAPPEAR / REQUIRES HUMAN DECISION / EVIDENCE INSUFFICIENT.  
+4. Build Kansas revenue-claim inventory from PRIMARY-LEGAL / GOV-DATA only — **do not invent**. **CWC-CE-128:** Domain 01 working inventory exists in WD-BILL-A-022 (14 rows); lottery/casino **referred**; remaining domains empty.  
+5. Classify each inventoried Kansas claim under Human disposition vocabulary: REMAIN / TRANSFORM / DISAPPEAR / REQUIRES HUMAN DECISION / EVIDENCE INSUFFICIENT. **CWC-CE-128: all Domain 01 field 25 values remain BLANK. Do not fill this step from existence.**  
 6. Surface every federal-only mechanism (rate formula, prebate, IRS abolition, Sixteenth Amendment sunset, federal administration fee) as ADAPT / OUT-OF-SCOPE / REQUIRES HUMAN DECISION — never silent change.  
 7. Open Human questions for unused excise balances, sinking funds, rate reductions, refunds, credits, and other undisposed excise mechanisms (WD-BILL-A-008 §10).  
 8. Fill EV-KS-REV-001–012 (WD-BILL-A-013) without inventing Kansas claims; map each inventoried claim against XW rows for stack/duplicate. Audit **not executed** in this cycle.
@@ -114,8 +114,8 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 
 | Item | Status |
 |---|---|
-| Complete Kansas tax-class inventory | **EMPTY** — do not invent |
-| Kansas excise / excise-type audit findings | **EMPTY** — WD-BILL-A-013 requirement only; audit not executed |
+| Complete Kansas tax-class inventory | **PARTIAL** — Domain 01 working inventory in WD-BILL-A-022; Domains 02–12 EMPTY |
+| Kansas excise / excise-type audit findings | **DOMAIN 01 EXECUTED** in WD-BILL-A-023 — dispositions **BLANK**; not LOU-accepted |
 | REMAIN/TRANSFORM/DISAPPEAR classifications | **EMPTY** except architecture rule; no class-level dispositions asserted; motor fuel is **not** a RETAIN |
 | Kansas FairTax rate | **NOT SET** by Q-BILL-A-002 reply |
 | Prebate / family allowance Kansas adoption | **OPEN HUMAN DECISION** |
@@ -130,3 +130,5 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 | 0.1.0 | 2026-09-01 | Opened after Q-BILL-A-002 Human Intent. Pinned H.R. 25 IH (119th). Priority rows locator-opened. Inventory not invented. |
 | 0.2.0 | 2026-09-01 | CWC-CE-123: CWC chain documented; XW-HR25-013 lottery-ticket Human classification + PDF VERIFY. No Kansas inventory invented. |
 | 0.3.0 | 2026-09-01 | Q-BILL-A-003: XW-HR25-011/012 motor fuel = example of uniform surviving-excise standard, **not** Human RETAIN. Audit not executed. |
+| 0.4.0 | 2026-09-02 | CWC-CE-127: Domain 01 overlap/stack observations recorded in WD-BILL-A-023 §K. No RETAIN. H.R. 25 still not Kansas law. |
+| 0.5.0 | 2026-09-02 | CWC-CE-128: XW-HR25-007 Kansas lottery/casino mechanism evidenced and referred off Domain 01. H.R. 25 still not Kansas law. PDF VERIFY still required. |

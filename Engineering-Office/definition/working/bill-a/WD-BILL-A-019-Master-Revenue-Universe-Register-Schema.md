@@ -6,20 +6,19 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Work Card:** CWC-CE-125 (locks candidate schema; does **not** populate findings)  
 **Governing Human Intent:** WD-BILL-A-018 / Q-BILL-A-005 Option (a); WD-BILL-A-015 / Q-BILL-A-004; WD-BILL-A-012 / Q-BILL-A-003  
-**Governing LOU candidate:** LOU-004 Draft 0.7 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / CANDIDATE SCHEMA LOCKED — REGISTER **EMPTY** — NOT ACCEPTED  
-**Version:** 0.1.0  
+**Status:** WORKING / CANDIDATE SCHEMA LOCKED — DOMAIN 01 EXECUTION IN WD-BILL-A-022 — STATEWIDE REGISTER **NOT** COMPLETE — NOT ACCEPTED  
+**Version:** 0.3.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md  
 **Source ID:** SRC-BILL-A-022  
 
 ```text
 CANDIDATE MASTER REGISTER SCHEMA
-REGISTER NOT POPULATED
-AUDIT NOT EXECUTED
-NO KANSAS-LAW FINDINGS
-NO FISCAL QUANTITIES
+SCHEMA AUTHORITY REMAINS THIS FILE
+DOMAIN 01 EXECUTION INSTANCE = WD-BILL-A-022
+STATEWIDE REGISTER NOT COMPLETE
 BLANK DISPOSITION ≠ RETAIN
 KLRS CANDIDACY ≠ FINAL AUTHORIZATION
 MOTOR FUEL IS NOT RETAINED
@@ -118,7 +117,10 @@ Reason: the original practical question remains unanswered and must not be answe
 
 **DO KANSANS CURRENTLY PAY EXCISE TAXES OR MATERIALLY EQUIVALENT EXCISE-TYPE CLAIMS BEYOND MOTOR-FUEL / GASOLINE TAXATION?**
 
-This CWC does **not** answer it. Motor fuel remains the example of the uniform surviving-excise standard and is **not RETAINED**.
+**CWC-CE-127:** Domain 01 execution instance WD-BILL-A-022 answers the beyond-motor-fuel question in WD-BILL-A-023 as YES — VERIFIED. That answer is **not** a RETAIN. This schema file remains the authority for fields 1–32. Do not treat WD-BILL-A-022 as a competing schema.  
+**CWC-CE-128:** Domain 01 rows updated from closure evidence; count remains 14; gaming referred. Schema authority unchanged.
+
+Motor fuel remains the example of the uniform surviving-excise standard and is **not RETAINED**.
 
 ---
 
@@ -127,3 +129,5 @@ This CWC does **not** answer it. Motor fuel remains the example of the uniform s
 | Version | Date | Summary |
 |---|---|---|
 | 0.1.0 | 2026-09-02 | CWC-CE-125: locked candidate 32-field master schema and Domains 01–12. Register empty. Audit not executed. |
+| 0.2.0 | 2026-09-02 | CWC-CE-127: schema authority preserved. Domain 01 rows live in WD-BILL-A-022. Statewide register not complete. |
+| 0.3.0 | 2026-09-02 | CWC-CE-128: schema authority preserved. Domain 01 closure in WD-BILL-A-028. Statewide register not complete. |

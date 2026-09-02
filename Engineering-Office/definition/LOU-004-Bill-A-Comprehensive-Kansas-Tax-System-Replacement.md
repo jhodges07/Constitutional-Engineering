@@ -9,11 +9,11 @@
 **Governing Standard(s):** STD-001 — Engineering Workflow  
 **Governing Workflow:** WF-001 — Engineering Office Operating Workflow  
 **Governing Template:** TMP-002 — Letter of Understanding Template  
-**Governing CWC-CE:** CWC-CE-121 — workspace initialization; CWC-CE-123 — Q-BILL-A-003; CWC-CE-124 — Q-BILL-A-004 / KLRS; CWC-CE-125 — Q-BILL-A-005 Option (a) / audit-control foundation (audit **not** executed)  
+**Governing CWC-CE:** CWC-CE-121 — workspace initialization; CWC-CE-123 — Q-BILL-A-003; CWC-CE-124 — Q-BILL-A-004 / KLRS; CWC-CE-125 — Q-BILL-A-005 Option (a) / audit-control foundation; CWC-CE-127 — Domain 01 evidence execution (findings **not** accepted as LOU provisions); CWC-CE-128 — Domain 01 evidence closure / reconciliation (findings **not** accepted as LOU provisions)  
 **Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 **Lifecycle:** Engineering Definition  
 **Status:** Draft  
-**Version:** Draft 0.7  
+**Version:** Draft 0.9  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/LOU-004-Bill-A-Comprehensive-Kansas-Tax-System-Replacement.md  
 **Public Review (when applicable):** NOT RELEASED  
@@ -288,9 +288,9 @@ High-level inventory only. Details are in §6 and in `WD-BILL-A-003-Evidence-Reg
 | CONTROL-DOC — CWC-CE-085 / CWC-CE-086 / CWC-CE-121 | Inventoried |
 | AI-SYNTHESIS — `Bill_A/grok/2026-08-30-GROK-Bill-A-Research-Scout-Round-01.md` | Inventoried; NON-AUTHORITATIVE; fiscal/legal claims UNVERIFIED |
 | PRIMARY-LEGAL — H.R. 25 FairTax Act of 2025 (119th Cong., IH) | Pinned locator opened (SRC-BILL-A-015); full provision-by-provision trace **INCOMPLETE** |
-| PRIMARY-LEGAL / GOV-DATA Kansas current-state revenue claims | **NOT YET VERIFIED / NOT INVENTED FOR THIS LOU** — KLRS audit **required** (WD-BILL-A-016); Domain EXCISE **required** (WD-BILL-A-013); **neither executed** |
+| PRIMARY-LEGAL / GOV-DATA Kansas current-state revenue claims | Domain 01 **executed** in WD-BILL-A-022 / WD-BILL-A-023 (CWC-CE-127) and **closure applied** in WD-BILL-A-028 (CWC-CE-128). Those findings are **not** accepted into this LOU. Domains 02–12 **not** executed. Statewide Universe **not** certified. |
 
-No Kansas constitutional provision, statute, rate, or revenue quantity is asserted as fact in this Draft 0.7. H.R. 25 is recorded as the Human-directed federal model text, not as Kansas law. Kansas Legal Revenue Scope is a working Definition concept (compulsory demand-authority only), not a populated inventory and not current Kansas law.
+No Kansas constitutional provision, statute, rate, or revenue quantity is asserted as an **accepted LOU fact** in this Draft 0.9. Domain 01 current-state locators and working findings live in WD-BILL-A-022 through WD-BILL-A-026 and WD-BILL-A-028. They do **not** become LOU provisions by being discovered. H.R. 25 is recorded as the Human-directed federal model text, not as Kansas law. Kansas Legal Revenue Scope remains a working Definition concept (compulsory demand-authority only) and is **not** a closed post-Bill-A inventory.
 
 ---
 
@@ -497,9 +497,19 @@ Domains C–Q remain unasked as closed domains. Intent spill now also constrains
 
 **Human answer (summary):** OPTION (a). Final KLRS = closed set of compulsory governmental revenue claims. Current-state audit still inventories all material receipts. Non-compulsory receipts stay outside closed demand-authority unless later expressly added. Receipt of money ≠ authority to compel payment. Full text: WD-BILL-A-018.
 
-**Recommended next controlled work (not self-authorized):** Domain 01 EXCISE / EXCISE-TYPE evidence-execution CWC into the master register. Number **not assigned**. Do **not** execute under CWC-CE-125.
+**Recommended next controlled work (not self-authorized):** Remaining Domain 01 residual gaps (KAR, CRE PDFs if accessible, 75-5182(e), non-KDOR TGT) **or** Human-authorized Domain 02. Do **not** self-authorize Domain 02. See WD-BILL-A-028.
 
-No Q-BILL-A-006 is issued. Mixed per-row classification may be recorded as UNCERTAIN during Domain 01.
+## 10.9 CWC-CE-127 — Domain 01 evidence execution (status only)
+
+**Status:** Domain 01 current-state evidence audit **EXECUTED** in working artifacts WD-BILL-A-022 through WD-BILL-A-026. **Not** HG-D1 accepted. **Not** converted into LOU provisions. Human dispositions remain **BLANK**. Motor fuel remains **NOT RETAINED**. Bill A maturity remains **19%**.
+
+**Working beyond-gasoline answer (in WD-BILL-A-023, not this LOU):** YES — VERIFIED from PRIMARY-LEGAL / GOV-DATA. That answer is current-state existence only. It is **not** a RETAIN of any claim.
+
+## 10.10 CWC-CE-128 — Domain 01 evidence closure / reconciliation (status only)
+
+**Status:** Domain 01 evidence closure **EXECUTED** in WD-BILL-A-028 (register updates in WD-BILL-A-022–026). Completeness remains **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Count remains **14** verified Domain 01 rows. Gaming lottery/casino pathways **referred** (not Domain 01 counted rows). **Not** HG-D1 accepted. **Not** converted into LOU provisions. Human dispositions remain **BLANK**. Motor fuel remains **NOT RETAINED**. Bill A maturity remains **19%**. UNK-EX-005 remains **RESERVED**.
+
+No Q-BILL-A-006 is issued.
 
 ---
 
@@ -530,12 +540,12 @@ No fiscal quantity, Kansas legal rule, Kansas FairTax rate, or replacement-reven
 12. Complete H.R. 25 crosswalk completion and Kansas revenue-claim inventory.  
 13. Disposition of unused excise balances and related mechanisms.  
 14. Kansas FairTax rate and prebate decisions.  
-15. Execution of the Kansas excise / excise-type audit (WD-BILL-A-013) — **subordinate Domain EXCISE; not performed**.  
+15. Execution of the Kansas excise / excise-type audit (WD-BILL-A-013) — Domain 01 **executed** (CWC-CE-127) and **closure applied** (CWC-CE-128); dispositions **BLANK**; not LOU-accepted.  
 16. DIRECT PURPOSE EXECUTION versus ADMINISTRATION / OVERHEAD engineering test.  
 17. Historical narrow Q-BILL-A-004 (a)–(g) — **SUPERSEDED** as complete question; live only inside Domain EXCISE.  
 18. Execution of the comprehensive Kansas Government Revenue Universe / KLRS audit — **not performed**.  
-19. Master-register schema / completeness method — **candidate locked** (WD-BILL-A-019 / WD-BILL-A-020); not HG-D1 accepted; register empty.  
-20. Domain 01 EXCISE evidence execution (recommended next; not self-authorized).  
+19. Master-register schema / completeness method — **candidate locked** (WD-BILL-A-019 / WD-BILL-A-020); Domain 01 instance in WD-BILL-A-022; statewide register **not** complete; not HG-D1 accepted.  
+20. Domain 02 PROPERTY TAX evidence execution (recommended next after residual Domain 01 gaps if any; **not self-authorized**).  
 21. Criminal-law elements (WD-BILL-A-015 §13) — LEGAL ENGINEERING REQUIRED.  
 22. Completeness certification — protocol defined; **not certified**.
 
@@ -638,7 +648,7 @@ Human accepts LOU → HG-D1 → candidate SPEC → Human accepts SPEC → HG-D2
 | Decision | PENDING — not Accepted / not Accepted with Conditions / not Returned / not Rejected |
 | Date | — |
 | Conditions | — |
-| Notes | CWC-CE-121 / CWC-CE-123 / CWC-CE-124 / CWC-CE-125 candidate. Q-BILL-A-001 through Q-BILL-A-005 Human Intent recorded. Schema locked as candidate; audits not executed. Criminal-enforcement intent is not legislation. Silence is not acceptance. Recording intent is not HG-D1. Acceptance does not authorize implementation. |
+| Notes | CWC-CE-121 / CWC-CE-123 / CWC-CE-124 / CWC-CE-125 / CWC-CE-127 / CWC-CE-128 candidate. Q-BILL-A-001 through Q-BILL-A-005 Human Intent recorded. Domain 01 evidence executed and closure applied in working artifacts; dispositions BLANK; findings not accepted LOU provisions. Criminal-enforcement intent is not legislation. Silence is not acceptance. Recording intent is not HG-D1. Acceptance does not authorize implementation. |
 
 [ ] ACCEPTED — HG-D1  
 [ ] ACCEPTED WITH DIRECTED CHANGES  
@@ -668,7 +678,7 @@ If this LOU later supersedes the Bill A portion of LOU-001, that supersession SH
 
 | Item | Reference |
 |---|---|
-| Authorizing CWC-CE | CWC-CE-121 (workspace); CWC-CE-123 (Q-BILL-A-003); CWC-CE-124 (Q-BILL-A-004); CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation; audit not executed) |
+| Authorizing CWC-CE | CWC-CE-121 (workspace); CWC-CE-123 (Q-BILL-A-003); CWC-CE-124 (Q-BILL-A-004); CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation); CWC-CE-127 (Domain 01 evidence execution; findings not LOU provisions) |
 | Assigned agent | CE — Bill A Definition Engineer |
 | Template | TMP-002 v1.1.0 (working-tree Active locally) |
 | Shared A/B candidate | LOU-001 Draft 0.3 |
@@ -691,6 +701,12 @@ If this LOU later supersedes the Bill A portion of LOU-001, that supersession SH
 | Master register schema | `Engineering-Office/definition/working/bill-a/WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md` |
 | Completeness / execution control | `Engineering-Office/definition/working/bill-a/WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md` |
 | Git handoff (CWC-CE-125) | `Engineering-Office/definition/working/bill-a/WD-BILL-A-021-Git-Handoff-CWC-CE-125.md` |
+| Domain 01 register execution | `Engineering-Office/definition/working/bill-a/WD-BILL-A-022-Domain-01-Master-Register-Execution.md` |
+| Domain 01 evidence audit | `Engineering-Office/definition/working/bill-a/WD-BILL-A-023-Domain-01-Excise-Evidence-Audit.md` |
+| Domain 01 source register | `Engineering-Office/definition/working/bill-a/WD-BILL-A-024-Domain-01-Source-Register.md` |
+| Domain 01 completeness | `Engineering-Office/definition/working/bill-a/WD-BILL-A-025-Domain-01-Completeness-Reconciliation.md` |
+| Domain 01 conflicts / unknowns | `Engineering-Office/definition/working/bill-a/WD-BILL-A-026-Domain-01-Conflict-Unknown-Register.md` |
+| Git handoff (CWC-CE-127) | `Engineering-Office/definition/working/bill-a/WD-BILL-A-027-Git-Handoff-CWC-CE-127.md` |
 | Related SPEC | NONE |
 | Related CWC-CE for Controlled Execution | NONE |
 | ARCH / POL / STD / WF | ARCH-001; POL-001; STD-001; WF-001 |
@@ -708,3 +724,5 @@ If this LOU later supersedes the Bill A portion of LOU-001, that supersession SH
 | Draft 0.5 | 2026-09-01 | Records Q-BILL-A-003 Human Intent: evidenced audit of all Kansas excise / excise-type claims; uniform surviving-excise standard; motor fuel = example not unique class; dispositions deferred and not invented. Defines WD-BILL-A-013 audit requirement (audit not executed). Asks Q-BILL-A-004 (materially equivalent scope). Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
 | Draft 0.6 | 2026-09-02 | CWC-CE-124: records Q-BILL-A-004 Human Intent — Kansas Legal Revenue Scope; comprehensive current-state vs post-Bill-A distinction; WD-BILL-A-013 subordinated; narrow Q-004 historically retained and SUPERSEDED; criminal-enforcement intent recorded as intent only; audit not executed. Asks Q-BILL-A-005 (compulsory vs other receipts in final KLRS). Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
 | Draft 0.7 | 2026-09-02 | CWC-CE-125: records Q-BILL-A-005 Option (a) — KLRS = compulsory demand-authority; Government Revenue Universe remains auditable; locks candidate master schema (WD-BILL-A-019) and completeness protocol (WD-BILL-A-020). Audit not executed. Motor fuel not RETAINED. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
+| Draft 0.8 | 2026-09-02 | CWC-CE-127: Domain 01 evidence execution **status** only. Findings live in WD-BILL-A-022–026 and are **not** accepted LOU provisions. Dispositions BLANK. Motor fuel not RETAINED. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
+| Draft 0.9 | 2026-09-02 | CWC-CE-128: Domain 01 evidence closure **status** only. Findings live in WD-BILL-A-028 / updated 022–026 and are **not** accepted LOU provisions. Count 14. Gaming referred. Completeness not upgraded. Dispositions BLANK. Motor fuel not RETAINED. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
