@@ -4,13 +4,13 @@
 **Title:** Kansas Government Revenue Universe — Completeness Methodology and Evidence-Execution Control  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-125 (defines method; does **not** certify completeness); CWC-CE-127 (applies method to Domain 01 only); CWC-CE-128 (Domain 01 closure; completeness **not** upgraded)  
+**Governing Work Card:** CWC-CE-125 (defines method; does **not** certify completeness); CWC-CE-127 (applies method to Domain 01 only); CWC-CE-128 (Domain 01 closure; completeness **not** upgraded); CWC-CE-130 (applies method to Domain 02); CWC-CE-131 (Domain 02 closure reassessment; statewide completeness **not** certified)  
 **Governing Human Intent:** WD-BILL-A-018 / Q-BILL-A-005 Option (a)  
 **Governing schema:** WD-BILL-A-019  
-**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 1.1 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / METHOD DEFINED — DOMAIN 01 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — STATEWIDE COMPLETENESS **NOT CERTIFIED** — NOT ACCEPTED  
-**Version:** 0.3.0  
+**Status:** WORKING / METHOD DEFINED — DOMAIN 01 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — DOMAIN 02 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — STATEWIDE COMPLETENESS **NOT CERTIFIED** — NOT ACCEPTED  
+**Version:** 0.5.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md  
 **Source ID:** SRC-BILL-A-023  
@@ -19,6 +19,8 @@
 COMPLETENESS METHODOLOGY / EXECUTION CONTROL
 NO STATEWIDE COMPLETENESS CERTIFICATION
 DOMAIN 01 APPLIED UNDER CWC-CE-127 (WD-BILL-A-025)
+DOMAIN 02 APPLIED UNDER CWC-CE-130 (WD-BILL-A-033)
+DOMAIN 02 CLOSURE REASSESSED UNDER CWC-CE-131 (WD-BILL-A-037)
 AI SYNTHESIS IS NOT KANSAS-LAW EVIDENCE
 BLANK ≠ RETAIN
 NOT A SPEC
@@ -99,8 +101,22 @@ CWC-CE-127
   → disposition field 25 remains BLANK
   → no RETAIN of motor fuel
 
+CWC-CE-130
+= DOMAIN 02 PROPERTY-BASED CLAIMS EXECUTED
+  → WD-BILL-A-031 execution instance (schema remains WD-BILL-A-019)
+  → 15 claim-category rows at execution; dispositions BLANK
+  → completeness: SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS (WD-BILL-A-033)
+  → no property-tax elimination design
+
+CWC-CE-131
+= DOMAIN 02 EVIDENCE CLOSURE / RECONCILIATION
+  → WD-BILL-A-037; WD-BILL-A-031 count **16**
+  → KRU-D02-016 added; KRU-D02-010/011 TY 2026 mill NOT CURRENT
+  → completeness **not upgraded**: SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS
+  → dispositions BLANK; Domain 03 not executed
+
 NEXT (Human-authorized; number not assigned)
-= Domain 01 additional evidence closure, then remaining domains 02–12
+= residual Domain 02 gaps, then remaining domains 03–12
   against the SAME master register
   still no invented dispositions
 THEN
@@ -125,7 +141,9 @@ CWC-CE-125 did not execute the audit. CWC-CE-127 executed Domain 01 only. Statew
 CWC-CE-125 does **not** pass those criteria because execution is **not** authorized.
 
 **CWC-CE-127:** Domain 01 execution status is recorded in WD-BILL-A-025. Statewide Universe completeness remains **not certified**.  
-**CWC-CE-128:** Domain 01 completeness **reassessed, not upgraded**. WD-BILL-A-025 v0.2.0 / WD-BILL-A-028. Statewide Universe completeness remains **not certified**.
+**CWC-CE-128:** Domain 01 completeness **reassessed, not upgraded**. WD-BILL-A-025 v0.2.0 / WD-BILL-A-028. Statewide Universe completeness remains **not certified**.  
+**CWC-CE-130:** Domain 02 completeness recorded in WD-BILL-A-033 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Statewide Universe completeness remains **not certified**.  
+**CWC-CE-131:** Domain 02 completeness **reassessed** in WD-BILL-A-033 / WD-BILL-A-037 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** (not upgraded). Statewide Universe completeness remains **not certified**.
 
 ---
 
@@ -136,3 +154,5 @@ CWC-CE-125 does **not** pass those criteria because execution is **not** authori
 | 0.1.0 | 2026-09-02 | CWC-CE-125: locked candidate completeness protocol CMP-A–U and Domain 01-first execution order. Not certified. Not executed. |
 | 0.2.0 | 2026-09-02 | CWC-CE-127: Domain 01 execution status only. Universe not certified. |
 | 0.3.0 | 2026-09-02 | CWC-CE-128: Domain 01 closure status; completeness not upgraded. Universe not certified. |
+| 0.4.0 | 2026-09-02 | CWC-CE-130: Domain 02 applied; substantially complete with explicit gaps. Universe not certified. |
+| 0.5.0 | 2026-09-02 | CWC-CE-131: Domain 02 closure reassessed; completeness not upgraded. Universe not certified. |
