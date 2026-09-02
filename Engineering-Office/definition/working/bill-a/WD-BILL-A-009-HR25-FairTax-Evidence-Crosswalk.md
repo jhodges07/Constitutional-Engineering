@@ -4,11 +4,11 @@
 **Title:** H.R. 25 FairTax Evidence Crosswalk — Kansas Mirror Trace Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121 (Definition workspace origin); Human Q-BILL-A-002 reply 2026-09-01; CWC-CE-123 (exception boundary); CWC-CE-127; CWC-CE-128; CWC-CE-133; CWC-CE-134  
-**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121 (Definition workspace origin); Human Q-BILL-A-002 reply 2026-09-01; CWC-CE-123 (exception boundary); CWC-CE-127; CWC-CE-128; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137  
+**Governing LOU candidate:** LOU-004 Draft 1.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / INCOMPLETE — NOT ACCEPTED — NOT PRIMARY EVIDENCE BY ITSELF  
-**Version:** 0.7.0  
+**Version:** 0.9.0  
 **Effective Date:** 2026-09-01  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-009-HR25-FairTax-Evidence-Crosswalk.md  
 **Source ID:** SRC-BILL-A-014 (this register); primary text = SRC-BILL-A-015  
@@ -114,7 +114,7 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 
 | Item | Status |
 |---|---|
-| Complete Kansas tax-class inventory | **PARTIAL** — Domain 01 in WD-BILL-A-022; Domain 02 in WD-BILL-A-031; Domain 03 in WD-BILL-A-040; Domains 04–12 EMPTY |
+| Complete Kansas tax-class inventory | **PARTIAL** — Domain 01 in WD-BILL-A-022; Domain 02 in WD-BILL-A-031; Domain 03 in WD-BILL-A-040; Domain 04 in WD-BILL-A-049; Domains 05–12 EMPTY |
 | Kansas excise / excise-type audit findings | **DOMAIN 01 EXECUTED** in WD-BILL-A-023 — dispositions **BLANK**; not LOU-accepted |
 | REMAIN/TRANSFORM/DISAPPEAR classifications | **EMPTY** except architecture rule; no class-level dispositions asserted; motor fuel is **not** a RETAIN |
 | Kansas FairTax rate | **NOT SET** by Q-BILL-A-002 reply |
@@ -134,3 +134,5 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 | 0.5.0 | 2026-09-02 | CWC-CE-128: XW-HR25-007 Kansas lottery/casino mechanism evidenced and referred off Domain 01. H.R. 25 still not Kansas law. PDF VERIFY still required. |
 | 0.6.0 | 2026-09-02 | CWC-CE-133: Domain 03 income/privilege claims classified STRUCTURALLY OUTSIDE H.R. 25 FINAL-CONSUMPTION EVENT in WD-BILL-A-044. No RETAIN/DISAPPEAR. H.R. 25 still not Kansas law. |
 | 0.7.0 | 2026-09-02 | CWC-CE-134: Domain 03 closure does not change H.R. 25 classifications. Count remains 5. No RETAIN/DISAPPEAR. H.R. 25 still not Kansas law. |
+| 0.8.0 | 2026-09-02 | CWC-CE-136: Domain 04 current Kansas RST/use compared in WD-BILL-A-053. MATERIAL STRUCTURAL DIFFERENCE on used property, enumerated-only services, and business-input patchwork. STRUCTURAL MATCH ≠ RETAIN. H.R. 25 still not Kansas law. |
+| 0.9.0 | 2026-09-02 | CWC-CE-137: mixed-use classified NO GENERAL EQUIVALENT LOCATED / CATEGORY-SPECIFIC ONLY. Digital/ASP notes do not convert Kansas into all-services. H.R. 25 still not Kansas law. |

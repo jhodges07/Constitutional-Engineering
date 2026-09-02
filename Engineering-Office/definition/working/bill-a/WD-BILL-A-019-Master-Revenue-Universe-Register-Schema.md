@@ -6,10 +6,10 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Work Card:** CWC-CE-125 (locks candidate schema; does **not** populate findings)  
 **Governing Human Intent:** WD-BILL-A-018 / Q-BILL-A-005 Option (a); WD-BILL-A-015 / Q-BILL-A-004; WD-BILL-A-012 / Q-BILL-A-003  
-**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 1.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / CANDIDATE SCHEMA LOCKED — DOMAIN 01 EXECUTION IN WD-BILL-A-022 — DOMAIN 02 EXECUTION IN WD-BILL-A-031 — DOMAIN 03 EXECUTION IN WD-BILL-A-040 — STATEWIDE REGISTER **NOT** COMPLETE — NOT ACCEPTED  
-**Version:** 0.7.0  
+**Status:** WORKING / CANDIDATE SCHEMA LOCKED — DOMAIN 01 EXECUTION IN WD-BILL-A-022 — DOMAIN 02 EXECUTION IN WD-BILL-A-031 — DOMAIN 03 EXECUTION IN WD-BILL-A-040 — DOMAIN 04 EXECUTION IN WD-BILL-A-049 — STATEWIDE REGISTER **NOT** COMPLETE — NOT ACCEPTED  
+**Version:** 0.9.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md  
 **Source ID:** SRC-BILL-A-022  
@@ -20,6 +20,7 @@ SCHEMA AUTHORITY REMAINS THIS FILE
 DOMAIN 01 EXECUTION INSTANCE = WD-BILL-A-022
 DOMAIN 02 EXECUTION INSTANCE = WD-BILL-A-031
 DOMAIN 03 EXECUTION INSTANCE = WD-BILL-A-040
+DOMAIN 04 EXECUTION INSTANCE = WD-BILL-A-049
 STATEWIDE REGISTER NOT COMPLETE
 BLANK DISPOSITION ≠ RETAIN
 KLRS CANDIDACY ≠ FINAL AUTHORIZATION
@@ -124,7 +125,9 @@ Reason: the original practical question remains unanswered and must not be answe
 **CWC-CE-130:** Domain 02 execution instance WD-BILL-A-031 (15 claim-category rows). Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete.  
 **CWC-CE-131:** Domain 02 execution instance WD-BILL-A-031 updated (16 claim-category rows; KRU-D02-016 added; 010/011 TY 2026 mill NOT CURRENT). Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete.  
 **CWC-CE-133:** Domain 03 execution instance WD-BILL-A-040 (5 claim-category rows). Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete.  
-**CWC-CE-134:** Domain 03 execution instance WD-BILL-A-040 field-strengthened from closure evidence. Count remains **5**. Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete.
+**CWC-CE-134:** Domain 03 execution instance WD-BILL-A-040 field-strengthened from closure evidence. Count remains **5**. Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete.  
+**CWC-CE-136:** Domain 04 execution instance WD-BILL-A-049 (5 claim-category rows). Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete. Current Kansas sales/use ≠ H.R. 25.  
+**CWC-CE-137:** Domain 04 execution instance WD-BILL-A-049 field-strengthened from closure evidence. Count remains **5**. Schema fields 1–32 unchanged. Field 25 BLANK. Statewide register not complete.
 
 Motor fuel remains the example of the uniform surviving-excise standard and is **not RETAINED**.
 
@@ -141,3 +144,5 @@ Motor fuel remains the example of the uniform surviving-excise standard and is *
 | 0.5.0 | 2026-09-02 | CWC-CE-131: schema authority preserved. Domain 02 count 16 in WD-BILL-A-031. Statewide register not complete. |
 | 0.6.0 | 2026-09-02 | CWC-CE-133: schema authority preserved. Domain 03 execution in WD-BILL-A-040 (5 rows). Statewide register not complete. |
 | 0.7.0 | 2026-09-02 | CWC-CE-134: schema authority preserved. Domain 03 count remains 5. Statewide register not complete. |
+| 0.8.0 | 2026-09-02 | CWC-CE-136: schema authority preserved. Domain 04 execution in WD-BILL-A-049 (5 rows). Statewide register not complete. |
+| 0.9.0 | 2026-09-02 | CWC-CE-137: schema authority preserved. Domain 04 count remains 5. Statewide register not complete. |

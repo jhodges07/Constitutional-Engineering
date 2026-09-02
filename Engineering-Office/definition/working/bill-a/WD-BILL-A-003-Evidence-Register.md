@@ -4,11 +4,11 @@
 **Title:** Bill A Evidence Register / Research Annex Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134  
-**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137  
+**Governing LOU candidate:** LOU-004 Draft 1.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.3.0  
+**Version:** 1.5.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-003-Evidence-Register.md  
 
@@ -95,12 +95,20 @@ Do not treat AI summaries of H.R. 25 as primary evidence. Do not silently alter 
 | SRC-BILL-A-171 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-043-Domain-03-Conflict-Unknown-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 03 conflicts / unknowns | Closure statuses applied CWC-CE-134 | Recorded | Non-authoritative |
 | SRC-BILL-A-172 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-044-Domain-03-Income-Privilege-Architecture-Crosswalk.md` | CE — Bill A Definition Engineer | 2026-09-02 | Income/privilege architecture / H.R. 25 / AGCL crosswalk | Not a disposition | Bounded crosswalk | Non-authoritative working finding |
 | SRC-BILL-A-182 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-046-Domain-03-Evidence-Closure-Reconciliation.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 03 evidence closure / reconciliation | Dispositions BLANK; not LOU-accepted | Closure executed | Non-authoritative working finding |
+| SRC-BILL-A-215 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-048-Domain-04-Sales-Use-Consumption-Evidence-Audit.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 04 sales/use/consumption evidence audit | Dispositions BLANK; not LOU-accepted | Domain 04 executed | Non-authoritative working finding |
+| SRC-BILL-A-216 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-049-Domain-04-Master-Register-Execution.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 04 32-field execution instance | Dispositions BLANK; Universe not complete | 5 claim-category rows | Working register — not LOU acceptance |
+| SRC-BILL-A-217 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-051-Domain-04-Completeness-Reconciliation.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 04 CMP application | Universe not certified | Domain 04 substantially complete with gaps | Non-authoritative method application |
+| SRC-BILL-A-218 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-052-Domain-04-Conflict-Unknown-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 04 conflicts / unknowns | Closure statuses applied CWC-CE-137 | Recorded | Non-authoritative |
+| SRC-BILL-A-219 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-053-Domain-04-Kansas-vs-HR25-Structural-Crosswalk.md` | CE — Bill A Definition Engineer | 2026-09-02 | Kansas vs H.R. 25 Domain 04 structural crosswalk | Not a disposition; H.R. 25 not Kansas law | Bounded crosswalk | Non-authoritative working finding |
+| SRC-BILL-A-228 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-055-Domain-04-Evidence-Closure-Reconciliation.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 04 evidence closure / reconciliation | Dispositions BLANK; not LOU-accepted | Closure executed | Non-authoritative working finding |
 
 PRIMARY-LEGAL / GOV-DATA Domain 01 locators: **SRC-BILL-A-027 through SRC-BILL-A-053** (CWC-CE-127) and **SRC-BILL-A-055 through SRC-BILL-A-073** (CWC-CE-128) in WD-BILL-A-024. They establish working current-state evidence for Domain 01 only. They are **not** accepted LOU-004 provisions.
 
 PRIMARY-LEGAL / GOV-DATA Domain 02 locators: **SRC-BILL-A-075 through SRC-BILL-A-109** (CWC-CE-130) and **SRC-BILL-A-115 through SRC-BILL-A-131 / 134** (CWC-CE-131) in WD-BILL-A-032. They establish working current-state evidence for Domain 02 only. They are **not** accepted LOU-004 provisions. Domain 01 findings are not rewritten.
 
 PRIMARY-LEGAL / GOV-DATA Domain 03 locators: **SRC-BILL-A-135 through SRC-BILL-A-167** (CWC-CE-133) and **SRC-BILL-A-173 through SRC-BILL-A-181** (CWC-CE-134) in WD-BILL-A-041. They establish working current-state evidence for Domain 03 only. They are **not** accepted LOU-004 provisions. Domain 01 and Domain 02 findings are not rewritten.
+
+PRIMARY-LEGAL / GOV-DATA Domain 04 locators: **SRC-BILL-A-183 through SRC-BILL-A-214** (CWC-CE-136) and **SRC-BILL-A-220 through SRC-BILL-A-227** (CWC-CE-137) in WD-BILL-A-050. They establish working current-state evidence for Domain 04 only. They are **not** accepted LOU-004 provisions. Domain 01–03 findings are not rewritten.
 
 ### External AI provenance (SRC-BILL-A-010)
 
@@ -128,7 +136,9 @@ H.R. 25 IH (SRC-BILL-A-015) remains the PRIMARY-LEGAL **federal model** pin. It 
 **CWC-CE-130:** Domain 02 locators SRC-BILL-A-075–114 and WD-BILL-A-030–035.  
 **CWC-CE-131:** Closure locators SRC-BILL-A-115–134 and WD-BILL-A-037.  
 **CWC-CE-133:** Domain 03 locators SRC-BILL-A-135–172 and WD-BILL-A-039–045.  
-**CWC-CE-134:** Closure locators SRC-BILL-A-173–182 and WD-BILL-A-046. Domains 04–12 remain empty. Statewide Government Revenue Universe remains uncertified.
+**CWC-CE-134:** Closure locators SRC-BILL-A-173–182 and WD-BILL-A-046.  
+**CWC-CE-136:** Domain 04 locators SRC-BILL-A-183–219 and WD-BILL-A-048–054.  
+**CWC-CE-137:** Closure locators SRC-BILL-A-220–229 and WD-BILL-A-055. Domains 05–12 remain empty. Statewide Government Revenue Universe remains uncertified.
 
 ### 4.1 Kansas excise audit evidence needs (WD-BILL-A-013) — Domain 01 executed; gaps remain
 
@@ -178,3 +188,5 @@ Parent of Domain EXCISE. Full table: WD-BILL-A-016 §10 (EV-KLRS-001–015). Com
 | 1.1.0 | 2026-09-02 | CWC-CE-131: SRC-BILL-A-115–134 / 132. Findings not accepted into LOU-004. |
 | 1.2.0 | 2026-09-02 | CWC-CE-133: Domain 03 SRC-BILL-A-135–172. Findings not accepted into LOU-004. |
 | 1.3.0 | 2026-09-02 | CWC-CE-134: SRC-BILL-A-173–182 / WD-BILL-A-046. Findings not accepted into LOU-004. |
+| 1.4.0 | 2026-09-02 | CWC-CE-136: Domain 04 SRC-BILL-A-183–219 / WD-BILL-A-048–054. Findings not accepted into LOU-004. |
+| 1.5.0 | 2026-09-02 | CWC-CE-137: SRC-BILL-A-220–229 / WD-BILL-A-055. Findings not accepted into LOU-004. |
