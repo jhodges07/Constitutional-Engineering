@@ -1,5 +1,14 @@
 # WD-BILL-A-058 — County Property-Tax Architecture Boundary / Unresolved Question Register
 
+```text
+SUPERSEDED AS CONTROLLING BOUNDARY BY CWC-CE-142 / WD-BILL-A-067
+LIVE QUESTIONS CONTINUE IN WD-BILL-A-069
+THIS FILE IS HISTORICAL TRACEABILITY
+DO NOT ERASE
+```
+
+**CWC-CE-142:** Section 1.1 (“COUNTY CHOICE APPLIES TO PROPERTY-TAX TRANSITION”) and CP-PT-001/002 (ALL-IN/OUT as PT-package entry/non-entry) are **SUPERSEDED**. Controlling architecture: WD-BILL-A-067. Map: WD-BILL-A-068. The historical body below is preserved.
+
 **Document ID:** WD-BILL-A-058  
 **Title:** County Property-Tax All-In / All-Out Architecture Boundary and Unresolved Question Register  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
@@ -7,8 +16,8 @@
 **Governing Work Card:** CWC-CE-139  
 **Governing LOU candidate:** LOU-004 Draft 1.6 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Status:** WORKING / CANDIDATE — **SUPERSEDED AS CONTROLLING BOUNDARY** (CWC-CE-142) — HISTORICAL — NOT ACCEPTED  
+**Version:** 1.0.1  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-058-County-Property-Tax-Architecture-Boundary-Unresolved-Question-Register.md  
 **Source ID:** SRC-BILL-A-231  

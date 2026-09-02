@@ -4,12 +4,12 @@
 **Title:** Kansas Legal Revenue Scope — Comprehensive Audit Requirement, Discovery Architecture, and Completeness Controls  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-124 (defines architecture); CWC-CE-125 (Q-BILL-A-005 Option (a); schema locked in WD-BILL-A-019 / WD-BILL-A-020); CWC-CE-127 (Domain 01 executed); CWC-CE-128 (Domain 01 closure); CWC-CE-130 (Domain 02 executed); CWC-CE-131 (Domain 02 closure); CWC-CE-133 (Domain 03 executed); CWC-CE-134 (Domain 03 closure); CWC-CE-136 (Domain 04 executed); CWC-CE-137 (Domain 04 closure; remaining domains **not** executed)  
+**Governing Work Card:** CWC-CE-124 (defines architecture); CWC-CE-125 (Q-BILL-A-005 Option (a); schema locked in WD-BILL-A-019 / WD-BILL-A-020); CWC-CE-127 (Domain 01 executed); CWC-CE-128 (Domain 01 closure); CWC-CE-130 (Domain 02 executed); CWC-CE-131 (Domain 02 closure); CWC-CE-133 (Domain 03 executed); CWC-CE-134 (Domain 03 closure); CWC-CE-136 (Domain 04 executed); CWC-CE-137 (Domain 04 closure); CWC-CE-141 (Domain 05 executed; remaining domains **not** executed)  
 **Governing Human Intent:** WD-BILL-A-015 / Q-BILL-A-004; WD-BILL-A-018 / Q-BILL-A-005 Option (a); subordinate excise intent WD-BILL-A-012 / Q-BILL-A-003  
-**Governing LOU candidate:** LOU-004 Draft 1.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 1.7 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / ARCHITECTURE DEFINED — SCHEMA LOCKED IN WD-BILL-A-019/020 — DOMAIN 01 **EXECUTED** — DOMAIN 02 **EXECUTED / CLOSURE APPLIED** — DOMAIN 03 **EXECUTED / CLOSURE APPLIED** — DOMAIN 04 **EXECUTED / CLOSURE APPLIED** — REMAINING DOMAINS **NOT PERFORMED** — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Status:** WORKING / ARCHITECTURE DEFINED — SCHEMA LOCKED IN WD-BILL-A-019/020 — DOMAIN 01 **EXECUTED** — DOMAIN 02 **EXECUTED / CLOSURE APPLIED** — DOMAIN 03 **EXECUTED / CLOSURE APPLIED** — DOMAIN 04 **EXECUTED / CLOSURE APPLIED** — DOMAIN 05 **EXECUTED** — REMAINING DOMAINS **NOT PERFORMED** — NOT ACCEPTED  
+**Version:** 1.1.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-016-Kansas-Legal-Revenue-Scope-Audit-Architecture.md  
 **Source ID:** SRC-BILL-A-020  
@@ -23,6 +23,7 @@ DOMAIN 03 EXECUTED UNDER CWC-CE-133
 DOMAIN 03 CLOSURE APPLIED UNDER CWC-CE-134
 DOMAIN 04 EXECUTED UNDER CWC-CE-136
 DOMAIN 04 CLOSURE APPLIED UNDER CWC-CE-137
+DOMAIN 05 EXECUTED UNDER CWC-CE-141
 REMAINING DOMAINS NOT EXECUTED
 STATEWIDE UNIVERSE NOT CERTIFIED
 NO RETAIN / TRANSFORM / DISAPPEAR DISPOSITIONS
@@ -272,7 +273,7 @@ EV-KS-REV-001–012 (WD-BILL-A-013) remain the **excise-domain** evidence needs 
 | CF-BILL-A-010 | Narrow Q-BILL-A-004 (excise-type classes a–g) vs comprehensive Q-BILL-A-004 (KLRS) | **Recorded supersession** — narrow question retained historically; WD-BILL-A-015 governs |
 | UNK-KLRS-001 | Complete state revenue-authority universe | UNKNOWN — do not invent |
 | UNK-KLRS-002 | Complete local-government revenue-authority / entity universe | UNKNOWN — do not invent |
-| UNK-KLRS-003 | Kansas-source distinction among tax, fee, assessment, service charge, penalty, fine, and other receipt | `[TO BE VERIFIED]` |
+| UNK-KLRS-003 | Kansas-source distinction among tax, fee, assessment, service charge, penalty, fine, and other receipt | Domain 05 bounded doctrine recorded (*Executive Aircraft*; *Heartland*) — **LEGAL INTERPRETATION REQUIRED** per row; not a statewide resolution |
 | UNK-KLRS-004 | Whether every governmental receipt belongs in final KLRS or only compulsory claims | **RECORDED Option (a)** — compulsory only; other receipts remain auditable outside closed demand-authority unless Human later expressly adds (WD-BILL-A-018). Per-row mixed/uncertain classification still OPEN |
 | UNK-KLRS-005 | Treatment of voluntary government transactions | OPEN |
 | UNK-KLRS-006 | Utility / enterprise charges | OPEN |
@@ -283,7 +284,7 @@ EV-KS-REV-001–012 (WD-BILL-A-013) remain the **excise-domain** evidence needs 
 | UNK-KLRS-011 | Federal funds | OPEN |
 | UNK-KLRS-012 | Bond proceeds / borrowing | OPEN |
 | UNK-KLRS-013 | Unclaimed property / forfeitures / settlements | OPEN |
-| UNK-KLRS-014 | Regulatory fees / user fees | OPEN |
+| UNK-KLRS-014 | Regulatory fees / user fees | Domain 05 **EXECUTED** (WD-BILL-A-060/061) with explicit gaps; Domain 08 user-pay **not executed** |
 | UNK-KLRS-015 | Special assessments / development / exaction charges | OPEN — Domain 02 referred K.S.A. 12-6a01 improvement-district assessments to Domain 06; Domain 06 **not executed** |
 | UNK-KLRS-016 | Local home-rule authority vs closed KLRS | `[LEGAL EFFECT UNKNOWN]` |
 | UNK-KLRS-017 | Existing constitutional revenue authority vs closed KLRS | `[CITATION/TEXT NEEDED]` |
@@ -313,3 +314,4 @@ EV-KS-REV-001–012 (WD-BILL-A-013) remain the **excise-domain** evidence needs 
 | 0.8.0 | 2026-09-02 | CWC-CE-134: Domain 03 closure-status cross-reference. Architecture unchanged. Domains 04–12 not executed. Universe not certified. |
 | 0.9.0 | 2026-09-02 | CWC-CE-136: Domain 04 execution-status cross-reference. Architecture unchanged. Domains 05–12 not executed. Universe not certified. Current Kansas sales/use ≠ H.R. 25. |
 | 1.0.0 | 2026-09-02 | CWC-CE-137: Domain 04 closure-status cross-reference. Architecture unchanged. Domains 05–12 not executed. Universe not certified. Completeness not upgraded. |
+| 1.1.0 | 2026-09-02 | CWC-CE-141: Domain 05 execution-status cross-reference. Architecture unchanged. Domains 06–12 not executed. Universe not certified. |

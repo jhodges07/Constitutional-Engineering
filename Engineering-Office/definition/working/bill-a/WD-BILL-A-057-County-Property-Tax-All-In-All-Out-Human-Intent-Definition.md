@@ -1,5 +1,14 @@
 # WD-BILL-A-057 — County Property-Tax All-In / All-Out Human Intent Definition
 
+```text
+SUPERSEDED AS CONTROLLING INTERPRETATION BY CWC-CE-142 / WD-BILL-A-067
+THIS FILE IS HISTORICAL TRACEABILITY
+DO NOT ERASE
+DO NOT USE AS THE CURRENT COUNTY ALL-IN / ALL-OUT MEANING
+```
+
+**CWC-CE-142:** The interpretation that ALL-IN / ALL-OUT is a **property-tax-transition participation** choice (ALL-IN = enter PT elimination; ALL-OUT = do not enter that package) is **SUPERSEDED**. Controlling intent: WD-BILL-A-067. Supersession map: WD-BILL-A-068. Live questions: WD-BILL-A-069. The historical body below is preserved.
+
 **Document ID:** WD-BILL-A-057  
 **Title:** County Property-Tax All-In / All-Out Human Engineering Intent Definition  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
@@ -7,8 +16,8 @@
 **Governing Work Card:** CWC-CE-139  
 **Governing LOU candidate:** LOU-004 Draft 1.6 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** HUMAN INTENT / WORKING DEFINITION — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Status:** HUMAN INTENT / WORKING DEFINITION — **SUPERSEDED AS CONTROLLING** (CWC-CE-142) — HISTORICAL — NOT ACCEPTED  
+**Version:** 1.0.1  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-057-County-Property-Tax-All-In-All-Out-Human-Intent-Definition.md  
 **Source ID:** SRC-BILL-A-230  
