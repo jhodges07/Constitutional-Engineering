@@ -4,11 +4,11 @@
 **Title:** Bill A Human Questionnaire / Definition Register  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137  
-**Governing LOU candidate:** LOU-004 Draft 1.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139  
+**Governing LOU candidate:** LOU-004 Draft 1.6 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.5.0  
+**Version:** 1.6.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-002-Human-Questionnaire-Definition-Register.md  
 
@@ -75,15 +75,15 @@ Reason: CWC-CE-121 §11. Intent spill does not close unasked domains.
 | B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–04 executed (BLANK dispositions); next = residual gaps or Domain 05 (not asked as a question) |
 | C | Permissible taxable events | NOT ASKED (intent spill: H.R. 25 final consumption; existence not taxable) |
 | D | Property rights | NOT ASKED (intent spill from Q-BILL-A-001) |
-| E | State / local fiscal relationship | NOT ASKED (intent spill: KLRS covers state and local entities; entity universe not invented) |
-| F | Transition | NOT ASKED |
-| G | Property tax relationship (Bill B) | NOT ASKED (LOU-001 five-year destination **not transferred**) |
+| E | State / local fiscal relationship | NOT ASKED as a closed domain (intent spill: KLRS covers state and local entities; CWC-CE-139 county PT transition is **not** a general local opt-out of statewide architecture) |
+| F | Transition | NOT ASKED as a closed domain (**INTENT SPILL / CANDIDATE RECORDING** — CWC-CE-139 county ALL-IN / ALL-OUT property-tax transition; remaining UQ-PT items HUMAN DECISION REQUIRED — WD-BILL-A-058) |
+| G | Property tax relationship (Bill B) | NOT ASKED as a closed domain (**INTENT SPILL / CANDIDATE RECORDING** — CWC-CE-139; LOU-001 five-year destination **not transferred** as selected duration; 5-year and 7-year remain HUMAN CANDIDATES; Bill A/B allocation HUMAN DECISION REQUIRED) |
 | H | Debt | NOT ASKED |
 | I | Retirement / long-duration liabilities | NOT ASKED |
 | J | Revenue distribution | NOT ASKED (intent spill: surviving-excise restricted pools; 100% purpose restriction) |
 | K | Taxpayer exit | NOT ASKED |
 | L | Government-node failure | NOT ASKED |
-| M | Transparency / signal | NOT ASKED (intent spill: surviving-excise taxpayer signal H) |
+| M | Transparency / signal | NOT ASKED as a closed domain (intent spill: surviving-excise taxpayer signal H; CWC-CE-139 statewide API / visibility association where Q-BILL-A-001 already supports it — no API SPEC) |
 | N | Enforcement | NOT ASKED (intent spill: criminal-enforcement Human Intent recorded; elements reserved — not legislation) |
 | O | Authority expiration | NOT ASKED |
 | P | Constitutional permanence | NOT ASKED |
@@ -238,7 +238,21 @@ Full EV-KLRS-001–015 and UNK-KLRS register: WD-BILL-A-016 §§10–11. **AI sy
 | Classification | **HUMAN INTENT / WORKING DEFINITION** (primary). PROPOSED UNDERSTANDING seeds (LOU-004 §7 items 13–16 as refined). REJECTED: receipt-as-demand; Option (a) as RETAIN; criminal-intent applied to mere non-compulsory receipt. OPEN: per-row mixed/uncertain classification; criminal-law elements. **Not** Kansas law. |
 | Evidence required | Per-row compulsory status from PRIMARY-LEGAL / GOV-DATA during later domain execution. Schema: WD-BILL-A-019. |
 | LOU update | LOU-004 Draft 0.7 §§2.7, 7–14, 19–20 |
-| Next question | **STOP.** No Q-BILL-A-006. Domain 01 executed/closed (CWC-CE-127/128). Domain 02 executed (CWC-CE-130) and closure applied (CWC-CE-131 / WD-BILL-A-037). Domain 03 executed (CWC-CE-133 / WD-BILL-A-039–045) and closure applied (CWC-CE-134 / WD-BILL-A-046). Domain 04 executed (CWC-CE-136 / WD-BILL-A-048–054) and closure applied (CWC-CE-137 / WD-BILL-A-055). Recommended subsequent controlled work: residual Domain 01–04 gaps **or** Human-authorized Git canonicalization of combined 136/137 **or** Human-authorized Domain 05 — **not self-authorized**. No FairTax rate. |
+| Next question | **STOP.** No Q-BILL-A-006. Domain 01 executed/closed (CWC-CE-127/128). Domain 02 executed (CWC-CE-130) and closure applied (CWC-CE-131 / WD-BILL-A-037). Domain 03 executed (CWC-CE-133 / WD-BILL-A-039–045) and closure applied (CWC-CE-134 / WD-BILL-A-046). Domain 04 executed (CWC-CE-136 / WD-BILL-A-048–054) and closure applied (CWC-CE-137 / WD-BILL-A-055). CWC-CE-139 recorded county ALL-IN / ALL-OUT Human Intent (WD-BILL-A-057 / 058) without a new questionnaire item. Recommended subsequent controlled work: residual Domain 01–04 gaps **or** Human-authorized Git canonicalization of CWC-CE-139 **or** Human-authorized Domain 05 — **not self-authorized**. No FairTax rate. |
+
+### CWC-CE-139 Definition Cycle (not a questionnaire item)
+
+| Field | Value |
+|---|---|
+| ID | **CWC-CE-139** — not Q-BILL-A-006 |
+| Domain | F / G / E / M intent spill — domains **not** closed |
+| Status | **RECORDED — 2026-09-02 — HUMAN INTENT / WORKING DEFINITION** |
+| Why no Q-BILL-A-006 | Human statements in CWC-CE-139 were sufficient to record the intent without another question. Remaining items are deferred in WD-BILL-A-058 (UQ-PT-001–020). |
+| Human statement (summary) | County ALL-IN / ALL-OUT is a candidate **property-tax transition** boundary. It is **not** a general Bill A opt-in / opt-out. API access, Taxpayer Supremacy, and Runtime Republic architecture are statewide / non-county-optional. 5-year and 7-year phaseouts are HUMAN CANDIDATES. Final duration HUMAN DECISION REQUIRED. ALL-IN = complete entry into the defined property-tax transition toward zero property-tax authority. ALL-OUT = non-entry at that decision point, not escape from statewide controls. County voter authorization is a candidate principle; exact mechanism OPEN. Full text: WD-BILL-A-057. |
+| Classification | **HUMAN ENGINEERING INTENT** (primary). CONTROLLED EVIDENCE used only for Domain 02 structural context. ENGINEERING QUESTIONS in WD-BILL-A-058. **Not** Kansas law. **Not** accepted LOU. **Not** SPEC. |
+| Evidence required | None manufactured as a new Human question. Deferred legal/fiscal/engineering research is classified in WD-BILL-A-058. Domain 02 dispositions remain BLANK. |
+| LOU update | LOU-004 Draft 1.6 §§2.8, 7 items 17–22, 8 items 35–40, 10.17, 12 items 23–24 |
+| Next question | **STOP.** No Q-BILL-A-006. |
 
 ---
 
@@ -267,3 +281,4 @@ Do not interrogate the Human with a large questionnaire dump unless the Human En
 | 1.3.0 | 2026-09-02 | CWC-CE-134: Domain 03 closure recorded. Dispositions BLANK. No Q-006. Next = residual gaps or Domain 04 (not self-authorized). |
 | 1.4.0 | 2026-09-02 | CWC-CE-136: Domain 04 executed. Dispositions BLANK. No Q-006. Next = residual gaps, Domain 04 closure, or Domain 05 (not self-authorized). |
 | 1.5.0 | 2026-09-02 | CWC-CE-137: Domain 04 closure recorded. Dispositions BLANK. No Q-006. Next = residual gaps, Git canonicalization, or Domain 05 (not self-authorized). |
+| 1.6.0 | 2026-09-02 | CWC-CE-139: county ALL-IN / ALL-OUT Human Intent recorded. Domains F/G/E/M intent spill; not closed. No Q-006. Domain 05 not executed. |

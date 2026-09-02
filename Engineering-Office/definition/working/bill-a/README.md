@@ -2,10 +2,10 @@
 
 **Document ID:** README-DEF-WORKING-BILL-A-001  
 **Classification:** Informational Directory Note  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation); CWC-CE-127 (Domain 01 evidence execution); CWC-CE-128 (Domain 01 evidence closure / reconciliation); CWC-CE-130 (Domain 02 property-claims evidence execution); CWC-CE-131 (Domain 02 evidence closure / reconciliation); CWC-CE-133 (Domain 03 income/earnings/privilege evidence execution); CWC-CE-134 (Domain 03 evidence closure / reconciliation); CWC-CE-136 (Domain 04 sales/use/consumption evidence execution); CWC-CE-137 (Domain 04 evidence closure / reconciliation)  
-**Governing LOU candidate:** LOU-004 Draft 1.5 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation); CWC-CE-127 (Domain 01 evidence execution); CWC-CE-128 (Domain 01 evidence closure / reconciliation); CWC-CE-130 (Domain 02 property-claims evidence execution); CWC-CE-131 (Domain 02 evidence closure / reconciliation); CWC-CE-133 (Domain 03 income/earnings/privilege evidence execution); CWC-CE-134 (Domain 03 evidence closure / reconciliation); CWC-CE-136 (Domain 04 sales/use/consumption evidence execution); CWC-CE-137 (Domain 04 evidence closure / reconciliation); CWC-CE-139 (county property-tax ALL-IN / ALL-OUT Human Intent Definition)  
+**Governing LOU candidate:** LOU-004 Draft 1.6 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Status:** Active (directory note only)  
-**Version:** 1.14.0  
+**Version:** 1.15.0  
 **Effective Date:** 2026-09-02  
 
 Path: `Engineering-Office/definition/working/bill-a/`
@@ -72,5 +72,8 @@ This directory is separate from CWC-CE-070 Master Plan `WD-MP-*` files in the pa
 | `WD-BILL-A-054-Git-Handoff-CWC-CE-136.md` | CWC-CE-136 Git handoff — **no commit/push** |
 | `WD-BILL-A-055-Domain-04-Evidence-Closure-Reconciliation.md` | CWC-CE-137 Domain 04 closure / reconciliation — dispositions **BLANK** |
 | `WD-BILL-A-056-Git-Handoff-CWC-CE-137.md` | CWC-CE-137 Git handoff — combined 136/137 path list — **no commit/push** |
+| `WD-BILL-A-057-County-Property-Tax-All-In-All-Out-Human-Intent-Definition.md` | CWC-CE-139 Human Intent — county ALL-IN / ALL-OUT as property-tax transition boundary |
+| `WD-BILL-A-058-County-Property-Tax-Architecture-Boundary-Unresolved-Question-Register.md` | CWC-CE-139 architecture boundary / UQ-PT register — questions **not decided** |
+| `WD-BILL-A-059-Git-Handoff-CWC-CE-139.md` | CWC-CE-139 Git handoff — **no commit/push** |
 
-**Control snapshot:** HG-D1 NOT PASSED · maturity **19% unchanged** · no SPEC · no legislative draft · no publication · Q-BILL-A-001–005 **RECORDED** · Option (a) · schema locked as candidate · Domain 01 **executed** and **closure applied** (dispositions **BLANK**) · Domain 02 **executed** and **closure applied** (dispositions **BLANK**) · Domain 03 **executed** and **closure applied** (dispositions **BLANK**) · Domain 04 **executed** and **closure applied** (dispositions **BLANK**) · Universe **not certified** · motor fuel **not RETAINED** · no property-tax elimination design · no income-tax repeal design · no FairTax rate calculation · current Kansas sales/use ≠ H.R. 25 · Domain 05 **not executed** · criminal-enforcement intent is **not** a statute · no commit/push.
+**Control snapshot:** HG-D1 NOT PASSED · maturity **19% unchanged** · no SPEC · no legislative draft · no publication · Q-BILL-A-001–005 **RECORDED** · Option (a) · schema locked as candidate · Domain 01 **executed** and **closure applied** (dispositions **BLANK**) · Domain 02 **executed** and **closure applied** (dispositions **BLANK**) · Domain 03 **executed** and **closure applied** (dispositions **BLANK**) · Domain 04 **executed** and **closure applied** (dispositions **BLANK**) · CWC-CE-139 county ALL-IN / ALL-OUT Human Intent **recorded** (not accepted LOU; not a general Bill A opt-out; API / Taxpayer Supremacy / Runtime Republic **statewide**) · Universe **not certified** · motor fuel **not RETAINED** · no property-tax elimination design · no income-tax repeal design · no FairTax rate calculation · current Kansas sales/use ≠ H.R. 25 · Domain 05 **not executed** · criminal-enforcement intent is **not** a statute · no commit/push.
