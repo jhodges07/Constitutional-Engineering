@@ -4,11 +4,11 @@
 **Title:** H.R. 25 FairTax Evidence Crosswalk — Kansas Mirror Trace Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121 (Definition workspace origin); Human Q-BILL-A-002 reply 2026-09-01; CWC-CE-123 (exception boundary); CWC-CE-127; CWC-CE-128  
-**Governing LOU candidate:** LOU-004 Draft 0.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121 (Definition workspace origin); Human Q-BILL-A-002 reply 2026-09-01; CWC-CE-123 (exception boundary); CWC-CE-127; CWC-CE-128; CWC-CE-133; CWC-CE-134  
+**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / INCOMPLETE — NOT ACCEPTED — NOT PRIMARY EVIDENCE BY ITSELF  
-**Version:** 0.5.0  
+**Version:** 0.7.0  
 **Effective Date:** 2026-09-01  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-009-HR25-FairTax-Evidence-Crosswalk.md  
 **Source ID:** SRC-BILL-A-014 (this register); primary text = SRC-BILL-A-015  
@@ -102,8 +102,8 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 1. Attach verbatim operative excerpts (or PDF pinpoint cites with line-stable quotes) for every priority row from `BILLS-119hr25ih.pdf` — not from AI paraphrase.  
 2. Resolve IH internal cross-reference inconsistency (gaming sponsor §701(a) vs §702 body) against the PDF.  
 3. Enumerate remaining H.R. 25 subtitle sections (financial intermediation, government enterprises, not-for-profits, imports, housing, etc.) into additional XW rows.  
-4. Build Kansas revenue-claim inventory from PRIMARY-LEGAL / GOV-DATA only — **do not invent**. **CWC-CE-128:** Domain 01 working inventory exists in WD-BILL-A-022 (14 rows); lottery/casino **referred**; remaining domains empty.  
-5. Classify each inventoried Kansas claim under Human disposition vocabulary: REMAIN / TRANSFORM / DISAPPEAR / REQUIRES HUMAN DECISION / EVIDENCE INSUFFICIENT. **CWC-CE-128: all Domain 01 field 25 values remain BLANK. Do not fill this step from existence.**  
+4. Build Kansas revenue-claim inventory from PRIMARY-LEGAL / GOV-DATA only — **do not invent**. **CWC-CE-134:** Domain 01 working inventory exists in WD-BILL-A-022 (14 rows); Domain 02 in WD-BILL-A-031 (16 rows); Domain 03 in WD-BILL-A-040 (5 rows after closure); remaining domains empty.  
+5. Classify each inventoried Kansas claim under Human disposition vocabulary: REMAIN / TRANSFORM / DISAPPEAR / REQUIRES HUMAN DECISION / EVIDENCE INSUFFICIENT. **CWC-CE-134: all Domain 01, 02, and 03 field 25 values remain BLANK. Do not fill this step from existence.**  
 6. Surface every federal-only mechanism (rate formula, prebate, IRS abolition, Sixteenth Amendment sunset, federal administration fee) as ADAPT / OUT-OF-SCOPE / REQUIRES HUMAN DECISION — never silent change.  
 7. Open Human questions for unused excise balances, sinking funds, rate reductions, refunds, credits, and other undisposed excise mechanisms (WD-BILL-A-008 §10).  
 8. Fill EV-KS-REV-001–012 (WD-BILL-A-013) without inventing Kansas claims; map each inventoried claim against XW rows for stack/duplicate. Audit **not executed** in this cycle.
@@ -114,7 +114,7 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 
 | Item | Status |
 |---|---|
-| Complete Kansas tax-class inventory | **PARTIAL** — Domain 01 working inventory in WD-BILL-A-022; Domains 02–12 EMPTY |
+| Complete Kansas tax-class inventory | **PARTIAL** — Domain 01 in WD-BILL-A-022; Domain 02 in WD-BILL-A-031; Domain 03 in WD-BILL-A-040; Domains 04–12 EMPTY |
 | Kansas excise / excise-type audit findings | **DOMAIN 01 EXECUTED** in WD-BILL-A-023 — dispositions **BLANK**; not LOU-accepted |
 | REMAIN/TRANSFORM/DISAPPEAR classifications | **EMPTY** except architecture rule; no class-level dispositions asserted; motor fuel is **not** a RETAIN |
 | Kansas FairTax rate | **NOT SET** by Q-BILL-A-002 reply |
@@ -132,3 +132,5 @@ Status as of 2026-09-01: **PARTIAL locator open**. Full verbatim attachment and 
 | 0.3.0 | 2026-09-01 | Q-BILL-A-003: XW-HR25-011/012 motor fuel = example of uniform surviving-excise standard, **not** Human RETAIN. Audit not executed. |
 | 0.4.0 | 2026-09-02 | CWC-CE-127: Domain 01 overlap/stack observations recorded in WD-BILL-A-023 §K. No RETAIN. H.R. 25 still not Kansas law. |
 | 0.5.0 | 2026-09-02 | CWC-CE-128: XW-HR25-007 Kansas lottery/casino mechanism evidenced and referred off Domain 01. H.R. 25 still not Kansas law. PDF VERIFY still required. |
+| 0.6.0 | 2026-09-02 | CWC-CE-133: Domain 03 income/privilege claims classified STRUCTURALLY OUTSIDE H.R. 25 FINAL-CONSUMPTION EVENT in WD-BILL-A-044. No RETAIN/DISAPPEAR. H.R. 25 still not Kansas law. |
+| 0.7.0 | 2026-09-02 | CWC-CE-134: Domain 03 closure does not change H.R. 25 classifications. Count remains 5. No RETAIN/DISAPPEAR. H.R. 25 still not Kansas law. |

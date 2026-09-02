@@ -2,10 +2,10 @@
 
 **Document ID:** README-DEF-WORKING-BILL-A-001  
 **Classification:** Informational Directory Note  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation); CWC-CE-127 (Domain 01 evidence execution); CWC-CE-128 (Domain 01 evidence closure / reconciliation); CWC-CE-130 (Domain 02 property-claims evidence execution); CWC-CE-131 (Domain 02 evidence closure / reconciliation)  
-**Governing LOU candidate:** LOU-004 Draft 1.1 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125 (Q-BILL-A-005 Option (a) / audit-control foundation); CWC-CE-127 (Domain 01 evidence execution); CWC-CE-128 (Domain 01 evidence closure / reconciliation); CWC-CE-130 (Domain 02 property-claims evidence execution); CWC-CE-131 (Domain 02 evidence closure / reconciliation); CWC-CE-133 (Domain 03 income/earnings/privilege evidence execution); CWC-CE-134 (Domain 03 evidence closure / reconciliation)  
+**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Status:** Active (directory note only)  
-**Version:** 1.10.0  
+**Version:** 1.12.0  
 **Effective Date:** 2026-09-02  
 
 Path: `Engineering-Office/definition/working/bill-a/`
@@ -31,10 +31,10 @@ This directory is separate from CWC-CE-070 Master Plan `WD-MP-*` files in the pa
 | `WD-BILL-A-013-Kansas-Excise-Audit-Requirement.md` | Domain 01 EXCISE requirement — subordinate; CWC-CE-127 executed Domain 01 |
 | `WD-BILL-A-014-Git-Handoff-Q-BILL-A-003-Recording.md` | Q-BILL-A-003 recording Git handoff |
 | `WD-BILL-A-015-Q-BILL-A-004-Human-Intent-Kansas-Legal-Revenue-Scope.md` | Q-BILL-A-004 Human Intent source of record |
-| `WD-BILL-A-016-Kansas-Legal-Revenue-Scope-Audit-Architecture.md` | KLRS / Universe audit architecture — Domain 01 and Domain 02 executed; remaining domains not executed |
+| `WD-BILL-A-016-Kansas-Legal-Revenue-Scope-Audit-Architecture.md` | KLRS / Universe audit architecture — Domains 01–03 executed / closure applied; remaining domains not executed |
 | `WD-BILL-A-017-Git-Handoff-CWC-CE-124.md` | CWC-CE-124 Git handoff |
 | `WD-BILL-A-018-Q-BILL-A-005-Human-Intent-Closed-Demand-Authority.md` | Q-BILL-A-005 Human Intent — Option (a) |
-| `WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md` | Candidate 32-field master register — schema authority; Domain 01 in WD-BILL-A-022; Domain 02 in WD-BILL-A-031 |
+| `WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md` | Candidate 32-field master register — schema authority; Domain 01 in WD-BILL-A-022; Domain 02 in WD-BILL-A-031; Domain 03 in WD-BILL-A-040 |
 | `WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md` | Completeness protocol / Domain 01-first order — Universe **not certified** |
 | `WD-BILL-A-021-Git-Handoff-CWC-CE-125.md` | CWC-CE-125 Git handoff — **no commit/push** |
 | `WD-BILL-A-022-Domain-01-Master-Register-Execution.md` | Domain 01 32-field execution instance — dispositions **BLANK** |
@@ -54,5 +54,14 @@ This directory is separate from CWC-CE-070 Master Plan `WD-MP-*` files in the pa
 | `WD-BILL-A-036-Git-Handoff-CWC-CE-130.md` | CWC-CE-130 Git handoff — **no commit/push** |
 | `WD-BILL-A-037-Domain-02-Evidence-Closure-Reconciliation.md` | CWC-CE-131 Domain 02 closure / reconciliation — dispositions **BLANK** |
 | `WD-BILL-A-038-Git-Handoff-CWC-CE-131.md` | CWC-CE-131 Git handoff — **no commit/push** |
+| `WD-BILL-A-039-Domain-03-Income-Earnings-Privilege-Evidence-Audit.md` | Domain 03 Human-readable income/earnings/privilege audit; dispositions **BLANK** |
+| `WD-BILL-A-040-Domain-03-Master-Register-Execution.md` | Domain 03 32-field execution instance — 5 claim-category rows; dispositions **BLANK** |
+| `WD-BILL-A-041-Domain-03-Source-Register.md` | Domain 03 PRIMARY-LEGAL / GOV-DATA locators |
+| `WD-BILL-A-042-Domain-03-Completeness-Reconciliation.md` | Domain 03 completeness: substantially complete with explicit gaps |
+| `WD-BILL-A-043-Domain-03-Conflict-Unknown-Register.md` | Domain 03 source conflicts and unknowns |
+| `WD-BILL-A-044-Domain-03-Income-Privilege-Architecture-Crosswalk.md` | Current-law chain / taxpayer-remitter / H.R. 25 / AGCL crosswalk |
+| `WD-BILL-A-045-Git-Handoff-CWC-CE-133.md` | CWC-CE-133 Git handoff — **no commit/push** |
+| `WD-BILL-A-046-Domain-03-Evidence-Closure-Reconciliation.md` | CWC-CE-134 Domain 03 closure / reconciliation — dispositions **BLANK** |
+| `WD-BILL-A-047-Git-Handoff-CWC-CE-134.md` | CWC-CE-134 Git handoff — combined 133/134 path list — **no commit/push** |
 
-**Control snapshot:** HG-D1 NOT PASSED · maturity **19% unchanged** · no SPEC · no legislative draft · no publication · Q-BILL-A-001–005 **RECORDED** · Option (a) · schema locked as candidate · Domain 01 **executed** and **closure applied** (dispositions **BLANK**) · Domain 02 **executed** and **closure applied** (dispositions **BLANK**) · Universe **not certified** · motor fuel **not RETAINED** · no property-tax elimination design · criminal-enforcement intent is **not** a statute · no commit/push.
+**Control snapshot:** HG-D1 NOT PASSED · maturity **19% unchanged** · no SPEC · no legislative draft · no publication · Q-BILL-A-001–005 **RECORDED** · Option (a) · schema locked as candidate · Domain 01 **executed** and **closure applied** (dispositions **BLANK**) · Domain 02 **executed** and **closure applied** (dispositions **BLANK**) · Domain 03 **executed** and **closure applied** (dispositions **BLANK**) · Universe **not certified** · motor fuel **not RETAINED** · no property-tax elimination design · no income-tax repeal design · no FairTax rate calculation · Domain 04 **not executed** · criminal-enforcement intent is **not** a statute · no commit/push.

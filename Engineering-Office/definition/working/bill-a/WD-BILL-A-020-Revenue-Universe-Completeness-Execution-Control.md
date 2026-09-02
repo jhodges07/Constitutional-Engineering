@@ -4,13 +4,13 @@
 **Title:** Kansas Government Revenue Universe — Completeness Methodology and Evidence-Execution Control  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-125 (defines method; does **not** certify completeness); CWC-CE-127 (applies method to Domain 01 only); CWC-CE-128 (Domain 01 closure; completeness **not** upgraded); CWC-CE-130 (applies method to Domain 02); CWC-CE-131 (Domain 02 closure reassessment; statewide completeness **not** certified)  
+**Governing Work Card:** CWC-CE-125 (defines method; does **not** certify completeness); CWC-CE-127 (applies method to Domain 01 only); CWC-CE-128 (Domain 01 closure; completeness **not** upgraded); CWC-CE-130 (applies method to Domain 02); CWC-CE-131 (Domain 02 closure reassessment; statewide completeness **not** certified); CWC-CE-133 (applies method to Domain 03; statewide completeness **not** certified); CWC-CE-134 (Domain 03 closure reassessment; completeness **not** upgraded; statewide completeness **not** certified)  
 **Governing Human Intent:** WD-BILL-A-018 / Q-BILL-A-005 Option (a)  
 **Governing schema:** WD-BILL-A-019  
-**Governing LOU candidate:** LOU-004 Draft 1.1 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / METHOD DEFINED — DOMAIN 01 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — DOMAIN 02 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — STATEWIDE COMPLETENESS **NOT CERTIFIED** — NOT ACCEPTED  
-**Version:** 0.5.0  
+**Status:** WORKING / METHOD DEFINED — DOMAIN 01 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — DOMAIN 02 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — DOMAIN 03 **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** — STATEWIDE COMPLETENESS **NOT CERTIFIED** — NOT ACCEPTED  
+**Version:** 0.7.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-020-Revenue-Universe-Completeness-Execution-Control.md  
 **Source ID:** SRC-BILL-A-023  
@@ -115,8 +115,23 @@ CWC-CE-131
   → completeness **not upgraded**: SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS
   → dispositions BLANK; Domain 03 not executed
 
+CWC-CE-133
+= DOMAIN 03 INCOME / EARNINGS / PRIVILEGE EXECUTED
+  → WD-BILL-A-040 execution instance (schema remains WD-BILL-A-019)
+  → 5 claim-category rows; dispositions BLANK
+  → completeness: SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS (WD-BILL-A-042)
+  → no income-tax repeal design; no FairTax rate calculation
+  → Domain 04 not executed
+
+CWC-CE-134
+= DOMAIN 03 EVIDENCE CLOSURE / RECONCILIATION
+  → WD-BILL-A-046; WD-BILL-A-040 count remains **5**
+  → CF-D03-001/002/003 closed as classified; residual gaps preserved
+  → completeness **not upgraded**: SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS
+  → dispositions BLANK; Domain 04 not executed
+
 NEXT (Human-authorized; number not assigned)
-= residual Domain 02 gaps, then remaining domains 03–12
+= residual Domain 01–03 gaps, then remaining domains 04–12
   against the SAME master register
   still no invented dispositions
 THEN
@@ -143,7 +158,9 @@ CWC-CE-125 does **not** pass those criteria because execution is **not** authori
 **CWC-CE-127:** Domain 01 execution status is recorded in WD-BILL-A-025. Statewide Universe completeness remains **not certified**.  
 **CWC-CE-128:** Domain 01 completeness **reassessed, not upgraded**. WD-BILL-A-025 v0.2.0 / WD-BILL-A-028. Statewide Universe completeness remains **not certified**.  
 **CWC-CE-130:** Domain 02 completeness recorded in WD-BILL-A-033 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Statewide Universe completeness remains **not certified**.  
-**CWC-CE-131:** Domain 02 completeness **reassessed** in WD-BILL-A-033 / WD-BILL-A-037 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** (not upgraded). Statewide Universe completeness remains **not certified**.
+**CWC-CE-131:** Domain 02 completeness **reassessed** in WD-BILL-A-033 / WD-BILL-A-037 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS** (not upgraded). Statewide Universe completeness remains **not certified**.  
+**CWC-CE-133:** Domain 03 completeness recorded in WD-BILL-A-042 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Statewide Universe completeness remains **not certified**. Domain 04 **not executed**.  
+**CWC-CE-134:** Domain 03 completeness **reassessed, not upgraded** in WD-BILL-A-042 / WD-BILL-A-046 as **SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Statewide Universe completeness remains **not certified**. Domain 04 **not executed**.
 
 ---
 
@@ -156,3 +173,5 @@ CWC-CE-125 does **not** pass those criteria because execution is **not** authori
 | 0.3.0 | 2026-09-02 | CWC-CE-128: Domain 01 closure status; completeness not upgraded. Universe not certified. |
 | 0.4.0 | 2026-09-02 | CWC-CE-130: Domain 02 applied; substantially complete with explicit gaps. Universe not certified. |
 | 0.5.0 | 2026-09-02 | CWC-CE-131: Domain 02 closure reassessed; completeness not upgraded. Universe not certified. |
+| 0.6.0 | 2026-09-02 | CWC-CE-133: Domain 03 applied; substantially complete with explicit gaps. Universe not certified. Domain 04 not executed. |
+| 0.7.0 | 2026-09-02 | CWC-CE-134: Domain 03 closure reassessment; completeness not upgraded. Universe not certified. Domain 04 not executed. |

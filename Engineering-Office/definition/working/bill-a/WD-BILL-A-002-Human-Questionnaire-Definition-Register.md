@@ -4,11 +4,11 @@
 **Title:** Bill A Human Questionnaire / Definition Register  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131  
-**Governing LOU candidate:** LOU-004 Draft 1.1 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134  
+**Governing LOU candidate:** LOU-004 Draft 1.3 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.1.0  
+**Version:** 1.3.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-002-Human-Questionnaire-Definition-Register.md  
 
@@ -56,7 +56,7 @@ Human intent is never converted into an asserted Kansas legal or fiscal fact.
 Established order for this register:
 
 1. Problem definition (Domain A) — **RECORDED (Q-BILL-A-001)**  
-2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); **no current Human question** — next work = residual Domain 02 gaps or Human-authorized Domain 03 (not self-authorized)  
+2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); **no current Human question** — next work = residual Domain 01–03 gaps or Human-authorized Domain 04 (not self-authorized)  
 3. Property-right boundary (Domain D)  
 4. Permissible taxation boundary (Domain C) — intent spill from Q-BILL-A-002 (H.R. 25 final consumption; existence not an event) does **not** close Domain C  
 5. State/local architecture (Domain E)  
@@ -72,7 +72,7 @@ Reason: CWC-CE-121 §11. Intent spill does not close unasked domains.
 | Domain | Title | Status |
 |---|---|---|
 | A | Problem definition | **RECORDED** — Q-BILL-A-001 Human Intent (not HG-D1) |
-| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domain 01 and Domain 02 executed and closed (BLANK dispositions); next = residual Domain 02 gaps or Domain 03 (not asked as a question) |
+| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–03 executed (BLANK dispositions); next = residual gaps or Domain 04 (not asked as a question) |
 | C | Permissible taxable events | NOT ASKED (intent spill: H.R. 25 final consumption; existence not taxable) |
 | D | Property rights | NOT ASKED (intent spill from Q-BILL-A-001) |
 | E | State / local fiscal relationship | NOT ASKED (intent spill: KLRS covers state and local entities; entity universe not invented) |
@@ -238,7 +238,7 @@ Full EV-KLRS-001–015 and UNK-KLRS register: WD-BILL-A-016 §§10–11. **AI sy
 | Classification | **HUMAN INTENT / WORKING DEFINITION** (primary). PROPOSED UNDERSTANDING seeds (LOU-004 §7 items 13–16 as refined). REJECTED: receipt-as-demand; Option (a) as RETAIN; criminal-intent applied to mere non-compulsory receipt. OPEN: per-row mixed/uncertain classification; criminal-law elements. **Not** Kansas law. |
 | Evidence required | Per-row compulsory status from PRIMARY-LEGAL / GOV-DATA during later domain execution. Schema: WD-BILL-A-019. |
 | LOU update | LOU-004 Draft 0.7 §§2.7, 7–14, 19–20 |
-| Next question | **STOP.** No Q-BILL-A-006. Domain 01 executed/closed (CWC-CE-127/128). Domain 02 executed (CWC-CE-130) and closure applied (CWC-CE-131 / WD-BILL-A-037). Recommended subsequent controlled work: residual Domain 02 gaps (named PVD Statistical Report; isolated school mill dollars; PILOTs) **or** Human-authorized Domain 03 — **not self-authorized**. |
+| Next question | **STOP.** No Q-BILL-A-006. Domain 01 executed/closed (CWC-CE-127/128). Domain 02 executed (CWC-CE-130) and closure applied (CWC-CE-131 / WD-BILL-A-037). Domain 03 executed (CWC-CE-133 / WD-BILL-A-039–045) and closure applied (CWC-CE-134 / WD-BILL-A-046). Recommended subsequent controlled work: residual Domain 01–03 gaps **or** Human-authorized Domain 04 — **not self-authorized**. |
 
 ---
 
@@ -263,3 +263,5 @@ Do not interrogate the Human with a large questionnaire dump unless the Human En
 | 0.9.0 | 2026-09-02 | CWC-CE-128: Domain 01 closure recorded. No Q-006. Next = residual gaps or Domain 02 (not self-authorized). |
 | 1.0.0 | 2026-09-02 | CWC-CE-130: Domain 02 executed. Dispositions BLANK. No Q-006. Next = residual Domain 02 gaps or Domain 03 (not self-authorized). |
 | 1.1.0 | 2026-09-02 | CWC-CE-131: Domain 02 closure recorded. Dispositions BLANK. No Q-006. Next = residual gaps or Domain 03 (not self-authorized). |
+| 1.2.0 | 2026-09-02 | CWC-CE-133: Domain 03 executed. Dispositions BLANK. No Q-006. Next = residual gaps or Domain 04 (not self-authorized). |
+| 1.3.0 | 2026-09-02 | CWC-CE-134: Domain 03 closure recorded. Dispositions BLANK. No Q-006. Next = residual gaps or Domain 04 (not self-authorized). |
