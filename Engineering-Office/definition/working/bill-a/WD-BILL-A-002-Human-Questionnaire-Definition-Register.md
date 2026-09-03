@@ -4,11 +4,11 @@
 **Title:** Bill A Human Questionnaire / Definition Register  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142  
-**Governing LOU candidate:** LOU-004 Draft 1.8 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144  
+**Governing LOU candidate:** LOU-004 Draft 1.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.8.0  
+**Version:** 1.9.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-002-Human-Questionnaire-Definition-Register.md  
 
@@ -56,7 +56,7 @@ Human intent is never converted into an asserted Kansas legal or fiscal fact.
 Established order for this register:
 
 1. Problem definition (Domain A) — **RECORDED (Q-BILL-A-001)**  
-2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); Domain 04 **executed and closure applied** (dispositions BLANK); Domain 05 **executed** (dispositions BLANK); CWC-CE-142 county architecture **recorded** (not accepted); **no current Human question** — next work = residual Domain 01–05 gaps **or** Human-authorized Git of CWC-CE-141+142 **or** Human-authorized Domain 06 (not self-authorized)  
+2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); Domain 04 **executed and closure applied** (dispositions BLANK); Domain 05 **executed** (dispositions BLANK); Domain 06 **executed** (dispositions BLANK); CWC-CE-142 county architecture **recorded** (not accepted); **no current Human question** — next work = residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-144 **or** Human-authorized Domain 07 (not self-authorized)  
 3. Property-right boundary (Domain D)  
 4. Permissible taxation boundary (Domain C) — intent spill from Q-BILL-A-002 (H.R. 25 final consumption; existence not an event) does **not** close Domain C  
 5. State/local architecture (Domain E)  
@@ -72,7 +72,7 @@ Reason: CWC-CE-121 §11. Intent spill does not close unasked domains.
 | Domain | Title | Status |
 |---|---|---|
 | A | Problem definition | **RECORDED** — Q-BILL-A-001 Human Intent (not HG-D1) |
-| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–05 executed (BLANK dispositions); CWC-CE-142 county architecture recorded (not accepted); next = residual gaps, Human-authorized Git of 141+142, or Domain 06 (not asked as a question) |
+| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–06 executed (BLANK dispositions); CWC-CE-142 county architecture recorded (not accepted); next = residual gaps, Human-authorized Git of CWC-CE-144, or Domain 07 (not asked as a question; **not self-authorized**) |
 | C | Permissible taxable events | NOT ASKED (intent spill: H.R. 25 final consumption; existence not taxable) |
 | D | Property rights | NOT ASKED (intent spill from Q-BILL-A-001) |
 | E | State / local fiscal relationship | NOT ASKED as a closed domain (intent spill: KLRS covers state and local entities; CWC-CE-142 county ALL-IN / ALL-OUT is a **tax-system** choice, **not** a general local opt-out of statewide architecture) |
@@ -279,7 +279,20 @@ Full EV-KLRS-001–015 and UNK-KLRS register: WD-BILL-A-016 §§10–11. **AI sy
 | Classification | **HUMAN ENGINEERING INTENT** (primary). **Not** Kansas law. **Not** accepted LOU. **Not** SPEC. Domain 01–05 evidence **preserved**. Field 25 remains BLANK. |
 | Evidence required | None manufactured as a new Human question. Deferred legal/fiscal/engineering research is classified in WD-BILL-A-069. |
 | LOU update | LOU-004 Draft 1.8 §§2.8 SUPERSEDED, 2.11, 7, 8, 10.17 |
-| Next question | **STOP.** No Q-BILL-A-006. Recommended subsequent controlled work: residual Domain 01–05 gaps **or** Human-authorized Git of CWC-CE-141+142 **or** Human-authorized Domain 06 — **not self-authorized**. |
+| Next question | **STOP.** No Q-BILL-A-006. Recommended subsequent controlled work: residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-144 **or** Human-authorized Domain 07 — **not self-authorized**. |
+
+### CWC-CE-144 Definition Cycle (not a questionnaire item)
+
+| Field | Value |
+|---|---|
+| ID | **CWC-CE-144** — not Q-BILL-A-006 |
+| Domain | B — current-state Domain 06 evidence (not a Human policy question) |
+| Status | **EXECUTED — 2026-09-02 — CURRENT-STATE EVIDENCE AUDIT** |
+| Why no Q-BILL-A-006 | Domain 06 could proceed from controlled intent and evidence. No blocking Human policy decision was required. UQ-CTS-001–016 remain unresolved and were not required to continue. |
+| Recorded result | 14 verified Domain 06 claim-category records (WD-BILL-A-072; `KRU-D06-001`–`014`). Completeness: SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS. Field 25 BLANK. Field 26 NOT DETERMINED. Universe/KLRS not certified. Domain 01–05 preserved 14/16/5/5/18. Combined arithmetic 72 is not a retained-claim total. County architecture unchanged. Domain 07 not executed. |
+| Classification | CONTROLLED EVIDENCE / WORKING FINDING. **Not** Kansas law by this register. **Not** accepted LOU. **Not** RETAIN. ASSESSMENT ≠ AUTOMATICALLY RETAIN. |
+| LOU update | LOU-004 Draft 1.9 §2.12 status/traceability only |
+| Next question | **STOP.** No Q-BILL-A-006. Recommended subsequent controlled work: residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-144 **or** Human-authorized Domain 07 — **not self-authorized**. |
 
 ---
 
@@ -311,3 +324,4 @@ Do not interrogate the Human with a large questionnaire dump unless the Human En
 | 1.6.0 | 2026-09-02 | CWC-CE-139: county ALL-IN / ALL-OUT Human Intent recorded. Domains F/G/E/M intent spill; not closed. No Q-006. Domain 05 not executed. |
 | 1.7.0 | 2026-09-02 | CWC-CE-141: Domain 05 executed. 18 rows. Dispositions BLANK. No Q-006. Next = residual gaps or Domain 06 (not self-authorized). |
 | 1.8.0 | 2026-09-02 | CWC-CE-142: controlling county architecture recorded. CWC-CE-139 PT-transition-participation reading SUPERSEDED. No Q-006. Next = residual gaps, Human-authorized Git of 141+142, or Domain 06 (not self-authorized). |
+| 1.9.0 | 2026-09-02 | CWC-CE-144: Domain 06 executed. 14 rows. Dispositions BLANK. No Q-006. Next = residual gaps, Human-authorized Git of 144, or Domain 07 (not self-authorized). |

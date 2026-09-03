@@ -6,10 +6,10 @@
 **Authority:** Constitutional Engineering Office  
 **Governing Work Card:** CWC-CE-125 (locks candidate schema; does **not** populate findings)  
 **Governing Human Intent:** WD-BILL-A-018 / Q-BILL-A-005 Option (a); WD-BILL-A-015 / Q-BILL-A-004; WD-BILL-A-012 / Q-BILL-A-003  
-**Governing LOU candidate:** LOU-004 Draft 1.7 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing LOU candidate:** LOU-004 Draft 1.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
-**Status:** WORKING / CANDIDATE SCHEMA LOCKED — DOMAIN 01 EXECUTION IN WD-BILL-A-022 — DOMAIN 02 EXECUTION IN WD-BILL-A-031 — DOMAIN 03 EXECUTION IN WD-BILL-A-040 — DOMAIN 04 EXECUTION IN WD-BILL-A-049 — DOMAIN 05 EXECUTION IN WD-BILL-A-061 — STATEWIDE REGISTER **NOT** COMPLETE — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Status:** WORKING / CANDIDATE SCHEMA LOCKED — DOMAIN 01 EXECUTION IN WD-BILL-A-022 — DOMAIN 02 EXECUTION IN WD-BILL-A-031 — DOMAIN 03 EXECUTION IN WD-BILL-A-040 — DOMAIN 04 EXECUTION IN WD-BILL-A-049 — DOMAIN 05 EXECUTION IN WD-BILL-A-061 — DOMAIN 06 EXECUTION IN WD-BILL-A-072 — STATEWIDE REGISTER **NOT** COMPLETE — NOT ACCEPTED  
+**Version:** 1.1.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-019-Master-Revenue-Universe-Register-Schema.md  
 **Source ID:** SRC-BILL-A-022  
@@ -22,6 +22,7 @@ DOMAIN 02 EXECUTION INSTANCE = WD-BILL-A-031
 DOMAIN 03 EXECUTION INSTANCE = WD-BILL-A-040
 DOMAIN 04 EXECUTION INSTANCE = WD-BILL-A-049
 DOMAIN 05 EXECUTION INSTANCE = WD-BILL-A-061
+DOMAIN 06 EXECUTION INSTANCE = WD-BILL-A-072
 STATEWIDE REGISTER NOT COMPLETE
 BLANK DISPOSITION ≠ RETAIN
 KLRS CANDIDACY ≠ FINAL AUTHORIZATION
@@ -132,6 +133,8 @@ Reason: the original practical question remains unanswered and must not be answe
 
 **CWC-CE-141:** Domain 05 execution instance = WD-BILL-A-061. Count **18**. Schema fields 1–32 unchanged. Field 25 BLANK. Field 26 NOT DETERMINED. Statewide register not complete.
 
+**CWC-CE-144:** Domain 06 execution instance = WD-BILL-A-072. Count **14**. Schema fields 1–32 unchanged. Field 25 BLANK. Field 26 NOT DETERMINED. Statewide register not complete. Do not infer RETAIN from assessment ≠ property tax.
+
 Motor fuel remains the example of the uniform surviving-excise standard and is **not RETAINED**.
 
 ---
@@ -150,3 +153,4 @@ Motor fuel remains the example of the uniform surviving-excise standard and is *
 | 0.8.0 | 2026-09-02 | CWC-CE-136: schema authority preserved. Domain 04 execution in WD-BILL-A-049 (5 rows). Statewide register not complete. |
 | 0.9.0 | 2026-09-02 | CWC-CE-137: schema authority preserved. Domain 04 count remains 5. Statewide register not complete. |
 | 1.0.0 | 2026-09-02 | CWC-CE-141: schema authority preserved (32 fields unchanged). Domain 05 execution in WD-BILL-A-061 (18 rows). Statewide register not complete. |
+| 1.1.0 | 2026-09-02 | CWC-CE-144: schema authority preserved (32 fields unchanged). Domain 06 execution in WD-BILL-A-072 (14 rows). Statewide register not complete. |
