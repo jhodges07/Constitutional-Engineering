@@ -8,13 +8,14 @@
 **Governing LOU candidate:** LOU-004 Draft 1.8 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** HUMAN INTENT / WORKING DEFINITION — CONTROLLING FOR THIS SUBJECT — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-067-County-Tax-System-Choice-Mandatory-Property-Tax-Elimination-Human-Intent.md  
 **Source ID:** SRC-BILL-A-274  
 **Supersession companion:** WD-BILL-A-068 (SRC-BILL-A-275)  
 **Unresolved-question companion:** WD-BILL-A-069 (SRC-BILL-A-276)  
-**Git handoff:** WD-BILL-A-070 (SRC-BILL-A-277)
+**Git handoff:** WD-BILL-A-070 (SRC-BILL-A-277)  
+**CWC-CE-146 integration:** WD-BILL-A-078 — **NOT A SUPERSESSION** of the four rules. The 5-year / 7-year schedule is integrated as a **MAXIMUM AUTHORIZED PROPERTY-TAX ELIMINATION RUNWAY** subject to later-defined revenue-sufficiency acceleration and no-double-dip. Transition sequencing, senior Year-1 priority, provisional 5%/5% ceilings, Current-State → Future-State mapping, and Sedgwick reference-model role live in WD-BILL-A-078 / 079 / 080.
 
 ```text
 HUMAN INTENT / WORKING DEFINITION
@@ -132,6 +133,8 @@ This CWC SHALL NOT invent:
 Those remain later Definition/research questions (WD-BILL-A-069).
 
 The schedule choice is **independent** of the tax-system choice unless later Human Engineering Intent establishes a dependency.
+
+**CWC-CE-146 INTEGRATION (does not invent mechanics):** the chosen 5-year or 7-year schedule is the **outside maximum authorized runway**, not a governmental entitlement to collect property tax for the full period. Earlier zero is intended when subsequently defined revenue-sufficiency conditions are satisfied (WD-BILL-A-078). Annual reduction mathematics remain UQ-CTS-001 / **NOT INVENTED**.
 
 ## 4.3 County choice — tax system
 

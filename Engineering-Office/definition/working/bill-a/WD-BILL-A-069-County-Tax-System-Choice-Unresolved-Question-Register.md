@@ -8,7 +8,7 @@
 **Governing LOU candidate:** LOU-004 Draft 1.8 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — QUESTIONS NOT ANSWERED — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-069-County-Tax-System-Choice-Unresolved-Question-Register.md  
 **Source ID:** SRC-BILL-A-276  
@@ -28,6 +28,8 @@ HUMAN INTENT ≠ CURRENT LAW
 
 This register lists questions that remain open **after** CWC-CE-142 recorded mandatory statewide property-tax elimination, the 5/7-year county schedule choice, the separate ALL-IN / ALL-OUT tax-system choice, and statewide taxpayer-control architecture. It does **not** answer them. Historical UQ-PT IDs remain in WD-BILL-A-058.
 
+**CWC-CE-146:** The 5/7-year choice is integrated as a **maximum authorized runway** with revenue-sufficiency acceleration (WD-BILL-A-078). UQ-CTS-001–016 remain **live and unanswered**. New transition questions (senior eligibility, sufficiency test, 5%/5% relationship, local envelope, Sedgwick scope, no-double-dip formula) live in WD-BILL-A-079 (UQ-TR-001–012) and are **not** answered here.
+
 ---
 
 # 1. Established (do not re-ask as if open)
@@ -37,7 +39,7 @@ This register lists questions that remain open **after** CWC-CE-142 recorded man
 | Property-tax elimination is statewide and mandatory | **ESTABLISHED HUMAN INTENT** — not Kansas law; mechanisms OPEN |
 | PROPERTY TAX = ZERO is the end condition for every Kansas county | **ESTABLISHED HUMAN INTENT** |
 | County may not permanently retain property taxation | **ESTABLISHED HUMAN INTENT** |
-| Each county chooses a 5-year **or** 7-year elimination schedule | **ESTABLISHED HUMAN INTENT** (existence of the two choices) |
+| Each county chooses a 5-year **or** 7-year elimination schedule | **ESTABLISHED HUMAN INTENT** (existence of the two choices). **CWC-CE-146:** that schedule is the **outside maximum runway**, not a collection entitlement (WD-BILL-A-078). Mechanics remain UQ-CTS-001 |
 | ALL-IN = new Bill A tax system (as later defined) | **ESTABLISHED HUMAN INTENT** |
 | ALL-OUT = legacy tax system minus property tax | **ESTABLISHED HUMAN INTENT** |
 | ALL-IN / ALL-OUT does not determine whether property tax is eliminated | **ESTABLISHED HUMAN INTENT** |

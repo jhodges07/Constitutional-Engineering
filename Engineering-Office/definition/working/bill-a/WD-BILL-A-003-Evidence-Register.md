@@ -4,11 +4,11 @@
 **Title:** Bill A Evidence Register / Research Annex Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144  
-**Governing LOU candidate:** LOU-004 Draft 1.9 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146  
+**Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.9.0  
+**Version:** 1.10.0  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-003-Evidence-Register.md  
 
@@ -122,6 +122,10 @@ Do not treat AI summaries of H.R. 25 as primary evidence. Do not silently alter 
 | SRC-BILL-A-306 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-075-Domain-06-Conflict-Unknown-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 06 conflicts / unknowns | Recorded | Non-authoritative | Non-authoritative |
 | SRC-BILL-A-307 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-076-Domain-06-Classification-Referral-Crosswalk.md` | CE — Bill A Definition Engineer | 2026-09-02 | Domain 06 classification / referral | Later domains not executed | Bounded crosswalk | Non-authoritative working finding |
 | SRC-BILL-A-308 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-077-Git-Handoff-CWC-CE-144.md` | CE — Bill A Definition Engineer | 2026-09-02 | CWC-CE-144 Git handoff | No commit/push | Path set recorded | Control authorization for later Git CWC only |
+| SRC-BILL-A-309 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-078-Property-Tax-Transition-Revenue-Sufficiency-Senior-Priority-Planning-Ceilings-Sedgwick-Reference-Human-Intent.md` | CE — Bill A Definition Engineer | 2026-09-02 | CWC-CE-146 transition / sufficiency / senior / ceiling / mapping / Sedgwick-reference Human Intent | Not Kansas law; not a rate; Sedgwick audit not executed | Intent recorded | Non-authoritative working definition — not LOU acceptance |
+| SRC-BILL-A-310 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-079-Transition-Sufficiency-Senior-Ceiling-Mapping-Unresolved-Question-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | UQ-TR-001–012 | Questions not answered | Register recorded | Non-authoritative working register |
+| SRC-BILL-A-311 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-080-CWC-CE-146-Conflict-Authority-Level-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | CWC-CE-146 conflicts / rejected inferences / authority levels | Not a legality conclusion | Register recorded | Non-authoritative working register |
+| SRC-BILL-A-312 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-081-Git-Handoff-CWC-CE-146.md` | CE — Bill A Definition Engineer | 2026-09-02 | CWC-CE-146 Git handoff | No commit/push | Path set recorded | Control authorization for later Git CWC only |
 
 PRIMARY-LEGAL / GOV-DATA Domain 01 locators: **SRC-BILL-A-027 through SRC-BILL-A-053** (CWC-CE-127) and **SRC-BILL-A-055 through SRC-BILL-A-073** (CWC-CE-128) in WD-BILL-A-024. They establish working current-state evidence for Domain 01 only. They are **not** accepted LOU-004 provisions.
 
@@ -221,3 +225,4 @@ Parent of Domain EXCISE. Full table: WD-BILL-A-016 §10 (EV-KLRS-001–015). Com
 | 1.7.0 | 2026-09-02 | CWC-CE-141: Domain 05 SRC-BILL-A-233–261 / 267–273 / WD-BILL-A-060–066. Findings not accepted into LOU-004. |
 | 1.8.0 | 2026-09-02 | CWC-CE-142: SRC-BILL-A-274–277 / WD-BILL-A-067–070. Human Intent recorded; not accepted into LOU-004. SRC-BILL-A-230 marked SUPERSEDED as controlling. |
 | 1.9.0 | 2026-09-02 | CWC-CE-144: Domain 06 SRC-BILL-A-278–301 / 302–308 / WD-BILL-A-071–077. Findings not accepted into LOU-004. |
+| 1.10.0 | 2026-09-02 | CWC-CE-146: SRC-BILL-A-309–312 / WD-BILL-A-078–081. Transition Human Intent recorded; not accepted into LOU-004. No rate / Sedgwick audit. |

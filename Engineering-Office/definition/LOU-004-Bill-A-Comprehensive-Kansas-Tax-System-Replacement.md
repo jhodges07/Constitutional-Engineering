@@ -9,11 +9,11 @@
 **Governing Standard(s):** STD-001 — Engineering Workflow  
 **Governing Workflow:** WF-001 — Engineering Office Operating Workflow  
 **Governing Template:** TMP-002 — Letter of Understanding Template  
-**Governing CWC-CE:** CWC-CE-121 — workspace initialization; CWC-CE-123 — Q-BILL-A-003; CWC-CE-124 — Q-BILL-A-004 / KLRS; CWC-CE-125 — Q-BILL-A-005 Option (a) / audit-control foundation; CWC-CE-127 — Domain 01 evidence execution (findings **not** accepted as LOU provisions); CWC-CE-128 — Domain 01 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-130 — Domain 02 property-claims evidence execution (findings **not** accepted as LOU provisions); CWC-CE-131 — Domain 02 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-133 — Domain 03 income/earnings/privilege evidence execution (findings **not** accepted as LOU provisions); CWC-CE-134 — Domain 03 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-136 — Domain 04 sales/use/consumption evidence execution (findings **not** accepted as LOU provisions); CWC-CE-137 — Domain 04 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-139 — county property-tax ALL-IN / ALL-OUT Human Intent Definition (intent **not** accepted as LOU provisions); CWC-CE-141 — Domain 05 fees/licenses/permits/regulatory evidence execution (findings **not** accepted as LOU provisions); CWC-CE-142 — county tax-system choice / mandatory property-tax elimination intent correction (intent **not** accepted as LOU provisions); CWC-CE-143 — Git canonicalization of Domain 05 and county architecture correction; CWC-CE-144 — Domain 06 assessments evidence execution (findings **not** accepted as LOU provisions; Domain 07 **not** executed)  
+**Governing CWC-CE:** CWC-CE-121 — workspace initialization; CWC-CE-123 — Q-BILL-A-003; CWC-CE-124 — Q-BILL-A-004 / KLRS; CWC-CE-125 — Q-BILL-A-005 Option (a) / audit-control foundation; CWC-CE-127 — Domain 01 evidence execution (findings **not** accepted as LOU provisions); CWC-CE-128 — Domain 01 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-130 — Domain 02 property-claims evidence execution (findings **not** accepted as LOU provisions); CWC-CE-131 — Domain 02 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-133 — Domain 03 income/earnings/privilege evidence execution (findings **not** accepted as LOU provisions); CWC-CE-134 — Domain 03 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-136 — Domain 04 sales/use/consumption evidence execution (findings **not** accepted as LOU provisions); CWC-CE-137 — Domain 04 evidence closure / reconciliation (findings **not** accepted as LOU provisions); CWC-CE-139 — county property-tax ALL-IN / ALL-OUT Human Intent Definition (intent **not** accepted as LOU provisions); CWC-CE-141 — Domain 05 fees/licenses/permits/regulatory evidence execution (findings **not** accepted as LOU provisions); CWC-CE-142 — county tax-system choice / mandatory property-tax elimination intent correction (intent **not** accepted as LOU provisions); CWC-CE-143 — Git canonicalization of Domain 05 and county architecture correction; CWC-CE-144 — Domain 06 assessments evidence execution (findings **not** accepted as LOU provisions; Domain 07 **not** executed); CWC-CE-145 — Git canonicalization of Domain 06 assessments evidence; CWC-CE-146 — property-tax transition / revenue-sufficiency / senior priority / provisional 5%+5% planning ceilings / Current-State → Future-State mapping / Sedgwick reference-model Human Intent (intent **not** accepted as LOU provisions)  
 **Governing ECR:** ECR-002 — Engineering Definition / LOU Controlled Adoption  
 **Lifecycle:** Engineering Definition  
 **Status:** Draft  
-**Version:** Draft 1.9  
+**Version:** Draft 1.10  
 **Effective Date:** 2026-09-02  
 **Storage Path:** Engineering-Office/definition/LOU-004-Bill-A-Comprehensive-Kansas-Tax-System-Replacement.md  
 **Public Review (when applicable):** NOT RELEASED  
@@ -326,6 +326,8 @@ Statewide / non-optional: API access; Taxpayer Supremacy; transparency architect
 
 Do not infer which individual legacy claims survive. Field 25 remains **BLANK**. Field 26 remains **NOT DETERMINED**. Mechanisms remain RESEARCH REQUIRED / LEGAL INTERPRETATION REQUIRED / NOT DETERMINED (WD-BILL-A-069). HUMAN INTENT ≠ CURRENT LAW.
 
+**CWC-CE-146 INTEGRATION:** The four rules above remain controlling. The 5-year / 7-year schedule is the **maximum authorized property-tax elimination runway**, not a governmental entitlement to collect property tax for five or seven years. Revenue-sufficiency acceleration, no-double-dip, senior Year-1 priority, provisional up-to-5% state and up-to-5% local planning ceilings, Current-State → Future-State mapping, function-first local allocation, and Sedgwick County as initial reference model are recorded in §2.13 / WD-BILL-A-078. This does **not** accept those statements as LOU provisions.
+
 ## 2.12 Domain 06 current-state evidence status recorded from CWC-CE-144 (2026-09-02)
 
 **Classification:** AUDIT STATUS / TRACEABILITY ONLY — **not** accepted LOU provisions.
@@ -334,7 +336,43 @@ Do not infer which individual legacy claims survive. Field 25 remains **BLANK**.
 
 **Not:** a specification; legislative language; accepted LOU provision; HG-D1/HG-D2; RETAIN/TRANSFORM/DISAPPEAR; a FairTax rate; replacement-revenue engineering; future distribution; Domain 07 execution; county-architecture change; property-tax architecture change; maturity change; publication; commit/push; Q-BILL-A-006.
 
-Domain 06 was Human-authorized as a **current-state revenue-claim evidence audit**. Fourteen verified claim-category records were written to WD-BILL-A-072 (`KRU-D06-001` through `KRU-D06-014`). Completeness: **DOMAIN 06 SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Every Field 25 remains **BLANK**. Every Field 26 remains **NOT DETERMINED**. BLANK ≠ RETAIN. ASSESSMENT ≠ AUTOMATICALLY RETAIN. PROPERTY-RELATED ASSESSMENT ≠ AUTOMATICALLY PROPERTY TAX. CURRENT EXISTENCE ≠ POST-BILL-A AUTHORITY. CURRENT RECEIPTS ≠ REQUIRED REPLACEMENT REVENUE. Kansas Government Revenue Universe remains **NOT CERTIFIED**. KLRS remains **NOT CERTIFIED**. Domain 01–05 counts remain **14 / 16 / 5 / 5 / 18**. Combined arithmetic **58 + 14 = 72** is a register count only — **72 ≠ 72 retained claims**. The four-rule county architecture in §2.11 is **unchanged**. Findings live in the working artifacts and are **not** converted into this LOU.
+Domain 06 was Human-authorized as a **current-state revenue-claim evidence audit**. Fourteen verified claim-category records were written to WD-BILL-A-072 (`KRU-D06-001` through `KRU-D06-014`). Completeness: **DOMAIN 06 SUBSTANTIALLY COMPLETE WITH EXPLICIT GAPS**. Every Field 25 remains **BLANK**. Every Field 26 remains **NOT DETERMINED**. BLANK ≠ RETAIN. ASSESSMENT ≠ AUTOMATICALLY RETAIN. PROPERTY-RELATED ASSESSMENT ≠ AUTOMATICALLY PROPERTY TAX. CURRENT EXISTENCE ≠ POST-BILL-A AUTHORITY. CURRENT RECEIPTS ≠ REQUIRED REPLACEMENT REVENUE. Kansas Government Revenue Universe remains **NOT CERTIFIED**. KLRS remains **NOT CERTIFIED**. Domain 01–05 counts remain **14 / 16 / 5 / 5 / 18**. Combined arithmetic **58 + 14 = 72** is a register count only — **72 ≠ 72 retained claims**. The four-rule county architecture in §2.11 is **unchanged** as the CWC-CE-142 base and is **integrated** (not superseded) by CWC-CE-146. Findings live in the working artifacts and are **not** converted into this LOU.
+
+## 2.13 Human Engineering Intent recorded from CWC-CE-146 (2026-09-02)
+
+**Classification:** HUMAN INTENT / WORKING DEFINITION — **CONTROLLING** for transition sequencing, no-double-dip, revenue-sufficiency acceleration, senior Year-1 priority, provisional 5%/5% planning ceilings, Current-State → Future-State mapping, function-first local allocation, and Sedgwick County reference-model **role**. **Not** accepted LOU provisions. **Not** Kansas law.
+
+**Source of record:** WD-BILL-A-078 (SRC-BILL-A-309). Unresolved questions: WD-BILL-A-079. Conflicts / authority levels: WD-BILL-A-080. CWC-CE-142 four rules remain in WD-BILL-A-067 / §2.11.
+
+**Not:** a specification; legislative language; current Kansas law; accepted LOU provision; HG-D1/HG-D2; a Domain 01–06 disposition; a FairTax rate; replacement-revenue engineering; a distribution formula; a Sedgwick fiscal audit; invented senior eligibility; invented sufficiency mathematics; maturity change; publication; commit/push; Q-BILL-A-006.
+
+**Recorded Human Engineering Intent (summary; full text WD-BILL-A-078):**
+
+```text
+PROPERTY TAX = ZERO IS THE STATEWIDE END STATE.
+5 OR 7 YEARS IS THE MAXIMUM TRANSITION RUNWAY, NOT A GOVERNMENT REVENUE ENTITLEMENT.
+REVENUE SUFFICIENCY MAY ACCELERATE PROPERTY TAX TO ZERO.
+THE TRANSITION SHALL NOT AUTHORIZE DOUBLE-DIPPING.
+SENIORS RECEIVE FIRST PRIORITY TO ZERO WHEN A TRANSITION REMAINS.
+IF REVENUE SUFFICIENCY SUPPORTS ZERO FOR EVERYONE, DO NOT DELAY EVERYONE ELSE SOLELY TO PRESERVE THE SCHEDULE.
+UP TO 5% STATE AND UP TO 5% LOCAL ARE PROVISIONAL PLANNING CEILINGS.
+THE CEILING IS NOT THE TARGET.
+5% + 5% ≠ GUARANTEED 10%.
+CURRENT REVENUE ≠ REQUIRED FUTURE REVENUE.
+HISTORICAL COLLECTION ≠ FUTURE ENTITLEMENT.
+LOCAL REVENUE IS AN ENVELOPE ENGINEERED AROUND AUTHORIZED FUNCTION AND DEMONSTRATED REQUIREMENT.
+USDs MAY REQUIRE THE LION'S SHARE; THEY ARE NOT PREASSIGNED THE LION'S SHARE.
+EACH COUNTY REQUIRES CURRENT-STATE → FUTURE-STATE MAPPING.
+SEDGWICK COUNTY IS THE INITIAL REFERENCE MODEL, NOT THE STATEWIDE RESULT.
+```
+
+AUTHORIZED REVENUE REQUIREMENT remains an engineering term. It is **not** last year's revenue, current collections, current spending, current property-tax collections, or historical budget.
+
+Senior Year-1 destination is **zero**, not a freeze / cap / deferral / rebate / partial exemption / permanent separate class. Eligibility remains **NOT DETERMINED** (WD-BILL-A-079 UQ-TR-001).
+
+Sedgwick County fiscal audit is **NOT EXECUTED**.
+
+No rate, replacement-revenue, distribution, or senior-savings calculation is performed. Human concurrence with CWC-CE-146 authorizes this Definition recording. It does **not** constitute acceptance of this LOU draft.
 
 ---
 
@@ -382,7 +420,7 @@ High-level inventory only. Details are in §6 and in `WD-BILL-A-003-Evidence-Reg
 | PRIMARY-LEGAL — H.R. 25 FairTax Act of 2025 (119th Cong., IH) | Pinned locator opened (SRC-BILL-A-015); full provision-by-provision trace **INCOMPLETE** |
 | PRIMARY-LEGAL / GOV-DATA Kansas current-state revenue claims | Domain 01 **executed** in WD-BILL-A-022 / WD-BILL-A-023 (CWC-CE-127) and **closure applied** in WD-BILL-A-028 (CWC-CE-128). Domain 02 **executed** in WD-BILL-A-030 / WD-BILL-A-031 (CWC-CE-130) and **closure applied** in WD-BILL-A-037 (CWC-CE-131). Domain 03 **executed** in WD-BILL-A-039 / WD-BILL-A-040 (CWC-CE-133) and **closure applied** in WD-BILL-A-046 (CWC-CE-134). Domain 04 **executed** in WD-BILL-A-048 / WD-BILL-A-049 (CWC-CE-136) and **closure applied** in WD-BILL-A-055 (CWC-CE-137). Domain 05 **executed** in WD-BILL-A-060 / WD-BILL-A-061 (CWC-CE-141). Domain 06 **executed** in WD-BILL-A-071 / WD-BILL-A-072 (CWC-CE-144). Those findings are **not** accepted into this LOU. Domains 07–12 **not** executed. Statewide Universe **not** certified. |
 
-No Kansas constitutional provision, statute, rate, or revenue quantity is asserted as an **accepted LOU fact** in this Draft 1.9. Domain 01 current-state locators and working findings live in WD-BILL-A-022 through WD-BILL-A-026 and WD-BILL-A-028. Domain 02 current-state locators and working findings live in WD-BILL-A-030 through WD-BILL-A-035 and WD-BILL-A-037. Domain 03 current-state locators and working findings live in WD-BILL-A-039 through WD-BILL-A-044 and WD-BILL-A-046. Domain 04 current-state locators and working findings live in WD-BILL-A-048 through WD-BILL-A-056. Domain 06 current-state locators and working findings live in WD-BILL-A-071 through WD-BILL-A-077. They do **not** become LOU provisions by being discovered. Current income-tax existence is **not** a Human RETAIN. Current property-tax existence is **not** a Human RETAIN. Current Kansas sales/use tax is **not** designated as the Bill A replacement tax and is **not** H.R. 25. H.R. 25 is recorded as the Human-directed federal model text, not as Kansas law. Kansas Legal Revenue Scope remains a working Definition concept (compulsory demand-authority only) and is **not** a closed post-Bill-A inventory.
+No Kansas constitutional provision, statute, rate, or revenue quantity is asserted as an **accepted LOU fact** in this Draft 1.10. Domain 01 current-state locators and working findings live in WD-BILL-A-022 through WD-BILL-A-026 and WD-BILL-A-028. Domain 02 current-state locators and working findings live in WD-BILL-A-030 through WD-BILL-A-035 and WD-BILL-A-037. Domain 03 current-state locators and working findings live in WD-BILL-A-039 through WD-BILL-A-044 and WD-BILL-A-046. Domain 04 current-state locators and working findings live in WD-BILL-A-048 through WD-BILL-A-056. Domain 06 current-state locators and working findings live in WD-BILL-A-071 through WD-BILL-A-077. They do **not** become LOU provisions by being discovered. Current income-tax existence is **not** a Human RETAIN. Current property-tax existence is **not** a Human RETAIN. Current Kansas sales/use tax is **not** designated as the Bill A replacement tax and is **not** H.R. 25. H.R. 25 is recorded as the Human-directed federal model text, not as Kansas law. Kansas Legal Revenue Scope remains a working Definition concept (compulsory demand-authority only) and is **not** a closed post-Bill-A inventory.
 
 ---
 
@@ -445,7 +483,13 @@ The following are **PROPOSED UNDERSTANDING** seeds transcribed from classified H
 21. County decision authority / voter-authorization **mechanism** remains OPEN.  
 22. DEPENDENCY ≠ RETAIN. Existing obligations cannot be ignored. Bill A / Bill B allocation remains HUMAN DECISION REQUIRED.  
 23. **CWC-CE-142:** Property-tax elimination is **statewide and mandatory**. PROPERTY TAX = ZERO is the intended end condition for every Kansas county. Mechanisms RESEARCH REQUIRED / LEGAL INTERPRETATION REQUIRED / NOT DETERMINED. Human Intent ≠ current Kansas law.  
-24. Do not infer which individual legacy claims survive under ALL-OUT. Domain 01–05 Field 25 remains BLANK.
+24. Do not infer which individual legacy claims survive under ALL-OUT. Domain 01–06 Field 25 remains BLANK.  
+25. **CWC-CE-146:** The county 5-year or 7-year schedule is the **maximum authorized property-tax elimination runway**, not a governmental entitlement to collect property tax for the full period. Earlier zero is intended when subsequently defined revenue-sufficiency conditions are satisfied. Mechanics remain OPEN (WD-BILL-A-069 / WD-BILL-A-079).  
+26. **CWC-CE-146:** The transition shall not authorize double-dipping — collecting full replacement-system revenue while also collecting property-tax revenue that is no longer necessary. The formula is **not** defined.  
+27. **CWC-CE-146:** If an ALL-IN county's new authorized tax system produces sufficient revenue to meet the properly determined AUTHORIZED REVENUE REQUIREMENT, property taxation shall accelerate to zero. The sufficiency test is **not** defined. AUTHORIZED REVENUE REQUIREMENT is **not** last year's revenue / current collections / current spending / current property-tax collections / historical budget.  
+28. **CWC-CE-146:** Qualifying senior homestead property tax is intended to reach zero in Year 1 as an elimination **priority** when a transition remains necessary. Eligibility is **not** determined. If Year-1 sufficiency is achieved, do not delay everyone else solely to preserve the schedule. Absorption is **not** defined as a tax shift onto younger owners.  
+29. **CWC-CE-146:** Up to 5% state and up to 5% local FairTax-style / use-tax amounts are **provisional planning ceilings**, not set rates, not a guaranteed 10%, and not a county-owned 5%. The ceiling is not the target. H.R. 25 substantive economic architecture is **not** silently modified.  
+30. **CWC-CE-146:** Each Kansas county requires a controlled Current-State → Future-State mapping before its final Bill A transition architecture is determined. Local revenue follows authorized function and demonstrated Future-State requirement. USD lion's share is possible if later evidence supports it and is **not** preassigned. Sedgwick County is the initial **reference model**, not the statewide result; the Sedgwick audit is **not** executed.
 
 Prior LOU-001 candidate statements are **not** imported as agreed understanding.
 
@@ -499,7 +543,17 @@ The following are **not adopted** for this LOU. Historical retention does not eq
 42. That ALL-IN means property-tax elimination (elimination is statewide and occurs under both paths).  
 43. That CWC-CE-142 invented phaseout percentages, baselines, mill formulas, election statutes, or decided city/school/special-district binding.  
 44. That CWC-CE-142 established present Kansas legal authorization for the architecture.  
-45. That ALL-OUT infers RETAIN of any Domain 01–05 claim other than the Human statement that property taxation is permanently removed.  
+45. That ALL-OUT infers RETAIN of any Domain 01–06 claim other than the Human statement that property taxation is permanently removed.  
+46. That a 5-year or 7-year schedule is a governmental entitlement to collect property tax for the full period.  
+47. That CWC-CE-146 set STATE RATE = 5%, LOCAL RATE = 5%, or a guaranteed 10% tax.  
+48. That county government owns the provisional local 5% envelope.  
+49. That Unified School Districts are preassigned the lion's share of local replacement revenue.  
+50. That historical collections equal future entitlement, or that current revenue equals required replacement revenue.  
+51. That senior Year-1 priority is a freeze, valuation cap, deferral, rebate, partial exemption, or permanent separate property-tax class, or that younger owners are assigned seniors' former property tax.  
+52. That Sedgwick County is the statewide default, statewide rate, or automatic template result.  
+53. That CWC-CE-146 calculated a FairTax rate, replacement revenue, distribution, senior savings, or executed a Sedgwick fiscal audit.  
+54. That CWC-CE-146 superseded the CWC-CE-142 four-rule architecture.  
+55. That CWC-CE-146 Human concurrence accepts LOU-004 or passes HG-D1.  
 
 ---
 
@@ -681,6 +735,12 @@ No Q-BILL-A-006 is issued.
 
 No Q-BILL-A-006 is issued.
 
+## 10.21 CWC-CE-146 — Transition / sufficiency / senior / ceiling / mapping / Sedgwick-reference Human Intent (status only)
+
+**Status:** Human Engineering Intent **RECORDED** in WD-BILL-A-078; unresolved questions WD-BILL-A-079; conflicts / authority levels WD-BILL-A-080. CWC-CE-142 four-rule architecture **preserved and integrated**, not superseded. 5/7 years = **maximum runway**. No-double-dip **principle** recorded; formula **not** defined. ALL-IN revenue-sufficiency acceleration **principle** recorded; test **not** defined. Senior Year-1 zero **priority** recorded; eligibility **not** determined. Up to 5% state and up to 5% local = **provisional planning ceilings**, not set rates, not guaranteed 10%. Sedgwick County = initial **reference model**; audit **not executed**. Domain 01–06 dispositions remain **BLANK**. **Not** HG-D1 accepted. **Not** converted into accepted LOU provisions. Bill A maturity remains **19%**.
+
+No Q-BILL-A-006 is issued.
+
 ---
 
 # 11. Assumptions
@@ -723,7 +783,8 @@ No fiscal quantity, Kansas legal rule, Kansas FairTax rate, or replacement-reven
 21. Criminal-law elements (WD-BILL-A-015 §13) — LEGAL ENGINEERING REQUIRED.  
 22. Completeness certification — protocol defined; **not certified**.  
 23. County tax-system choice / PT-elimination **mechanisms** in WD-BILL-A-069 (percentages, baselines, default schedule, election mechanics, city/school/special-district binding, debt, Bill A/B allocation, constitutional research) — **recorded as open; not decided**. Historical UQ-PT list in WD-BILL-A-058 is **not** the controlling question set.  
-24. CWC-CE-139 PT-transition-participation reading of ALL-IN / ALL-OUT — **SUPERSEDED** as controlling (CWC-CE-142 / WD-BILL-A-067).
+24. CWC-CE-139 PT-transition-participation reading of ALL-IN / ALL-OUT — **SUPERSEDED** as controlling (CWC-CE-142 / WD-BILL-A-067).  
+25. CWC-CE-146 transition mechanisms (revenue-sufficiency test; AUTHORIZED REVENUE REQUIREMENT; no-double-dip formula; senior eligibility; 5%/5% rate relationship; local envelope allocation; USD share; Sedgwick audit execution) — **recorded as open; not decided** (WD-BILL-A-079).
 
 ---
 
@@ -758,6 +819,7 @@ No fiscal quantity, Kansas legal rule, Kansas FairTax rate, or replacement-reven
 | CWC-CE-141 Domain 05 evidence | Executed in WD-BILL-A-060–066; 18 rows; dispositions **BLANK**; **not** accepted LOU provisions |
 | CWC-CE-142 county tax-system / mandatory PT-elimination Human Intent | Recorded in WD-BILL-A-067; **not** accepted LOU provisions; **not** Kansas law; mechanisms OPEN (WD-BILL-A-069); Domain 01–06 dispositions **BLANK** |
 | CWC-CE-144 Domain 06 evidence | Executed in WD-BILL-A-071–077; 14 rows; dispositions **BLANK**; **not** accepted LOU provisions |
+| CWC-CE-146 transition / sufficiency / senior / ceiling / mapping / Sedgwick-reference Human Intent | Recorded in WD-BILL-A-078; **not** accepted LOU provisions; **not** Kansas law; mechanisms OPEN (WD-BILL-A-079); Domain 01–06 dispositions **BLANK**; Sedgwick audit **not executed** |
 
 ---
 
@@ -935,6 +997,10 @@ If this LOU later supersedes the Bill A portion of LOU-001, that supersession SH
 | Domain 06 conflicts / unknowns | `Engineering-Office/definition/working/bill-a/WD-BILL-A-075-Domain-06-Conflict-Unknown-Register.md` |
 | Domain 06 classification / referral crosswalk | `Engineering-Office/definition/working/bill-a/WD-BILL-A-076-Domain-06-Classification-Referral-Crosswalk.md` |
 | Git handoff (CWC-CE-144) | `Engineering-Office/definition/working/bill-a/WD-BILL-A-077-Git-Handoff-CWC-CE-144.md` |
+| CWC-CE-146 Human Intent (controlling for transition subject) | `Engineering-Office/definition/working/bill-a/WD-BILL-A-078-Property-Tax-Transition-Revenue-Sufficiency-Senior-Priority-Planning-Ceilings-Sedgwick-Reference-Human-Intent.md` |
+| CWC-CE-146 unresolved questions | `Engineering-Office/definition/working/bill-a/WD-BILL-A-079-Transition-Sufficiency-Senior-Ceiling-Mapping-Unresolved-Question-Register.md` |
+| CWC-CE-146 conflict / authority-level register | `Engineering-Office/definition/working/bill-a/WD-BILL-A-080-CWC-CE-146-Conflict-Authority-Level-Register.md` |
+| Git handoff (CWC-CE-146) | `Engineering-Office/definition/working/bill-a/WD-BILL-A-081-Git-Handoff-CWC-CE-146.md` |
 | Related SPEC | NONE |
 | Related CWC-CE for Controlled Execution | NONE |
 | ARCH / POL / STD / WF | ARCH-001; POL-001; STD-001; WF-001 |
@@ -964,3 +1030,4 @@ If this LOU later supersedes the Bill A portion of LOU-001, that supersession SH
 | Draft 1.7 | 2026-09-02 | CWC-CE-141: Domain 05 evidence execution **status** only. Findings live in WD-BILL-A-060–066 and are **not** accepted LOU provisions. Count **18**. Dispositions BLANK. Completeness: Domain 05 substantially complete with explicit gaps. Universe/KLRS not certified. County PT intent unchanged. Domain 06 not executed. No FairTax rate. No Q-BILL-A-006. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
 | Draft 1.8 | 2026-09-02 | CWC-CE-142: records controlling Human Intent — statewide mandatory property-tax elimination; county 5- or 7-year schedule; ALL-IN/ALL-OUT as tax-system choice (legacy minus PT). Supersedes CWC-CE-139/140 PT-transition-participation reading. Domain 01–05 evidence preserved; dispositions BLANK. No FairTax rate. No Q-BILL-A-006. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
 | Draft 1.9 | 2026-09-02 | CWC-CE-144: Domain 06 assessments evidence execution **status** only. Findings live in WD-BILL-A-071–077 and are **not** accepted LOU provisions. Count **14**. Dispositions BLANK. Completeness: Domain 06 substantially complete with explicit gaps. Universe/KLRS not certified. Domain 01–05 preserved 14/16/5/5/18. County four-rule architecture unchanged. Domain 07 not executed. No FairTax rate. No Q-BILL-A-006. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
+| Draft 1.10 | 2026-09-02 | CWC-CE-146: records transition Human Intent — 5/7 as maximum runway; no-double-dip; ALL-IN revenue-sufficiency acceleration; senior Year-1 zero priority; provisional up-to-5% state and up-to-5% local planning ceilings (not a guaranteed 10%); Current-State → Future-State mapping; function-first local envelope; Sedgwick as initial reference model (audit not executed). CWC-CE-142 four rules preserved/integrated, not superseded. Domain 01–06 dispositions BLANK. No rate/replacement/distribution calculation. No Q-BILL-A-006. Maturity 19% unchanged. HG-D1 NOT PASSED. No commit/push. |
