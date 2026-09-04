@@ -4,7 +4,7 @@
 **Title:** Unresolved Definition Questions after CWC-CE-146  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-146  
+**Governing Work Card:** CWC-CE-146; CWC-CE-148 mapping note (questions **not** closed)  
 **Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — QUESTIONS NOT ANSWERED — NOT ACCEPTED  
@@ -144,8 +144,9 @@ These IDs are **not** Q-BILL-A-006. UQ-CTS-001–016 remain live in WD-BILL-A-06
 | Field | Value |
 |---|---|
 | Question | Exact governmental ecosystem in-scope for the later Sedgwick Current-State → Future-State audit (entities, USDs, cities, townships, special districts, assessments, debt, school-finance flows) |
-| Status | **HUMAN DECISION REQUIRED** for later execution CWC |
-| This CWC | Defines the **role**; does **not** execute the audit |
+| Status | **HUMAN DECISION REQUIRED** — **NOT CLOSED** |
+| CWC-CE-146 | Defines the **role**; does **not** execute the audit |
+| CWC-CE-148 | First Current-State mapping **executed** for the governmental fiscal ecosystem affecting taxpayers within Sedgwick County (WD-BILL-A-082–091). Remaining entity-depth / KDOR line-item gaps: WD-BILL-A-090. Future-State mapping **not** executed. This does **not** close UQ-TR-011 as a Human decision |
 
 ### UQ-TR-012 — No-double-dip implementation
 
@@ -164,6 +165,8 @@ UQ-CTS-001 (schedule mechanics) remains **open**. CWC-CE-146 interprets 5/7 as a
 UQ-CTS-012 (constitutional / legal research on county architecture) remains **open** and is joined by UQ-TR legal surfaces (senior classification; local envelope; school finance; acceleration).
 
 Do **not** treat CWC-CE-146 as closing UQ-CTS-001–016.
+
+Do **not** treat CWC-CE-148 as closing UQ-TR-001–012 or UQ-CTS-001–016.
 
 ---
 

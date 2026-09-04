@@ -4,12 +4,12 @@
 **Title:** Bill A Evidence Register / Research Annex Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148  
 **Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.10.0  
-**Effective Date:** 2026-09-02  
+**Version:** 1.11.0  
+**Effective Date:** 2026-09-04  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-003-Evidence-Register.md  
 
 ```text
@@ -126,6 +126,16 @@ Do not treat AI summaries of H.R. 25 as primary evidence. Do not silently alter 
 | SRC-BILL-A-310 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-079-Transition-Sufficiency-Senior-Ceiling-Mapping-Unresolved-Question-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | UQ-TR-001–012 | Questions not answered | Register recorded | Non-authoritative working register |
 | SRC-BILL-A-311 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-080-CWC-CE-146-Conflict-Authority-Level-Register.md` | CE — Bill A Definition Engineer | 2026-09-02 | CWC-CE-146 conflicts / rejected inferences / authority levels | Not a legality conclusion | Register recorded | Non-authoritative working register |
 | SRC-BILL-A-312 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-081-Git-Handoff-CWC-CE-146.md` | CE — Bill A Definition Engineer | 2026-09-02 | CWC-CE-146 Git handoff | No commit/push | Path set recorded | Control authorization for later Git CWC only |
+| SRC-BILL-A-313 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-082-Sedgwick-County-Current-State-Reference-Model-Evidence-Mapping.md` | CE — Bill A Definition Engineer | 2026-09-04 | CWC-CE-148 Sedgwick Current-State master map | Future State not designed; not a rate | Working evidence map | Non-authoritative working finding — not LOU acceptance |
+| SRC-BILL-A-314 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-083-Sedgwick-Governmental-Entity-Inventory-Overlapping-Jurisdictions.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sedgwick entity / jurisdiction inventory | Not exhaustive | Working inventory | Non-authoritative working finding |
+| SRC-BILL-A-315 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-084-Sedgwick-Property-Tax-Current-State-Map.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sedgwick property-tax Current-State map | Levy ≠ collection ≠ ACFR | Working map | Non-authoritative working finding |
+| SRC-BILL-A-316 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-085-Sedgwick-USD-School-Finance-Current-State-Map.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sedgwick USD / school-finance Current-State map | USD share not assigned | Working map | Non-authoritative working finding |
+| SRC-BILL-A-317 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-086-Sedgwick-County-Municipal-Township-Special-District-Fiscal-Map.md` | CE — Bill A Definition Engineer | 2026-09-04 | County / city / township / special-district fiscal map | County ≠ ecosystem | Working map | Non-authoritative working finding |
+| SRC-BILL-A-318 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-087-Sedgwick-Sales-Use-Tax-Current-State-Human-Lead-Verification.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sales/use architecture + Human-lead verification | Human figures not auto-verified; $121M vs $145M UNRESOLVED | Working verification | Non-authoritative working finding |
+| SRC-BILL-A-319 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-088-Sedgwick-Revenue-Universe-Crosswalk-Intergovernmental-Double-Count.md` | CE — Bill A Definition Engineer | 2026-09-04 | KRU observation / flows / double-count | Sedgwick observation ≠ count change | Working crosswalk | Non-authoritative working finding |
+| SRC-BILL-A-320 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-089-Sedgwick-Debt-Special-Assessments-Functions-Spending.md` | CE — Bill A Definition Engineer | 2026-09-04 | Debt / assessments / functions | DEPENDENCY ≠ RETAIN | Working map | Non-authoritative working finding |
+| SRC-BILL-A-321 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-090-Sedgwick-Current-State-Gaps-Conflicts-Future-State-Input-Requirements.md` | CE — Bill A Definition Engineer | 2026-09-04 | Gaps / Future-State input requirements | Input ≠ design | Working register | Non-authoritative working finding |
+| SRC-BILL-A-322 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-091-Git-Handoff-CWC-CE-148.md` | CE — Bill A Definition Engineer | 2026-09-04 | CWC-CE-148 Git handoff | No commit/push | Path set recorded | Control authorization for later Git CWC only |
 
 PRIMARY-LEGAL / GOV-DATA Domain 01 locators: **SRC-BILL-A-027 through SRC-BILL-A-053** (CWC-CE-127) and **SRC-BILL-A-055 through SRC-BILL-A-073** (CWC-CE-128) in WD-BILL-A-024. They establish working current-state evidence for Domain 01 only. They are **not** accepted LOU-004 provisions.
 
@@ -169,7 +179,8 @@ H.R. 25 IH (SRC-BILL-A-015) remains the PRIMARY-LEGAL **federal model** pin. It 
 **CWC-CE-136:** Domain 04 locators SRC-BILL-A-183–219 and WD-BILL-A-048–054.  
 **CWC-CE-137:** Closure locators SRC-BILL-A-220–229 and WD-BILL-A-055.  
 **CWC-CE-141:** Domain 05 locators SRC-BILL-A-233–261 and WD-BILL-A-060–066.  
-**CWC-CE-144:** Domain 06 locators SRC-BILL-A-278–301 and WD-BILL-A-071–077. Domains 07–12 remain empty. Statewide Government Revenue Universe remains uncertified.
+**CWC-CE-144:** Domain 06 locators SRC-BILL-A-278–301 and WD-BILL-A-071–077. Domains 07–12 remain empty. Statewide Government Revenue Universe remains uncertified.  
+**CWC-CE-148:** Sedgwick Current-State locators SRC-BILL-A-313–322 and WD-BILL-A-082–091. Findings are **not** verified into LOU-004 as accepted facts. Future State not designed.
 
 ### 4.1 Kansas excise audit evidence needs (WD-BILL-A-013) — Domain 01 executed; gaps remain
 
@@ -226,3 +237,4 @@ Parent of Domain EXCISE. Full table: WD-BILL-A-016 §10 (EV-KLRS-001–015). Com
 | 1.8.0 | 2026-09-02 | CWC-CE-142: SRC-BILL-A-274–277 / WD-BILL-A-067–070. Human Intent recorded; not accepted into LOU-004. SRC-BILL-A-230 marked SUPERSEDED as controlling. |
 | 1.9.0 | 2026-09-02 | CWC-CE-144: Domain 06 SRC-BILL-A-278–301 / 302–308 / WD-BILL-A-071–077. Findings not accepted into LOU-004. |
 | 1.10.0 | 2026-09-02 | CWC-CE-146: SRC-BILL-A-309–312 / WD-BILL-A-078–081. Transition Human Intent recorded; not accepted into LOU-004. No rate / Sedgwick audit. |
+| 1.11.0 | 2026-09-04 | CWC-CE-148: SRC-BILL-A-313–322 / WD-BILL-A-082–091. Sedgwick Current-State mapping recorded; not accepted into LOU-004. Future State not designed. No rate/ARR. |

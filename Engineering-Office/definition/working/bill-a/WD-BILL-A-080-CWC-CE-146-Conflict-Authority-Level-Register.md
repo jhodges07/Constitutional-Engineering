@@ -96,4 +96,21 @@ Do **not** adopt:
 
 ---
 
+# 5. CWC-CE-148 mapping note (status only — questions not closed)
+
+CWC-CE-148 executed first Sedgwick Current-State evidence mapping (WD-BILL-A-082–091). That mapping **does not**:
+
+- close UQ-TR-001–012 or UQ-CTS-001–016;
+- convert Current-State collections into required Future-State revenue;
+- calculate a Bill A rate, ARR, sufficiency, no-double-dip formula, or senior savings;
+- make Sedgwick the statewide default/rate/template;
+- change Domain 01–06 counts or Field 25/26;
+- accept LOU-004 or pass HG-D1.
+
+Additional rejected inferences from CWC-CE-148 evidence: Human-supplied `$824.3M` / `$145M` / `$121M+` are **not** Bill A targets; `$121M+` versus `~$145M` remains **UNRESOLVED**; County ACFR sales-tax `$41.8M` is the County **share**, not the countywide pool.
+
+Authority level of CWC-CE-148 findings: **CONTROLLED CURRENT-STATE EVIDENCE / WORKING FINDING** — not Human Intent, not Kansas law, not accepted LOU.
+
+---
+
 Libertas sine lapsu — Liberty without drift.

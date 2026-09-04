@@ -4,12 +4,12 @@
 **Title:** Bill A Human Questionnaire / Definition Register  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148  
 **Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.10.0  
-**Effective Date:** 2026-09-02  
+**Version:** 1.11.0  
+**Effective Date:** 2026-09-04  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-002-Human-Questionnaire-Definition-Register.md  
 
 ```text
@@ -56,7 +56,7 @@ Human intent is never converted into an asserted Kansas legal or fiscal fact.
 Established order for this register:
 
 1. Problem definition (Domain A) — **RECORDED (Q-BILL-A-001)**  
-2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); Domain 04 **executed and closure applied** (dispositions BLANK); Domain 05 **executed** (dispositions BLANK); Domain 06 **executed** (dispositions BLANK); CWC-CE-142 county architecture **recorded** (not accepted); CWC-CE-146 transition architecture **recorded** (not accepted); **no current Human question** — next work = residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-146 **or** Human-authorized Sedgwick mapping CWC **or** Human-authorized Domain 07 (not self-authorized)  
+2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); Domain 04 **executed and closure applied** (dispositions BLANK); Domain 05 **executed** (dispositions BLANK); Domain 06 **executed** (dispositions BLANK); CWC-CE-142 county architecture **recorded** (not accepted); CWC-CE-146 transition architecture **recorded** (not accepted); CWC-CE-148 Sedgwick Current-State mapping **executed** (not accepted; Future State not designed); **no current Human question** — next work = residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-148 **or** Human-authorized Future-State engineering CWC **or** Human-authorized Domain 07 (not self-authorized)  
 3. Property-right boundary (Domain D)  
 4. Permissible taxation boundary (Domain C) — intent spill from Q-BILL-A-002 (H.R. 25 final consumption; existence not an event) does **not** close Domain C  
 5. State/local architecture (Domain E)  
@@ -72,7 +72,7 @@ Reason: CWC-CE-121 §11. Intent spill does not close unasked domains.
 | Domain | Title | Status |
 |---|---|---|
 | A | Problem definition | **RECORDED** — Q-BILL-A-001 Human Intent (not HG-D1) |
-| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–06 executed (BLANK dispositions); CWC-CE-142 county architecture recorded (not accepted); CWC-CE-146 transition / sufficiency / senior / ceilings / mapping / Sedgwick-reference recorded (not accepted); next = residual gaps, Human-authorized Git of CWC-CE-146, Human-authorized Sedgwick mapping, or Domain 07 (not asked as a question; **not self-authorized**) |
+| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–06 executed (BLANK dispositions); CWC-CE-142 county architecture recorded (not accepted); CWC-CE-146 transition / sufficiency / senior / ceilings / mapping / Sedgwick-reference recorded (not accepted); CWC-CE-148 Sedgwick Current-State mapping executed (not accepted; Future State not designed); next = residual gaps, Human-authorized Git of CWC-CE-148, Human-authorized Future-State engineering, or Domain 07 (not asked as a question; **not self-authorized**) |
 | C | Permissible taxable events | NOT ASKED (intent spill: H.R. 25 final consumption; existence not taxable) |
 | D | Property rights | NOT ASKED (intent spill from Q-BILL-A-001) |
 | E | State / local fiscal relationship | NOT ASKED as a closed domain (intent spill: KLRS covers state and local entities; CWC-CE-142 county ALL-IN / ALL-OUT is a **tax-system** choice, **not** a general local opt-out of statewide architecture) |
@@ -308,6 +308,19 @@ Full EV-KLRS-001–015 and UNK-KLRS register: WD-BILL-A-016 §§10–11. **AI sy
 | LOU update | LOU-004 Draft 1.10 §§2.11 INTEGRATION, 2.13, 7 items 25–30, 8 items 46–55, 10.21 |
 | Next question | **STOP.** No Q-BILL-A-006. Recommended subsequent controlled work: residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-146 **or** Human-authorized Sedgwick mapping **or** Human-authorized Domain 07 — **not self-authorized**. |
 
+### CWC-CE-148 Definition Cycle (not a questionnaire item)
+
+| Field | Value |
+|---|---|
+| ID | **CWC-CE-148** — not Q-BILL-A-006; **not** CWC-CE-149 |
+| Domain | B / E / F — Current-State evidence mapping (not a Human policy question) |
+| Status | **EXECUTED — 2026-09-04 — CURRENT-STATE EVIDENCE MAPPING** |
+| Why no Q-BILL-A-006 | Authorized Current-State mapping could proceed from CWC-CE-146 role plus evidence. No blocking Human policy decision was required. UQ-TR-001–012 and UQ-CTS-001–016 remain unresolved and were not closed. |
+| Recorded result | First Sedgwick governmental-ecosystem Current-State map (WD-BILL-A-082–091). Human sales/use leads classified in WD-BILL-A-087. Completeness: SUBSTANTIALLY COMPLETE FOR ARCHITECTURE WITH EXPLICIT GAPS. Future State **not designed**. No rate / ARR / sufficiency / no-double-dip / senior-savings calculation. Field 25 BLANK. Field 26 NOT DETERMINED. Universe/KLRS not certified. Domain 01–06 preserved 14/16/5/5/18/14. Domain 07 statewide not executed. |
+| Classification | CONTROLLED EVIDENCE / WORKING FINDING. **Not** Kansas law by this register. **Not** accepted LOU. **Not** new Human Intent. CURRENT REVENUE ≠ REQUIRED FUTURE REVENUE. |
+| LOU update | LOU-004 Draft 1.10 §2.14 status/traceability only — draft version **not** incremented; status update ≠ Human acceptance |
+| Next question | **STOP.** No Q-BILL-A-006. Recommended subsequent controlled work: residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-148 **or** Human-authorized Future-State engineering CWC **or** Human-authorized Domain 07 — **not self-authorized**. |
+
 ---
 
 ## 5. Batch-questioning rule
@@ -340,3 +353,4 @@ Do not interrogate the Human with a large questionnaire dump unless the Human En
 | 1.8.0 | 2026-09-02 | CWC-CE-142: controlling county architecture recorded. CWC-CE-139 PT-transition-participation reading SUPERSEDED. No Q-006. Next = residual gaps, Human-authorized Git of 141+142, or Domain 06 (not self-authorized). |
 | 1.9.0 | 2026-09-02 | CWC-CE-144: Domain 06 executed. 14 rows. Dispositions BLANK. No Q-006. Next = residual gaps, Human-authorized Git of 144, or Domain 07 (not self-authorized). |
 | 1.10.0 | 2026-09-02 | CWC-CE-146: transition Human Intent recorded. 5/7 = maximum runway; no-double-dip; sufficiency acceleration; senior Year-1 priority; provisional 5%+5% ceilings; CS-FS mapping; Sedgwick reference model. No Q-006. No rate calculation. |
+| 1.11.0 | 2026-09-04 | CWC-CE-148: Sedgwick Current-State mapping executed. Future State not designed. No Q-006. No rate/ARR/sufficiency calculation. CWC-CE-149 not created. |
