@@ -2,9 +2,9 @@
 
 **Document ID:** WD-BILL-A-090  
 **Source ID:** SRC-BILL-A-321  
-**Governing Work Card:** CWC-CE-148  
+**Governing Work Card:** CWC-CE-148; **CWC-CE-150** dispositions  
 **Status:** WORKING / GAP REGISTER — NOT FUTURE-STATE DESIGN — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Retrieval date:** 2026-09-04  
 
 ```text
@@ -26,13 +26,14 @@ Completeness of this first execution stage: **SUBSTANTIALLY COMPLETE FOR ARCHITE
 
 | ID | Items | Status |
 |---|---|---|
-| CF-SED-001 | County ACFR property taxes **$241.5M** vs PVD county district **$206.0M** | **UNRESOLVED** — bridge EVIDENCE REQUIRED |
-| CF-SED-002 | PVD taxable value **$7,548,699,392** vs mill-sheet county AV **$7,546,656,630** | **UNRESOLVED** (small) |
-| CF-SED-003 | County ACFR sales taxes **$41.8M** vs Q4 budgetary **$41,127,614** | **UNLIKE BASES** (GAAP vs budgetary / lag) — both County-share series |
-| CF-SED-004 | Human **>$121M** countywide 1% vs Human **~$145M** KDOR local sales+use | **UNRESOLVED** — do not force (WD-BILL-A-087) |
-| CF-SED-005 | Human Wichita **nearly $7M** vs implied city remainder of a ~$121M pool after $41.8M County share | **UNRESOLVED / EVIDENCE REQUIRED** |
-| CF-SED-006 | USD 259 ACFR revenues **$874.0M** vs news/budget **~$1.01B / ~$1.32B** | **UNLIKE QUANTITIES** |
-| CF-SED-007 | KU taxable-sales method (collections ÷ 6.5%) vs food-phaseout non-uniform rate | **METHOD CONFLICT** — KU not used to verify Human CY tax totals |
+| CF-SED-001 | County ACFR property taxes **$241,512,296** vs PVD county district **$205,980,345.17** | **PARTIALLY CLASSIFIED / NUMERICAL BRIDGE UNRESOLVED** (WD-BILL-A-094) |
+| CF-SED-002 | PVD taxable value **$7,548,699,392** vs mill-sheet county AV **$7,546,656,630** | **UNRESOLVED** |
+| CF-SED-003 | County ACFR sales taxes **$41,840,210** vs Q4/KDOR BoC **$41,127,614** | **CLOSED as unlike quantities** (GAAP vs KDOR/Q4); both County-share |
+| CF-SED-004 | CY2025 countywide **sales $121,665,410.28** vs FY2025 countywide **sales+use $145,054,963.23** | **CLOSED as explained unlike quantities** (CY vs FY; sales vs sales+use) |
+| CF-SED-005 | Human Wichita **nearly $7M** vs KDOR/ACFR Wichita 12-192 / sales-tax series | **CLOSED** — HUMAN LEAD **NOT VERIFIED / CONTRADICTED** |
+| CF-SED-006 | USD 259 ACFR revenues **$874,033,452** vs news/budget **~$1.01B / ~$1.32B** | **CLOSED as unlike-quantity classification** (no new USD audit) |
+| CF-SED-007 | KU taxable-sales method vs food-phaseout non-uniform rate | **CLOSED as methodological classification** (WD-BILL-A-094) |
+| CF-SED-008 | Wichita KDOR CY2025 12-192 S+U **$85,253,695.74** vs Wichita ACFR local sales tax **$86,828,492** | **UNRESOLVED residual** — do not force |
 
 Year-to-year sales-tax change explanations (food phaseout; NCAA; retail growth; post-pandemic normalization): **HYPOTHESES / EVIDENCE LEADS**, not proven causation.
 
@@ -42,20 +43,19 @@ Year-to-year sales-tax change explanations (food phaseout; NCAA; retail growth; 
 
 | Gap | Why it matters | Suggested primary source |
 |---|---|---|
-| KDOR county-of-sale CY2023–2025 state sales **and** use line items | Human $824.3 / $820.2 / $833.9M | `https://ksrevenue.gov/prsalesreports.html` annual/monthly county files |
-| KDOR FY2024–FY2025 state **sales-only** county totals | Human $644.2 / $666.5M; use-tax exclusion | KDOR *State Sales Tax Collections by County* |
-| KDOR city/county local distribution FY2025 sales **and** use | Human $118.4M + $26.7M ≈ $145M | KDOR local distribution reports |
-| KDOR countywide 1% CY/FY distribution total | Human >$121M | KDOR countywide sales-tax distribution PDF |
+| KDOR CY2025 **annual revised** state sales/use workbooks | Confirm monthly-file CY2025 construction | `cy25revised.xlsx` / `cy25reviseduse.xlsx` when published (`prsalesreports.html`) |
 | KS-1700 city RST inventory for all 20 Sedgwick cities | Combined-rate map; Wichita 0% primary print | KDOR KS-1700 / city-county rate publication |
-| 2025 in-force CID/TDD inventory | Combined 8.5–10.5% class | KDOR notices; city ordinances |
-| Wichita ACFR-scale fiscal map | Municipal property tax, fees, enterprises, 12-192 share | City of Wichita ACFR |
-| Exact Wichita 12-192 dollar share | Human ~$7M conflict | KDOR distribution + city CAFR |
-| Line-item bridge ACFR PT $241.5M ↔ PVD $206.0M | Quantity-type control | County ACFR note + treasurer collection report |
+| 2025 in-force CID/TDD inventory | Combined 8.5–10.5% class; CF-SED-008 residual | KDOR notices; city ordinances |
+| Line-item bridge ACFR PT $241,512,296 ↔ components | CF-SED-001 numerical bridge | Treasurer collection report + ACFR note |
+| PVD vs mill-sheet AV difference **$2,042,762** | CF-SED-002 | PVD / Clerk certification timing note |
+| Wichita KDOR vs ACFR residual **$1,574,796.26** | CF-SED-008 | City ACFR note + KDOR city line / CID |
 | Other USD ACFRs (260, 261, 265, 266, joint 385/375, etc.) | School-finance ecosystem | Each USD ACFR |
 | Joint-city / joint-USD out-of-county AV | Boundary completeness | Adjacent-county mill sheets |
 | Food-local stacking legal rule | County 1% / CID on food after 1 Jan 2025 | K.S.A. 12-189 / 79-3603d / KDOR notice |
 | Transient guest / lodging receipts | D01-013 Sedgwick instance | KDOR / city lodging reports |
 | Domain 03 local incomplete surface | Statewide gap, not closed here | Later Domain 03 residual CWC |
+
+CWC-CE-148 gaps **closed by CWC-CE-150 primary retrieval:** CY2023–2025 state S/U; FY2024–FY2025 state sales-only; FY2025 local S/U; CY2025 countywide 1% sales pool; Wichita 12-192 dollars (WD-BILL-A-092 / 093). **Not** converted into Future-State design.
 
 ---
 
@@ -109,9 +109,12 @@ These are **requirements to gather/decide later**. They are **not** Bill A rates
 | Senior savings | **NOT CALCULATED** |
 | H.R. 25 | **PRESERVED** (current KS S/U ≠ FairTax-style Future State) |
 | 5% + 5% | **CEILINGS ONLY** |
-| CWC-CE-149 | **NOT CREATED** |
+| CWC-CE-149 | **PASS** (canonicalize CWC-CE-148 map); SHA `f8bc930c8fe16a394123076dc155b6035d838f87` |
+| CWC-CE-150 | **EXECUTED** (evidence-gap closure; WD-BILL-A-092–096) |
+| CWC-CE-151 | **NOT CREATED** |
 | Maturity | **19% UNCHANGED** |
 | HG-D1 / SPEC / HG-D2 | **NOT PASSED / NONE / NOT PASSED** |
+| Overlap map | **DEFERRED / NOT CREATED** — Sedgwick County Government Overlap Map — deferred until completion of all other Bill A LOU research and Definition activities |
 
 ---
 

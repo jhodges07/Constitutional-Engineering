@@ -107,9 +107,27 @@ CWC-CE-148 executed first Sedgwick Current-State evidence mapping (WD-BILL-A-082
 - change Domain 01–06 counts or Field 25/26;
 - accept LOU-004 or pass HG-D1.
 
-Additional rejected inferences from CWC-CE-148 evidence: Human-supplied `$824.3M` / `$145M` / `$121M+` are **not** Bill A targets; `$121M+` versus `~$145M` remains **UNRESOLVED**; County ACFR sales-tax `$41.8M` is the County **share**, not the countywide pool.
+Additional rejected inferences from CWC-CE-148 evidence: Human-supplied `$824.3M` / `$145M` / `$121M+` are **not** Bill A targets; County ACFR sales-tax `$41.8M` is the County **share**, not the countywide pool. CWC-CE-150 later **verified** those Human quantity leads from KDOR primary files (WD-BILL-A-092) and **closed CF-SED-004** as unlike quantities; verification **does not** convert them into Bill A targets.
 
 Authority level of CWC-CE-148 findings: **CONTROLLED CURRENT-STATE EVIDENCE / WORKING FINDING** — not Human Intent, not Kansas law, not accepted LOU.
+
+---
+
+# 6. CWC-CE-150 mapping note (status only — questions not closed)
+
+CWC-CE-150 executed Sedgwick high-value Current-State evidence-gap closure (WD-BILL-A-092–096). That work **does not**:
+
+- close UQ-TR-001–012 or UQ-CTS-001–016;
+- convert verified Current-State collections into required Future-State revenue;
+- calculate a Bill A rate, ARR, sufficiency, no-double-dip formula, or senior savings;
+- design the Sedgwick Future State;
+- create the Sedgwick County Government Overlap Map (deferred until completion of all other Bill A LOU research and Definition activities);
+- change Domain 01–06 counts or Field 25/26;
+- accept LOU-004 or pass HG-D1.
+
+Additional rejected inferences from CWC-CE-150 evidence: Wichita approximately `$7M` Human lead is **NOT VERIFIED / CONTRADICTED**; evidence may correct a factual lead and shall **not** override Human policy authority.
+
+Authority level of CWC-CE-150 findings: **CONTROLLED CURRENT-STATE EVIDENCE / WORKING FINDING** — not Human Intent, not Kansas law, not accepted LOU.
 
 ---
 

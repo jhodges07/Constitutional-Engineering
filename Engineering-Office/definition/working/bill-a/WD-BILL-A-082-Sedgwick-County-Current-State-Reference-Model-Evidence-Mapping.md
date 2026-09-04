@@ -15,7 +15,7 @@
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-082-Sedgwick-County-Current-State-Reference-Model-Evidence-Mapping.md  
 **Source ID:** SRC-BILL-A-313  
 
-**Companions:** WD-BILL-A-083 (entities/jurisdictions); WD-BILL-A-084 (property tax); WD-BILL-A-085 (USD/school finance); WD-BILL-A-086 (county/city/township/specials); WD-BILL-A-087 (sales/use + Human-lead verification); WD-BILL-A-088 (Universe crosswalk / flows / double-count); WD-BILL-A-089 (debt / assessments / functions); WD-BILL-A-090 (gaps / Future-State inputs); WD-BILL-A-091 (Git handoff).
+**Companions:** WD-BILL-A-083 (entities/jurisdictions); WD-BILL-A-084 (property tax); WD-BILL-A-085 (USD/school finance); WD-BILL-A-086 (county/city/township/specials); WD-BILL-A-087 (sales/use + Human-lead verification); WD-BILL-A-088 (Universe crosswalk / flows / double-count); WD-BILL-A-089 (debt / assessments / functions); WD-BILL-A-090 (gaps / Future-State inputs); WD-BILL-A-091 (Git handoff CWC-CE-148). **CWC-CE-150 gap-closure companions:** WD-BILL-A-092 (KDOR state/local S/U); WD-BILL-A-093 (countywide 1% / Wichita); WD-BILL-A-094 (CF-SED dispositions); WD-BILL-A-095 (period / remaining gaps); WD-BILL-A-096 (Git handoff CWC-CE-150). Future State **not designed**. Overlap map **deferred / not created**.
 
 ```text
 CURRENT STATE FIRST

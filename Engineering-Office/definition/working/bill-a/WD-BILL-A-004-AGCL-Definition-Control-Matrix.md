@@ -4,11 +4,11 @@
 **Title:** Bill A AGCL Definition Control Matrix  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148; CWC-CE-150  
 **Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.11.0  
+**Version:** 1.12.0  
 **Effective Date:** 2026-09-04  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-004-AGCL-Definition-Control-Matrix.md  
 
@@ -118,3 +118,4 @@ Absence of a recorded conflict is **not** compatibility. No control is marked sa
 | 1.9.0 | 2026-09-02 | CWC-CE-144 Domain 06: 00A/00C/00E/00H/00J surfaces recorded; no control SATISFIED. |
 | 1.10.0 | 2026-09-02 | CWC-CE-146: 00A runway/acceleration; 00C senior Year-1 zero priority; 00E no-double-dip vs debt; 00G CS→FS telemetry; 00H senior/USD/envelope; 00J ceiling-not-target. No control SATISFIED. |
 | 1.11.0 | 2026-09-04 | CWC-CE-148: 00G CS map without API SPEC; 00J current-collection ≠ future entitlement; 00H/ARR rejected-inference surface. No control SATISFIED. |
+| 1.12.0 | 2026-09-04 | CWC-CE-150: verified Current-State S/U quantities still ≠ Future-State entitlement; 00G no API SPEC; overlap map not created. No control SATISFIED. |

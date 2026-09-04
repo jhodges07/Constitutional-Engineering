@@ -2,10 +2,12 @@
 
 **Document ID:** WD-BILL-A-087  
 **Source ID:** SRC-BILL-A-318  
-**Governing Work Card:** CWC-CE-148 (supplemental Human evidence input; **not** CWC-CE-149)  
+**Governing Work Card:** CWC-CE-148 (architecture); **CWC-CE-150** (primary KDOR verification of Human leads)  
 **Status:** WORKING / EVIDENCE VERIFICATION — NOT A BILL A RATE — NOT ACCEPTED  
-**Version:** 1.0.0  
+**Version:** 1.1.0  
 **Retrieval date:** 2026-09-04  
+
+**CWC-CE-150:** Human-lead quantity cells below are updated from primary KDOR workbooks. Detailed provenance: WD-BILL-A-092 / WD-BILL-A-093. Architecture in §§1–2 is **preserved**. Do not treat verified Current-State collections as Bill A targets.  
 
 ```text
 HUMAN-SUPPLIED FIGURES = EVIDENCE LEADS UNTIL INDEPENDENTLY VERIFIED
@@ -73,21 +75,21 @@ KDOR FAQ: city-imposed tax → city receives **actual city tax collected**; coun
 
 | Lead | Human description | Independent finding | Status |
 |---|---|---|---|
-| CY2025 **$824.3M** | State sales **and** use collected from Sedgwick / county of sale | Controlling KDOR county-of-sale **annual** PDF not retrieved (report index exists at `ksrevenue.gov/prsalesreports.html`; direct PDF URL 404 in this cycle). KU Abstract compiles **taxable sales** from KDOR using **collections ÷ 6.5%**, which is **invalid as a uniform converter during food phaseout**. | **EVIDENCE REQUIRED** |
-| CY2024 **$820.2M** | Same | Same | **EVIDENCE REQUIRED** |
-| CY2023 **$833.9M** | Same | Same | **EVIDENCE REQUIRED** |
+| CY2025 **$824.3M** | State sales **and** use collected from Sedgwick / county of sale | KDOR monthly county files: CY2025 sales **$649,772,028.02** + use **$174,486,404.74** = **$824,258,432.76**. Annual revised CY2025 workbook **not published**. | **VERIFIED** (monthly official files; WD-BILL-A-092) |
+| CY2024 **$820.2M** | Same | `cy24revised.xlsx` Combined CY **$654,923,412.48** + `cy24reviseduse.xlsx` CY **$165,282,890.34** = **$820,206,302.82** | **VERIFIED** |
+| CY2023 **$833.9M** | Same | `cy23revised.xlsx` Combined CY **$681,347,500.29** + `cy23reviseduse.xlsx` CY **$152,562,187.24** = **$833,909,687.53** | **VERIFIED** |
 | State rate 6.5% | General rate | VERIFIED (79-3603; KDOR AR25). **Not** all transactions at 6.5% (food phaseout). | **VERIFIED** as general rate; **not** as uniform effective rate |
-| FY2025 **$644.2M** state **sales only** | Excludes local; Human: excludes use | KDOR monthly *State Sales Tax Collections by County* files exist; this CWC did **not** sum 12 months. KU 2025 Sedgwick **nominal taxable sales $9,996.5 million** (CY, compiled) × 6.5% = **$649.8 million** — **order-of-magnitude only**, methodologically flawed, **CY not FY**. | **EVIDENCE REQUIRED** (do not treat $649.8M as verification of $644.2M) |
-| FY2024 **$666.5M** state sales only | Same | Same | **EVIDENCE REQUIRED** |
+| FY2025 **$644.2M** state **sales only** | Excludes local; Human: excludes use | `062025coll.xlsx` Sedgwick FY2025 **$644,157,207.05**. **Not** use; **not** CY. | **VERIFIED** (rounding) |
+| FY2024 **$666.5M** state sales only | Same | Same workbook, FY2024 **$666,509,001.27** | **VERIFIED** (rounding) |
 | Countywide 1% voter 1985 | Architecture | VERIFIED in County ACFR/Q4 | **VERIFIED** |
-| Kansas collects and distributes to county + cities | Architecture | VERIFIED K.S.A. 12-192; KDOR FAQ | **VERIFIED** |
-| 2025 countywide 1% **> $121 million** | Pool | Wichita Eagle (secondary) matches Human wording. **No KDOR CY2025 countywide distribution PDF in hand.** County share $41.8M is **consistent with** a ~$120M pool if County receives ~1/3 under 12-192, **but that arithmetic is not a verification**. | **PARTIALLY VERIFIED** (secondary + consistency); **primary KDOR total EVIDENCE REQUIRED** |
-| County gov share 2025 **$41.8M** | County receipts | County ACFR: Sales taxes **$41.8 million** (2025). Narrative: countywide 1% retail sales **and use**. | **VERIFIED** (GAAP millions; County FY/CY 2025) |
+| Kansas collects and distributes to county + cities | Architecture | VERIFIED K.S.A. 12-192; KDOR FAQ; KDOR countywide city/county rows | **VERIFIED** |
+| 2025 countywide 1% **> $121 million** | Pool | `cy2025salescitiesco.xlsx` parent Sedgwick County CY sales **$121,665,410.28**. **Sales only**; **not** use; **not** FY. | **VERIFIED** |
+| County gov share 2025 **$41.8M** | County receipts | County ACFR sales taxes **$41,840,210**. KDOR CY2025 Balance of County S+U **$41,127,613.64** (= Q4 **$41,127,614**). | **VERIFIED** (GAAP millions); Q4/KDOR are **unlike** GAAP (CF-SED-003) |
 | County gov share 2024 **$39.6M** | County receipts | ACFR **$39.6 million** | **VERIFIED** |
-| Q4 cash/budgetary 2025 **$41,127,614** vs 2024 **$39,192,136** | County collections | County Q4 report. Two-month State disbursement lag noted. | **VERIFIED** as Q4 budgetary series; **≠** ACFR $41.8M |
-| Wichita 2025 **nearly $7 million** | Human: Wichita share | Eagle repeats Human. **In tension** with (a) “Wichita more than half of city share” if city share ≈ pool − $41.8M, and (b) Wichita being the largest city. Possible distinct stream (GF half of Wichita’s 12-192 share; a subset; error). | **EVIDENCE REQUIRED** — **not** inferred |
-| FY2025 local KDOR sales **$118.4M** + use **$26.7M** ≈ **$145M** | County + cities distributions | KDOR City/County annual distribution reports exist; **not totaled from primary file in this CWC**. | **EVIDENCE REQUIRED** |
-| **$121M+ vs ~$145M** | Reconciliation | **Not resolved by assumption.** Candidate causes: CY vs FY; countywide 1% vs **all** local (city + CID + use); sales vs sales+use; recipient scope; lag/adjustments. | **UNRESOLVED** |
+| Q4 cash/budgetary 2025 **$41,127,614** vs 2024 **$39,192,136** | County collections | County Q4 report. Matches KDOR Balance of County CY2025 S+U. Two-month State disbursement lag noted. | **VERIFIED** as Q4/KDOR series; **≠** ACFR $41,840,210 |
+| Wichita 2025 **nearly $7 million** | Human: Wichita share | KDOR CY2025 Wichita countywide sales **$69,575,997.23**; S+U **$85,253,695.74**. Wichita ACFR local sales tax **$86,828,492**. | **HUMAN LEAD: NOT VERIFIED / CONTRADICTED** |
+| FY2025 local KDOR sales **$118.4M** + use **$26.7M** ≈ **$145M** | County + cities distributions | FY2025 local sales **$118,366,941.10** + use **$26,688,022.13** = **$145,054,963.23**. Scope = **countywide 1%** parent row (County + cities). | **VERIFIED** as that scope |
+| **$121M+ vs ~$145M** | Reconciliation | **$121.7M** = CY2025 countywide **sales**; **$145.1M** = FY2025 countywide **sales+use**. Unlike period and tax type. | **CLOSED as unlike quantities** (CF-SED-004) |
 
 **Do not compare CY state S&U totals with FY state sales-only totals without a period/scope bridge.**
 

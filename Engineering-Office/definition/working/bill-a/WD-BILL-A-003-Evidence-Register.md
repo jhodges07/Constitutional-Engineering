@@ -4,11 +4,11 @@
 **Title:** Bill A Evidence Register / Research Annex Surface  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148; CWC-CE-150  
 **Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.11.0  
+**Version:** 1.12.0  
 **Effective Date:** 2026-09-04  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-003-Evidence-Register.md  
 
@@ -131,11 +131,19 @@ Do not treat AI summaries of H.R. 25 as primary evidence. Do not silently alter 
 | SRC-BILL-A-315 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-084-Sedgwick-Property-Tax-Current-State-Map.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sedgwick property-tax Current-State map | Levy ≠ collection ≠ ACFR | Working map | Non-authoritative working finding |
 | SRC-BILL-A-316 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-085-Sedgwick-USD-School-Finance-Current-State-Map.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sedgwick USD / school-finance Current-State map | USD share not assigned | Working map | Non-authoritative working finding |
 | SRC-BILL-A-317 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-086-Sedgwick-County-Municipal-Township-Special-District-Fiscal-Map.md` | CE — Bill A Definition Engineer | 2026-09-04 | County / city / township / special-district fiscal map | County ≠ ecosystem | Working map | Non-authoritative working finding |
-| SRC-BILL-A-318 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-087-Sedgwick-Sales-Use-Tax-Current-State-Human-Lead-Verification.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sales/use architecture + Human-lead verification | Human figures not auto-verified; $121M vs $145M UNRESOLVED | Working verification | Non-authoritative working finding |
+| SRC-BILL-A-318 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-087-Sedgwick-Sales-Use-Tax-Current-State-Human-Lead-Verification.md` | CE — Bill A Definition Engineer | 2026-09-04 | Sales/use architecture + Human-lead verification (CWC-CE-150 quantity update) | Architecture preserved; Wichita ~$7M contradicted | Working verification | Non-authoritative working finding |
 | SRC-BILL-A-319 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-088-Sedgwick-Revenue-Universe-Crosswalk-Intergovernmental-Double-Count.md` | CE — Bill A Definition Engineer | 2026-09-04 | KRU observation / flows / double-count | Sedgwick observation ≠ count change | Working crosswalk | Non-authoritative working finding |
 | SRC-BILL-A-320 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-089-Sedgwick-Debt-Special-Assessments-Functions-Spending.md` | CE — Bill A Definition Engineer | 2026-09-04 | Debt / assessments / functions | DEPENDENCY ≠ RETAIN | Working map | Non-authoritative working finding |
 | SRC-BILL-A-321 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-090-Sedgwick-Current-State-Gaps-Conflicts-Future-State-Input-Requirements.md` | CE — Bill A Definition Engineer | 2026-09-04 | Gaps / Future-State input requirements | Input ≠ design | Working register | Non-authoritative working finding |
 | SRC-BILL-A-322 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-091-Git-Handoff-CWC-CE-148.md` | CE — Bill A Definition Engineer | 2026-09-04 | CWC-CE-148 Git handoff | No commit/push | Path set recorded | Control authorization for later Git CWC only |
+| SRC-BILL-A-323 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-092-KDOR-Sedgwick-State-Local-Sales-Use-Evidence-Closure.md` | CE — Bill A Definition Engineer | 2026-09-04 | CWC-CE-150 KDOR state/local S/U verification | Not a Bill A rate; CY ≠ FY | Working verification | Non-authoritative working finding — not LOU acceptance |
+| SRC-BILL-A-324 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-093-Countywide-1-Percent-Wichita-Distribution-Evidence.md` | CE — Bill A Definition Engineer | 2026-09-04 | Countywide 1% pool / County share / Wichita distribution | Wichita ~$7M contradicted | Working verification | Non-authoritative working finding |
+| SRC-BILL-A-325 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-094-CF-SED-001-007-Reconciliation-Dispositions.md` | CE — Bill A Definition Engineer | 2026-09-04 | CF-SED-001–007 dispositions; CF-SED-008 residual | No false reconciliation | Working register | Non-authoritative working finding |
+| SRC-BILL-A-326 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-095-Sedgwick-Evidence-Gap-Fiscal-Period-Reconciliation.md` | CE — Bill A Definition Engineer | 2026-09-04 | Remaining gaps / fiscal-period control | No aggregate Sedgwick total | Working control | Non-authoritative working finding |
+| SRC-BILL-A-327 | CONTROL-DOC | `Engineering-Office/definition/working/bill-a/WD-BILL-A-096-Git-Handoff-CWC-CE-150.md` | CE — Bill A Definition Engineer | 2026-09-04 | CWC-CE-150 Git handoff | No commit/push | Path set recorded | Control authorization for later Git CWC only |
+| SRC-BILL-A-328 | GOV-DATA | `https://www.ksrevenue.gov/prsalesreports.html` and `pdf/cy23revised.xlsx` / `cy23reviseduse.xlsx` / `cy24revised.xlsx` / `cy24reviseduse.xlsx` / `01`–`12``2025coll.xlsx` / `01`–`12``2025colluse.xlsx` / `062025coll.xlsx` | CE — Bill A Definition Engineer | 2026-09-04 | KDOR Sedgwick state sales/use CY and FY collections | Food rate ≠ 6.5%; CY ≠ FY | Official KDOR workbooks retrieved | Non-authoritative for LOU-004; controlling for Current-State quantity verification in WD-BILL-A-092 |
+| SRC-BILL-A-329 | GOV-DATA | `https://www.ksrevenue.gov/pdf/cy2025salescitiesco.xlsx` / `CY25CountywideUse.xlsx` / `loytd2025.xlsx` / `CY24LocUseTaxDist.xlsx` / `CY25LocUseTaxDist.xlsx` / monthly `*lo.xlsx` Jul 2024–Jun 2025 | CE — Bill A Definition Engineer | 2026-09-04 | KDOR countywide 1% and local city/county distributions | Parent row ≠ County-only | Official KDOR workbooks retrieved | Non-authoritative for LOU-004; controlling for WD-BILL-A-092/093 |
+| SRC-BILL-A-330 | GOV-DATA | `https://www.wichita.gov/DocumentCenter/View/38400/2025-Annual-Comprehensive-Financial-Report-PDF` | CE — Bill A Definition Engineer | 2026-09-04 | City of Wichita ACFR YE 31 Dec 2025 sales-tax revenue | GAAP ≠ KDOR distribution line | Official city ACFR retrieved | Non-authoritative for LOU-004; controlling for Wichita GAAP series in WD-BILL-A-093 |
 
 PRIMARY-LEGAL / GOV-DATA Domain 01 locators: **SRC-BILL-A-027 through SRC-BILL-A-053** (CWC-CE-127) and **SRC-BILL-A-055 through SRC-BILL-A-073** (CWC-CE-128) in WD-BILL-A-024. They establish working current-state evidence for Domain 01 only. They are **not** accepted LOU-004 provisions.
 
@@ -180,7 +188,8 @@ H.R. 25 IH (SRC-BILL-A-015) remains the PRIMARY-LEGAL **federal model** pin. It 
 **CWC-CE-137:** Closure locators SRC-BILL-A-220–229 and WD-BILL-A-055.  
 **CWC-CE-141:** Domain 05 locators SRC-BILL-A-233–261 and WD-BILL-A-060–066.  
 **CWC-CE-144:** Domain 06 locators SRC-BILL-A-278–301 and WD-BILL-A-071–077. Domains 07–12 remain empty. Statewide Government Revenue Universe remains uncertified.  
-**CWC-CE-148:** Sedgwick Current-State locators SRC-BILL-A-313–322 and WD-BILL-A-082–091. Findings are **not** verified into LOU-004 as accepted facts. Future State not designed.
+**CWC-CE-148:** Sedgwick Current-State locators SRC-BILL-A-313–322 and WD-BILL-A-082–091. Findings are **not** verified into LOU-004 as accepted facts. Future State not designed.  
+**CWC-CE-150:** Sedgwick evidence-gap locators SRC-BILL-A-323–330 and WD-BILL-A-092–096. Findings are **not** verified into LOU-004 as accepted facts. Future State not designed. Overlap map not created.
 
 ### 4.1 Kansas excise audit evidence needs (WD-BILL-A-013) — Domain 01 executed; gaps remain
 
@@ -238,3 +247,4 @@ Parent of Domain EXCISE. Full table: WD-BILL-A-016 §10 (EV-KLRS-001–015). Com
 | 1.9.0 | 2026-09-02 | CWC-CE-144: Domain 06 SRC-BILL-A-278–301 / 302–308 / WD-BILL-A-071–077. Findings not accepted into LOU-004. |
 | 1.10.0 | 2026-09-02 | CWC-CE-146: SRC-BILL-A-309–312 / WD-BILL-A-078–081. Transition Human Intent recorded; not accepted into LOU-004. No rate / Sedgwick audit. |
 | 1.11.0 | 2026-09-04 | CWC-CE-148: SRC-BILL-A-313–322 / WD-BILL-A-082–091. Sedgwick Current-State mapping recorded; not accepted into LOU-004. Future State not designed. No rate/ARR. |
+| 1.12.0 | 2026-09-04 | CWC-CE-150: SRC-BILL-A-323–330 / WD-BILL-A-092–096. Evidence-gap closure recorded; not accepted into LOU-004. Future State not designed. No rate/ARR. |

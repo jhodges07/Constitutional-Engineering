@@ -108,7 +108,7 @@ Sedgwick County ACFR FY2025 governmental **Property taxes $241.5 million** (2024
 
 PVD county district **$205,980,345**.
 
-Difference is **not reconciled by assumption**. Candidate causes (not verified as a complete bridge): motor-vehicle tax; back taxes; payments in lieu; accounting recognition vs levy; other property-related receipts. **EVIDENCE REQUIRED** for a line-item bridge.
+Difference is **not reconciled by assumption**. CWC-CE-150 (WD-BILL-A-094) classified these as **unlike quantities** (levy year vs GAAP recognition year; County-class levy vs blended County reporting) but did **not** construct a complete treasurer line-item bridge. **CF-SED-001 REMAINS UNRESOLVED as a numerical bridge.** Exact ACFR governmental-funds property taxes: **$241,512,296**.
 
 **Do not treat $241.5M and $206.0M as the same quantity.**
 
