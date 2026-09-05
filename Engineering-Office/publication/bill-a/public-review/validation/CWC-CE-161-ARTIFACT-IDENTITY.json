@@ -1,0 +1,31 @@
+{
+  "cwc": "CWC-CE-161",
+  "canonical_git_sha": "9e96c1b96ed46e28ac9515065d9331fd78b62bcf",
+  "render_timestamp_utc": "2026-09-05T13:07:21Z",
+  "toolchain": "Python ReportLab + pymupdf validation; prepare table reformatting",
+  "page_size": "6in x 9in portrait (432pt x 648pt)",
+  "artifacts": [
+    {
+      "filename": "Bill-A-LOU-004-Public-Review-Draft-1.10.pdf",
+      "path": "Engineering-Office/publication/bill-a/public-review/pdf/Bill-A-LOU-004-Public-Review-Draft-1.10.pdf",
+      "pdf_sha256": "A392AEFD7385DB434C6076FDC2553B25817B132A02885791E878CFFC06B3BD02",
+      "file_size_bytes": 230938,
+      "page_count": 116,
+      "page_width_pt": 432.0,
+      "page_height_pt": 648.0,
+      "source_markdown": "Engineering-Office/definition/LOU-004-Bill-A-Comprehensive-Kansas-Tax-System-Replacement.md",
+      "source_git_sha": "9e96c1b96ed46e28ac9515065d9331fd78b62bcf"
+    },
+    {
+      "filename": "Bill-A-LOU-004-Review-Summary.pdf",
+      "path": "Engineering-Office/publication/bill-a/public-review/pdf/Bill-A-LOU-004-Review-Summary.pdf",
+      "pdf_sha256": "FE50EF5EC2046267800D1A5D8A5438C4234CBC0490629C6DD09CF8554A611CA9",
+      "file_size_bytes": 14649,
+      "page_count": 7,
+      "page_width_pt": 432.0,
+      "page_height_pt": 648.0,
+      "source_markdown": "Engineering-Office/definition/working/bill-a/WD-BILL-A-113-LOU-004-Human-Review-Summary.md",
+      "source_git_sha": "9e96c1b96ed46e28ac9515065d9331fd78b62bcf"
+    }
+  ]
+}

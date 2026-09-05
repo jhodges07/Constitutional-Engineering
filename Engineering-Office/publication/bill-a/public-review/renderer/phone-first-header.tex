@@ -1,0 +1,67 @@
+% Phone-first public-review PDF geometry and typography (CWC-CE-161)
+% Page target: approximately 6in × 9in portrait
+\usepackage[paperwidth=6in,paperheight=9in,margin=0.55in,top=0.6in,bottom=0.7in]{geometry}
+\usepackage{fontspec}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{microtype}
+\usepackage{etoolbox}
+\usepackage{hyperref}
+
+\setstretch{1.28}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.25em,itemsep=0.25em,topsep=0.35em}
+
+\titleformat{\section}{\Large\bfseries\color{black}}{}{0em}{}
+\titleformat{\subsection}{\large\bfseries\color{black}}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.1em}{0.45em}
+\titlespacing*{\subsection}{0pt}{0.9em}{0.35em}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.25em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!45!black,
+  citecolor=black,
+  pdfcreator={Constitutional-Engineering phone-first public-review renderer (CWC-CE-161)},
+  pdfproducer={pandoc + XeLaTeX}
+}
+
+\urlstyle{same}
+\sloppy
+\emergencystretch=2.5em
+
+% Narrow-page tables: wrap cells
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\fancyfoot[L]{\footnotesize BlueprintLiberty.com}
+\fancyfoot[C]{\footnotesize\thepage}
+\fancyfoot[R]{\footnotesize\PhoneFooterRight}
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.3pt}
+  \fancyfoot[L]{\footnotesize BlueprintLiberty.com}
+  \fancyfoot[C]{\footnotesize\thepage}
+  \fancyfoot[R]{\footnotesize\PhoneFooterRight}
+}
+
+% Cover helpers
+\newcommand{\CoverRule}{\vspace{0.6em}\hrule height 0.6pt\vspace{0.8em}}

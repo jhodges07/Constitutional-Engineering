@@ -1,0 +1,50 @@
+{
+  "pdf": "Bill-A-LOU-004-Review-Summary.pdf",
+  "pages_inspected": [
+    {
+      "page": 1,
+      "size_pt": [
+        432.0,
+        648.0
+      ],
+      "line_count": 36,
+      "long_lines_gt95chars": 0
+    },
+    {
+      "page": 2,
+      "size_pt": [
+        432.0,
+        648.0
+      ],
+      "line_count": 22,
+      "long_lines_gt95chars": 0
+    },
+    {
+      "page": 3,
+      "size_pt": [
+        432.0,
+        648.0
+      ],
+      "line_count": 36,
+      "long_lines_gt95chars": 0
+    },
+    {
+      "page": 4,
+      "size_pt": [
+        432.0,
+        648.0
+      ],
+      "line_count": 40,
+      "long_lines_gt95chars": 0
+    },
+    {
+      "page": 7,
+      "size_pt": [
+        432.0,
+        648.0
+      ],
+      "line_count": 6,
+      "long_lines_gt95chars": 0
+    }
+  ]
+}
