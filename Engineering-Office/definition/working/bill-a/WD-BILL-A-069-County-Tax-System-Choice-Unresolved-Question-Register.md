@@ -30,6 +30,20 @@ This register lists questions that remain open **after** CWC-CE-142 recorded man
 
 **CWC-CE-146:** The 5/7-year choice is integrated as a **maximum authorized runway** with revenue-sufficiency acceleration (WD-BILL-A-078). UQ-CTS-001–016 remain **live and unanswered**. New transition questions (senior eligibility, sufficiency test, 5%/5% relationship, local envelope, Sedgwick scope, no-double-dip formula) live in WD-BILL-A-079 (UQ-TR-001–012) and are **not** answered here.
 
+**CWC-CE-152:** UQ-CTS items remain **live and unanswered**. UQ-TR-003 is **ASKED** as Q-BILL-A-006 (ARR **definition** only). That does **not** close this register.
+
+**CWC-CE-153:** Q-BILL-A-006 **ANSWERED**. ALL-OUT **no** Bill A replacement-revenue guarantee (narrows UQ-CTS-010 on that path; does **not** close UQ-CTS-013). UQ-CTS-001–016 remain **live**. Q-BILL-A-007 does **not** close this register.
+
+**CWC-CE-154:** Q-BILL-A-007 **ANSWERED**. TRR/ARR terms established. New spending → NBBF. Does **not** close UQ-CTS-001–016. Q-BILL-A-008 does **not** close this register.
+
+**CWC-CE-155:** ALL-IN / ALL-OUT **revenue architecture** recorded. ALL-OUT **refined**: no replacement-revenue guarantee; statewide PT elimination continues; may operate only authorized surviving claims; may establish county personal and business income/payroll within bounded jurisdiction; **SHALL NOT** impose inheritance tax; may not revive eliminated claims. UQ-CTS-010 / 013 / 014 **narrowed, not closed**. **UQ-CTS-017 NEW** (nexus / originate / TDY). Field 25 remains **BLANK**. Q-BILL-A-008 remains unanswered and does **not** close this register.
+
+**CWC-CE-156:** Q-BILL-A-008 **ANSWERED** (B). ALL-IN TRR is **not** “fund existing government as it exists.” Does **not** extend TRR as an ALL-OUT replacement-revenue guarantee. Does **not** close UQ-CTS-001–017. Field 25 **BLANK**.
+
+**CWC-CE-157:** Q-BILL-A-009 **ANSWERED** (A Zero Terminal). ALL-OUT remains subject to GCD and Zero Terminal for compulsory claims subject to degradation. ALL-OUT is **not** a permanent tax floor and cannot evade Zero Terminal by renaming. Whether ALL-OUT income/payroll follows the general GCD path is **Q-BILL-A-010** (UQ-GCD-006). Does **not** close UQ-CTS-001–017. Field 25 **BLANK**.
+
+**CWC-CE-158:** Q-BILL-A-010 **ANSWERED** (A). ALL-OUT personal and business income/payroll follow GCD to Zero Terminal. ALL-OUT ≠ permanent legacy tax system. Does **not** close UQ-CTS-001–017. Field 25 **BLANK**.
+
 ---
 
 # 1. Established (do not re-ask as if open)
@@ -40,8 +54,8 @@ This register lists questions that remain open **after** CWC-CE-142 recorded man
 | PROPERTY TAX = ZERO is the end condition for every Kansas county | **ESTABLISHED HUMAN INTENT** |
 | County may not permanently retain property taxation | **ESTABLISHED HUMAN INTENT** |
 | Each county chooses a 5-year **or** 7-year elimination schedule | **ESTABLISHED HUMAN INTENT** (existence of the two choices). **CWC-CE-146:** that schedule is the **outside maximum runway**, not a collection entitlement (WD-BILL-A-078). Mechanics remain UQ-CTS-001 |
-| ALL-IN = new Bill A tax system (as later defined) | **ESTABLISHED HUMAN INTENT** |
-| ALL-OUT = legacy tax system minus property tax | **ESTABLISHED HUMAN INTENT** |
+| ALL-IN = new Bill A tax system (as later defined) | **ESTABLISHED HUMAN INTENT** — **CWC-CE-155:** ALL-IN participates in the new Bill A state/local tax architecture |
+| ALL-OUT = legacy tax system minus property tax | **ESTABLISHED HUMAN INTENT (CWC-CE-142 four rules preserved).** **CWC-CE-155 REFINES** the ALL-OUT **revenue** description: not a complete statement. ALL-OUT does **not** participate in the new local H.R. 25-style replacement; may operate only authorized surviving claims; **may** establish county income/payroll within bounded jurisdiction; **SHALL NOT** impose inheritance tax; may not revive eliminated claims (CF-BILL-A-016) |
 | ALL-IN / ALL-OUT does not determine whether property tax is eliminated | **ESTABLISHED HUMAN INTENT** |
 | Schedule choice and tax-system choice are independent unless later Human Intent creates a dependency | **ESTABLISHED HUMAN INTENT** |
 | API, Taxpayer Supremacy, transparency, accountability, Runtime Republic are statewide non-optional | **ESTABLISHED HUMAN INTENT** |
@@ -136,6 +150,8 @@ These IDs are **not** Q-BILL-A-006.
 | Field | Value |
 |---|---|
 | Status | **NOT YET ENGINEERED** |
+| CWC-CE-153 | **NARROWED for ALL-OUT:** no Bill A replacement-revenue guarantee. ALL-IN replacement engineering still premature until Layer 2 is defined. Not calculated. |
+| CWC-CE-155 | **NARROWED.** ALL-IN = new architecture participation. ALL-OUT = no replacement guarantee + authorized surviving claims + optional county income/payroll. Not calculated. Field 25 **BLANK**. |
 | Forbidden this CWC | FairTax rate; replacement-revenue calculation; future distribution formula |
 
 ### UQ-CTS-011 — Bill A / Bill B allocation
@@ -160,6 +176,7 @@ These IDs are **not** Q-BILL-A-006.
 |---|---|
 | Question | Which current claims (Domains 01–05 and later) constitute the “legacy tax system” a county may retain minus property tax, and to what extent Bill A ultimately permits that retention? |
 | Status | **NOT DETERMINED** — Field 25 BLANK on every current-state row |
+| CWC-CE-155 | **NARROWED, not closed.** ALL-OUT is not automatic RETAIN of all legacy claims. ALL-OUT may operate only claims Bill A authorizes to survive. Optional county income/payroll is a permitted **class**, not a Field 25 RETAIN of current Domain 03 rows. |
 | Forbidden | Inferring RETAIN from ALL-OUT |
 
 ### UQ-CTS-014 — ALL-IN “new tax system” applicable to county/local taxation
@@ -168,6 +185,7 @@ These IDs are **not** Q-BILL-A-006.
 |---|---|
 | Question | Exact contents of the new Bill A tax system as applied to county/local taxation |
 | Status | **NOT DETERMINED** — later Engineering Definition and Requirements |
+| CWC-CE-155 | **NARROWED.** ALL-IN participates in the new Bill A state/local H.R. 25-style architecture. Kansas local package still OPEN. |
 | Note | H.R. 25 remains the federal economic model, not Kansas law |
 
 ### UQ-CTS-015 — Independence vs later dependency of the two county choices
@@ -185,6 +203,17 @@ These IDs are **not** Q-BILL-A-006.
 | Established | Those architectures are non-optional |
 | Residual | Node definition, measurement, failure consequences, software — **NOT ENGINEERED** |
 | Status | **ENGINEERING REQUIRED** — no SPEC |
+
+### UQ-CTS-017 — ALL-OUT county income/payroll jurisdiction / nexus
+
+| Field | Value |
+|---|---|
+| Established | Temporary physical presence / TDY alone does **not** create county income-tax jurisdiction. For the business/work-location case, **both** the business **and** the work location must originate within the county before the ALL-OUT county may impose the applicable local income/payroll claim. |
+| Residual | Definitions of residence, domicile, originate, business origin, work-location origin, TDY, temporary presence, payroll nexus, income nexus, remote work, multi-county employment, and business entity residence |
+| Status | **LEGAL RESEARCH REQUIRED / CLASS R** (CWC-CE-158 / CWC-CE-159). **Not CLASS H.** Residual definitions are **not** missing LOU Human-Intent forks. |
+| This CWC | Does **not** invent those definitions |
+
+**CWC-CE-159 note:** UQ-CTS-017 remains open CLASS R. Field 25 remains **BLANK**. This CWC does **not** close this register.
 
 ---
 

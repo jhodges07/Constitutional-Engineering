@@ -4,11 +4,11 @@
 **Title:** Bill A Human Questionnaire / Definition Register  
 **Classification:** Non-Normative Engineering Definition Working Artifact  
 **Authority:** Constitutional Engineering Office  
-**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148; CWC-CE-150  
-**Governing LOU candidate:** LOU-004 Draft 1.10 — NOT ACCEPTED — HG-D1 NOT PASSED  
+**Governing Work Card:** CWC-CE-121; CWC-CE-123; CWC-CE-124; CWC-CE-125; CWC-CE-127; CWC-CE-128; CWC-CE-130; CWC-CE-131; CWC-CE-133; CWC-CE-134; CWC-CE-136; CWC-CE-137; CWC-CE-139; CWC-CE-141; CWC-CE-142; CWC-CE-143; CWC-CE-144; CWC-CE-145; CWC-CE-146; CWC-CE-148; CWC-CE-150; CWC-CE-152; CWC-CE-153; CWC-CE-154; CWC-CE-155; CWC-CE-156; CWC-CE-157; CWC-CE-158; CWC-CE-159  
+**Governing LOU candidate:** LOU-004 Draft 1.10 — FINAL HUMAN-REVIEW CANDIDATE — NOT HUMAN-ACCEPTED — HG-D1 NOT PASSED  
 **Assigned Agent:** CE — Bill A Definition Engineer  
 **Status:** WORKING / CANDIDATE — NOT ACCEPTED  
-**Version:** 1.12.0  
+**Version:** 1.20.0  
 **Effective Date:** 2026-09-04  
 **Storage Path:** Engineering-Office/definition/working/bill-a/WD-BILL-A-002-Human-Questionnaire-Definition-Register.md  
 
@@ -56,7 +56,7 @@ Human intent is never converted into an asserted Kansas legal or fiscal fact.
 Established order for this register:
 
 1. Problem definition (Domain A) — **RECORDED (Q-BILL-A-001)**  
-2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); Domain 04 **executed and closure applied** (dispositions BLANK); Domain 05 **executed** (dispositions BLANK); Domain 06 **executed** (dispositions BLANK); CWC-CE-142 county architecture **recorded** (not accepted); CWC-CE-146 transition architecture **recorded** (not accepted); CWC-CE-148 Sedgwick Current-State mapping **executed** (not accepted; Future State not designed); CWC-CE-150 Sedgwick evidence-gap closure **executed** (not accepted; Future State not designed); **no current Human question** — next work = residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-150 **or** Human-authorized Future-State engineering CWC **or** Human-authorized Domain 07 (not self-authorized)  
+2. Desired end-state tax architecture (Domain B) — **ARCHITECTURE RECORDED (Q-BILL-A-002)**; **Q-BILL-A-003–005 RECORDED**; Domain 01 **executed** (dispositions BLANK); Domain 02 **executed and closure applied** (dispositions BLANK); Domain 03 **executed and closure applied** (dispositions BLANK); Domain 04 **executed and closure applied** (dispositions BLANK); Domain 05 **executed** (dispositions BLANK); Domain 06 **executed** (dispositions BLANK); CWC-CE-142 county architecture **recorded** (not accepted); CWC-CE-146 transition architecture **recorded** (not accepted); CWC-CE-148 Sedgwick Current-State mapping **executed** (not accepted; Future State not designed); CWC-CE-150 Sedgwick evidence-gap closure **executed** (not accepted; Future State not designed); **Q-BILL-A-006 RECORDED** (CWC-CE-153); **Q-BILL-A-007 RECORDED** (CWC-CE-154) — TRR / legally obligated current spending / new spending → NBBF; ARR reserved; **not calculated**; **CWC-CE-155** ALL-IN / ALL-OUT revenue architecture and Government Claim Degradation **recorded** (not accepted); **Q-BILL-A-008 RECORDED** (CWC-CE-156) — B Enforceable-Instrument Class; **Q-BILL-A-009 RECORDED** (CWC-CE-157) — A Zero Terminal; **Q-BILL-A-010 RECORDED** (CWC-CE-158) — A Applies in Full; LOU Completion Readiness **OUTCOME A**; **Q-BILL-A-011 NOT ASKED**  
 3. Property-right boundary (Domain D)  
 4. Permissible taxation boundary (Domain C) — intent spill from Q-BILL-A-002 (H.R. 25 final consumption; existence not an event) does **not** close Domain C  
 5. State/local architecture (Domain E)  
@@ -72,12 +72,12 @@ Reason: CWC-CE-121 §11. Intent spill does not close unasked domains.
 | Domain | Title | Status |
 |---|---|---|
 | A | Problem definition | **RECORDED** — Q-BILL-A-001 Human Intent (not HG-D1) |
-| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–06 executed (BLANK dispositions); CWC-CE-142 county architecture recorded (not accepted); CWC-CE-146 transition / sufficiency / senior / ceilings / mapping / Sedgwick-reference recorded (not accepted); CWC-CE-148 Sedgwick Current-State mapping executed (not accepted; Future State not designed); CWC-CE-150 evidence-gap closure executed (not accepted; Future State not designed); next = residual gaps, Human-authorized Git of CWC-CE-150, Human-authorized Future-State engineering, or Domain 07 (not asked as a question; **not self-authorized**) |
+| B | End-state tax architecture | **ARCHITECTURE RECORDED** — Q-BILL-A-002; **Q-BILL-A-003–005 RECORDED** (Option (a) closed compulsory KLRS); Domains 01–06 executed (BLANK dispositions); CWC-CE-142 county architecture recorded (not accepted); CWC-CE-146 transition / sufficiency / senior / ceilings / mapping / Sedgwick-reference recorded (not accepted); CWC-CE-148 Sedgwick Current-State mapping executed (not accepted; Future State not designed); CWC-CE-150 evidence-gap closure executed (not accepted; Future State not designed); **Q-BILL-A-006 RECORDED**; **Q-BILL-A-007 RECORDED** (TRR/ARR; not calculated); **CWC-CE-155** state H.R. 25 conversion / ALL-IN / ALL-OUT revenue / GCD recorded (not accepted); **Q-BILL-A-008 RECORDED** (B Enforceable-Instrument Class); **Q-BILL-A-009 RECORDED** (A Zero Terminal); **Q-BILL-A-010 RECORDED** (A Applies in Full); LOU Completion Readiness **OUTCOME A**; **Q-BILL-A-011 NOT ASKED** |
 | C | Permissible taxable events | NOT ASKED (intent spill: H.R. 25 final consumption; existence not taxable) |
 | D | Property rights | NOT ASKED (intent spill from Q-BILL-A-001) |
-| E | State / local fiscal relationship | NOT ASKED as a closed domain (intent spill: KLRS covers state and local entities; CWC-CE-142 county ALL-IN / ALL-OUT is a **tax-system** choice, **not** a general local opt-out of statewide architecture) |
-| F | Transition | NOT ASKED as a closed domain (**INTENT SPILL / CANDIDATE RECORDING** — CWC-CE-142: statewide mandatory PT elimination; county 5- or 7-year **maximum runway**; ALL-IN/ALL-OUT = tax-system choice. CWC-CE-146: no-double-dip; ALL-IN sufficiency acceleration; senior Year-1 priority; provisional 5%/5% ceilings; CS→FS mapping. Live questions: WD-BILL-A-069 and WD-BILL-A-079) |
-| G | Property tax relationship (Bill B) | NOT ASKED as a closed domain (**INTENT SPILL / CANDIDATE RECORDING** — CWC-CE-142 statewide mandatory PT = ZERO; CWC-CE-146: 5/7 = maximum runway, not a collection entitlement; senior Year-1 homestead priority to zero. LOU-001 five-year destination **not transferred** / **not accepted**. Bill A/B allocation HUMAN DECISION REQUIRED) |
+| E | State / local fiscal relationship | NOT ASKED as a closed domain (intent spill: KLRS covers state and local entities; CWC-CE-142 county ALL-IN / ALL-OUT is a **tax-system** choice, **not** a general local opt-out of statewide architecture; **CWC-CE-155:** ALL-OUT may operate county income/payroll within bounded jurisdiction; inheritance **prohibited**; nexus OPEN) |
+| F | Transition | NOT ASKED as a closed domain (**INTENT SPILL / CANDIDATE RECORDING** — CWC-CE-142: statewide mandatory PT elimination; county 5- or 7-year **maximum runway**; ALL-IN/ALL-OUT = tax-system choice. CWC-CE-146: no-double-dip; ALL-IN sufficiency acceleration; senior Year-1 priority; provisional 5%/5% ceilings; CS→FS mapping. CWC-CE-153: ALL-IN current spending requirements **historical phrase**; surplus→PT acceleration; senior+disabled first-priority class; ALL-OUT no replacement-revenue guarantee. CWC-CE-154: TRR = legally obligated current spending; new spending → NBBF immediately; ARR reserved. CWC-CE-155: ALL-IN participates in new Bill A state/local architecture; ALL-OUT does not participate in new **local** H.R. 25-style replacement; GCD recorded. CWC-CE-156: TRR membership = Enforceable-Instrument Class (Q-008 = B); CURRENT SPENDING ≠ TRR. CWC-CE-157: Zero Terminal; sinking-fund Future-State objective (not sufficiency). CWC-CE-158: ALL-OUT income/payroll GCD applies in full. Live questions: WD-BILL-A-069, WD-BILL-A-079, WD-BILL-A-110 (CLASS R/S/L), UQ-TR-016, UQ-SF-001) |
+| G | Property tax relationship (Bill B) | NOT ASKED as a closed domain (**INTENT SPILL / CANDIDATE RECORDING** — CWC-CE-142 statewide mandatory PT = ZERO; CWC-CE-146: 5/7 = maximum runway, not a collection entitlement; senior Year-1 homestead priority to zero. CWC-CE-153: first-priority class expanded to qualifying seniors **and** qualifying disabled persons on fixed incomes; eligibility **not** determined. LOU-001 five-year destination **not transferred** / **not accepted**. Bill A/B allocation HUMAN DECISION REQUIRED) |
 | H | Debt | NOT ASKED |
 | I | Retirement / long-duration liabilities | NOT ASKED |
 | J | Revenue distribution | NOT ASKED (intent spill: surviving-excise restricted pools; 100% purpose restriction) |
@@ -334,6 +334,91 @@ Full EV-KLRS-001–015 and UNK-KLRS register: WD-BILL-A-016 §§10–11. **AI sy
 | LOU update | LOU-004 Draft 1.10 §2.15 status/traceability only — draft version **not** incremented; status update ≠ Human acceptance |
 | Next question | **STOP.** No Q-BILL-A-006. Recommended subsequent controlled work: residual Domain 01–06 gaps **or** Human-authorized Git of CWC-CE-150 **or** Human-authorized Future-State engineering CWC **or** Human-authorized Domain 07 — **not self-authorized**. |
 
+### Q-BILL-A-006
+
+| Field | Value |
+|---|---|
+| ID | **Q-BILL-A-006** |
+| Domain | B / F — AUTHORIZED REVENUE REQUIREMENT **definition** (not a calculation; not Future-State design) |
+| Status | **ANSWERED BY HUMAN ENGINEER — 2026-09-04** |
+| Asked date | 2026-09-04 (CWC-CE-152) |
+| Answer date | 2026-09-04 (CWC-CE-153) |
+| Why now | CWC-CE-152 restored the LOU Definition sequence after CWC-CE-151 PASS. ARR is used in LOU-004 / WD-BILL-A-078 as an engineering term defined only by what it is **not**. |
+| Exact question | Presented in the CWC-CE-152 Final Cursor Report (section AN). Selection analysis: WD-BILL-A-097. |
+| Human answer | Exact Human statement (punctuation preserved): “All-In counties must meet their current spending requirements, but a spike in revenue beyond projections is immediately used to eliminate all remaining property taxes. Seniors (and the disabled on fixed incomes go first to zero, then others follow. All-Out counties are on their own to survive with surviving tax systems, and property taxes dissipate.” Full recording, Rules 1–8, and Layer 1/2/3 distinction: WD-BILL-A-099. Menu alternatives A–D were **not** selected; recorded as **OTHER / HUMAN DEFINITION**. |
+| Classification | **HUMAN INTENT**. Engineering interpretation is **separate** from the Human quote (WD-BILL-A-099 §2). **Not** Kansas law. **Not** a fiscal quantity. **Not** a rate. **Not** permanent authorization of all current spending. DEFINITION ≠ CALCULATION. ARR **not calculated**. |
+| Evidence required | Later mapping/legal research remains required to **apply** the rule. Precise meaning of “current spending requirements” was asked as Q-BILL-A-007 and **answered** in CWC-CE-154. |
+| LOU update | LOU-004 Draft 1.10 §2.16 / §2.17 status/traceability and proposed-understanding seeds — draft version **not** incremented; recording ≠ Human acceptance |
+| Next question | **Q-BILL-A-007 RECORDED** (CWC-CE-154). **Q-BILL-A-008 ASKED.** |
+
+### Q-BILL-A-007
+
+| Field | Value |
+|---|---|
+| ID | **Q-BILL-A-007** |
+| Domain | F / B — ALL-IN **transitional continuity** / meaning of “current spending requirements” (Layer 2). Not a dollar amount. Not a rate. Not a program list. |
+| Status | **ANSWERED BY HUMAN ENGINEER — 2026-09-05** |
+| Asked date | 2026-09-04 (CWC-CE-153) |
+| Answer date | 2026-09-05 (CWC-CE-154) |
+| Why now | Q-BILL-A-006 established that ALL-IN counties must meet current spending requirements during transition, while existing Human Intent states CURRENT SPENDING ≠ AUTHORIZED FUTURE SPENDING. |
+| Exact question | Presented in the CWC-CE-153 Final Cursor Report (section AO) and recorded in WD-BILL-A-099. |
+| Human answer | **OTHER / HUMAN DEFINITION.** Exact Part 1: “Protects legally obligated current spending, but immediately subjects all new spending to NBBF.” Exact Part 2: “Creates TRR — Transitional Revenue Requirement for the transition and reserves ARR — Authorized Revenue Requirement.” Full recording: WD-BILL-A-101. Menu A–C / Part 2 A–B were **not** substituted. |
+| Classification | **HUMAN INTENT**. Engineering interpretation is **separate** (WD-BILL-A-101 §2). TRR **established**. ARR **reserved** as separate mature term. TRR ≠ ARR. Legally obligated current spending ≠ all current spending. New spending → immediate NBBF. **Not** Kansas law. **Not** a quantity. TRR/ARR **not calculated**. |
+| Evidence required | Precise legal-obligation and new-spending membership require Q-BILL-A-008. Kansas/Bill A NBBF admission procedure = dependency (UQ-NBBF-001); **not invented**. |
+| LOU update | LOU-004 Draft 1.10 §2.18 status/traceability — draft version **not** incremented; recording ≠ Human acceptance |
+| Next question | **Q-BILL-A-008 RECORDED** (CWC-CE-156). **Q-BILL-A-009 ASKED.** |
+
+### Q-BILL-A-008
+
+| Field | Value |
+|---|---|
+| ID | **Q-BILL-A-008** |
+| Domain | F / B — TRR membership versus new-spending NBBF gate (one admission boundary). Not a dollar amount. Not a rate. Not a program list. Not an NBBF SPEC. |
+| Status | **ANSWERED BY HUMAN ENGINEER — 2026-09-05** |
+| Asked date | 2026-09-05 (CWC-CE-154; re-presented CWC-CE-155) |
+| Answer date | 2026-09-05 (CWC-CE-156) |
+| Why now | Q-BILL-A-007 established TRR = legally obligated current spending and new spending → NBBF, without defining either membership test. |
+| Exact question | Presented in the CWC-CE-154 Final Cursor Report (section AS); re-presented in CWC-CE-155. Full recording: WD-BILL-A-105. |
+| Human answer | **B — ENFORCEABLE-INSTRUMENT CLASS.** The Human Engineer explicitly concurred. Options A, C, and D were **not** substituted. |
+| Classification | **HUMAN INTENT**. Engineering interpretation is **separate** (WD-BILL-A-105 §2). TRR covers only presently enforceable legal obligations of later-established qualifying classes. Current spending / budget / appropriation / program / staffing / entity / pre-existing status ≠ TRR automatically. New transition instruments → NBBF. Qualifying classes **not classified** (UQ-TR-016). **Not** Kansas law. **Not** a quantity. TRR/ARR **not calculated**. |
+| Evidence required | Later controlled legal/evidence research of qualifying classes (UQ-TR-016). Kansas/Bill A NBBF admission procedure = UQ-NBBF-001; **not invented**. |
+| LOU update | LOU-004 Draft 1.10 §2.20 — question **answered**; draft version **not** incremented |
+| Next question | **Q-BILL-A-009 RECORDED** (CWC-CE-157). **Q-BILL-A-010 ASKED.** |
+
+### Q-BILL-A-009
+
+| Field | Value |
+|---|---|
+| ID | **Q-BILL-A-009** |
+| Domain | B / F — Government Claim Degradation **terminal condition** for authorized surviving compulsory claims. Not a dollar amount. Not a TRR class list. Not Field 25. |
+| Status | **ANSWERED BY HUMAN ENGINEER — 2026-09-05** |
+| Asked date | 2026-09-05 (CWC-CE-156) |
+| Answer date | 2026-09-05 (CWC-CE-157) |
+| Why now | Q-BILL-A-008 completed the TRR admission rule. Remaining highest LOU-completion Human Intent gap was the GCD destination. |
+| Exact question | Presented in the CWC-CE-156 Final Cursor Report. Full recording: WD-BILL-A-107. |
+| Human answer | **A — ZERO TERMINAL.** The Human Engineer explicitly concurred. Additional Human statement recorded separately: personal and government sinking funds / perpetual interest “is possible.” That statement is a Future-State **objective**, **not** a sufficiency finding. |
+| Classification | **HUMAN INTENT**. Engineering interpretation is **separate** (WD-BILL-A-107 §2). Authorized surviving compulsory claims subject to GCD continue to **ZERO**. No automatic non-zero floor. ZERO means ZERO. Personal ≠ governmental sinking funds. **Not** Kansas law. **Not** a quantity. TRR/ARR/fund balances **not calculated**. |
+| Evidence required | Later sinking-fund financial/constitutional/fiduciary/actuarial research (UQ-SF-001). Rounding / last increment remain UQ-GCD-002 (later Requirements/SPEC). |
+| LOU update | LOU-004 Draft 1.10 §2.21 — question **answered**; draft version **not** incremented |
+| Next question | **Q-BILL-A-010 RECORDED** (CWC-CE-158). **Q-BILL-A-011 NOT ASKED.** |
+
+### Q-BILL-A-010
+
+| Field | Value |
+|---|---|
+| ID | **Q-BILL-A-010** |
+| Domain | B / F — ALL-OUT personal and business income/payroll application of the general Government Claim Degradation / Zero Terminal rule. Not a dollar amount. Not nexus definitions. Not 5%/5% ceilings. Not Field 25. |
+| Status | **ANSWERED BY HUMAN ENGINEER — 2026-09-05** |
+| Asked date | 2026-09-05 (CWC-CE-157) |
+| Answer date | 2026-09-05 (CWC-CE-158) |
+| Why now | Q-BILL-A-009 established Zero Terminal. Completing ALL-OUT’s distinctive tax class required deciding whether GCD applies in full. |
+| Exact question | Presented in the CWC-CE-157 Final Cursor Report (section AS). Full recording: WD-BILL-A-109. |
+| Human answer | **A — APPLIES IN FULL.** The Human Engineer explicitly concurred. Options B and C were **not** substituted. |
+| Classification | **HUMAN INTENT**. Engineering interpretation is **separate** (WD-BILL-A-109 §2). Authorized ALL-OUT personal and business income/payroll follow −0.25 percentage points every three months to ZERO TERMINAL. ALL-OUT ≠ permanent tax floor. **Not** Kansas law. **Not** a quantity. TRR/ARR **not calculated**. |
+| Evidence required | Nexus definitions remain UQ-CTS-017 (legal research). No additional evidence required to record this Human Intent. |
+| LOU update | LOU-004 Draft 1.10 §2.22 — question **answered**; draft version **not** incremented |
+| Next question | **Q-BILL-A-011 NOT ASKED.** LOU Completion Readiness = **OUTCOME A**. CWC-CE-159 executed FINAL LOU RECONCILIATION / HUMAN-REVIEW PREPARATION. LOU-004 = **FINAL HUMAN-REVIEW CANDIDATE / NOT HUMAN-ACCEPTED**. Human Review Decision **A / B / C** is presented, **not** inferred. |
+
 ---
 
 ## 5. Batch-questioning rule
@@ -368,3 +453,11 @@ Do not interrogate the Human with a large questionnaire dump unless the Human En
 | 1.10.0 | 2026-09-02 | CWC-CE-146: transition Human Intent recorded. 5/7 = maximum runway; no-double-dip; sufficiency acceleration; senior Year-1 priority; provisional 5%+5% ceilings; CS-FS mapping; Sedgwick reference model. No Q-006. No rate calculation. |
 | 1.11.0 | 2026-09-04 | CWC-CE-148: Sedgwick Current-State mapping executed. Future State not designed. No Q-006. No rate/ARR/sufficiency calculation. CWC-CE-149 not created. |
 | 1.12.0 | 2026-09-04 | CWC-CE-150: Sedgwick Current-State evidence-gap closure executed. Future State not designed. No Q-006. No rate/ARR/sufficiency calculation. CWC-CE-151 not created. |
+| 1.13.0 | 2026-09-04 | CWC-CE-152: Q-BILL-A-006 ASKED (ARR definition). Not answered. ARR not calculated. Taxpayer Financial Signal concept recorded / metric deferred. |
+| 1.14.0 | 2026-09-04 | CWC-CE-153: Q-BILL-A-006 ANSWERED BY HUMAN ENGINEER. Q-BILL-A-007 ASKED (transitional continuity). ARR/TRR not calculated. |
+| 1.15.0 | 2026-09-05 | CWC-CE-154: Q-BILL-A-007 ANSWERED BY HUMAN ENGINEER. TRR established; ARR reserved. Q-BILL-A-008 ASKED. TRR/ARR not calculated. |
+| 1.16.0 | 2026-09-05 | CWC-CE-155: ALL-IN / ALL-OUT revenue architecture and Government Claim Degradation recorded. Q-BILL-A-008 RE-PRESENTED / NOT ANSWERED. TRR/ARR not calculated. Field 25 BLANK. |
+| 1.17.0 | 2026-09-05 | CWC-CE-156: Q-BILL-A-008 ANSWERED BY HUMAN ENGINEER (B Enforceable-Instrument Class). Q-BILL-A-009 ASKED (GCD terminal). TRR/ARR not calculated. Classes not classified. |
+| 1.18.0 | 2026-09-05 | CWC-CE-157: Q-BILL-A-009 ANSWERED BY HUMAN ENGINEER (A Zero Terminal). Sinking-fund Future-State objective recorded (not sufficiency). Q-BILL-A-010 ASKED. TRR/ARR/fund balances not calculated. |
+| 1.19.0 | 2026-09-05 | CWC-CE-158: Q-BILL-A-010 ANSWERED BY HUMAN ENGINEER (A Applies in Full). LOU Completion Readiness OUTCOME A. Q-BILL-A-011 not asked. TRR/ARR not calculated. |
+| 1.20.0 | 2026-09-05 | CWC-CE-159: LOU-004 designated Final Human-Review Candidate. Not Human-accepted. CLASS H = NONE. Q-BILL-A-011 not asked. HG-D1 not passed. |
